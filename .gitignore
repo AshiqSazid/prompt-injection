@@ -1,0 +1,12 @@
+# Only the code and the abstract are tracked. Everything else at the repo root
+# (runs/, paper/, labels/, docs/, data/, figures/, PDFs, protocols) is ignored.
+/*
+!/.gitignore
+!/abstract.md
+!/requirements.txt
+!/code/
+
+# Never track, under any of the negations above.
+__pycache__/
+.env
+.venv*/

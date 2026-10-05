@@ -1,0 +1,41 @@
+# Core loop — provider SDKs only, no agent framework (CLAUDE.md: the core loop
+# stays framework-free; frameworks appear ONLY in the protocol §4 framework arm).
+# Lower bounds are the minimum that works; the trailing comment records the
+# version actually used for the runs in runs/, so a reviewer can reproduce the
+# exact environment rather than whatever resolves today.
+pyyaml>=6.0            # used: 6.0.3
+anthropic>=0.40        # used: 0.120.0
+openai>=1.40           # used: 2.48.0
+google-genai>=0.3      # used: 2.14.0
+
+# --- Framework arm (protocol §4) --------------------------------------------
+# REQUIRED to reproduce the LangGraph ReAct arm — the arm carrying the paper's
+# RETRACTION (0/240 genuine framework disclosure), i.e. the result most likely to
+# be challenged. These were installed locally but undeclared, so a clean install
+# from this file silently could not run that arm at all.
+langgraph>=1.2         # used: 1.2.9
+langchain-core>=1.5    # used: 1.5.1
+langchain-openai>=1.4  # used: 1.4.1
+langchain-anthropic>=1.5  # used: 1.5.2
+
+# --- MCP server (mcp_server.py) ---------------------------------------------
+# Publishes A'/B/B'/C/D/E as inert stdio MCP tools, for scanner input and for
+# connecting a real MCP client.
+mcp>=1.27              # used: 1.27.0
+
+# --- External scanners (protocol §9 / H3) ------------------------------------
+# The detection-gap claim must NOT rest only on the project-authored scan.py.
+# `snyk-agent-scan` is the current name of the tool formerly shipped as
+# `mcp-scan`; the mcp-scan entry point now only prints a rename warning.
+# NOTE: run LOCAL inspection only --
+#   .venv/bin/snyk-agent-scan inspect mcp_config.json \
+#       --dangerously-run-mcp-servers --no-bootstrap
+# Remote verification can transmit condition descriptions to a vendor and must
+# wait for the coordinated-disclosure authorization in protocol §14.
+snyk-agent-scan>=0.5   # used: 0.5.15
+mcp-scan>=0.4          # used: 0.4.3 (rename shim, kept for provenance)
+
+# --- pre-registered statistics (protocol §6) --------------------------------
+# Mixed-effects logistic regression, odds ratios and the Holm-corrected tests
+# were pre-registered and unimplemented until 2026-08-08 (stats.py).
+statsmodels>=0.14      # used: 0.14.6  (pulls scipy/pandas/numpy)
