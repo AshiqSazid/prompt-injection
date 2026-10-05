@@ -1,0 +1,25 @@
+{
+  "experiment": "flagship-replication",
+  "stage": "S4",
+  "mode": "live",
+  "leg": "gemini-3.8-flash",
+  "evidence": "live",
+  "design_sha256": "372f611983392c4d5c7dbb4a7efdcf23078136e0e46ee6cf99eb489caa18ed2b",
+  "expected_trials": 460,
+  "rows_written": 0,
+  "errors": 0,
+  "complete": false,
+  "stop_reason": null,
+  "resumes": 0,
+  "committed_usd": 0,
+  "prices_usd_per_million": [
+    0.75,
+    3.75
+  ],
+  "max_tokens": 2048,
+  "workers": 4,
+  "include_replication": false,
+  "canonical_path": "extension_runs/flagship-live-gemini-3.8-flash-20261001-233903-714328.jsonl",
+  "started_at": "2026-10-01T23:39:03.714360+00:00",
+  "finished_at": null
+}

@@ -1,0 +1,26 @@
+{
+  "_instructions": "Fill every null yourself. true means you personally checked it. Leave a gate null or false if it is not done; the runner will refuse.",
+  "stage": "A",
+  "leg": "gemini-3-flash-preview",
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-4o-2024-08-06"
+    },
+    {
+      "provider": "google",
+      "model": "gemini-3-flash-preview"
+    }
+  ],
+  "design_sha256": "886842230fd2f48276b1ab3b7d668ecd9bec70ed644e53bcd02fd1da82be151e",
+  "protocol_sha256": "b3c1c3bbc90e7f1e979a0182b9f9e199a9efa81dba4f76e5805594c381568545",
+  "approved_by": "Md. Rafiur Rahman" ,
+  "approved_on": "29-09-2026",
+  "approved_budget_usd": 2.15,
+  "provider_schema_compatibility_checked": true,
+  "provider_prices_and_token_bounds_verified": true,
+  "task_fixtures_reviewed": true,
+  "statistical_review_completed": true,
+  "witness_verified": true,
+  "disclosure_decision": "deferred; to be decided before publication"
+}

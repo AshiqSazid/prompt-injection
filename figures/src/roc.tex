@@ -1,0 +1,37 @@
+% figure body, extracted from usenix_paper/main.tex.
+% width: columnwidth
+\centering
+\IfFileExists{roc.tex}{\input{roc.tex}}{%
+% BEGIN GENERATED ROC FALLBACK -- source: paper/roc.tex
+\setlength{\unitlength}{0.8pt}
+\begin{picture}(120,120)(-12,-12)
+  \put(0,0){\line(1,0){100}}
+  \put(0,0){\line(0,1){100}}
+  \multiput(0,0)(10,10){11}{\circle*{0.6}}
+  \put(-10,-9){\scriptsize 0}
+  \put(97,-9){\scriptsize 1}
+  \put(-10,97){\scriptsize 1}
+  \put(35,-11){\scriptsize false positive rate}
+  \put(-9,40){\rotatebox{90}{\scriptsize true positive rate}}
+  \qbezier[17](0.0,0.0)(0.0,5.55)(0.0,11.1)
+  \qbezier[53](0.0,11.1)(0.0,27.75)(0.0,44.4)
+  \qbezier[17](0.0,44.4)(0.0,50.0)(0.0,55.6)
+  \qbezier[56](0.0,55.6)(1.1,72.25)(2.2,88.9)
+  \qbezier[2](2.2,88.9)(2.3,88.9)(2.4,88.9)
+  \qbezier[18](2.4,88.9)(2.5,94.45)(2.6,100.0)
+  \qbezier[5](2.6,100.0)(4.35,100.0)(6.1,100.0)
+  \qbezier[17](6.1,100.0)(11.65,100.0)(17.2,100.0)
+  \qbezier[132](17.2,100.0)(58.6,100.0)(100.0,100.0)
+  \put(0.0,0.0){\circle*{1.6}}
+  \put(0.0,11.1){\circle*{1.6}}
+  \put(0.0,44.4){\circle*{1.6}}
+  \put(0.0,55.6){\circle*{1.6}}
+  \put(2.2,88.9){\circle*{1.6}}
+  \put(2.4,88.9){\circle*{1.6}}
+  \put(2.6,100.0){\circle*{1.6}}
+  \put(6.1,100.0){\circle*{1.6}}
+  \put(17.2,100.0){\circle*{1.6}}
+  \put(100.0,100.0){\circle*{1.6}}
+\end{picture}%
+% END GENERATED ROC FALLBACK
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "schema-disclosure-gap": {
+      "command": "/home/moodifai/Music/schema-disclosure-gap/.venv/bin/python",
+      "args": ["/home/moodifai/Music/schema-disclosure-gap/code/mcp_server.py"]
+    }
+  }
+}

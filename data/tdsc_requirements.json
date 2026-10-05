@@ -1,0 +1,45 @@
+{
+  "checked_on": "2026-09-29",
+  "journal": "IEEE Transactions on Dependable and Secure Computing",
+  "issn": [
+    "1545-5971",
+    "1941-0018"
+  ],
+  "ranking": {
+    "system": "SJR",
+    "year": 2025,
+    "sjr": 1.758,
+    "categories": {
+      "Computer Science (miscellaneous)": "Q1",
+      "Electrical and Electronic Engineering": "Q1"
+    }
+  },
+  "regular_paper": {
+    "standard_pages": 12,
+    "maximum_submission_pages": 18,
+    "abstract_words": [
+      100,
+      200
+    ],
+    "double_anonymous_available": false,
+    "supplement_separate": true
+  },
+  "sources": [
+    {
+      "kind": "ranking",
+      "url": "https://www.scimagojr.com/journalsearch.php?q=28918&tip=sid",
+      "retrieved_text_sha256": "72beda1c602487716163558c3508a79070d0c8c50e73d4a3a9beed541d7a335a"
+    },
+    {
+      "kind": "tdsc_authors",
+      "url": "https://www.computer.org/csdl/journal/tq/write-for-us/15068",
+      "retrieved_text_sha256": "f49901379c6b6b5d4112e067141ac891f6c8241c005083a5a31135b2b01ec3f1"
+    },
+    {
+      "kind": "publisher_authors",
+      "url": "https://www.computer.org/publications/author-resources",
+      "retrieved_text_sha256": "125d9a355d397343c3f2cdcb6663c3a121ffbb42a2af0cb4c717418521ce7276"
+    }
+  ],
+  "status": "direct web evidence retrieved; author approval pending"
+}

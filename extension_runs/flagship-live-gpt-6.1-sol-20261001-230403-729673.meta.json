@@ -1,0 +1,25 @@
+{
+  "experiment": "flagship-replication",
+  "stage": "S4",
+  "mode": "live",
+  "leg": "gpt-6.1-sol",
+  "evidence": "live",
+  "design_sha256": "3c7bdf6ca0ca5bc9695308dc175140748192d8b2115db0d9da16042979d1f872",
+  "expected_trials": 460,
+  "rows_written": 460,
+  "errors": 1,
+  "complete": true,
+  "stop_reason": null,
+  "resumes": 0,
+  "committed_usd": 0.683648,
+  "prices_usd_per_million": [
+    2.0,
+    10.0
+  ],
+  "max_tokens": 2048,
+  "workers": 4,
+  "include_replication": false,
+  "canonical_path": "extension_runs/flagship-live-gpt-6.1-sol-20261001-230403-729673.jsonl",
+  "started_at": "2026-10-01T23:04:03.729714+00:00",
+  "finished_at": "2026-10-01T23:11:30.908114+00:00"
+}

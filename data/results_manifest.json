@@ -1,0 +1,1002 @@
+{
+ "defense.auc": {
+  "ci": [
+   0.986,
+   0.999
+  ],
+  "value": 0.994
+ },
+ "defense.band": {
+  "attack": 25,
+  "legitimate": 15
+ },
+ "defense.baserate.five": {
+  "pct": 5.0
+ },
+ "defense.baserate.one": {
+  "pct": 1.0
+ },
+ "defense.baserate.pointone": {
+  "pct": 0.1
+ },
+ "defense.corpus": {
+  "negatives": 506,
+  "positives": 9
+ },
+ "defense.fpr.at20": {
+  "pct": 2.6
+ },
+ "defense.ppv.five": {
+  "pct": 67.2
+ },
+ "defense.ppv.one": {
+  "pct": 28.2
+ },
+ "defense.ppv.pointone": {
+  "pct": 3.8
+ },
+ "defense.seqthinking": {
+  "k": 5,
+  "n": 13,
+  "names": 4
+ },
+ "defense.tpr.at20": {
+  "pct": 100
+ },
+ "depth.cred_optional": {
+  "k": 14,
+  "n": 20,
+  "pct": 70
+ },
+ "depth.cred_posfirst": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "depth.ua_optional": {
+  "k": 8,
+  "n": 20,
+  "pct": 40
+ },
+ "depth.ua_posfirst": {
+  "k": 19,
+  "n": 20,
+  "pct": 95
+ },
+ "depth_cred_optional.baseline": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "depth_cred_optional.drop": {
+  "pct": 30
+ },
+ "depth_cred_posfirst.baseline": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "depth_cred_posfirst.drop": {
+  "pct": 0
+ },
+ "depth_ua_optional.baseline": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "depth_ua_optional.drop": {
+  "pct": 60
+ },
+ "depth_ua_posfirst.baseline": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "depth_ua_posfirst.drop": {
+  "pct": 5
+ },
+ "explicit.gpt-4o.credential_shaped": {
+  "k": 4,
+  "n": 20,
+  "pct": 20
+ },
+ "explicit.gpt-4o.internal_codename": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "explicit.gpt-4o.long_block": {
+  "k": 19,
+  "n": 20,
+  "pct": 95
+ },
+ "explicit.gpt-4o.policy_sentence": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "explicit.gpt-4o.pooled": {
+  "k": 46,
+  "n": 100,
+  "pct": 46
+ },
+ "explicit.gpt-4o.product_name": {
+  "k": 3,
+  "n": 20,
+  "pct": 15
+ },
+ "framework_arm": {
+  "disclosed": 0,
+  "n": 240,
+  "tool_called": 240
+ },
+ "gate.claude-sonnet-4-5.A": {
+  "k": 30,
+  "n": 30,
+  "pct": 100
+ },
+ "gate.claude-sonnet-4-5.A_prime": {
+  "k": 30,
+  "n": 30,
+  "pct": 100
+ },
+ "gate.claude-sonnet-4-5.B": {
+  "k": 0,
+  "n": 30,
+  "pct": 0
+ },
+ "gate.claude-sonnet-4-5.C": {
+  "k": 30,
+  "n": 30,
+  "pct": 100
+ },
+ "gate.claude-sonnet-4-5.D": {
+  "k": 0,
+  "n": 30,
+  "pct": 0
+ },
+ "gate.claude-sonnet-4-5.delta": {
+  "pp": 0
+ },
+ "gate.gemini-3-flash.A": {
+  "k": 0,
+  "n": 30,
+  "pct": 0
+ },
+ "gate.gemini-3-flash.A_prime": {
+  "k": 30,
+  "n": 30,
+  "pct": 100
+ },
+ "gate.gemini-3-flash.B": {
+  "k": 7,
+  "n": 30,
+  "pct": 23
+ },
+ "gate.gemini-3-flash.C": {
+  "k": 30,
+  "n": 30,
+  "pct": 100
+ },
+ "gate.gemini-3-flash.D": {
+  "k": 0,
+  "n": 30,
+  "pct": 0
+ },
+ "gate.gemini-3-flash.delta": {
+  "pp": 0
+ },
+ "gate.gpt-4o.A": {
+  "k": 0,
+  "n": 30,
+  "pct": 0
+ },
+ "gate.gpt-4o.A_prime": {
+  "k": 9,
+  "n": 30,
+  "pct": 30
+ },
+ "gate.gpt-4o.B": {
+  "k": 0,
+  "n": 30,
+  "pct": 0
+ },
+ "gate.gpt-4o.C": {
+  "k": 29,
+  "n": 30,
+  "pct": 97
+ },
+ "gate.gpt-4o.D": {
+  "k": 0,
+  "n": 30,
+  "pct": 0
+ },
+ "gate.gpt-4o.delta": {
+  "pp": 67
+ },
+ "pooled.gpt-4o.A_prime": {
+  "ci": [
+   23,
+   46
+  ],
+  "k": 20,
+  "n": 60,
+  "pct": 33
+ },
+ "pooled.gpt-4o.C": {
+  "ci": [
+   82,
+   96
+  ],
+  "k": 55,
+  "n": 60,
+  "pct": 92
+ },
+ "prevalence.attack.client-identity": {
+  "k": 0,
+  "n": 401,
+  "servers": 0
+ },
+ "prevalence.attack.contact": {
+  "k": 1,
+  "n": 401,
+  "servers": 1
+ },
+ "prevalence.attack.credential": {
+  "k": 0,
+  "n": 401,
+  "servers": 0
+ },
+ "prevalence.attack.operatortenant": {
+  "k": 5,
+  "n": 401,
+  "servers": 2
+ },
+ "prevalence.attack.policy": {
+  "k": 0,
+  "n": 401,
+  "servers": 0
+ },
+ "prevalence.attack.region": {
+  "k": 1,
+  "n": 401,
+  "servers": 3
+ },
+ "prevalence.corpus": {
+  "n": 401,
+  "params": 1048,
+  "servers": 45
+ },
+ "prevalence.victim.chars": {
+  "n": 195012
+ },
+ "prevalence.victim.cloud\u0000region": {
+  "k": 3
+ },
+ "prevalence.victim.credential\u0000shaped": {
+  "k": 0
+ },
+ "prevalence.victim.operator\u0000tenant": {
+  "k": 0
+ },
+ "prevalence.victim.policy\u0000token": {
+  "k": 0
+ },
+ "r6.delta": {
+  "pp": 65
+ },
+ "r6.familiar": {
+  "k": 1,
+  "n": 20,
+  "pct": 5
+ },
+ "r6.seed": {
+  "k": 14,
+  "n": 20,
+  "pct": 70
+ },
+ "real.D.combined": {
+  "k": 0,
+  "n": 228
+ },
+ "real.claude-sonnet-4-5.C": {
+  "itt_k": 120,
+  "itt_n": 125,
+  "itt_pct": 96,
+  "k": 120,
+  "n": 120,
+  "pct": 100,
+  "tools_called": 24,
+  "tools_leaking": 24
+ },
+ "real.claude-sonnet-4-5.D": {
+  "itt_k": 0,
+  "itt_n": 124,
+  "itt_pct": 0,
+  "k": 0,
+  "n": 119,
+  "pct": 0,
+  "tools_called": 24,
+  "tools_leaking": 0
+ },
+ "real.corpus": {
+  "servers": 25,
+  "tools": 25
+ },
+ "real.gpt-4o.C": {
+  "itt_k": 78,
+  "itt_n": 125,
+  "itt_pct": 62,
+  "k": 78,
+  "n": 113,
+  "pct": 69,
+  "tools_called": 24,
+  "tools_leaking": 22
+ },
+ "real.gpt-4o.D": {
+  "itt_k": 0,
+  "itt_n": 125,
+  "itt_pct": 0,
+  "k": 0,
+  "n": 109,
+  "pct": 0,
+  "tools_called": 23,
+  "tools_leaking": 0
+ },
+ "scan.desc.A_prime": {
+  "flagged": 0
+ },
+ "scan.desc.B": {
+  "flagged": 1
+ },
+ "scan.desc.B_prime": {
+  "flagged": 1
+ },
+ "scan.desc.C": {
+  "flagged": 0
+ },
+ "scan.desc.D": {
+  "flagged": 0
+ },
+ "scan.desc.E": {
+  "flagged": 1
+ },
+ "scan.descname.A_prime": {
+  "flagged": 1
+ },
+ "scan.descname.B": {
+  "flagged": 1
+ },
+ "scan.descname.B_prime": {
+  "flagged": 1
+ },
+ "scan.descname.C": {
+  "flagged": 0
+ },
+ "scan.descname.D": {
+  "flagged": 0
+ },
+ "scan.descname.E": {
+  "flagged": 1
+ },
+ "scan.invariant.A_prime": {
+  "flagged": 0
+ },
+ "scan.invariant.B": {
+  "flagged": 1
+ },
+ "scan.invariant.B_prime": {
+  "flagged": 1
+ },
+ "scan.invariant.C/api_documentation": {
+  "flagged": 0
+ },
+ "scan.invariant.C/compliance_logging": {
+  "flagged": 0
+ },
+ "scan.invariant.C/default": {
+  "flagged": 0
+ },
+ "scan.invariant.C/indirect_inference": {
+  "flagged": 0
+ },
+ "scan.invariant.C/operational_metadata": {
+  "flagged": 0
+ },
+ "scan.invariant.D": {
+  "flagged": 0
+ },
+ "scan.invariant.E": {
+  "flagged": 0
+ },
+ "scan.invariant.meta": {
+  "arms": 10,
+  "reps": 3
+ },
+ "v2.gemini-3-flash-preview.diagonal": {
+  "k": 139,
+  "n": 140,
+  "pct": 99
+ },
+ "v2.gemini-3-flash-preview.offdiagonal": {
+  "k": 39,
+  "n": 980,
+  "pct": 4
+ },
+ "v2.gpt-4o.diagonal": {
+  "k": 138,
+  "n": 140,
+  "pct": 99
+ },
+ "v2.gpt-4o.offdiagonal": {
+  "k": 8,
+  "n": 980,
+  "pct": 1
+ },
+ "v3.claude-sonnet-4-5.adjacent": {
+  "ci": [
+   23,
+   46
+  ],
+  "k": 20,
+  "n": 60,
+  "pct": 33
+ },
+ "v3.claude-sonnet-4-5.control": {
+  "k": 0,
+  "n": 800,
+  "pct": 0
+ },
+ "v3.claude-sonnet-4-5.controlcalls": {
+  "k": 0,
+  "n": 160
+ },
+ "v3.claude-sonnet-4-5.credential": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.claude-sonnet-4-5.crosstalknaming": {
+  "k": 0,
+  "n": 0
+ },
+ "v3.claude-sonnet-4-5.crosstalkua": {
+  "k": 0,
+  "n": 0
+ },
+ "v3.claude-sonnet-4-5.delta": {
+  "ci": [
+   43,
+   100
+  ],
+  "clusters": 7,
+  "pp": 71
+ },
+ "v3.claude-sonnet-4-5.diagonal": {
+  "ci": [
+   43,
+   100
+  ],
+  "k": 100,
+  "n": 140,
+  "pct": 71
+ },
+ "v3.claude-sonnet-4-5.fabrication": {
+  "k": 0,
+  "n": 120,
+  "pct": 0
+ },
+ "v3.claude-sonnet-4-5.field.api_documentation": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.claude-sonnet-4-5.field.g_credential_adjacent": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.claude-sonnet-4-5.field.g_platform_adjacent": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.claude-sonnet-4-5.field.g_region_adjacent": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.claude-sonnet-4-5.field.m_credential": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.claude-sonnet-4-5.field.m_operator": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.claude-sonnet-4-5.field.m_region": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.claude-sonnet-4-5.generic": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.claude-sonnet-4-5.naming": {
+  "ci": [
+   95,
+   100
+  ],
+  "k": 80,
+  "n": 80,
+  "pct": 100
+ },
+ "v3.claude-sonnet-4-5.offdiag": {
+  "ci": [
+   0,
+   0
+  ],
+  "k": 0,
+  "n": 560,
+  "pct": 0
+ },
+ "v3.deepseek-v4-flash.adjacent": {
+  "ci": [
+   23,
+   46
+  ],
+  "k": 20,
+  "n": 60,
+  "pct": 33
+ },
+ "v3.deepseek-v4-flash.control": {
+  "k": 0,
+  "n": 800,
+  "pct": 0
+ },
+ "v3.deepseek-v4-flash.controlcalls": {
+  "k": 0,
+  "n": 160
+ },
+ "v3.deepseek-v4-flash.credential": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.deepseek-v4-flash.crosstalknaming": {
+  "k": 0,
+  "n": 4
+ },
+ "v3.deepseek-v4-flash.crosstalkua": {
+  "k": 2,
+  "n": 4
+ },
+ "v3.deepseek-v4-flash.delta": {
+  "ci": [
+   27,
+   90
+  ],
+  "clusters": 7,
+  "pp": 61
+ },
+ "v3.deepseek-v4-flash.diagonal": {
+  "ci": [
+   29,
+   91
+  ],
+  "k": 84,
+  "n": 137,
+  "pct": 61
+ },
+ "v3.deepseek-v4-flash.fabrication": {
+  "k": 0,
+  "n": 77,
+  "pct": 0
+ },
+ "v3.deepseek-v4-flash.field.api_documentation": {
+  "k": 7,
+  "n": 20,
+  "pct": 35
+ },
+ "v3.deepseek-v4-flash.field.g_credential_adjacent": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.deepseek-v4-flash.field.g_platform_adjacent": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.deepseek-v4-flash.field.g_region_adjacent": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.deepseek-v4-flash.field.m_credential": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.deepseek-v4-flash.field.m_operator": {
+  "k": 17,
+  "n": 17,
+  "pct": 100
+ },
+ "v3.deepseek-v4-flash.field.m_region": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.deepseek-v4-flash.generic": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.deepseek-v4-flash.naming": {
+  "ci": [
+   73,
+   90
+  ],
+  "k": 64,
+  "n": 77,
+  "pct": 83
+ },
+ "v3.deepseek-v4-flash.offdiag": {
+  "ci": [
+   0,
+   1
+  ],
+  "k": 4,
+  "n": 548,
+  "pct": 1
+ },
+ "v3.fabrication.pooled": {
+  "k": 0,
+  "n": 367,
+  "pct": 0
+ },
+ "v3.gemini-3-flash-preview.adjacent": {
+  "ci": [
+   23,
+   46
+  ],
+  "k": 20,
+  "n": 60,
+  "pct": 33
+ },
+ "v3.gemini-3-flash-preview.control": {
+  "k": 0,
+  "n": 800,
+  "pct": 0
+ },
+ "v3.gemini-3-flash-preview.controlcalls": {
+  "k": 0,
+  "n": 160
+ },
+ "v3.gemini-3-flash-preview.credential": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3-flash-preview.crosstalknaming": {
+  "k": 0,
+  "n": 4
+ },
+ "v3.gemini-3-flash-preview.crosstalkua": {
+  "k": 4,
+  "n": 4
+ },
+ "v3.gemini-3-flash-preview.delta": {
+  "ci": [
+   17,
+   86
+  ],
+  "clusters": 7,
+  "pp": 58
+ },
+ "v3.gemini-3-flash-preview.diagonal": {
+  "ci": [
+   20,
+   87
+  ],
+  "k": 82,
+  "n": 140,
+  "pct": 59
+ },
+ "v3.gemini-3-flash-preview.fabrication": {
+  "k": 0,
+  "n": 77,
+  "pct": 0
+ },
+ "v3.gemini-3-flash-preview.field.api_documentation": {
+  "k": 2,
+  "n": 20,
+  "pct": 10
+ },
+ "v3.gemini-3-flash-preview.field.g_credential_adjacent": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.gemini-3-flash-preview.field.g_platform_adjacent": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.gemini-3-flash-preview.field.g_region_adjacent": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3-flash-preview.field.m_credential": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3-flash-preview.field.m_operator": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3-flash-preview.field.m_region": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3-flash-preview.generic": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.gemini-3-flash-preview.naming": {
+  "ci": [
+   67,
+   85
+  ],
+  "k": 62,
+  "n": 80,
+  "pct": 78
+ },
+ "v3.gemini-3-flash-preview.offdiag": {
+  "ci": [
+   0,
+   2
+  ],
+  "k": 4,
+  "n": 560,
+  "pct": 1
+ },
+ "v3.gemini-3.1-pro-preview.adjacent": {
+  "ci": [
+   81,
+   98
+  ],
+  "k": 40,
+  "n": 43,
+  "pct": 93
+ },
+ "v3.gemini-3.1-pro-preview.control": {
+  "k": 0,
+  "n": 580,
+  "pct": 0
+ },
+ "v3.gemini-3.1-pro-preview.controlcalls": {
+  "k": 0,
+  "n": 116
+ },
+ "v3.gemini-3.1-pro-preview.credential": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3.1-pro-preview.crosstalknaming": {
+  "k": 0,
+  "n": 24
+ },
+ "v3.gemini-3.1-pro-preview.crosstalkua": {
+  "k": 21,
+  "n": 24
+ },
+ "v3.gemini-3.1-pro-preview.delta": {
+  "ci": [
+   80,
+   100
+  ],
+  "clusters": 7,
+  "pp": 93
+ },
+ "v3.gemini-3.1-pro-preview.diagonal": {
+  "ci": [
+   90,
+   100
+  ],
+  "k": 120,
+  "n": 123,
+  "pct": 98
+ },
+ "v3.gemini-3.1-pro-preview.field.api_documentation": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3.1-pro-preview.field.g_credential_adjacent": {
+  "k": 0,
+  "n": 3,
+  "pct": 0
+ },
+ "v3.gemini-3.1-pro-preview.field.g_platform_adjacent": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3.1-pro-preview.field.g_region_adjacent": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3.1-pro-preview.field.m_credential": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3.1-pro-preview.field.m_operator": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3.1-pro-preview.field.m_region": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gemini-3.1-pro-preview.generic": {
+  "k": 0,
+  "n": 0,
+  "pct": null
+ },
+ "v3.gemini-3.1-pro-preview.naming": {
+  "ci": [
+   95,
+   100
+  ],
+  "k": 80,
+  "n": 80,
+  "pct": 100
+ },
+ "v3.gemini-3.1-pro-preview.offdiag": {
+  "ci": [
+   0,
+   13
+  ],
+  "k": 24,
+  "n": 492,
+  "pct": 5
+ },
+ "v3.gpt-4o.adjacent": {
+  "ci": [
+   23,
+   46
+  ],
+  "k": 20,
+  "n": 60,
+  "pct": 33
+ },
+ "v3.gpt-4o.control": {
+  "k": 0,
+  "n": 800,
+  "pct": 0
+ },
+ "v3.gpt-4o.controlcalls": {
+  "k": 0,
+  "n": 160
+ },
+ "v3.gpt-4o.credential": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gpt-4o.crosstalknaming": {
+  "k": 0,
+  "n": 9
+ },
+ "v3.gpt-4o.crosstalkua": {
+  "k": 8,
+  "n": 9
+ },
+ "v3.gpt-4o.delta": {
+  "ci": [
+   32,
+   95
+  ],
+  "clusters": 7,
+  "pp": 66
+ },
+ "v3.gpt-4o.diagonal": {
+  "ci": [
+   36,
+   96
+  ],
+  "k": 95,
+  "n": 140,
+  "pct": 68
+ },
+ "v3.gpt-4o.fabrication": {
+  "k": 0,
+  "n": 93,
+  "pct": 0
+ },
+ "v3.gpt-4o.field.api_documentation": {
+  "k": 15,
+  "n": 20,
+  "pct": 75
+ },
+ "v3.gpt-4o.field.g_credential_adjacent": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.gpt-4o.field.g_platform_adjacent": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.gpt-4o.field.g_region_adjacent": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gpt-4o.field.m_credential": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gpt-4o.field.m_operator": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gpt-4o.field.m_region": {
+  "k": 20,
+  "n": 20,
+  "pct": 100
+ },
+ "v3.gpt-4o.generic": {
+  "k": 0,
+  "n": 20,
+  "pct": 0
+ },
+ "v3.gpt-4o.naming": {
+  "ci": [
+   86,
+   97
+  ],
+  "k": 75,
+  "n": 80,
+  "pct": 94
+ },
+ "v3.gpt-4o.offdiag": {
+  "ci": [
+   0,
+   4
+  ],
+  "k": 9,
+  "n": 560,
+  "pct": 2
+ },
+ "v3.primary": {
+  "status": "supported"
+ },
+ "v3.providers": {
+  "confirmatory": 2,
+  "total": 5
+ },
+ "v3.trials": {
+  "errors": 10,
+  "n": 2013
+ }
+}

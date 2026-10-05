@@ -1,0 +1,48 @@
+{
+  "status": "offline_engineering_only",
+  "live_observations": 0,
+  "stages": {
+    "A": {
+      "planned": 1200,
+      "recorded": 1200,
+      "complete": true,
+      "analysis_collection_status": "complete",
+      "mock": true,
+      "calls_by_arm": {
+        "free": 320,
+        "constrained": 320,
+        "unplanted": 80,
+        "capacity_planted": 240,
+        "capacity_unplanted": 240
+      },
+      "source_sha256": {
+        "schema_types_design.py": "c27dee3c892c033aa21a4314cdd56246c43ff86e5db059838165ffbedf25fdc9",
+        "schema_types_run.py": "c36cd7766b9fc477e1691ffd842385d98f353d46640d0d132dc10b8c975afc95",
+        "native_fixtures.py": "8d76e52ac26381d4701570da1fcc97896859f88bd0862bc2fa318a2d49c691e1",
+        "extension_harness.py": "9132c93e962afa852d0776f2238b9458333e7b9492182cc7030fda61b9dfeec1"
+      },
+      "design_sha256": "886842230fd2f48276b1ab3b7d668ecd9bec70ed644e53bcd02fd1da82be151e"
+    },
+    "B": {
+      "planned": 160,
+      "recorded": 160,
+      "complete": true,
+      "analysis_collection_status": "complete",
+      "mock": true,
+      "calls_by_arm": {
+        "free": 80,
+        "constrained": 80,
+        "unplanted": 0,
+        "capacity_planted": 0,
+        "capacity_unplanted": 0
+      },
+      "source_sha256": {
+        "schema_types_design.py": "c27dee3c892c033aa21a4314cdd56246c43ff86e5db059838165ffbedf25fdc9",
+        "schema_types_run.py": "c36cd7766b9fc477e1691ffd842385d98f353d46640d0d132dc10b8c975afc95",
+        "native_fixtures.py": "8d76e52ac26381d4701570da1fcc97896859f88bd0862bc2fa318a2d49c691e1",
+        "extension_harness.py": "9132c93e962afa852d0776f2238b9458333e7b9492182cc7030fda61b9dfeec1"
+      },
+      "design_sha256": "8e2a2eae730844f32e1c0abe9bf508cc9f8c0bb9993790be01ce209399573cb2"
+    }
+  }
+}

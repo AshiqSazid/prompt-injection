@@ -1,0 +1,14 @@
+{
+  "_note": "Approval given by the named author in the working session of 2026-10-02 after reviewing the models, budget and the new planted prose (docs/STUDY_4_FIELD_REVIEW.md). Study 4 is an exploratory robustness extension, run after the Study 1-3 witnesses, so it carries no OpenTimestamps anchor.",
+  "stage": "S4",
+  "leg": "gpt-6.1-sol",
+  "design_sha256": "3c7bdf6ca0ca5bc9695308dc175140748192d8b2115db0d9da16042979d1f872",
+  "protocol_sha256": "150d5b358465ba869ec6395e12b66cab05902a98a360778de4158534e94f52f3",
+  "approved_by": "Ashiq Sazid",
+  "approved_on": "2026-10-02",
+  "approved_budget_usd": 10.0,
+  "field_texts_reviewed": true,
+  "provider_prices_and_token_bounds_verified": true,
+  "provider_schema_compatibility_checked": true,
+  "disclosure_decision": "deferred; to be decided before publication"
+}

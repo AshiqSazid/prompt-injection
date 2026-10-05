@@ -1,0 +1,31 @@
+{
+  "_note": "Approval given by the named author in the working session of 2026-10-02 (local date), after the Gemini leg was reported, and written to this file by the assistant on that instruction. The anchor of the protocol file was verified before any planted call.",
+  "stage": "S3-1",
+  "leg": "gpt-4o-2024-08-06",
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-4o-2024-08-06"
+    },
+    {
+      "provider": "google",
+      "model": "gemini-3-flash-preview"
+    }
+  ],
+  "design_sha256": "493849c0253062fc4a7ab439f25271070c9c98a07579288266746212d8b87ec4",
+  "protocol_sha256": "21db2c9cfbe4c699624a9e3ad929d91c30513860480979587238829269779c73",
+  "approved_by": "Ashiq Sazid",
+  "approved_on": "2026-10-02",
+  "approved_budget_usd": 8.5,
+  "field_texts_reviewed": true,
+  "provider_prices_and_token_bounds_verified": true,
+  "provider_schema_compatibility_checked": true,
+  "bitcoin_anchor_verified_before_collection": true,
+  "disclosure_decision": "deferred; to be decided before publication",
+  "bitcoin_anchor": {
+    "block": 969484,
+    "header_time_utc": "2026-10-01T19:19:47Z",
+    "checked_utc": "2026-10-01T20:06:40Z",
+    "method": "Merkle root compared with the block header from blockstream.info"
+  }
+}

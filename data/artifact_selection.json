@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "selection_status": "Retrospective evidence inventory, not preregistration",
+  "artifacts": [
+    {
+      "path": "runs/v3_matrix_anthropic-live-20260811-130540.jsonl",
+      "sha256": "8ac01c7434087429760d3c2919898c01272c6decf937d51cf5fdc1c14f870925",
+      "model": "claude-sonnet-4-5-20250929",
+      "status": "post_hoc",
+      "reason": "Historical manuscript evidence frozen during 2026-09-28 audit; partial Pro arm retained as descriptive only.",
+      "claim_group": "v3.matrix"
+    },
+    {
+      "path": "runs/v3_matrix_deepseek-live-20260811-125245.jsonl",
+      "sha256": "9de2fd8b220541ffc8f039226a3fb117d0da48aaaa9e9d00580dcfd716171155",
+      "model": "deepseek-v4-flash",
+      "status": "post_hoc",
+      "reason": "Historical manuscript evidence frozen during 2026-09-28 audit; partial Pro arm retained as descriptive only.",
+      "claim_group": "v3.matrix"
+    },
+    {
+      "path": "runs/v3_matrix_google-live-20260811-121223.jsonl",
+      "sha256": "4ba6f0258a010ae882a5ebc4a3a3154ee0ef4ab80aa98ad62d39ccdbb299dacb",
+      "model": "gemini-3-flash-preview",
+      "status": "protocol_named",
+      "reason": "Historical manuscript evidence frozen during 2026-09-28 audit; partial Pro arm retained as descriptive only.",
+      "claim_group": "v3.matrix"
+    },
+    {
+      "path": "runs/v3_matrix_google-live-20260811-111959.jsonl",
+      "sha256": "6982dc293bf12ef415f7efee675d7ef44f0524addc8529cdb62b126b709aaaf1",
+      "model": "gemini-3.1-pro-preview",
+      "status": "post_hoc",
+      "reason": "Historical manuscript evidence frozen during 2026-09-28 audit; partial Pro arm retained as descriptive only.",
+      "claim_group": "v3.matrix"
+    },
+    {
+      "path": "runs/v3_matrix_openai-live-20260811-110618.jsonl",
+      "sha256": "65fd8100c296e261600c5b4572524055225d925e2176aaaab8f9c70810476257",
+      "model": "gpt-4o",
+      "status": "protocol_named",
+      "reason": "Historical manuscript evidence frozen during 2026-09-28 audit; partial Pro arm retained as descriptive only.",
+      "claim_group": "v3.matrix"
+    },
+    {
+      "path": "runs/v3_unplanted_anthropic-live-20260811-132128.jsonl",
+      "sha256": "2bbbbbe5a5e34d9986a07ff8c9735094a4a0ad90eee93a09a2680e1cfbc26689",
+      "model": "claude-sonnet-4-5-20250929",
+      "status": "post_hoc",
+      "reason": "Historical manuscript evidence frozen during 2026-09-28 audit; partial Pro arm retained as descriptive only.",
+      "claim_group": "v3.unplanted"
+    },
+    {
+      "path": "runs/v3_unplanted_deepseek-live-20260811-130130.jsonl",
+      "sha256": "e865ce36c6827cd31083feefbf9e9c0751399ff93b32299a5eff2c3939f169f9",
+      "model": "deepseek-v4-flash",
+      "status": "post_hoc",
+      "reason": "Historical manuscript evidence frozen during 2026-09-28 audit; partial Pro arm retained as descriptive only.",
+      "claim_group": "v3.unplanted"
+    },
+    {
+      "path": "runs/v3_unplanted_google-live-20260811-124509.jsonl",
+      "sha256": "d6b539f4709dacfc24b7c4ab2b44b2401b2f4b28e7d1406f0c3286a5bfa451d2",
+      "model": "gemini-3-flash-preview",
+      "status": "protocol_named",
+      "reason": "Historical manuscript evidence frozen during 2026-09-28 audit; partial Pro arm retained as descriptive only.",
+      "claim_group": "v3.unplanted"
+    },
+    {
+      "path": "runs/v3_unplanted_openai-live-20260811-124046.jsonl",
+      "sha256": "51cd04d9f6c8a1b5d23c622638c787dd6247ce617bbb80333f2518f28b40cb86",
+      "model": "gpt-4o",
+      "status": "protocol_named",
+      "reason": "Historical manuscript evidence frozen during 2026-09-28 audit; partial Pro arm retained as descriptive only.",
+      "claim_group": "v3.unplanted"
+    }
+  ],
+  "legacy_patterns": {
+    "runs/*.jsonl": [
+      "runs/confound_fix_anthropic-live-20260726-232742.jsonl",
+      "runs/confound_fix_openai-live-20260726-232559.jsonl",
+      "runs/explicit_payloads_openai-live-20260808-121319.jsonl",
+      "runs/explicit_payloads_probe-live-20260808-121222.jsonl",
+      "runs/framework_arm_anthropic-live-20260727-002821.jsonl",
+      "runs/framework_arm_openai-live-20260727-001015.jsonl",
+      "runs/framework_arm_openai-live-20260727-002409.jsonl",
+      "runs/gate-live-20260728-201545.jsonl",
+      "runs/gate_anthropic_apidoc-live-20260726-182314.jsonl",
+      "runs/gate_anthropic_apidoc-live-20260726-182359.jsonl",
+      "runs/gate_google_apidoc-live-20260726-231404.jsonl",
+      "runs/gate_google_apidoc-live-20260801-200257.jsonl",
+      "runs/gate_google_mini-live-20260728-200144.jsonl",
+      "runs/gate_google_mini-live-20260801-194434.jsonl",
+      "runs/gate_google_mini-live-20260801-194458.jsonl",
+      "runs/gate_google_probe-live-20260801-195121.jsonl",
+      "runs/mcp_client_capture.jsonl",
+      "runs/or-mini.jsonl",
+      "runs/payload_generality_anthropic-live-20260808-121931.jsonl",
+      "runs/payload_generality_openai-live-20260808-105201.jsonl",
+      "runs/payload_probe-live-20260808-085901.jsonl",
+      "runs/r6_familiarity_openai-live-20260817-142835.jsonl",
+      "runs/r6_familiarity_probe-live-20260817-142809.jsonl",
+      "runs/real_schemas_anthropic-live-20260808-142451.jsonl",
+      "runs/real_schemas_openai-live-20260808-132341.jsonl",
+      "runs/real_schemas_probe-live-20260808-132317.jsonl",
+      "runs/reticence_ladder-live-20260808-121152.jsonl",
+      "runs/reticence_ladder_google-live-20260808-132343.jsonl",
+      "runs/reticence_ladder_google-live-20260808-143824.jsonl",
+      "runs/reticence_probe-live-20260808-121115.jsonl",
+      "runs/v2-openai.jsonl",
+      "runs/v2-smoke.jsonl",
+      "runs/v2_depth_openai-live-20260810-185420.jsonl",
+      "runs/v2_depth_openai-live-20260810-185651.jsonl",
+      "runs/v2_matrix_google-live-20260810-184329.jsonl",
+      "runs/v2_matrix_openai-live-20260810-183530.jsonl",
+      "runs/v2_matrix_openai_t0-live-20260810-184331.jsonl",
+      "runs/v2_matrix_probe-live-20260810-183458.jsonl",
+      "runs/v3-wording.jsonl",
+      "runs/v3_matrix_anthropic-live-20260811-130540.jsonl",
+      "runs/v3_matrix_deepseek-live-20260811-125245.jsonl",
+      "runs/v3_matrix_google-live-20260811-111215.jsonl",
+      "runs/v3_matrix_google-live-20260811-111917.jsonl",
+      "runs/v3_matrix_google-live-20260811-111959.jsonl",
+      "runs/v3_matrix_google-live-20260811-121223.jsonl",
+      "runs/v3_matrix_openai-live-20260811-110618.jsonl",
+      "runs/v3_matrix_probe-live-20260811-110532.jsonl",
+      "runs/v3_unplanted_anthropic-live-20260811-132128.jsonl",
+      "runs/v3_unplanted_deepseek-live-20260811-130130.jsonl",
+      "runs/v3_unplanted_google-live-20260811-124509.jsonl",
+      "runs/v3_unplanted_openai-live-20260811-124046.jsonl",
+      "runs/v4-apidoc-gate.jsonl",
+      "runs/wording_ablation-live-20260726-192257.jsonl",
+      "runs/wording_ablation_anthropic-live-20260726-192725.jsonl"
+    ],
+    "runs/explicit_payloads_openai-live-*.jsonl": [
+      "runs/explicit_payloads_openai-live-20260808-121319.jsonl"
+    ],
+    "runs/payload_generality_anthropic-live-*.jsonl": [
+      "runs/payload_generality_anthropic-live-20260808-121931.jsonl"
+    ],
+    "runs/payload_generality_openai-live-*.jsonl": [
+      "runs/payload_generality_openai-live-20260808-105201.jsonl"
+    ],
+    "runs/r6_familiarity_openai-live-*.jsonl": [
+      "runs/r6_familiarity_openai-live-20260817-142835.jsonl"
+    ],
+    "runs/real_schemas_anthropic-live-*.jsonl": [
+      "runs/real_schemas_anthropic-live-20260808-142451.jsonl"
+    ],
+    "runs/real_schemas_openai-live-*.jsonl": [
+      "runs/real_schemas_openai-live-20260808-132341.jsonl"
+    ],
+    "runs/reticence_ladder*-live-*.jsonl": [
+      "runs/reticence_ladder-live-20260808-121152.jsonl",
+      "runs/reticence_ladder_google-live-20260808-132343.jsonl",
+      "runs/reticence_ladder_google-live-20260808-143824.jsonl"
+    ],
+    "runs/v2_depth_openai-live-*.jsonl": [
+      "runs/v2_depth_openai-live-20260810-185420.jsonl",
+      "runs/v2_depth_openai-live-20260810-185651.jsonl"
+    ],
+    "runs/v2_matrix*-live-*.jsonl": [
+      "runs/v2_matrix_google-live-20260810-184329.jsonl",
+      "runs/v2_matrix_openai-live-20260810-183530.jsonl",
+      "runs/v2_matrix_openai_t0-live-20260810-184331.jsonl",
+      "runs/v2_matrix_probe-live-20260810-183458.jsonl"
+    ],
+    "runs/v2_matrix_openai-live-*.jsonl": [
+      "runs/v2_matrix_openai-live-20260810-183530.jsonl"
+    ],
+    "runs/v3_matrix_*-live-*.jsonl": [
+      "runs/v3_matrix_anthropic-live-20260811-130540.jsonl",
+      "runs/v3_matrix_deepseek-live-20260811-125245.jsonl",
+      "runs/v3_matrix_google-live-20260811-111215.jsonl",
+      "runs/v3_matrix_google-live-20260811-111917.jsonl",
+      "runs/v3_matrix_google-live-20260811-111959.jsonl",
+      "runs/v3_matrix_google-live-20260811-121223.jsonl",
+      "runs/v3_matrix_openai-live-20260811-110618.jsonl",
+      "runs/v3_matrix_probe-live-20260811-110532.jsonl"
+    ],
+    "runs/v3_unplanted_*-live-*.jsonl": [
+      "runs/v3_unplanted_anthropic-live-20260811-132128.jsonl",
+      "runs/v3_unplanted_deepseek-live-20260811-130130.jsonl",
+      "runs/v3_unplanted_google-live-20260811-124509.jsonl",
+      "runs/v3_unplanted_openai-live-20260811-124046.jsonl"
+    ],
+    "runs/wording_ablation*-live-*.jsonl": [
+      "runs/wording_ablation-live-20260726-192257.jsonl",
+      "runs/wording_ablation_anthropic-live-20260726-192725.jsonl"
+    ]
+  },
+  "historical_sha256": {
+    "runs/confound_fix_anthropic-live-20260726-232742.jsonl": "5f8cc3191a4d4e24575627fa3137a0ea8e8e68f93bb000bef0e1e73b91e53ff7",
+    "runs/confound_fix_openai-live-20260726-232559.jsonl": "a9bfa4b78e836370267ef30f85024467ed2c092b31d65855e7bb9b6118a69128",
+    "runs/explicit_payloads_openai-live-20260808-121319.jsonl": "18fa504ce0c35b51f122ef3a9a0b7e94af9cf9ce5e2b9c2986d1b797963921fb",
+    "runs/explicit_payloads_probe-live-20260808-121222.jsonl": "ca1df1ffaf3a3dd070d5a2d721852d528c5831f1d625cd44e93f20e30f66eb35",
+    "runs/framework_arm_anthropic-live-20260727-002821.jsonl": "c02f5b05485350b558e79f2e92ca4ba9dc9365ec40d786ca37e8397fe6d6c6f9",
+    "runs/framework_arm_openai-live-20260727-001015.jsonl": "680b58715e2657a09a1fe7af3ec547c6590711e4471fb799937ac20745aa9062",
+    "runs/framework_arm_openai-live-20260727-002409.jsonl": "0e47bc70d84a847f84c389d9355019624035c23e440384fc3328978aad7a9430",
+    "runs/gate-live-20260728-201545.jsonl": "17eb611855bc86e1518f2d38636d84ef5424980aba8bdddde104c7ed49b0b62b",
+    "runs/gate_anthropic_apidoc-live-20260726-182314.jsonl": "1407c5c0acdb92ef712322cf0f9809e256209a9f9dc111b7d8cca7c4fa646494",
+    "runs/gate_anthropic_apidoc-live-20260726-182359.jsonl": "0a6a07eeb3781fed996e11280827f1370b28ac66ac06bf485911d7d447834975",
+    "runs/gate_google_apidoc-live-20260726-231404.jsonl": "2e91fb503010d2657723d0a4d27c11cd7fd35b3db50db52a5afe30d5cb1d3852",
+    "runs/gate_google_apidoc-live-20260801-200257.jsonl": "4405effcccc884497982beefbaa3bbbd05b0311cf97f652b5117ce63a893c9c2",
+    "runs/gate_google_mini-live-20260728-200144.jsonl": "f9f9191fbaf34e53331df0f7dcf8e64f17f6c6c5a9c187c3425ab65be43680c1",
+    "runs/gate_google_mini-live-20260801-194434.jsonl": "388e2ba7898ed95859d1e041a0d962c466286313930188b3cd49b9cd50ad1bd1",
+    "runs/gate_google_mini-live-20260801-194458.jsonl": "35a17d5722a64494cb96a0c8b85a89c2b66cdf11e05fae20d09e696d0a7e828d",
+    "runs/gate_google_probe-live-20260801-195121.jsonl": "c91a75cb4dfe838d6863d9fad82a5929b211aa8af25e62edf2b0dbce4c189202",
+    "runs/mcp_client_capture.jsonl": "aaf1511f233bf3f650e2716551c986197cf652bf833277bc28fc43f9040f11cc",
+    "runs/or-mini.jsonl": "3eee0e87c4b1d216854d93d2bce1c74e13ccfb6f660f4d221db6731ad8057547",
+    "runs/payload_generality_anthropic-live-20260808-121931.jsonl": "7407c28f0ea0d50d9f6223333a889607f27ea162634ba8ce4da652d395b5357c",
+    "runs/payload_generality_openai-live-20260808-105201.jsonl": "cc96e2ca6cab5999b470023c27c792fc4ae388fb6dd7f6ce1b5fc81c0a5386ca",
+    "runs/payload_probe-live-20260808-085901.jsonl": "8447e54e0e0a3f5e32f3f962814f267fa627b66272b440e4a817d5668491ed96",
+    "runs/r6_familiarity_openai-live-20260817-142835.jsonl": "98420ff4872e8992605da21ed73412edf8b5190e54320f3eba94778b5076a0a3",
+    "runs/r6_familiarity_probe-live-20260817-142809.jsonl": "efd01640ae06ef1f6df21cde82dce4209a9c194532758796ddc03d10290f185b",
+    "runs/real_schemas_anthropic-live-20260808-142451.jsonl": "017d5b1ccc9161ce000a97111f53e61b11a9d8bf8c33d55496783d2d64501530",
+    "runs/real_schemas_openai-live-20260808-132341.jsonl": "d09026d4922ab4ba82b9ed35817eb86b0416b6399874cfd866ea3694c1f7d822",
+    "runs/real_schemas_probe-live-20260808-132317.jsonl": "39a2bb9a05b5bc84739dcb2a812a35d2076756c7ae7aa47b9dc39dd6a16cdc86",
+    "runs/reticence_ladder-live-20260808-121152.jsonl": "3fbd5cb68b07429b20ada43a8fc59f0828096c465bf6f29198f50a2a62209e89",
+    "runs/reticence_ladder_google-live-20260808-132343.jsonl": "661eb0e3aeb6674c312574ddb14c2ef440875db69a5c1f96a4c089037b6e640d",
+    "runs/reticence_ladder_google-live-20260808-143824.jsonl": "bcd331be259cee1afd6ea243158d27e00fcc9971305634f02f82f01bac5c4364",
+    "runs/reticence_probe-live-20260808-121115.jsonl": "4d38ded2b09fe3342a321a318cced923fcdabcecafd8f69f84bd861215e962d3",
+    "runs/v2-openai.jsonl": "d5ebf9e7dde1a4d732c359e92ed759a2caadbd9e0dc9812097135477df88e47d",
+    "runs/v2-smoke.jsonl": "a16749dfc9e09440c1961640f5107be8910ec78131ae8c76d03fe6a722feb6de",
+    "runs/v2_depth_openai-live-20260810-185420.jsonl": "963c094d402b1fe9fd8ac739a0f3a15207e79d28a21707f5ef035b1005b5a892",
+    "runs/v2_depth_openai-live-20260810-185651.jsonl": "f87d9a09bde34261642b0dc119b8f258dcaec9ca8e5941eb28e631937f7c971b",
+    "runs/v2_matrix_google-live-20260810-184329.jsonl": "a87a1badd57dd840b2e8af8a871e0d8b41a59378e8cca9134f182f5d451b8ce2",
+    "runs/v2_matrix_openai-live-20260810-183530.jsonl": "04bbef70576b0d68bb63505d8a476b73b658a658726cab8fa7e95297c4bcafe5",
+    "runs/v2_matrix_openai_t0-live-20260810-184331.jsonl": "0087036a90641a8dec67867120cd63790d51a3ed44503b9bbcf5861f7310eb48",
+    "runs/v2_matrix_probe-live-20260810-183458.jsonl": "6dc97688a49220a55694f382bb9a8e118191413be6eb64aa25b5fe5048582aed",
+    "runs/v3-wording.jsonl": "70ea32e952782fcd8e65b297aa90dd1e2d18247d41530ffcb10a0d2ee70cb01c",
+    "runs/v3_matrix_anthropic-live-20260811-130540.jsonl": "8ac01c7434087429760d3c2919898c01272c6decf937d51cf5fdc1c14f870925",
+    "runs/v3_matrix_deepseek-live-20260811-125245.jsonl": "9de2fd8b220541ffc8f039226a3fb117d0da48aaaa9e9d00580dcfd716171155",
+    "runs/v3_matrix_google-live-20260811-111215.jsonl": "dff2370795573fbb708c443e6c2ee7317693116921e059eafbd65aef3f24ab67",
+    "runs/v3_matrix_google-live-20260811-111917.jsonl": "845e851d2fa27605bc22c1d5d2159f40739a39554ef0c31d5badc9b950fc3fc9",
+    "runs/v3_matrix_google-live-20260811-111959.jsonl": "6982dc293bf12ef415f7efee675d7ef44f0524addc8529cdb62b126b709aaaf1",
+    "runs/v3_matrix_google-live-20260811-121223.jsonl": "4ba6f0258a010ae882a5ebc4a3a3154ee0ef4ab80aa98ad62d39ccdbb299dacb",
+    "runs/v3_matrix_openai-live-20260811-110618.jsonl": "65fd8100c296e261600c5b4572524055225d925e2176aaaab8f9c70810476257",
+    "runs/v3_matrix_probe-live-20260811-110532.jsonl": "1367491c06932240550627b9b8871394e4d170b0984bd9e6f9f3c0720082854e",
+    "runs/v3_unplanted_anthropic-live-20260811-132128.jsonl": "2bbbbbe5a5e34d9986a07ff8c9735094a4a0ad90eee93a09a2680e1cfbc26689",
+    "runs/v3_unplanted_deepseek-live-20260811-130130.jsonl": "e865ce36c6827cd31083feefbf9e9c0751399ff93b32299a5eff2c3939f169f9",
+    "runs/v3_unplanted_google-live-20260811-124509.jsonl": "d6b539f4709dacfc24b7c4ab2b44b2401b2f4b28e7d1406f0c3286a5bfa451d2",
+    "runs/v3_unplanted_openai-live-20260811-124046.jsonl": "51cd04d9f6c8a1b5d23c622638c787dd6247ce617bbb80333f2518f28b40cb86",
+    "runs/v4-apidoc-gate.jsonl": "222104b92981b73177cada70e28c0d9bd06054bc840eb77a7740c1d8976b58d8",
+    "runs/wording_ablation-live-20260726-192257.jsonl": "7060ac4fd3378ba030e6a94f85108229fef1a922211946f35a4a3881a60199dd",
+    "runs/wording_ablation_anthropic-live-20260726-192725.jsonl": "57107e71802208c0d905d489f1d8bd982df4427aa7d664365428ec89028e20b9"
+  }
+}

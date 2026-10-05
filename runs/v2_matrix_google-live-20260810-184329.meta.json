@@ -1,0 +1,13 @@
+{
+  "run_id": "20260810-184329",
+  "stage": "v2_matrix_google",
+  "dry_run": false,
+  "expected_trials": 280,
+  "rows_written": 280,
+  "ok": 280,
+  "errors": 0,
+  "limit": null,
+  "complete": true,
+  "canonical_path": "runs/v2_matrix_google-live-20260810-184329.jsonl",
+  "finished_at": "2026-08-10T18:53:38.445243"
+}

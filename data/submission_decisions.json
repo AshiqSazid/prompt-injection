@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "approved_manuscript_sha256": {},
+  "decisions": {
+    "venue_scope_and_sjr": {
+      "status": "pending",
+      "preparation_target": "IEEE Transactions on Dependable and Secure Computing (TDSC)",
+      "note": "Direct SCImago 2025 Q1 confirmed in both listed categories on 2026-09-29; publisher instructions retrieved. See docs/TDSC_TARGET.md and data/tdsc_requirements.json. Author sign-off pending."
+    },
+    "authors_and_approval": {
+      "status": "pending",
+      "note": "Names, order, affiliations, corresponding author and all-author consent required."
+    },
+    "funding_and_conflicts": {
+      "status": "pending",
+      "note": "Do not infer none from missing information."
+    },
+    "prior_publication": {
+      "status": "pending",
+      "note": "Confirm preprints, related papers, earlier submissions and absence of simultaneous review."
+    },
+    "disclosure_decision": {
+      "status": "pending",
+      "note": "No completed vendor notification is evidenced; authors must document notification or justify a no-notification decision."
+    },
+    "release_and_licenses": {
+      "status": "pending",
+      "note": "License permissions, release URL, venue anonymity and full artifact inspection remain."
+    },
+    "literature_and_novelty": {
+      "status": "pending",
+      "note": "Focused claim-level review supplied; author review and search update through actual submission date required."
+    },
+    "statistical_review": {
+      "status": "pending",
+      "note": "Independent review of small clusters, secondary dependence, deviations and scope required."
+    },
+    "evidence_scope_decision": {
+      "status": "pending",
+      "note": "Author decision recorded in commit 0512ab7: controlled stage A first, B conditional on funding. Offline A/B implementation complete; no live observations; API budget remains zero. Final scientific sufficiency review pending."
+    },
+    "timestamp_provenance": {
+      "status": "pending",
+      "note": "Verify historical calendar receipts and anchoring, or approve a further downgrade of provenance language."
+    },
+    "ai_use_declaration": {
+      "status": "pending",
+      "note": "Disclose AI-assisted code and manuscript revision under selected publisher rules; human authors verify and take responsibility."
+    },
+    "venue_format_and_files": {
+      "status": "pending",
+      "note": "IEEEtran journal/compsoc and IEEE bibliography applied; separate supplement built. Confirm author details, template-selector settings, declarations and exact final files."
+    }
+  }
+}

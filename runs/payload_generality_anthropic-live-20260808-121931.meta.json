@@ -1,0 +1,13 @@
+{
+  "run_id": "20260808-121931",
+  "stage": "payload_generality_anthropic",
+  "dry_run": false,
+  "expected_trials": 150,
+  "rows_written": 150,
+  "ok": 150,
+  "errors": 0,
+  "limit": null,
+  "complete": true,
+  "canonical_path": "runs/payload_generality_anthropic-live-20260808-121931.jsonl",
+  "finished_at": "2026-08-08T12:25:34.683085"
+}

@@ -1,0 +1,13 @@
+{
+  "run_id": "20260808-132341",
+  "stage": "real_schemas_openai",
+  "dry_run": false,
+  "expected_trials": 250,
+  "rows_written": 250,
+  "ok": 250,
+  "errors": 0,
+  "limit": null,
+  "complete": true,
+  "canonical_path": "runs/real_schemas_openai-live-20260808-132341.jsonl",
+  "finished_at": "2026-08-08T13:28:18.502076"
+}

@@ -1,0 +1,1737 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "source_url": "https://github.com/nspady/google-calendar-mcp",
+    "commit": "ac8bf687e7949824bbdd8a93986b1ba46ac6db37",
+    "license": "MIT",
+    "task": "calendar",
+    "selected_tool": "list-events",
+    "capture": {
+      "captured_at": "2026-09-28T17:43:29.391493+00:00",
+      "method": "tools/list only; no tool called",
+      "transport": "stdio",
+      "network": "none",
+      "protocol_version_requested": "2025-06-18",
+      "docker_image_id": "sha256:466f1847ed074828dbb21049a6c864250e86da8c5c2945359d2b35dba12648bd",
+      "dockerfile": "repo:Dockerfile",
+      "dockerfile_sha256": "a78b964b52b5a82edf2be41c88cf8809c96af2d128b13f2035978728d77d8dec",
+      "docker_server_version": "28.5.1",
+      "placeholder_env": {
+        "GOOGLE_OAUTH_CREDENTIALS": "/secrets/gcp-oauth.keys.json"
+      },
+      "server_args": [],
+      "initialize_response_sha256": "02d88aa6d16b4e01c3ca152bbb4da461e1aaa6c1cf3d4bc86daac8a26aa1174f",
+      "tools_list_page_sha256": [
+        "cfe44634f70cf1c4835fb3dfd9e1cac63222405d205fcf6f9fede12d40a34f44"
+      ],
+      "tool_count": 13
+    }
+  },
+  "native_tools_list": {
+    "result": {
+      "tools": [
+        {
+          "name": "list-calendars",
+          "title": "List Calendars",
+          "description": "List all available calendars",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "account": {
+                "description": "Account nickname(s) to query (e.g., 'work' or ['work', 'personal']). Omit to query all accounts.",
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-z0-9_-]{1,64}$"
+                  },
+                  {
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-z0-9_-]{1,64}$"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "list-events",
+          "title": "List Calendar Events",
+          "description": "List events from one or more calendars. Supports both calendar IDs and calendar names.",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "account": {
+                "description": "Account nickname(s) to query (e.g., 'work' or ['work', 'personal']). Omit to query all accounts.",
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-z0-9_-]{1,64}$"
+                  },
+                  {
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-z0-9_-]{1,64}$"
+                    }
+                  }
+                ]
+              },
+              "calendarId": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "description": "Calendar identifier(s) to query. Accepts calendar IDs (e.g., 'primary', 'user@gmail.com') OR calendar names (e.g., 'Work', 'Personal'). Single calendar: 'primary'. Multiple calendars: array ['Work', 'Personal'] or JSON string '[\"Work\", \"Personal\"]'"
+                  },
+                  {
+                    "minItems": 1,
+                    "maxItems": 50,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "description": "Array of calendar IDs to query events from (max 50, no duplicates)"
+                  }
+                ]
+              },
+              "timeMin": {
+                "type": "string",
+                "description": "Start of time range (ISO 8601, e.g., '2024-01-01T00:00:00')."
+              },
+              "timeMax": {
+                "type": "string",
+                "description": "End of time range (ISO 8601, e.g., '2024-01-31T23:59:59')."
+              },
+              "timeZone": {
+                "description": "IANA timezone (e.g., 'America/Los_Angeles'). Defaults to calendar's timezone.",
+                "type": "string"
+              },
+              "fields": {
+                "description": "Additional fields to include beyond defaults (id, summary, start, end, status, htmlLink, location, attendees).",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "summary",
+                    "description",
+                    "start",
+                    "end",
+                    "location",
+                    "attendees",
+                    "colorId",
+                    "transparency",
+                    "extendedProperties",
+                    "reminders",
+                    "conferenceData",
+                    "attachments",
+                    "status",
+                    "htmlLink",
+                    "created",
+                    "updated",
+                    "creator",
+                    "organizer",
+                    "recurrence",
+                    "recurringEventId",
+                    "originalStartTime",
+                    "visibility",
+                    "iCalUID",
+                    "sequence",
+                    "hangoutLink",
+                    "anyoneCanAddSelf",
+                    "guestsCanInviteOthers",
+                    "guestsCanModify",
+                    "guestsCanSeeOtherGuests",
+                    "privateCopy",
+                    "locked",
+                    "source",
+                    "eventType"
+                  ]
+                }
+              },
+              "privateExtendedProperty": {
+                "description": "Filter by private extended properties (key=value). Matches events that have all specified properties.",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[^=]+=[^=]+$"
+                }
+              },
+              "sharedExtendedProperty": {
+                "description": "Filter by shared extended properties (key=value). Matches events that have all specified properties.",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[^=]+=[^=]+$"
+                }
+              }
+            },
+            "required": [
+              "calendarId"
+            ]
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "search-events",
+          "title": "Search Calendar Events",
+          "description": "Search for events in a calendar by text query.",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "account": {
+                "description": "Account nickname(s) to query (e.g., 'work' or ['work', 'personal']). Omit to query all accounts.",
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-z0-9_-]{1,64}$"
+                  },
+                  {
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-z0-9_-]{1,64}$"
+                    }
+                  }
+                ]
+              },
+              "calendarId": {
+                "description": "Calendar identifier(s) to search. Accepts calendar IDs or names. Single or multiple calendars supported.",
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "description": "Calendar identifier(s) to search. Accepts calendar IDs (e.g., 'primary', 'user@gmail.com') OR calendar names (e.g., 'Work', 'Personal'). Single calendar: 'primary'. Multiple calendars: array ['Work', 'Personal'] or JSON string '[\"Work\", \"Personal\"]'"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              },
+              "query": {
+                "type": "string",
+                "description": "Free text search query (searches summary, description, location, attendees, etc.)"
+              },
+              "timeMin": {
+                "type": "string",
+                "description": "Start of time range (ISO 8601, e.g., '2024-01-01T00:00:00')."
+              },
+              "timeMax": {
+                "type": "string",
+                "description": "End of time range (ISO 8601, e.g., '2024-01-31T23:59:59')."
+              },
+              "timeZone": {
+                "description": "IANA timezone (e.g., 'America/Los_Angeles'). Defaults to calendar's timezone.",
+                "type": "string"
+              },
+              "fields": {
+                "description": "Additional fields to include beyond defaults (id, summary, start, end, status, htmlLink, location, attendees).",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "summary",
+                    "description",
+                    "start",
+                    "end",
+                    "location",
+                    "attendees",
+                    "colorId",
+                    "transparency",
+                    "extendedProperties",
+                    "reminders",
+                    "conferenceData",
+                    "attachments",
+                    "status",
+                    "htmlLink",
+                    "created",
+                    "updated",
+                    "creator",
+                    "organizer",
+                    "recurrence",
+                    "recurringEventId",
+                    "originalStartTime",
+                    "visibility",
+                    "iCalUID",
+                    "sequence",
+                    "hangoutLink",
+                    "anyoneCanAddSelf",
+                    "guestsCanInviteOthers",
+                    "guestsCanModify",
+                    "guestsCanSeeOtherGuests",
+                    "privateCopy",
+                    "locked",
+                    "source",
+                    "eventType"
+                  ]
+                }
+              },
+              "privateExtendedProperty": {
+                "description": "Filter by private extended properties (key=value). Matches events that have all specified properties.",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[^=]+=[^=]+$"
+                }
+              },
+              "sharedExtendedProperty": {
+                "description": "Filter by shared extended properties (key=value). Matches events that have all specified properties.",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[^=]+=[^=]+$"
+                }
+              }
+            },
+            "required": [
+              "calendarId",
+              "query",
+              "timeMin",
+              "timeMax"
+            ]
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "get-event",
+          "title": "Get Event Details",
+          "description": "Get details of a specific event by ID.",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "account": {
+                "description": "Account nickname (e.g., 'work'). Optional if only one account connected.",
+                "type": "string",
+                "pattern": "^[a-z0-9_-]{1,64}$"
+              },
+              "calendarId": {
+                "type": "string",
+                "description": "ID of the calendar (use 'primary' for the main calendar)"
+              },
+              "eventId": {
+                "type": "string",
+                "description": "ID of the event to retrieve"
+              },
+              "fields": {
+                "description": "Optional array of additional event fields to retrieve. Available fields are strictly validated. Default fields (id, summary, start, end, status, htmlLink, location, attendees) are always included.",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "summary",
+                    "description",
+                    "start",
+                    "end",
+                    "location",
+                    "attendees",
+                    "colorId",
+                    "transparency",
+                    "extendedProperties",
+                    "reminders",
+                    "conferenceData",
+                    "attachments",
+                    "status",
+                    "htmlLink",
+                    "created",
+                    "updated",
+                    "creator",
+                    "organizer",
+                    "recurrence",
+                    "recurringEventId",
+                    "originalStartTime",
+                    "visibility",
+                    "iCalUID",
+                    "sequence",
+                    "hangoutLink",
+                    "anyoneCanAddSelf",
+                    "guestsCanInviteOthers",
+                    "guestsCanModify",
+                    "guestsCanSeeOtherGuests",
+                    "privateCopy",
+                    "locked",
+                    "source",
+                    "eventType"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "calendarId",
+              "eventId"
+            ]
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "list-colors",
+          "title": "List Calendar Colors",
+          "description": "List available color IDs and their meanings for calendar events",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "account": {
+                "description": "Account nickname (e.g., 'work'). Optional if only one account connected.",
+                "type": "string",
+                "pattern": "^[a-z0-9_-]{1,64}$"
+              }
+            }
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "create-event",
+          "title": "Create Calendar Event",
+          "description": "Create a new calendar event.",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "account": {
+                "description": "Account nickname (e.g., 'work'). Optional if only one account connected.",
+                "type": "string",
+                "pattern": "^[a-z0-9_-]{1,64}$"
+              },
+              "calendarId": {
+                "type": "string",
+                "description": "ID of the calendar (use 'primary' for the main calendar)"
+              },
+              "eventId": {
+                "description": "Optional custom event ID (5-1024 characters, base32hex encoding: lowercase letters a-v and digits 0-9 only). If not provided, Google Calendar will generate one.",
+                "type": "string"
+              },
+              "summary": {
+                "type": "string",
+                "description": "Title of the event"
+              },
+              "description": {
+                "description": "Description/notes for the event",
+                "type": "string"
+              },
+              "start": {
+                "type": "string",
+                "description": "Event start time. String format: '2025-01-01T10:00:00' (timed) or '2025-01-01' (all-day). For per-field timezone, use JSON: '{\"dateTime\": \"2025-01-01T10:00:00\", \"timeZone\": \"America/Los_Angeles\"}'. Per-field timezone is useful for events spanning multiple timezones (e.g., flights). Note: If the dateTime already includes a timezone offset (e.g., 'Z' or '+05:00'), the embedded timezone takes precedence over the timeZone field."
+              },
+              "end": {
+                "type": "string",
+                "description": "Event end time. String format: '2025-01-01T11:00:00' (timed) or '2025-01-02' (all-day, exclusive). For per-field timezone, use JSON: '{\"dateTime\": \"2025-01-01T11:00:00\", \"timeZone\": \"America/New_York\"}'. Per-field timezone is useful for events spanning multiple timezones (e.g., flights). Note: If the dateTime already includes a timezone offset (e.g., 'Z' or '+05:00'), the embedded timezone takes precedence over the timeZone field."
+              },
+              "timeZone": {
+                "description": "Timezone as IANA Time Zone Database name (e.g., America/Los_Angeles). Takes priority over calendar's default timezone. Only used for timezone-naive datetime strings.",
+                "type": "string"
+              },
+              "location": {
+                "description": "Location of the event",
+                "type": "string"
+              },
+              "attendees": {
+                "description": "List of event attendees with their details",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+                      "description": "Email address of the attendee"
+                    },
+                    "displayName": {
+                      "description": "Display name of the attendee",
+                      "type": "string"
+                    },
+                    "optional": {
+                      "description": "Whether this is an optional attendee",
+                      "type": "boolean"
+                    },
+                    "responseStatus": {
+                      "description": "Attendee's response status",
+                      "type": "string",
+                      "enum": [
+                        "needsAction",
+                        "declined",
+                        "tentative",
+                        "accepted"
+                      ]
+                    },
+                    "comment": {
+                      "description": "Attendee's response comment",
+                      "type": "string"
+                    },
+                    "additionalGuests": {
+                      "description": "Number of additional guests the attendee is bringing",
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "required": [
+                    "email"
+                  ]
+                }
+              },
+              "colorId": {
+                "description": "Color ID for the event (use list-colors to see available IDs)",
+                "type": "string"
+              },
+              "reminders": {
+                "type": "object",
+                "properties": {
+                  "useDefault": {
+                    "type": "boolean",
+                    "description": "Whether to use the default reminders"
+                  },
+                  "overrides": {
+                    "description": "Custom reminders",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "method": {
+                          "default": "popup",
+                          "description": "Reminder method",
+                          "type": "string",
+                          "enum": [
+                            "email",
+                            "popup"
+                          ]
+                        },
+                        "minutes": {
+                          "type": "number",
+                          "description": "Minutes before the event to trigger the reminder"
+                        }
+                      },
+                      "required": [
+                        "minutes"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "useDefault"
+                ],
+                "description": "Reminder settings for the event"
+              },
+              "recurrence": {
+                "description": "Recurrence rules in RFC5545 format (e.g., [\"RRULE:FREQ=WEEKLY;COUNT=5\"])",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "transparency": {
+                "description": "Whether the event blocks time on the calendar. 'opaque' means busy, 'transparent' means free.",
+                "type": "string",
+                "enum": [
+                  "opaque",
+                  "transparent"
+                ]
+              },
+              "visibility": {
+                "description": "Visibility of the event. Use 'public' for public events, 'private' for private events visible to attendees.",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "public",
+                  "private",
+                  "confidential"
+                ]
+              },
+              "guestsCanInviteOthers": {
+                "description": "Whether attendees can invite others to the event. Default is true.",
+                "type": "boolean"
+              },
+              "guestsCanModify": {
+                "description": "Whether attendees can modify the event. Default is false.",
+                "type": "boolean"
+              },
+              "guestsCanSeeOtherGuests": {
+                "description": "Whether attendees can see the list of other attendees. Default is true.",
+                "type": "boolean"
+              },
+              "anyoneCanAddSelf": {
+                "description": "Whether anyone can add themselves to the event. Default is false.",
+                "type": "boolean"
+              },
+              "sendUpdates": {
+                "description": "Whether to send notifications about the event creation. 'all' sends to all guests, 'externalOnly' to non-Google Calendar users only, 'none' sends no notifications.",
+                "type": "string",
+                "enum": [
+                  "all",
+                  "externalOnly",
+                  "none"
+                ]
+              },
+              "conferenceData": {
+                "description": "Conference properties for the event. Use createRequest to add a new conference.",
+                "type": "object",
+                "properties": {
+                  "createRequest": {
+                    "type": "object",
+                    "properties": {
+                      "requestId": {
+                        "type": "string",
+                        "description": "Client-generated unique ID for this request to ensure idempotency"
+                      },
+                      "conferenceSolutionKey": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "hangoutsMeet",
+                              "eventHangout",
+                              "eventNamedHangout",
+                              "addOn"
+                            ],
+                            "description": "Conference solution type"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ],
+                        "description": "Conference solution to create"
+                      }
+                    },
+                    "required": [
+                      "requestId",
+                      "conferenceSolutionKey"
+                    ],
+                    "description": "Request to generate a new conference"
+                  }
+                },
+                "required": [
+                  "createRequest"
+                ]
+              },
+              "extendedProperties": {
+                "description": "Extended properties for storing application-specific data. Max 300 properties totaling 32KB.",
+                "type": "object",
+                "properties": {
+                  "private": {
+                    "description": "Properties private to the application. Keys can have max 44 chars, values max 1024 chars.",
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  },
+                  "shared": {
+                    "description": "Properties visible to all attendees. Keys can have max 44 chars, values max 1024 chars.",
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "attachments": {
+                "description": "File attachments for the event. Requires calendar to support attachments.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "fileUrl": {
+                      "type": "string",
+                      "description": "URL of the attached file"
+                    },
+                    "title": {
+                      "description": "Title of the attachment",
+                      "type": "string"
+                    },
+                    "mimeType": {
+                      "description": "MIME type of the attachment",
+                      "type": "string"
+                    },
+                    "iconLink": {
+                      "description": "URL of the icon for the attachment",
+                      "type": "string"
+                    },
+                    "fileId": {
+                      "description": "ID of the attached file in Google Drive",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "fileUrl"
+                  ]
+                }
+              },
+              "source": {
+                "description": "Source of the event, such as a web page or email message.",
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "URL of the source"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "Title of the source"
+                  }
+                },
+                "required": [
+                  "url",
+                  "title"
+                ]
+              },
+              "calendarsToCheck": {
+                "description": "List of calendar IDs to check for conflicts (defaults to just the target calendar)",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "duplicateSimilarityThreshold": {
+                "description": "Threshold for duplicate detection (0-1, default: 0.7). Events with similarity above this are flagged as potential duplicates",
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "allowDuplicates": {
+                "description": "If true, allows creation even when exact duplicates are detected (similarity >= 0.95). Default is false which blocks duplicate creation",
+                "type": "boolean"
+              },
+              "eventType": {
+                "description": "Type of the event. 'default' for regular events, 'focusTime' for Focus Time blocks, 'outOfOffice' for Out of Office events, 'workingLocation' for Working Location events. Note: outOfOffice and workingLocation require Google Workspace and only work on primary calendar.",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "focusTime",
+                  "outOfOffice",
+                  "workingLocation"
+                ]
+              },
+              "focusTimeProperties": {
+                "description": "Focus Time properties. Only used when eventType is 'focusTime'. Requires Google Workspace.",
+                "type": "object",
+                "properties": {
+                  "autoDeclineMode": {
+                    "description": "Whether to auto-decline conflicting meetings",
+                    "type": "string",
+                    "enum": [
+                      "declineNone",
+                      "declineAllConflictingInvitations",
+                      "declineOnlyNewConflictingInvitations"
+                    ]
+                  },
+                  "chatStatus": {
+                    "description": "Chat status during focus time",
+                    "type": "string",
+                    "enum": [
+                      "available",
+                      "doNotDisturb"
+                    ]
+                  },
+                  "declineMessage": {
+                    "description": "Message sent when declining invitations",
+                    "type": "string"
+                  }
+                }
+              },
+              "outOfOfficeProperties": {
+                "description": "Out of Office properties. Only used when eventType is 'outOfOffice'. Requires Google Workspace.",
+                "type": "object",
+                "properties": {
+                  "autoDeclineMode": {
+                    "default": "declineAllConflictingInvitations",
+                    "description": "How to handle conflicting meetings. Default is to decline all conflicts.",
+                    "type": "string",
+                    "enum": [
+                      "declineNone",
+                      "declineAllConflictingInvitations",
+                      "declineOnlyNewConflictingInvitations"
+                    ]
+                  },
+                  "declineMessage": {
+                    "description": "Message sent when declining invitations (e.g., 'I'm out of office, will respond when I return')",
+                    "type": "string"
+                  }
+                }
+              },
+              "workingLocationProperties": {
+                "description": "Working Location properties. Only used when eventType is 'workingLocation'. Requires Google Workspace.",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "homeOffice",
+                      "officeLocation",
+                      "customLocation"
+                    ],
+                    "description": "Type of working location"
+                  },
+                  "homeOffice": {
+                    "description": "Empty object for home office type",
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "officeLocation": {
+                    "description": "Office location details",
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "description": "Office name shown in Calendar (e.g., 'HQ Building', 'NYC Office')",
+                        "type": "string"
+                      },
+                      "buildingId": {
+                        "description": "Building identifier from organization's Resources",
+                        "type": "string"
+                      },
+                      "floorId": {
+                        "description": "Floor identifier",
+                        "type": "string"
+                      },
+                      "floorSectionId": {
+                        "description": "Floor section identifier",
+                        "type": "string"
+                      },
+                      "deskId": {
+                        "description": "Desk identifier",
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "customLocation": {
+                    "description": "Custom location details",
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "description": "Label for custom location (e.g., 'Coffee Shop', 'Client Site')",
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              }
+            },
+            "required": [
+              "calendarId",
+              "summary",
+              "start",
+              "end"
+            ]
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "create-events",
+          "title": "Create Calendar Events (Bulk)",
+          "description": "Create multiple calendar events in bulk. Accepts shared defaults (account, calendarId, timeZone) that apply to all events, with per-event overrides. Skips conflict and duplicate detection for speed.",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "account": {
+                "description": "Default account for all events. Individual events can override this.",
+                "type": "string",
+                "pattern": "^[a-z0-9_-]{1,64}$"
+              },
+              "calendarId": {
+                "description": "Default calendar ID for all events (use 'primary' for the main calendar). Individual events can override this. Defaults to 'primary' if not specified.",
+                "type": "string"
+              },
+              "timeZone": {
+                "description": "Default IANA timezone for all events (e.g., 'America/Los_Angeles'). Individual events can override this.",
+                "type": "string"
+              },
+              "sendUpdates": {
+                "description": "Default notification setting for all events. Individual events can override this.",
+                "type": "string",
+                "enum": [
+                  "all",
+                  "externalOnly",
+                  "none"
+                ]
+              },
+              "events": {
+                "minItems": 1,
+                "maxItems": 50,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "summary": {
+                      "type": "string",
+                      "description": "Title of the event"
+                    },
+                    "start": {
+                      "type": "string",
+                      "description": "Event start time: '2025-01-01T10:00:00' for timed events or '2025-01-01' for all-day events"
+                    },
+                    "end": {
+                      "type": "string",
+                      "description": "Event end time: '2025-01-01T11:00:00' for timed events or '2025-01-02' for all-day events (exclusive)"
+                    },
+                    "calendarId": {
+                      "description": "Override calendar ID for this event",
+                      "type": "string"
+                    },
+                    "account": {
+                      "description": "Override account for this event",
+                      "type": "string",
+                      "pattern": "^[a-z0-9_-]{1,64}$"
+                    },
+                    "timeZone": {
+                      "description": "Override timezone for this event",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Description/notes for the event",
+                      "type": "string"
+                    },
+                    "location": {
+                      "description": "Location of the event",
+                      "type": "string"
+                    },
+                    "attendees": {
+                      "description": "List of event attendees",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "email": {
+                            "type": "string",
+                            "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+                            "description": "Email address of the attendee"
+                          },
+                          "displayName": {
+                            "description": "Display name of the attendee",
+                            "type": "string"
+                          },
+                          "optional": {
+                            "description": "Whether this is an optional attendee",
+                            "type": "boolean"
+                          },
+                          "responseStatus": {
+                            "description": "Attendee's response status",
+                            "type": "string",
+                            "enum": [
+                              "needsAction",
+                              "declined",
+                              "tentative",
+                              "accepted"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "email"
+                        ]
+                      }
+                    },
+                    "colorId": {
+                      "description": "Color ID for the event (use list-colors to see available IDs)",
+                      "type": "string"
+                    },
+                    "reminders": {
+                      "type": "object",
+                      "properties": {
+                        "useDefault": {
+                          "type": "boolean",
+                          "description": "Whether to use the default reminders"
+                        },
+                        "overrides": {
+                          "description": "Custom reminders",
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "method": {
+                                "default": "popup",
+                                "description": "Reminder method",
+                                "type": "string",
+                                "enum": [
+                                  "email",
+                                  "popup"
+                                ]
+                              },
+                              "minutes": {
+                                "type": "number",
+                                "description": "Minutes before the event to trigger the reminder"
+                              }
+                            },
+                            "required": [
+                              "minutes"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "useDefault"
+                      ],
+                      "description": "Reminder settings for the event"
+                    },
+                    "recurrence": {
+                      "description": "Recurrence rules in RFC5545 format (e.g., [\"RRULE:FREQ=WEEKLY;COUNT=5\"])",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "transparency": {
+                      "description": "Whether the event blocks time. 'opaque' = busy, 'transparent' = free.",
+                      "type": "string",
+                      "enum": [
+                        "opaque",
+                        "transparent"
+                      ]
+                    },
+                    "visibility": {
+                      "description": "Visibility of the event",
+                      "type": "string",
+                      "enum": [
+                        "default",
+                        "public",
+                        "private",
+                        "confidential"
+                      ]
+                    },
+                    "guestsCanInviteOthers": {
+                      "description": "Whether attendees can invite others",
+                      "type": "boolean"
+                    },
+                    "guestsCanModify": {
+                      "description": "Whether attendees can modify the event",
+                      "type": "boolean"
+                    },
+                    "guestsCanSeeOtherGuests": {
+                      "description": "Whether attendees can see other attendees",
+                      "type": "boolean"
+                    },
+                    "anyoneCanAddSelf": {
+                      "description": "Whether anyone can add themselves",
+                      "type": "boolean"
+                    },
+                    "sendUpdates": {
+                      "description": "Override notification setting for this event",
+                      "type": "string",
+                      "enum": [
+                        "all",
+                        "externalOnly",
+                        "none"
+                      ]
+                    },
+                    "conferenceData": {
+                      "description": "Conference properties for the event",
+                      "type": "object",
+                      "properties": {
+                        "createRequest": {
+                          "type": "object",
+                          "properties": {
+                            "requestId": {
+                              "type": "string",
+                              "description": "Client-generated unique ID for this request to ensure idempotency"
+                            },
+                            "conferenceSolutionKey": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "hangoutsMeet",
+                                    "eventHangout",
+                                    "eventNamedHangout",
+                                    "addOn"
+                                  ],
+                                  "description": "Conference solution type"
+                                }
+                              },
+                              "required": [
+                                "type"
+                              ],
+                              "description": "Conference solution to create"
+                            }
+                          },
+                          "required": [
+                            "requestId",
+                            "conferenceSolutionKey"
+                          ],
+                          "description": "Request to generate a new conference"
+                        }
+                      },
+                      "required": [
+                        "createRequest"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "summary",
+                    "start",
+                    "end"
+                  ]
+                },
+                "description": "Array of events to create (1-50 events)"
+              }
+            },
+            "required": [
+              "events"
+            ]
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "update-event",
+          "title": "Update Calendar Event",
+          "description": "Update an existing calendar event with recurring event modification scope support.",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "account": {
+                "description": "Account nickname (e.g., 'work'). Optional if only one account connected.",
+                "type": "string",
+                "pattern": "^[a-z0-9_-]{1,64}$"
+              },
+              "calendarId": {
+                "type": "string",
+                "description": "ID of the calendar (use 'primary' for the main calendar)"
+              },
+              "eventId": {
+                "type": "string",
+                "description": "ID of the event to update"
+              },
+              "summary": {
+                "description": "Updated title of the event",
+                "type": "string"
+              },
+              "description": {
+                "description": "Updated description/notes",
+                "type": "string"
+              },
+              "start": {
+                "type": "string",
+                "description": "Updated start time. String format: '2025-01-01T10:00:00' (timed) or '2025-01-01' (all-day). For per-field timezone, use JSON: '{\"dateTime\": \"2025-01-01T10:00:00\", \"timeZone\": \"America/Los_Angeles\"}'. Note: If the dateTime already includes a timezone offset, the embedded timezone takes precedence over the timeZone field."
+              },
+              "end": {
+                "type": "string",
+                "description": "Updated end time. String format: '2025-01-01T11:00:00' (timed) or '2025-01-02' (all-day, exclusive). For per-field timezone, use JSON: '{\"dateTime\": \"2025-01-01T11:00:00\", \"timeZone\": \"America/New_York\"}'. Note: If the dateTime already includes a timezone offset, the embedded timezone takes precedence over the timeZone field."
+              },
+              "timeZone": {
+                "description": "Updated timezone as IANA Time Zone Database name. If not provided, uses the calendar's default timezone.",
+                "type": "string"
+              },
+              "location": {
+                "description": "Updated location",
+                "type": "string"
+              },
+              "attendees": {
+                "description": "Updated attendee list",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+                      "description": "Email address of the attendee"
+                    }
+                  },
+                  "required": [
+                    "email"
+                  ]
+                }
+              },
+              "colorId": {
+                "description": "Updated color ID",
+                "type": "string"
+              },
+              "reminders": {
+                "type": "object",
+                "properties": {
+                  "useDefault": {
+                    "type": "boolean",
+                    "description": "Whether to use the default reminders"
+                  },
+                  "overrides": {
+                    "description": "Custom reminders",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "method": {
+                          "default": "popup",
+                          "description": "Reminder method",
+                          "type": "string",
+                          "enum": [
+                            "email",
+                            "popup"
+                          ]
+                        },
+                        "minutes": {
+                          "type": "number",
+                          "description": "Minutes before the event to trigger the reminder"
+                        }
+                      },
+                      "required": [
+                        "minutes"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "useDefault"
+                ],
+                "description": "Reminder settings for the event"
+              },
+              "recurrence": {
+                "description": "Recurrence rules in RFC5545 format (e.g., [\"RRULE:FREQ=WEEKLY;COUNT=5\"])",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "sendUpdates": {
+                "default": "all",
+                "description": "Whether to send update notifications",
+                "type": "string",
+                "enum": [
+                  "all",
+                  "externalOnly",
+                  "none"
+                ]
+              },
+              "modificationScope": {
+                "description": "Scope for recurring event modifications",
+                "type": "string",
+                "enum": [
+                  "thisAndFollowing",
+                  "all",
+                  "thisEventOnly"
+                ]
+              },
+              "originalStartTime": {
+                "type": "string",
+                "description": "Original start time in the ISO 8601 format '2024-01-01T10:00:00'"
+              },
+              "futureStartDate": {
+                "type": "string",
+                "description": "Start date for future instances in the ISO 8601 format '2024-01-01T10:00:00'"
+              },
+              "checkConflicts": {
+                "description": "Whether to check for conflicts when updating (default: true when changing time)",
+                "type": "boolean"
+              },
+              "calendarsToCheck": {
+                "description": "List of calendar IDs to check for conflicts (defaults to just the target calendar)",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "conferenceData": {
+                "description": "Conference properties for the event. Used to add or update Google Meet links.",
+                "type": "object",
+                "properties": {
+                  "createRequest": {
+                    "type": "object",
+                    "properties": {
+                      "requestId": {
+                        "type": "string",
+                        "description": "Client-generated unique ID for this request to ensure idempotency"
+                      },
+                      "conferenceSolutionKey": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "hangoutsMeet",
+                              "eventHangout",
+                              "eventNamedHangout",
+                              "addOn"
+                            ],
+                            "description": "Conference solution type"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ],
+                        "description": "Conference solution to create"
+                      }
+                    },
+                    "required": [
+                      "requestId",
+                      "conferenceSolutionKey"
+                    ],
+                    "description": "Request to generate a new conference"
+                  }
+                },
+                "required": [
+                  "createRequest"
+                ]
+              },
+              "transparency": {
+                "description": "Whether the event blocks time on the calendar. 'opaque' means busy, 'transparent' means available",
+                "type": "string",
+                "enum": [
+                  "opaque",
+                  "transparent"
+                ]
+              },
+              "visibility": {
+                "description": "Visibility of the event",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "public",
+                  "private",
+                  "confidential"
+                ]
+              },
+              "guestsCanInviteOthers": {
+                "description": "Whether attendees other than the organizer can invite others",
+                "type": "boolean"
+              },
+              "guestsCanModify": {
+                "description": "Whether attendees other than the organizer can modify the event",
+                "type": "boolean"
+              },
+              "guestsCanSeeOtherGuests": {
+                "description": "Whether attendees other than the organizer can see who the event's attendees are",
+                "type": "boolean"
+              },
+              "anyoneCanAddSelf": {
+                "description": "Whether anyone can add themselves to the event",
+                "type": "boolean"
+              },
+              "extendedProperties": {
+                "description": "Extended properties for storing application-specific data. Max 300 properties totaling 32KB.",
+                "type": "object",
+                "properties": {
+                  "private": {
+                    "description": "Properties private to the application. Keys can have max 44 chars, values max 1024 chars.",
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  },
+                  "shared": {
+                    "description": "Properties visible to all attendees. Keys can have max 44 chars, values max 1024 chars.",
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "attachments": {
+                "description": "File attachments for the event",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "fileUrl": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "URL link to the attachment"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Title of the attachment"
+                    },
+                    "mimeType": {
+                      "description": "MIME type of the attachment",
+                      "type": "string"
+                    },
+                    "iconLink": {
+                      "description": "URL link to the attachment's icon",
+                      "type": "string"
+                    },
+                    "fileId": {
+                      "description": "ID of the attached Google Drive file",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "fileUrl",
+                    "title"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "calendarId",
+              "eventId"
+            ]
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "delete-event",
+          "title": "Delete Calendar Event",
+          "description": "Delete a calendar event.",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "account": {
+                "description": "Account nickname (e.g., 'work'). Optional if only one account connected.",
+                "type": "string",
+                "pattern": "^[a-z0-9_-]{1,64}$"
+              },
+              "calendarId": {
+                "type": "string",
+                "description": "ID of the calendar (use 'primary' for the main calendar)"
+              },
+              "eventId": {
+                "type": "string",
+                "description": "ID of the event to delete"
+              },
+              "sendUpdates": {
+                "default": "all",
+                "description": "Whether to send cancellation notifications",
+                "type": "string",
+                "enum": [
+                  "all",
+                  "externalOnly",
+                  "none"
+                ]
+              }
+            },
+            "required": [
+              "calendarId",
+              "eventId"
+            ]
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "get-freebusy",
+          "title": "Get Free/Busy",
+          "description": "Query free/busy information for calendars. Note: Time range is limited to a maximum of 3 months between timeMin and timeMax.",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "account": {
+                "description": "Account nickname(s) to query (e.g., 'work' or ['work', 'personal']). Omit to query all accounts.",
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-z0-9_-]{1,64}$"
+                  },
+                  {
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-z0-9_-]{1,64}$"
+                    }
+                  }
+                ]
+              },
+              "calendars": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "ID of the calendar (use 'primary' for the main calendar)"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                "description": "List of calendars and/or groups to query for free/busy information"
+              },
+              "timeMin": {
+                "type": "string",
+                "description": "Start of time range (ISO 8601, e.g., '2024-01-01T00:00:00')."
+              },
+              "timeMax": {
+                "type": "string",
+                "description": "End of time range (ISO 8601, e.g., '2024-01-31T23:59:59')."
+              },
+              "timeZone": {
+                "description": "IANA timezone for the query.",
+                "type": "string"
+              },
+              "groupExpansionMax": {
+                "description": "Maximum number of calendars to expand per group (max 100)",
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 100
+              },
+              "calendarExpansionMax": {
+                "description": "Maximum number of calendars to expand (max 50)",
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 50
+              }
+            },
+            "required": [
+              "calendars",
+              "timeMin",
+              "timeMax"
+            ]
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "get-current-time",
+          "title": "Get Current Time",
+          "description": "Get the current date and time. Call this FIRST before creating, updating, or searching for events to ensure you have accurate date context for scheduling.",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "account": {
+                "description": "Account nickname (e.g., 'work'). Optional if only one account connected.",
+                "type": "string",
+                "pattern": "^[a-z0-9_-]{1,64}$"
+              },
+              "timeZone": {
+                "description": "IANA timezone (e.g., 'America/Los_Angeles'). Defaults to calendar's timezone.",
+                "type": "string"
+              }
+            }
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "respond-to-event",
+          "title": "Respond to Event Invitation",
+          "description": "Respond to a calendar event invitation with Accept, Decline, Maybe (Tentative), or No Response.",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "ID of the calendar (use 'primary' for the main calendar)"
+              },
+              "eventId": {
+                "type": "string",
+                "description": "ID of the event to respond to"
+              },
+              "account": {
+                "description": "Account nickname to use for this operation (e.g., 'work', 'personal'). Optional when only one account is connected - will auto-select the account with appropriate permissions. Use 'list-calendars' to see available accounts.",
+                "type": "string"
+              },
+              "response": {
+                "type": "string",
+                "enum": [
+                  "needsAction",
+                  "declined",
+                  "tentative",
+                  "accepted"
+                ],
+                "description": "Your response to the event invitation: 'accepted' (accept), 'declined' (decline), 'tentative' (maybe), 'needsAction' (no response)"
+              },
+              "comment": {
+                "description": "Optional message/note to include with your response (e.g., 'I have a conflict' when declining)",
+                "type": "string"
+              },
+              "modificationScope": {
+                "description": "For recurring events: 'thisEventOnly' responds to just this instance, 'all' responds to all instances. Default is 'all'.",
+                "type": "string",
+                "enum": [
+                  "thisEventOnly",
+                  "all"
+                ]
+              },
+              "originalStartTime": {
+                "type": "string",
+                "description": "Original start time of the specific instance (required when modificationScope is 'thisEventOnly')"
+              },
+              "sendUpdates": {
+                "description": "Whether to send response notifications. 'all' sends to all guests, 'externalOnly' to non-Google Calendar users only, 'none' sends no notifications. Default is 'none'.",
+                "type": "string",
+                "enum": [
+                  "all",
+                  "externalOnly",
+                  "none"
+                ]
+              }
+            },
+            "required": [
+              "calendarId",
+              "eventId",
+              "response"
+            ]
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "manage-accounts",
+          "title": "Manage Google Accounts",
+          "description": "Manage Google account authentication. Actions: 'list' (show accounts), 'add' (authenticate new account), 'remove' (remove account).",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "enum": [
+                  "list",
+                  "add",
+                  "remove"
+                ],
+                "description": "Action to perform: 'list' shows all accounts, 'add' authenticates a new account, 'remove' removes an account"
+              },
+              "account_id": {
+                "description": "Account nickname (e.g., 'work', 'personal') - a friendly name to identify this Google account. Required for 'add' and 'remove'. Optional for 'list' (shows all if omitted)",
+                "type": "string",
+                "pattern": "^[a-z0-9_-]{1,64}$"
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 2
+  },
+  "source_sha256": "cfe44634f70cf1c4835fb3dfd9e1cac63222405d205fcf6f9fede12d40a34f44",
+  "initialize_response": {
+    "result": {
+      "protocolVersion": "2025-06-18",
+      "capabilities": {
+        "tools": {
+          "listChanged": true
+        },
+        "prompts": {
+          "listChanged": true
+        },
+        "resources": {
+          "listChanged": true
+        }
+      },
+      "serverInfo": {
+        "name": "google-calendar",
+        "version": "2.6.3"
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 1
+  }
+}

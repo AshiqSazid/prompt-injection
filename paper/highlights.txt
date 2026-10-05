@@ -1,0 +1,5 @@
+A required tool field returns the system-prompt fact it names, not the others.
+Newer models also put a planted signed-in user into a billing field.
+Schema validity and field type do not stop an admissible secret from leaving.
+Models encode secrets on request, so a filter that knows them still passes them.
+An oracle argument allowlist removes the added field; a refusing tool fails the task.

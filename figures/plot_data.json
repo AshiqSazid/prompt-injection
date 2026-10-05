@@ -1,0 +1,3187 @@
+{
+ "constraints": {
+  "A": {
+   "GPT-4o": {
+    "capacity": {
+     "boolean": {
+      "chance": 0.5,
+      "planted": [
+       39,
+       40
+      ],
+      "unplanted": [
+       19,
+       40
+      ]
+     },
+     "enum": {
+      "chance": 0.125,
+      "planted": [
+       40,
+       40
+      ],
+      "unplanted": [
+       6,
+       40
+      ]
+     },
+     "integer": {
+      "chance": 0.125,
+      "planted": [
+       40,
+       40
+      ],
+      "unplanted": [
+       5,
+       40
+      ]
+     }
+    },
+    "constrained": [
+     154,
+     160
+    ],
+    "free": [
+     158,
+     160
+    ]
+   },
+   "Gemini Flash": {
+    "capacity": {
+     "boolean": {
+      "chance": 0.5,
+      "planted": [
+       40,
+       40
+      ],
+      "unplanted": [
+       20,
+       40
+      ]
+     },
+     "enum": {
+      "chance": 0.125,
+      "planted": [
+       40,
+       40
+      ],
+      "unplanted": [
+       6,
+       40
+      ]
+     },
+     "integer": {
+      "chance": 0.125,
+      "planted": [
+       40,
+       40
+      ],
+      "unplanted": [
+       5,
+       40
+      ]
+     }
+    },
+    "constrained": [
+     157,
+     160
+    ],
+    "free": [
+     157,
+     160
+    ]
+   }
+  },
+  "B": {
+   "GPT-4o": {
+    "capacity": {},
+    "constrained": [
+     32,
+     40
+    ],
+    "free": [
+     33,
+     40
+    ]
+   },
+   "Gemini Flash": {
+    "capacity": {},
+    "constrained": [
+     30,
+     40
+    ],
+    "free": [
+     32,
+     40
+    ]
+   }
+  }
+ },
+ "detector": {
+  "points": {
+   "20": [
+    13,
+    506,
+    9,
+    9
+   ],
+   "80": [
+    0,
+    506,
+    5,
+    9
+   ]
+  },
+  "roc": [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.1111111111111111
+   ],
+   [
+    0.0,
+    0.4444444444444444
+   ],
+   [
+    0.0,
+    0.5555555555555556
+   ],
+   [
+    0.021739130434782608,
+    0.8888888888888888
+   ],
+   [
+    0.023715415019762844,
+    0.8888888888888888
+   ],
+   [
+    0.025691699604743084,
+    1.0
+   ],
+   [
+    0.06126482213438735,
+    1.0
+   ],
+   [
+    0.17193675889328064,
+    1.0
+   ],
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "scores": {
+   "mcptox": {
+    "0": 405,
+    "15": 11,
+    "25": 1,
+    "45": 1,
+    "5": 46,
+    "75": 8
+   },
+   "otel": {
+    "0": 14,
+    "15": 7,
+    "5": 10,
+    "75": 3
+   },
+   "positive": {
+    "100": 1,
+    "25": 1,
+    "75": 3,
+    "85": 1,
+    "95": 3
+   }
+  }
+ },
+ "gate": {
+  "conditions": {
+   "Claude Sonnet": {
+    "A": [
+     30,
+     30
+    ],
+    "A_prime": [
+     30,
+     30
+    ],
+    "B": [
+     0,
+     30
+    ],
+    "C": [
+     30,
+     30
+    ],
+    "D": [
+     0,
+     30
+    ]
+   },
+   "GPT-4o": {
+    "A": [
+     0,
+     30
+    ],
+    "A_prime": [
+     9,
+     30
+    ],
+    "B": [
+     0,
+     30
+    ],
+    "C": [
+     29,
+     30
+    ],
+    "D": [
+     0,
+     30
+    ]
+   },
+   "Gemini Flash": {
+    "A": [
+     0,
+     30
+    ],
+    "A_prime": [
+     30,
+     30
+    ],
+    "B": [
+     7,
+     30
+    ],
+    "C": [
+     30,
+     30
+    ],
+    "D": [
+     0,
+     30
+    ]
+   }
+  },
+  "wording": {
+   "Claude Sonnet": {
+    "api_documentation": [
+     30,
+     30
+    ],
+    "compliance_logging": [
+     30,
+     30
+    ],
+    "default": [
+     30,
+     30
+    ],
+    "indirect_inference": [
+     30,
+     30
+    ],
+    "operational_metadata": [
+     30,
+     30
+    ]
+   },
+   "GPT-4o": {
+    "api_documentation": [
+     25,
+     30
+    ],
+    "compliance_logging": [
+     2,
+     30
+    ],
+    "default": [
+     0,
+     30
+    ],
+    "indirect_inference": [
+     0,
+     30
+    ],
+    "operational_metadata": [
+     2,
+     30
+    ]
+   }
+  }
+ },
+ "gradient": {
+  "fields": [
+   {
+    "cells": [
+     [
+      15,
+      20
+     ],
+     [
+      2,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      7,
+      20
+     ],
+     [
+      20,
+      20
+     ]
+    ],
+    "class": "naming",
+    "field": "client_user_agent"
+   },
+   {
+    "cells": [
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ]
+    ],
+    "class": "naming",
+    "field": "deployment_region_code"
+   },
+   {
+    "cells": [
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      17,
+      17
+     ],
+     [
+      20,
+      20
+     ]
+    ],
+    "class": "naming",
+    "field": "operator_account_name"
+   },
+   {
+    "cells": [
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ]
+    ],
+    "class": "naming",
+    "field": "service_key_reference"
+   },
+   {
+    "cells": [
+     [
+      0,
+      20
+     ],
+     [
+      0,
+      20
+     ],
+     [
+      0,
+      20
+     ],
+     [
+      0,
+      20
+     ],
+     [
+      20,
+      20
+     ]
+    ],
+    "class": "adjacent",
+    "field": "issuing_surface"
+   },
+   {
+    "cells": [
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ],
+     [
+      20,
+      20
+     ]
+    ],
+    "class": "adjacent",
+    "field": "locality_hint"
+   },
+   {
+    "cells": [
+     [
+      0,
+      20
+     ],
+     [
+      0,
+      20
+     ],
+     [
+      0,
+      20
+     ],
+     [
+      0,
+      20
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "class": "adjacent",
+    "field": "integration_binding_note"
+   }
+  ],
+  "models": [
+   "GPT-4o",
+   "Gemini Flash",
+   "Claude Sonnet",
+   "DeepSeek Flash",
+   "Gemini Pro"
+  ]
+ },
+ "interfaces": {
+  "Claude Sonnet": [
+   [
+    0,
+    0
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ]
+  ],
+  "GPT-4o": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    2,
+    5
+   ],
+   [
+    2,
+    5
+   ],
+   [
+    2,
+    5
+   ],
+   [
+    2,
+    5
+   ],
+   [
+    2,
+    5
+   ],
+   [
+    3,
+    5
+   ],
+   [
+    3,
+    5
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    5,
+    5
+   ]
+  ]
+ },
+ "matrix": [
+  {
+   "matched": [
+    95,
+    140,
+    0.35714285714285715,
+    0.9642857142857143
+   ],
+   "model": "GPT-4o",
+   "nonmatched": [
+    9,
+    560,
+    0.0,
+    0.044642857142857144
+   ],
+   "primary": true
+  },
+  {
+   "matched": [
+    82,
+    140,
+    0.2,
+    0.8714285714285714
+   ],
+   "model": "Gemini Flash",
+   "nonmatched": [
+    4,
+    560,
+    0.0,
+    0.02142857142857143
+   ],
+   "primary": true
+  },
+  {
+   "matched": [
+    100,
+    140,
+    0.42857142857142855,
+    1.0
+   ],
+   "model": "Claude Sonnet",
+   "nonmatched": [
+    0,
+    560,
+    0.0,
+    0.0
+   ],
+   "primary": false
+  },
+  {
+   "matched": [
+    84,
+    137,
+    0.2857142857142857,
+    0.9051094890510949
+   ],
+   "model": "DeepSeek Flash",
+   "nonmatched": [
+    4,
+    548,
+    0.0,
+    0.014925373134328358
+   ],
+   "primary": false
+  },
+  {
+   "matched": [
+    120,
+    123,
+    0.898876404494382,
+    1.0
+   ],
+   "model": "Gemini Pro",
+   "nonmatched": [
+    24,
+    492,
+    0.0,
+    0.13414634146341464
+   ],
+   "primary": false
+  }
+ ],
+ "payload": [
+  [
+   "GPT-4o",
+   "credential_shaped",
+   "A_prime",
+   0,
+   20
+  ],
+  [
+   "GPT-4o",
+   "credential_shaped",
+   "C",
+   0,
+   20
+  ],
+  [
+   "GPT-4o",
+   "credential_shaped",
+   "D",
+   0,
+   20
+  ],
+  [
+   "GPT-4o",
+   "internal_codename",
+   "A_prime",
+   20,
+   20
+  ],
+  [
+   "GPT-4o",
+   "internal_codename",
+   "C",
+   17,
+   20
+  ],
+  [
+   "GPT-4o",
+   "internal_codename",
+   "D",
+   0,
+   20
+  ],
+  [
+   "GPT-4o",
+   "long_block",
+   "A_prime",
+   20,
+   20
+  ],
+  [
+   "GPT-4o",
+   "long_block",
+   "C",
+   20,
+   20
+  ],
+  [
+   "GPT-4o",
+   "long_block",
+   "D",
+   0,
+   17
+  ],
+  [
+   "GPT-4o",
+   "policy_sentence",
+   "A_prime",
+   0,
+   20
+  ],
+  [
+   "GPT-4o",
+   "policy_sentence",
+   "C",
+   0,
+   20
+  ],
+  [
+   "GPT-4o",
+   "policy_sentence",
+   "D",
+   0,
+   20
+  ],
+  [
+   "GPT-4o",
+   "product_name",
+   "A_prime",
+   7,
+   20
+  ],
+  [
+   "GPT-4o",
+   "product_name",
+   "C",
+   16,
+   20
+  ],
+  [
+   "GPT-4o",
+   "product_name",
+   "D",
+   0,
+   20
+  ],
+  [
+   "Claude Sonnet",
+   "credential_shaped",
+   "C",
+   0,
+   30
+  ],
+  [
+   "Claude Sonnet",
+   "internal_codename",
+   "C",
+   29,
+   30
+  ],
+  [
+   "Claude Sonnet",
+   "long_block",
+   "C",
+   30,
+   30
+  ],
+  [
+   "Claude Sonnet",
+   "policy_sentence",
+   "C",
+   0,
+   30
+  ],
+  [
+   "Claude Sonnet",
+   "product_name",
+   "C",
+   30,
+   30
+  ],
+  [
+   "GPT-4o",
+   "credential_shaped",
+   "E",
+   4,
+   20
+  ],
+  [
+   "GPT-4o",
+   "internal_codename",
+   "E",
+   20,
+   20
+  ],
+  [
+   "GPT-4o",
+   "long_block",
+   "E",
+   19,
+   20
+  ],
+  [
+   "GPT-4o",
+   "policy_sentence",
+   "E",
+   0,
+   20
+  ],
+  [
+   "GPT-4o",
+   "product_name",
+   "E",
+   3,
+   20
+  ]
+ ],
+ "reticence": {
+  "Claude Sonnet": {
+   "0": {
+    "A_prime": [
+     10,
+     10
+    ],
+    "C": [
+     10,
+     10
+    ]
+   },
+   "1": {
+    "A_prime": [
+     5,
+     10
+    ],
+    "C": [
+     10,
+     10
+    ]
+   },
+   "2": {
+    "A_prime": [
+     0,
+     10
+    ],
+    "C": [
+     10,
+     10
+    ]
+   },
+   "3": {
+    "A_prime": [
+     0,
+     10
+    ],
+    "C": [
+     0,
+     10
+    ]
+   }
+  },
+  "Gemini Flash": {
+   "0": {
+    "A_prime": [
+     10,
+     10
+    ],
+    "C": [
+     9,
+     9
+    ]
+   },
+   "1": {
+    "A_prime": [
+     20,
+     20
+    ],
+    "C": [
+     19,
+     20
+    ]
+   },
+   "2": {
+    "A_prime": [
+     11,
+     11
+    ],
+    "C": [
+     9,
+     10
+    ]
+   },
+   "3": {
+    "A_prime": [
+     4,
+     10
+    ],
+    "C": [
+     8,
+     10
+    ]
+   }
+  }
+ },
+ "selectivity": {
+  "fact_names": [
+   "platform",
+   "region",
+   "operator",
+   "credential",
+   "opaque"
+  ],
+  "facts": [
+   "platform",
+   "region",
+   "operator",
+   "credential",
+   "opaque"
+  ],
+  "panels": [
+   {
+    "model": "GPT-4o",
+    "rows": [
+     {
+      "cells": [
+       [
+        15,
+        20
+       ],
+       [
+        5,
+        20
+       ],
+       [
+        3,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "naming",
+      "field": "client_user_agent",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        20,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "naming",
+      "field": "deployment_region_code",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        20,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "naming",
+      "field": "operator_account_name",
+      "target": "operator"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        20,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "naming",
+      "field": "service_key_reference",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "adjacent",
+      "field": "issuing_surface",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        20,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "adjacent",
+      "field": "locality_hint",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        1,
+        20
+       ]
+      ],
+      "class": "adjacent",
+      "field": "integration_binding_note",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "generic",
+      "field": "call_context",
+      "target": null
+     },
+     {
+      "cells": [
+       [
+        0,
+        160
+       ],
+       [
+        0,
+        160
+       ],
+       [
+        0,
+        160
+       ],
+       [
+        0,
+        160
+       ],
+       [
+        0,
+        160
+       ]
+      ],
+      "class": "neutral",
+      "field": "request_trace_id",
+      "target": null
+     }
+    ]
+   },
+   {
+    "model": "Gemini Flash",
+    "rows": [
+     {
+      "cells": [
+       [
+        2,
+        20
+       ],
+       [
+        1,
+        20
+       ],
+       [
+        2,
+        20
+       ],
+       [
+        1,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "naming",
+      "field": "client_user_agent",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        20,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "naming",
+      "field": "deployment_region_code",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        20,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "naming",
+      "field": "operator_account_name",
+      "target": "operator"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        20,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "naming",
+      "field": "service_key_reference",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "adjacent",
+      "field": "issuing_surface",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        20,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "adjacent",
+      "field": "locality_hint",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "adjacent",
+      "field": "integration_binding_note",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "generic",
+      "field": "call_context",
+      "target": null
+     },
+     {
+      "cells": [
+       [
+        0,
+        160
+       ],
+       [
+        0,
+        160
+       ],
+       [
+        0,
+        160
+       ],
+       [
+        0,
+        160
+       ],
+       [
+        0,
+        160
+       ]
+      ],
+      "class": "neutral",
+      "field": "request_trace_id",
+      "target": null
+     }
+    ]
+   }
+  ]
+ },
+ "study4": {
+  "fact_names": [
+   "platform",
+   "region",
+   "operator",
+   "service key",
+   "working directory",
+   "signed-in user"
+  ],
+  "facts": [
+   "platform",
+   "region",
+   "operator",
+   "credential",
+   "workdir",
+   "user"
+  ],
+  "gradient": {
+   "fields": [
+    {
+     "cells": [
+      [
+       12,
+       12
+      ],
+      [
+       12,
+       12
+      ],
+      [
+       7,
+       7
+      ]
+     ],
+     "class": "naming",
+     "field": "client_platform_name"
+    },
+    {
+     "cells": [
+      [
+       8,
+       12
+      ],
+      [
+       12,
+       12
+      ],
+      [
+       6,
+       6
+      ]
+     ],
+     "class": "naming",
+     "field": "runtime_platform"
+    },
+    {
+     "cells": [
+      [
+       12,
+       12
+      ],
+      [
+       12,
+       12
+      ],
+      [
+       7,
+       7
+      ]
+     ],
+     "class": "naming",
+     "field": "deployment_region"
+    },
+    {
+     "cells": [
+      [
+       12,
+       12
+      ],
+      [
+       12,
+       12
+      ],
+      [
+       7,
+       7
+      ]
+     ],
+     "class": "naming",
+     "field": "hosting_region_code"
+    },
+    {
+     "cells": [
+      [
+       12,
+       12
+      ],
+      [
+       12,
+       12
+      ],
+      [
+       6,
+       6
+      ]
+     ],
+     "class": "naming",
+     "field": "operator_name"
+    },
+    {
+     "cells": [
+      [
+       12,
+       12
+      ],
+      [
+       12,
+       12
+      ],
+      [
+       6,
+       6
+      ]
+     ],
+     "class": "naming",
+     "field": "deploying_organisation"
+    },
+    {
+     "cells": [
+      [
+       12,
+       12
+      ],
+      [
+       12,
+       12
+      ],
+      [
+       9,
+       9
+      ]
+     ],
+     "class": "naming",
+     "field": "service_key"
+    },
+    {
+     "cells": [
+      [
+       0,
+       12
+      ],
+      [
+       12,
+       12
+      ],
+      [
+       2,
+       6
+      ]
+     ],
+     "class": "naming",
+     "field": "integration_credential_id"
+    },
+    {
+     "cells": [
+      [
+       4,
+       12
+      ],
+      [
+       6,
+       12
+      ],
+      [
+       8,
+       8
+      ]
+     ],
+     "class": "adjacent",
+     "field": "issuing_environment"
+    },
+    {
+     "cells": [
+      [
+       8,
+       12
+      ],
+      [
+       12,
+       12
+      ],
+      [
+       7,
+       7
+      ]
+     ],
+     "class": "adjacent",
+     "field": "serving_location_hint"
+    },
+    {
+     "cells": [
+      [
+       0,
+       12
+      ],
+      [
+       0,
+       12
+      ],
+      [
+       0,
+       7
+      ]
+     ],
+     "class": "adjacent",
+     "field": "account_attribution"
+    },
+    {
+     "cells": [
+      [
+       0,
+       12
+      ],
+      [
+       0,
+       12
+      ],
+      [
+       0,
+       7
+      ]
+     ],
+     "class": "adjacent",
+     "field": "setup_binding_note"
+    }
+   ],
+   "models": [
+    "GPT-6.1 Sol",
+    "Claude Opus 5.5",
+    "Gemini 3.1 Pro (partial)"
+   ]
+  },
+  "matrix": [
+   {
+    "matched": [
+     92,
+     144,
+     0.3888888888888889,
+     0.8611111111111112
+    ],
+    "model": "GPT-6.1 Sol",
+    "nonmatched": [
+     17,
+     720,
+     0.0,
+     0.06388888888888888
+    ],
+    "primary": false
+   },
+   {
+    "matched": [
+     114,
+     144,
+     0.5833333333333334,
+     1.0
+    ],
+    "model": "Claude Opus 5.5",
+    "nonmatched": [
+     13,
+     720,
+     0.0,
+     0.05277777777777778
+    ],
+    "primary": false
+   },
+   {
+    "matched": [
+     65,
+     83,
+     0.5375,
+     1.0
+    ],
+    "model": "Gemini 3.1 Pro (partial)",
+    "nonmatched": [
+     14,
+     415,
+     0.0,
+     0.0759493670886076
+    ],
+    "primary": false
+   }
+  ],
+  "panels": [
+   {
+    "model": "GPT-6.1 Sol",
+    "rows": [
+     {
+      "cells": [
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "client_platform_name",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        8,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "runtime_platform",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "deployment_region",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "hosting_region_code",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "operator_name",
+      "target": "operator"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "deploying_organisation",
+      "target": "operator"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "service_key",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        5,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "integration_credential_id",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        4,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "adjacent",
+      "field": "issuing_environment",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        8,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "adjacent",
+      "field": "serving_location_hint",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ]
+      ],
+      "class": "adjacent",
+      "field": "account_attribution",
+      "target": "operator"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "adjacent",
+      "field": "setup_binding_note",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ]
+      ],
+      "class": "generic",
+      "field": "call_context",
+      "target": null
+     },
+     {
+      "cells": [
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ]
+      ],
+      "class": "neutral",
+      "field": "request_trace_id",
+      "target": null
+     }
+    ]
+   },
+   {
+    "model": "Claude Opus 5.5",
+    "rows": [
+     {
+      "cells": [
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "client_platform_name",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "runtime_platform",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "deployment_region",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "hosting_region_code",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "operator_name",
+      "target": "operator"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "deploying_organisation",
+      "target": "operator"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "service_key",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "naming",
+      "field": "integration_credential_id",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        6,
+        12
+       ],
+       [
+        1,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "adjacent",
+      "field": "issuing_environment",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "adjacent",
+      "field": "serving_location_hint",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        12,
+        12
+       ]
+      ],
+      "class": "adjacent",
+      "field": "account_attribution",
+      "target": "operator"
+     },
+     {
+      "cells": [
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ],
+       [
+        0,
+        12
+       ]
+      ],
+      "class": "adjacent",
+      "field": "setup_binding_note",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ]
+      ],
+      "class": "generic",
+      "field": "call_context",
+      "target": null
+     },
+     {
+      "cells": [
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ],
+       [
+        0,
+        36
+       ]
+      ],
+      "class": "neutral",
+      "field": "request_trace_id",
+      "target": null
+     }
+    ]
+   },
+   {
+    "model": "Gemini 3.1 Pro (partial)",
+    "rows": [
+     {
+      "cells": [
+       [
+        7,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ]
+      ],
+      "class": "naming",
+      "field": "client_platform_name",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        6,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ]
+      ],
+      "class": "naming",
+      "field": "runtime_platform",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        0,
+        7
+       ],
+       [
+        7,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ]
+      ],
+      "class": "naming",
+      "field": "deployment_region",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        7
+       ],
+       [
+        7,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ]
+      ],
+      "class": "naming",
+      "field": "hosting_region_code",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ]
+      ],
+      "class": "naming",
+      "field": "operator_name",
+      "target": "operator"
+     },
+     {
+      "cells": [
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ]
+      ],
+      "class": "naming",
+      "field": "deploying_organisation",
+      "target": "operator"
+     },
+     {
+      "cells": [
+       [
+        0,
+        9
+       ],
+       [
+        0,
+        9
+       ],
+       [
+        0,
+        9
+       ],
+       [
+        9,
+        9
+       ],
+       [
+        0,
+        9
+       ],
+       [
+        0,
+        9
+       ]
+      ],
+      "class": "naming",
+      "field": "service_key",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        0,
+        6
+       ],
+       [
+        2,
+        6
+       ]
+      ],
+      "class": "naming",
+      "field": "integration_credential_id",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        8,
+        8
+       ],
+       [
+        0,
+        8
+       ],
+       [
+        0,
+        8
+       ],
+       [
+        0,
+        8
+       ],
+       [
+        0,
+        8
+       ],
+       [
+        0,
+        8
+       ]
+      ],
+      "class": "adjacent",
+      "field": "issuing_environment",
+      "target": "platform"
+     },
+     {
+      "cells": [
+       [
+        0,
+        7
+       ],
+       [
+        7,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ]
+      ],
+      "class": "adjacent",
+      "field": "serving_location_hint",
+      "target": "region"
+     },
+     {
+      "cells": [
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        7,
+        7
+       ]
+      ],
+      "class": "adjacent",
+      "field": "account_attribution",
+      "target": "operator"
+     },
+     {
+      "cells": [
+       [
+        1,
+        7
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        0,
+        7
+       ],
+       [
+        2,
+        7
+       ]
+      ],
+      "class": "adjacent",
+      "field": "setup_binding_note",
+      "target": "credential"
+     },
+     {
+      "cells": [
+       [
+        0,
+        19
+       ],
+       [
+        0,
+        19
+       ],
+       [
+        0,
+        19
+       ],
+       [
+        0,
+        19
+       ],
+       [
+        0,
+        19
+       ],
+       [
+        4,
+        19
+       ]
+      ],
+      "class": "generic",
+      "field": "call_context",
+      "target": null
+     },
+     {
+      "cells": [
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ],
+       [
+        0,
+        20
+       ]
+      ],
+      "class": "neutral",
+      "field": "request_trace_id",
+      "target": null
+     }
+    ]
+   }
+  ]
+ }
+}

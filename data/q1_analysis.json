@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "primary_decision": "supported",
+  "primary_crosscheck": [
+    {
+      "model": "gemini-3-flash-preview",
+      "counts": {
+        "diagonal_n": 140,
+        "diagonal_k": 82,
+        "off_n": 560,
+        "off_k": 4,
+        "control_calls": 160,
+        "control_any": 0
+      },
+      "production_ci": [
+        0.5785714285714286,
+        0.17142857142857143,
+        0.8642857142857143
+      ],
+      "independent_ci": [
+        0.17142857142857143,
+        0.8642857142857143
+      ],
+      "loo_difference": [
+        0.5083333333333334,
+        0.675
+      ],
+      "fields": 7,
+      "control_ci_call_level_descriptive": [
+        0.0,
+        0.0,
+        0.023447036650032713
+      ]
+    },
+    {
+      "model": "gpt-4o",
+      "counts": {
+        "diagonal_n": 140,
+        "diagonal_k": 95,
+        "off_n": 560,
+        "off_k": 9,
+        "control_calls": 160,
+        "control_any": 0
+      },
+      "production_ci": [
+        0.6625000000000001,
+        0.32321428571428573,
+        0.9500000000000001
+      ],
+      "independent_ci": [
+        0.32321428571428573,
+        0.9500000000000001
+      ],
+      "loo_difference": [
+        0.60625,
+        0.7749999999999999
+      ],
+      "fields": 7,
+      "control_ci_call_level_descriptive": [
+        0.0,
+        0.0,
+        0.023447036650032713
+      ]
+    }
+  ],
+  "per_fact": [
+    {
+      "model": "gemini-3-flash-preview",
+      "stratum": "all",
+      "fact": "platform",
+      "diagonal": [
+        2,
+        40
+      ],
+      "offdiag": [
+        0,
+        100
+      ],
+      "wilson": [
+        0.05,
+        0.013820377146101098,
+        0.165041708179252
+      ],
+      "difference_newcombe": [
+        0.05,
+        -0.0017453465544179161,
+        0.165041708179252
+      ],
+      "p": 0.08016443987667007,
+      "p_holm": 0.08016443987667007,
+      "family_size": 8
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "stratum": "all",
+      "fact": "region",
+      "diagonal": [
+        40,
+        40
+      ],
+      "offdiag": [
+        1,
+        100
+      ],
+      "wilson": [
+        1.0,
+        0.9123754607496077,
+        1.0
+      ],
+      "difference_newcombe": [
+        0.99,
+        0.8917289476081675,
+        0.9982326134344527
+      ],
+      "p": 2.3191166339176922e-34,
+      "p_holm": 1.8552933071341538e-33,
+      "family_size": 8
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "stratum": "all",
+      "fact": "operator",
+      "diagonal": [
+        20,
+        20
+      ],
+      "offdiag": [
+        2,
+        120
+      ],
+      "wilson": [
+        1.0,
+        0.8388698745050667,
+        1.0
+      ],
+      "difference_newcombe": [
+        0.9833333333333333,
+        0.8168015316889329,
+        0.9954175314588486
+      ],
+      "p": 2.792675373295731e-22,
+      "p_holm": 1.6756052239774386e-21,
+      "family_size": 8
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "stratum": "all",
+      "fact": "credential",
+      "diagonal": [
+        20,
+        40
+      ],
+      "offdiag": [
+        1,
+        100
+      ],
+      "wilson": [
+        0.5,
+        0.35199278797099753,
+        0.6480072120290025
+      ],
+      "difference_newcombe": [
+        0.49,
+        0.3354513841150531,
+        0.6382359967638064
+      ],
+      "p": 2.944143165293716e-12,
+      "p_holm": 8.832429495881148e-12,
+      "family_size": 8
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "stratum": "naming",
+      "fact": "platform",
+      "diagonal": [
+        2,
+        20
+      ],
+      "offdiag": [
+        0,
+        60
+      ],
+      "wilson": [
+        0.1,
+        0.027865893984153206,
+        0.30103820641179335
+      ],
+      "difference_newcombe": [
+        0.1,
+        0.006062621071968768,
+        0.30103820641179335
+      ],
+      "p": 0.06012658227848101,
+      "p_holm": 0.30063291139240506,
+      "family_size": 14
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "stratum": "naming",
+      "fact": "region",
+      "diagonal": [
+        20,
+        20
+      ],
+      "offdiag": [
+        1,
+        60
+      ],
+      "wilson": [
+        1.0,
+        0.8388698745050667,
+        1.0
+      ],
+      "difference_newcombe": [
+        0.9833333333333333,
+        0.8068946266334415,
+        0.9970519161391262
+      ],
+      "p": 5.940062827552261e-18,
+      "p_holm": 7.72208167581794e-17,
+      "family_size": 14
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "stratum": "naming",
+      "fact": "operator",
+      "diagonal": [
+        20,
+        20
+      ],
+      "offdiag": [
+        2,
+        60
+      ],
+      "wilson": [
+        1.0,
+        0.8388698745050667,
+        1.0
+      ],
+      "difference_newcombe": [
+        0.9666666666666667,
+        0.7866331752742844,
+        0.9908108735098498
+      ],
+      "p": 6.534069110307487e-17,
+      "p_holm": 7.187476021338235e-16,
+      "family_size": 14
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "stratum": "naming",
+      "fact": "credential",
+      "diagonal": [
+        20,
+        20
+      ],
+      "offdiag": [
+        1,
+        60
+      ],
+      "wilson": [
+        1.0,
+        0.8388698745050667,
+        1.0
+      ],
+      "difference_newcombe": [
+        0.9833333333333333,
+        0.8068946266334415,
+        0.9970519161391262
+      ],
+      "p": 5.940062827552261e-18,
+      "p_holm": 7.72208167581794e-17,
+      "family_size": 14
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "stratum": "adjacent",
+      "fact": "platform",
+      "diagonal": [
+        0,
+        20
+      ],
+      "offdiag": [
+        0,
+        40
+      ],
+      "wilson": [
+        0.0,
+        0.0,
+        0.16113012549493322
+      ],
+      "difference_newcombe": [
+        0.0,
+        -0.08762453925039232,
+        0.16113012549493322
+      ],
+      "p": 1.0,
+      "p_holm": 1.0,
+      "family_size": 14
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "stratum": "adjacent",
+      "fact": "region",
+      "diagonal": [
+        20,
+        20
+      ],
+      "offdiag": [
+        0,
+        40
+      ],
+      "wilson": [
+        1.0,
+        0.8388698745050667,
+        1.0
+      ],
+      "difference_newcombe": [
+        1.0,
+        0.8165852317264051,
+        1.0
+      ],
+      "p": 2.3855846718909774e-16,
+      "p_holm": 2.3855846718909772e-15,
+      "family_size": 14
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "stratum": "adjacent",
+      "fact": "credential",
+      "diagonal": [
+        0,
+        20
+      ],
+      "offdiag": [
+        0,
+        40
+      ],
+      "wilson": [
+        0.0,
+        0.0,
+        0.16113012549493322
+      ],
+      "difference_newcombe": [
+        0.0,
+        -0.08762453925039232,
+        0.16113012549493322
+      ],
+      "p": 1.0,
+      "p_holm": 1.0,
+      "family_size": 14
+    },
+    {
+      "model": "gpt-4o",
+      "stratum": "all",
+      "fact": "platform",
+      "diagonal": [
+        15,
+        40
+      ],
+      "offdiag": [
+        0,
+        100
+      ],
+      "wilson": [
+        0.375,
+        0.2422277353579172,
+        0.529678399454681
+      ],
+      "difference_newcombe": [
+        0.375,
+        0.23717006842353247,
+        0.529678399454681
+      ],
+      "p": 7.356398691059003e-10,
+      "p_holm": 1.4712797382118005e-09,
+      "family_size": 8
+    },
+    {
+      "model": "gpt-4o",
+      "stratum": "all",
+      "fact": "region",
+      "diagonal": [
+        40,
+        40
+      ],
+      "offdiag": [
+        5,
+        100
+      ],
+      "wilson": [
+        1.0,
+        0.9123754607496077,
+        1.0
+      ],
+      "difference_newcombe": [
+        0.95,
+        0.8428022150704189,
+        0.9784566385436864
+      ],
+      "p": 6.91073565741133e-30,
+      "p_holm": 4.837514960187931e-29,
+      "family_size": 8
+    },
+    {
+      "model": "gpt-4o",
+      "stratum": "all",
+      "fact": "operator",
+      "diagonal": [
+        20,
+        20
+      ],
+      "offdiag": [
+        3,
+        120
+      ],
+      "wilson": [
+        1.0,
+        0.8388698745050667,
+        1.0
+      ],
+      "difference_newcombe": [
+        0.975,
+        0.8074512133391963,
+        0.9914619799012145
+      ],
+      "p": 2.141051119526727e-21,
+      "p_holm": 1.0705255597633635e-20,
+      "family_size": 8
+    },
+    {
+      "model": "gpt-4o",
+      "stratum": "all",
+      "fact": "credential",
+      "diagonal": [
+        20,
+        40
+      ],
+      "offdiag": [
+        0,
+        100
+      ],
+      "wilson": [
+        0.5,
+        0.35199278797099753,
+        0.6480072120290025
+      ],
+      "difference_newcombe": [
+        0.5,
+        0.34743935437740003,
+        0.6480072120290025
+      ],
+      "p": 1.6664961312983301e-13,
+      "p_holm": 6.665984525193321e-13,
+      "family_size": 8
+    },
+    {
+      "model": "gpt-4o",
+      "stratum": "naming",
+      "fact": "platform",
+      "diagonal": [
+        15,
+        20
+      ],
+      "offdiag": [
+        0,
+        60
+      ],
+      "wilson": [
+        0.75,
+        0.5312949900419365,
+        0.888139947210597
+      ],
+      "difference_newcombe": [
+        0.75,
+        0.5231679403392904,
+        0.888139947210597
+      ],
+      "p": 2.3363930318354757e-12,
+      "p_holm": 1.4018358191012853e-11,
+      "family_size": 14
+    },
+    {
+      "model": "gpt-4o",
+      "stratum": "naming",
+      "fact": "region",
+      "diagonal": [
+        20,
+        20
+      ],
+      "offdiag": [
+        5,
+        60
+      ],
+      "wilson": [
+        1.0,
+        0.8388698745050667,
+        1.0
+      ],
+      "difference_newcombe": [
+        0.9166666666666666,
+        0.7284073616664277,
+        0.9638800759495141
+      ],
+      "p": 1.502835895370722e-14,
+      "p_holm": 1.0519851267595055e-13,
+      "family_size": 14
+    },
+    {
+      "model": "gpt-4o",
+      "stratum": "naming",
+      "fact": "operator",
+      "diagonal": [
+        20,
+        20
+      ],
+      "offdiag": [
+        3,
+        60
+      ],
+      "wilson": [
+        1.0,
+        0.8388698745050667,
+        1.0
+      ],
+      "difference_newcombe": [
+        0.95,
+        0.7668792866886597,
+        0.9828508088208587
+      ],
+      "p": 5.009452984569074e-16,
+      "p_holm": 4.007562387655259e-15,
+      "family_size": 14
+    },
+    {
+      "model": "gpt-4o",
+      "stratum": "naming",
+      "fact": "credential",
+      "diagonal": [
+        20,
+        20
+      ],
+      "offdiag": [
+        0,
+        60
+      ],
+      "wilson": [
+        1.0,
+        0.8388698745050667,
+        1.0
+      ],
+      "difference_newcombe": [
+        1.0,
+        0.8280005254334303,
+        1.0
+      ],
+      "p": 2.8286013464534573e-19,
+      "p_holm": 3.96004188503484e-18,
+      "family_size": 14
+    },
+    {
+      "model": "gpt-4o",
+      "stratum": "adjacent",
+      "fact": "platform",
+      "diagonal": [
+        0,
+        20
+      ],
+      "offdiag": [
+        0,
+        40
+      ],
+      "wilson": [
+        0.0,
+        0.0,
+        0.16113012549493322
+      ],
+      "difference_newcombe": [
+        0.0,
+        -0.08762453925039232,
+        0.16113012549493322
+      ],
+      "p": 1.0,
+      "p_holm": 1.0,
+      "family_size": 14
+    },
+    {
+      "model": "gpt-4o",
+      "stratum": "adjacent",
+      "fact": "region",
+      "diagonal": [
+        20,
+        20
+      ],
+      "offdiag": [
+        0,
+        40
+      ],
+      "wilson": [
+        1.0,
+        0.8388698745050667,
+        1.0
+      ],
+      "difference_newcombe": [
+        1.0,
+        0.8165852317264051,
+        1.0
+      ],
+      "p": 2.3855846718909774e-16,
+      "p_holm": 2.3855846718909772e-15,
+      "family_size": 14
+    },
+    {
+      "model": "gpt-4o",
+      "stratum": "adjacent",
+      "fact": "credential",
+      "diagonal": [
+        0,
+        20
+      ],
+      "offdiag": [
+        0,
+        40
+      ],
+      "wilson": [
+        0.0,
+        0.0,
+        0.16113012549493322
+      ],
+      "difference_newcombe": [
+        0.0,
+        -0.08762453925039232,
+        0.16113012549493322
+      ],
+      "p": 1.0,
+      "p_holm": 1.0,
+      "family_size": 14
+    }
+  ],
+  "hierarchical": {
+    "method": "Bayesian variational logistic; fe_p=2, vcp_p=1; zero means/unit SD initialization",
+    "converged": true,
+    "fixed_effects": {
+      "Intercept": -4.388911323268705,
+      "matched": 8.871781593129576
+    },
+    "fixed_effect_sd": {
+      "Intercept": 0.18332398827812085,
+      "matched": 0.2559837312688746
+    },
+    "warnings": [],
+    "limitation": "Two providers; repeated facts per trial; separation and priors limit interpretation. Not primary evidence."
+  },
+  "temperature_zero": {
+    "path": "runs/v2_matrix_openai_t0-live-20260810-184331.jsonl",
+    "sha256": "0087036a90641a8dec67867120cd63790d51a3ed44503b9bbcf5861f7310eb48",
+    "rows": 160,
+    "temperatures": [
+      0.0
+    ],
+    "counts": {
+      "diagonal_n": 80,
+      "diagonal_k": 80,
+      "off_n": 560,
+      "off_k": 0,
+      "neutral_calls": 80,
+      "neutral_any": 0
+    },
+    "status": "exploratory v2; different fixtures and collection time; not a causal temperature contrast with v3"
+  },
+  "generic_status": "Descriptive any-canary endpoint only: no semantic target, so registered generic diagonal rule is undefined.",
+  "inference_limit": "Per-fact Fisher/Wilson/Newcombe tests are the registered call-level analyses, not cluster-robust tests. Gradient Holm-family choice is a disclosed post-collection implementation choice."
+}

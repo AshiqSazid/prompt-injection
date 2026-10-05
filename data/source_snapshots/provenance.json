@@ -1,0 +1,9 @@
+{
+  "source_url": "https://raw.githubusercontent.com/zhiqiangwang4/MCPTox-Benchmark/main/response_all.json",
+  "source_sha256": "79a90049be931c59e71446d6180b1d7f0d196d123d08a59bc155d142b5041c03",
+  "snapshot_sha256": "783317f05b5b37e215f717184b1ee69c8c3fc871de0825ea76ea30b1be6ec0bf",
+  "transformation": "Keep server keys and clean_system_promot only; no attack responses.",
+  "license_status": "Upstream redistribution/license review required before release; no license inferred.",
+  "source_commit": null,
+  "source_commit_status": "Historical cache did not record a revision."
+}

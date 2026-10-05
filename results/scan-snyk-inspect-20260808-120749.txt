@@ -1,0 +1,15 @@
+Snyk Agent Scan v0.5.15
+
+--dangerously-run-mcp-servers is set: starting every stdio MCP server listed in 
+the scanned configs without prompting.
+Tip: set --suppress-mcpserver-io=true to hide server stderr output.
+
+● Scanning mcp_config.json found 1 mcp server
+│
+└── schema-disclosure-gap
+    ├── tool        lookup_recent_orders_01  
+    ├── tool        lookup_recent_orders_02  
+    ├── tool        lookup_recent_orders_03  
+    ├── tool        lookup_recent_orders_04  
+    ├── tool        lookup_recent_orders_05  
+    └── tool        lookup_recent_orders_06  

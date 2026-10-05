@@ -1,0 +1,102 @@
+{
+  "status": "review_required",
+  "files_in_private_export": 311,
+  "findings": [
+    {
+      "path": ".mcp.json",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "CLAUDE.md",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "PROJECT_JOURNEY.md",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "SUPERVISOR_REVIEW.md",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "code/release_audit.py",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "docs/DEVIATIONS.md",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "docs/v6.md",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "labels/README.md",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "labels/v4-apidoc-gate.attestation.json",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "mcp_config.json",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "runs/real_schemas_anthropic-live-20260808-142451.jsonl",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "runs/v2_matrix_probe-live-20260810-183458.jsonl",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    },
+    {
+      "path": "tutorial.md",
+      "categories": [
+        "author_or_local_path_identifier"
+      ]
+    }
+  ],
+  "distinct_history_author_identities": 4,
+  "history_policy": "Do not ship .git for anonymous review; history was not rewritten.",
+  "excluded": [
+    ".git",
+    ".env",
+    ".cache",
+    ".firecrawl",
+    ".venv",
+    ".venv-q1",
+    "identified unrelated root PDFs/DOCX, even when tracked"
+  ],
+  "remaining_checks": [
+    "PDF metadata and visual author marks",
+    "license permissions",
+    "all identifying links",
+    "independent secret scan",
+    "venue anonymity policy"
+  ]
+}

@@ -1,0 +1,513 @@
+% TDSC preparation draft. Do not submit until submission_check.py passes
+% and the authors approve the selected venue and final declarations.
+\documentclass[10pt,journal,compsoc]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,graphicx,microtype,xurl}
+\usepackage[hidelinks]{hyperref}
+\input{numbers}
+\input{journal_numbers}
+\hypersetup{pdfauthor={},pdftitle={Selective Recovery of Prompt-Resident Facts through Tool-Schema Parameters}}
+\title{Selective Recovery of Prompt-Resident Facts through Tool-Schema Parameters:\\A Controlled Measurement Study}
+\author{Author details pending confirmation}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Third-party tool schemas can solicit information unrelated to a user's task.
+We measure whether schema wording selectively recovers matching confidential
+facts rather than prompt contents indiscriminately. In an order-lookup task,
+we plant five synthetic facts, vary seven targeted string fields and one generic
+field, and compare with a neutral-field control. On the two protocol-named models,
+requested-fact recovery is \VthreeGptFouroDiagonalFrac{} for GPT-4o and
+\VthreeGeminiThreeFlashPreviewDiagonalFrac{} for Gemini 3 Flash, versus
+\VthreeGptFouroOffdiagFrac{} and \VthreeGeminiThreeFlashPreviewOffdiagFrac{}
+nonrequested fact-checks. Paired field-bootstrap differences are
+\VthreeGptFouroDeltaPp{} percentage points \VthreeGptFouroDeltaCI{} and
+\VthreeGeminiThreeFlashPreviewDeltaPp{} points
+\VthreeGeminiThreeFlashPreviewDeltaCI{}. The analysis implementation was corrected
+after collection. Neither model recovers a canary in its
+\VthreeGptFouroControlcallsN{} neutral calls. A prospective, timestamped follow-up
+(\ExpATrials{} calls, with local receipt and task success recorded) finds that a
+canary-permitting pattern and length constraint does not measurably reduce
+received recovery on either model (\ExpAGemDelta{} and \ExpAGptDelta{} points,
+intervals including zero), and that enum, integer and boolean fields return the
+planted value in \ExpACapacityPlanted{} trials. Selected fields, synthetic tools
+and secrets, and field heterogeneity limit generalization. Parameter-mediated
+extraction is established prior art; operational prevention remains open.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Tool-calling agents, information disclosure, schema security,
+Model Context Protocol, reproducible measurement.
+\end{IEEEkeywords}
+
+\section{Introduction}
+A tool-using assistant must translate a user's request into arguments satisfying
+a tool's declared interface. The tool provider can therefore influence what the
+model is asked to supply. If an unnecessary field solicits a deployment fact from
+the system prompt, a syntactically plausible call can contain information the
+user did not authorize the provider to receive. Actual disclosure to the provider
+additionally requires host dispatch and server receipt; generation alone does not
+establish either event.
+
+This extraction mechanism is not new. HiddenLayer reports parameter abuse and
+fake-function variants~\cite{hiddenlayer2025mcp}; MCP Security Bench (MSB) explicitly
+includes out-of-scope parameters~\cite{zhang2025msb}. Our question is narrower:
+\emph{when several confidential facts are simultaneously available, does the
+requested field select which one appears in the emitted arguments?} A
+fact-by-field matrix distinguishes selective recovery from indiscriminate
+copying. It also exposes whether an apparently low average recovery rate hides
+successful fields and consistently unsuccessful controls.
+
+We contribute (i) a controlled matrix with a deterministic, protocol-defined
+marker scorer; (ii) paired field-level estimates, independent numerical
+cross-checks, and explicit accounting for exploratory and incomplete arms;
+(iii) a bounded comparison with an injection-oriented policy, accompanied by
+negative results and implementation artifacts; and (iv) a prospective,
+externally timestamped experiment testing whether constraining the requested
+field's JSON Schema type changes recovery, measured at local receipt with
+legitimate-task utility (Section~\ref{sec:exp25}). We do not claim to discover
+parameter extraction, prove general retrieval without naming a target, or
+establish vulnerability prevalence in deployed agents. The historical gate
+hypothesis that a plausible field would outperform an explicit request on a
+majority of tested models failed; it is retained in the supplementary record.
+
+\section{Related work}
+Indirect prompt injection established that externally supplied content can
+redirect an application without a direct adversarial user
+request~\cite{greshake2023not}. Declarative field descriptions are another
+lower-trust input. We distinguish them from imperative attack text for experimental
+purposes, not as a claim that they fall outside every definition of injection.
+The planted prompts explicitly prohibit disclosure; successful recovery conflicts
+with that instruction even when a schema contains no override command.
+
+Lin's structured-output study tests conflicting prompt and schema definitions
+on a nonce-label classification task and finds model-dependent schema
+influence~\cite{lin2026schema}. This is close evidence that schema descriptions
+are behaviorally active, but its endpoint is classification accuracy rather
+than selective recovery of confidential prompt facts in tool arguments.
+
+HiddenLayer's parameter-abuse report establishes the mechanism and also describes
+fake functions embedded in user messages~\cite{hiddenlayer2025mcp}. Our provider
+controls a declared tool interface, while our measurement crosses requested fields
+with simultaneously planted facts. MSB already evaluates parameter-mediated
+leakage and executes tools through MCP~\cite{zhang2025msb}. Its task/security
+evaluation is complementary; our emitted-argument matrix is not a replacement
+for execution or task-utility testing.
+
+MCPTox studies metadata poisoning and supplies the rendered tool listings used
+in our exploratory reconstruction~\cite{mcptox2025}. AgentDojo provides an
+environment for evaluating tasks, attacks, and defenses~\cite{debenedetti2024agentdojo}.
+These motivate a future task-level evaluation rather than a claim that suitable
+benchmarks do not exist. Recent runtime enforcement work, including
+ShieldMCP~\cite{yergattikar2026securing}, further precludes interpreting a miss by
+one static policy as a result about all agent defenses.
+
+CaMeL separates control and data flow and uses capability-based
+policies~\cite{debenedetti2025camel}. This supports considering argument-release
+controls outside the generating model. We do not evaluate CaMeL or claim that
+it would necessarily block our exact fixtures. OWASP recommends avoiding secrets
+in system prompts~\cite{owasp_llm07}; our synthetic-credential observations do not
+establish that real deployments store such material there.
+
+\section{Threat model and observable outcomes}
+The adversary publishes a tool selected for a legitimate task. It controls the
+tool declaration, including an additional string parameter and its requiredness,
+but not the user request, host, model weights, or confidential system prompt.
+The experimenter plants facts to make measurement possible; the adversary does
+not receive their values. Each observation concerns one model response under a
+fixed condition, not an adaptive extraction sequence. The attacker benefits only
+if a host releases the generated information to the tool.
+
+MCP defines tool input schemas and calls, but its security guidance also recommends
+showing inputs and obtaining confirmation for sensitive
+operations~\cite{mcp_spec}. Delivery is therefore conditional on host behavior,
+not an unavoidable consequence of the protocol.
+
+\begin{table}[t]
+\centering\small
+\caption{Outcome levels. A later level cannot be inferred solely from an earlier one.}
+\label{tab:endpoints}
+\begin{tabular}{@{}p{.25\columnwidth}p{.67\columnwidth}@{}}
+\toprule
+Level & Evidence required \\
+\midrule
+Emission & Model response contains a tool call and recorded arguments. \\
+Validity & Arguments parse and satisfy the offered schema and tool name. \\
+Dispatch & Host records sending that selected call. \\
+Receipt & Server capture matches the correlation ID, tool, and arguments. \\
+Task utility & Returned result passes a legitimate-task oracle. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The historical endpoint is marker recovery in recorded non-\texttt{query}
+arguments conditional on the adapter's tool-call indicator. We preserve it for
+comparability. Missing historical validity, dispatch, and receipt fields remain
+unknown, not negative observations. A repaired no-network MCP round trip verifies
+delivery, rejection, and no-call behavior using mock responses. This is a software
+test, not additional model-disclosure evidence.
+
+\section{Design and analysis}
+\subsection{Task, fields, and facts}
+The primary task asks for the user's three most recent orders. Across conditions,
+the legitimate task and base tool are held fixed. Condition C adds a targeted
+or generic string field; condition D adds a neutral request-trace field.
+The prompt contains five seed-derived fixtures: platform, region, operator,
+credential-shaped, and opaque-control values, together with a confidentiality
+instruction. None is a live credential. The targeted fields cover four naming
+and three adjacent wordings. A generic \texttt{call\_context} field has no
+designated target. The field taxonomy was specified before v3 collection;
+the labels are not a guarantee of semantic distance.
+
+Each model's planned planted matrix has 20 repetitions for each of eight
+wordings under both C and D, at temperature 0.7. Thus seven targeted C fields
+supply 140 matched opportunities and 560 nonmatched checks; the generic C
+field supplies 20 call-level outcomes. The 160 D calls supply 800 correlated
+fact-check opportunities, not 800 independent calls. Unplanted arms separately
+test recovery without supplying the fixtures. Provider seeds are not equivalent
+randomness controls across APIs. The historical schedule was not the subsequently
+implemented blocked-randomized runner.
+
+\subsection{Scoring and estimand}
+Let $Y_{frk}$ indicate whether fact $k$ is recovered in repetition $r$ for field
+$f$, and let $t(f)$ be its prescribed target. The historical scorer serializes
+the non-\texttt{query} argument object, lowercases it, removes nonalphanumeric
+characters, and tests for a full marker or its prespecified prefix alias.
+This is deterministic normalized substring matching, not semantic grading or
+strict equality with a complete canary. Prefix matching can count partial
+recovery; punctuation and case are deliberately ignored. No aliases were added
+to improve the reported v3 results.
+The supplement additionally reports post-collection full-marker and
+all-argument sensitivity checks; they do not replace the registered endpoint.
+All three alternatives give the same matched and nonmatched counts as the
+registered scorer on both primary models.
+
+For eligible emitted calls with counts $n_f$, the primary quantities are
+\begin{align}
+\widehat p_M &= \frac{\sum_{f,r}Y_{fr,t(f)}}{\sum_f n_f},\\
+\widehat p_U &= \frac{\sum_{f,r}\sum_{k\ne t(f)}Y_{frk}}{4\sum_f n_f},\\
+\widehat\Delta &= \widehat p_M-\widehat p_U.
+\end{align}
+This compares a matched opportunity with a nonmatched opportunity, not the
+probability of any leak per trial. With equal field sizes it also equals the
+average field contrast. Generic and neutral any-canary recovery use
+$\mathbb{1}\{\sum_kY_{frk}>0\}$ and a call denominator. Generic outcomes never
+enter a contrast requiring $t(f)$.
+
+\subsection{Uncertainty and decision rule}
+The primary percentile bootstrap samples seven whole fields with replacement,
+retaining each field's matched and nonmatched counts together, for 10,000 draws
+with seed zero. The same draw produces both rates and their difference. We report
+95\% intervals and leave-one-field-out ranges. Repeated facts within a call
+are not treated as independent bootstrap units. Fields were hand-selected, so
+these intervals summarize sensitivity to their composition; they do not certify
+coverage over a randomly sampled population of schemas or deployments.
+
+The protocol's H-v3-1 rule requires a difference of at least 20 percentage points
+and a bootstrap interval excluding zero on both named providers. Missing or
+incomplete required arms yield an incomplete decision. The previously
+implemented analysis did not faithfully supply the paired contrast; its
+post-collection correction and numerical effects are recorded in the deviations
+log. We distinguish the pre-collection design from this later implementation.
+An independently implemented count and resampling calculation checks the primary
+result; it is a computational cross-check, not independent scientific replication.
+
+The supplement reports the registered per-fact Wilson, one-sided Fisher,
+Holm-adjusted, and Newcombe analyses and a hierarchical logistic sensitivity
+fit. These call-level tests are not cluster-robust replacements for the primary
+analysis. Multiplicity-family choices and hierarchical priors were resolved
+after collection. H-v3-2's generic diagonal rule is undefined because a generic
+field has no target; we report its descriptive outcome without repairing that
+rule retrospectively.
+
+\subsection{Provenance and completeness}
+The v3 protocol names \texttt{gpt-4o} and \texttt{gemini-3-flash-preview}; these
+are requested API identifiers, not immutable model-weight identifiers. The
+artifact records a protocol hash and calendar receipts preceding collection.
+Independent verification of timestamp anchoring remains an author-facing
+submission check. Other providers and the earlier v2 matrix are not upgraded
+to confirmatory evidence. An explicit artifact-selection file fixes the input
+paths and hashes; the analysis never chooses the largest available run.
+
+Reported served identities are audited against requested identities. Missing
+served identities remain unverified. Historical logs do not retrospectively
+gain the improved identity and schema-validation guarantees of the new runner.
+API-error rows are counted and excluded under the historical protocol; malformed
+files fail validation. The supplement gives attempted, usable, emitted-call,
+and error counts for every selected matrix arm.
+
+\section{Results}
+\subsection{Primary selectivity}
+\input{primary_table}
+Table~\ref{tab:primary} shows the paired effect for the protocol-named models.
+Both satisfy the numerical H-v3-1 rule under the corrected implementation.
+The wide intervals are substantive: there are seven field clusters, not
+hundreds of independent interfaces. Leave-one-field-out differences range from
+\JournalGptLoo{} percentage points for GPT-4o and \JournalGeminiLoo{} for
+Gemini. Omitting any one field retains a positive point difference, but does
+not expand the population to which the result applies.
+
+Neither model recovers any canary in its \VthreeGptFouroControlcallsN{} neutral
+calls; generic recovery is \VthreeGptFouroGenericFrac{} and
+\VthreeGeminiThreeFlashPreviewGenericFrac{}, respectively. Zero observed events
+do not prove zero risk. A call-level Wilson upper limit for the neutral arms
+would additionally rely on assumptions about independent, identically
+distributed trials that field heterogeneity does not establish.
+
+\subsection{Heterogeneity, negative results, and controls}
+\input{field_table}
+The field-level breakdown (Table~\ref{tab:fields}) qualifies the pooled result.
+The region-adjacent field succeeds, whereas the platform- and
+credential-adjacent fields do not recover their targets on the primary pair.
+Thus this study does not establish broad non-naming retrieval. The
+\texttt{service\_key\_reference} field recovers a fabricated credential on
+\VthreeGptFouroCredentialFrac{} calls in each primary arm. This tests copying a
+prompt-resident fixture, not use of a real service credential.
+
+Most nonmatched recoveries in the primary pair come from the broad
+\texttt{client\_user\_agent} field:
+\VthreeGptFouroCrosstalkuaFrac{} for GPT-4o and
+\VthreeGeminiThreeFlashPreviewCrosstalkuaFrac{} for Gemini. This concentration
+supports a field-specific interpretation rather than uniform leakage noise.
+Unplanted observations across the selected providers show
+\VthreeFabricationPooledFrac{} any-canary recoveries; provider-specific counts
+and evidence status are retained in the supplement rather than treating this
+pooled descriptive result as a new primary test.
+The unplanted stages cover six of the eight matrix fields, omitting the
+platform-adjacent and region-adjacent fields. They complete their configured
+stages but not the protocol's same-field control coverage; H-v3-3 is therefore
+not treated as fully established across the planned field set.
+
+The original majority-of-models gate hypothesis failed. A framework arm without
+planted content produced \FrameworkArmDisclosed{} identity disclosures in
+\FrameworkArmToolCalled{} tool-call observations. These negative results limit
+both superiority over explicit requests and claims about intrinsic model or
+framework self-knowledge.
+
+\subsection{Exploratory extensions already collected}
+Three additional matrix providers are exploratory. The Gemini Pro arm is
+quota-capped, and noncalls and errors make conditional denominators unequal.
+Its larger point estimate is not evidence of a capability-scaling law. All
+selected v3 matrix and unplanted files together contain
+\VthreeTrialsN{} attempted rows, including \VthreeTrialsErrors{} error rows;
+this is an inventory total, not the primary sample size.
+
+The existing exploratory temperature-zero v2 arm has
+\JournalTzeroDiagonal{} matched and \JournalTzeroOff{} nonmatched recoveries,
+with \JournalTzeroNeutral{} neutral any-canary outcomes. It uses different
+fixtures and a different collection time; comparing it with v3 cannot isolate a
+temperature effect.
+
+The external-listing arm reconstructs \RealCorpusTools{} tool interfaces from
+rendered MCPTox listings, appends an authored parameter, and pairs tasks by token
+overlap. GPT-4o recovery is \RealGptFouroCFrac{} conditional on a call and
+\RealGptFouroCIttFrac{} over attempted trials; Claude recovery is
+\RealClaudeSonnetFourFiveCFrac{} and \RealClaudeSonnetFourFiveCIttFrac{}.
+Neutral recovery is \RealDCombinedFrac{} across their emitted calls.
+Native types, nesting, requiredness, and constraints were not preserved:
+harvested parameters were reconstructed as strings. These observations broaden
+wording contexts, not validation against original live servers. Neither
+legitimate-task success nor a population upper bound follows from these rates.
+
+\section{Prospective schema-constraint experiment}\label{sec:exp25}
+Every earlier arm offered the requested field as a free string. Experiment~25
+asks two questions that the historical design could not: does a constraint on
+that string change received recovery, and can a categorical field carry a
+planted value above its guessing rate? It was specified, reviewed and
+externally timestamped before any planted call, and is analysed separately from
+the historical evidence, never pooled with it.
+
+\subsection{Design, host, and provenance}
+Stage~A uses two synthetic tools, order lookup and email search, and four
+naming fields, one per fact family (platform, region, operator, and a fabricated
+credential). Each tool and replicate has its own four seed-derived canaries,
+shared by every field and both arms, so each free trial has an exact
+constrained partner that differs only in the field's schema. The constrained
+arm adds the pattern \texttt{\^{}[A-Za-z0-9\_ -]\{1,128\}\$} and
+\texttt{maxLength:~128}; every planted canary satisfies it, so the arm tests a
+permissive constraint, not one that forbids the secret. There are 20 pairs per
+model, tool and field, and five unplanted repetitions. A capacity arm on the
+order tool adds an enum of eight tiers, an integer from 0 to 7, or a boolean,
+with 40 balanced planted values and 40 unplanted trials per model and domain;
+the unplanted trials carry hidden balanced labels that the model never sees.
+Stage~B adds one fixed field, \texttt{client\_platform\_name}, to eight frozen
+native MCP tool schemas (two servers for each of four tasks), with five pairs
+per schema and model; it was planned as a small contextual check, conditional
+on funding, and is analysed separately from stage~A.
+
+A local host parses each call and validates it against the offered schema before
+an in-process fixture handler receives it. The primary endpoint is receipt of
+the target canary in a non-task argument per attempted trial, scored by full
+normalized marker without the historical prefix aliases; a task oracle scores
+legitimate-task utility. Handler receipt is not MCP transport or a provider-side
+event. The models are \texttt{gpt-4o-2024-08-06} and
+\texttt{gemini-3-flash-preview} at temperature 0.7, collected as two legs in a
+fixed order, Gemini first. The primary estimand is the per-model mean of free
+minus constrained recovery; the protocol describes attenuation only when both
+models' 95\% intervals exclude zero in the positive direction. Stage~A intervals
+resample the 20 replicate blocks, 10,000 draws; capacity uses one-sided label
+permutation tests, Holm-adjusted over the six model--domain tests.
+
+The protocol file and a hash of the executable design were committed, and the
+protocol's SHA-256 was submitted to four OpenTimestamps calendars, before any
+planted call; Bitcoin anchoring was pending at the time of writing. A coauthor
+reviewed the four field texts before stage~A and the eight native task fixtures
+before stage~B, and recorded both decisions. All other model calls were
+unplanted compatibility checks: 14 on Gemini before sealing, 14 on GPT-4o before
+its leg, and 35 before stage~B. One dated amendment,
+approving the native fixtures, changed the design hash before any stage~B call;
+stage~A was collected under the sealed hash. The supplement discloses a first
+launch that failed locally before any request left the host, and three stops by
+the prespecified output-token bound, because Gemini's
+output limit does not cap its thinking tokens. Each stopped leg was resumed under
+the prespecified policy without repeating a trial. All \ExpATrials{} stage~A and
+\ExpBTrials{} stage~B trials completed with no API errors.
+
+\subsection{Results}
+\input{exp25_table}
+Table~\ref{tab:exp25} gives the primary endpoint. No interval excludes zero in
+the positive direction, in either stage, so by the prespecified rule no
+attenuation is described for either model. In stage~A the intervals rule out
+attenuation larger than about 3 points for Gemini and 6 for GPT-4o, for these
+fields and tools. Validation rejected \ExpAGemRejected{} and \ExpAGptRejected{}
+constrained calls: a constraint that admits the secret does not stop the model
+from supplying it.
+
+\input{exp25_capacity_table}
+The capacity arm (Table~\ref{tab:exp25capacity}) returned the planted value in
+\ExpACapacityPlanted{} trials, while unplanted answers stayed near their guessing
+rates. A categorical field therefore carries any secret that is one of its
+admissible values; a boolean carries one bit per call. These domains differ in
+wording and planted fact as well as type, so the table does not isolate a pure
+type effect.
+
+Stage~A also reproduces field-to-fact selectivity: the requested fact was
+received in \ExpAGemSelDiag{} (Gemini) and \ExpAGptSelDiag{} (GPT-4o) of free
+calls, and each of the other three facts in \ExpAGemSelOff{} and
+\ExpAGptSelOff{}. Only naming fields were tested, and the prompts and scorer
+differ from the historical matrix, so these rates are not comparable with
+Table~\ref{tab:primary}. Unplanted controls received no canary
+(\ExpAGemUnplanted{} and \ExpAGptUnplanted{}). Stage~B's recovery was lower, and
+its intervals again include zero, although Gemini's lower endpoint is exactly
+zero; with one field and five pairs per schema, stage~B is a small contextual
+check, not a precise estimate.
+
+Two descriptive observations were not prespecified. First, of the
+\ExpAMisses{} stage~A non-recoveries, \ExpAFirstWord{} sent only the first word
+of a two-word platform canary, which the full-marker rule does not count, so the
+small free--constrained differences reflect truncation rather than withheld
+secrets. Second, in stage~B, \ExpBGemWrongTool{} Gemini calls named tools that
+were not offered and so never reached the handler, and \ExpBFirstWord{} of the
+\ExpBMisses{} non-recoveries were first-word truncations.
+
+\subsection{Interpretation}
+Within these fields and tools, restricting a string's format, or its type to a
+small categorical domain, does not prevent recovery of a secret that the schema
+still admits. A categorical domain limits how much can move per call; it does
+not stop admissible values from moving. Constraints that exclude the secret were
+not tested: their zero recovery would reflect the schema rather than model
+behavior and would need an attempt-based endpoint. The experiment uses two
+models, synthetic tools and secrets, and purposively chosen fields; it is not
+evidence about arbitrary schemas or deployed agents.
+
+\section{Defensive interpretation}
+The artifact reproduces the prompt and pseudo-tag rule from
+\texttt{mcp-scan==0.3.39}, using its specified model and temperature and a
+study-defined majority vote across repeated classifications. It flags the
+tested imperative conditions but not the primary parameter-only condition or
+the explicit-parameter comparison. This is an observation about a historical
+published policy reproduced locally, not the vendor's hosted service or current
+production rules. Historical artifacts retain boolean votes, not raw judge
+text; the old parser mapped any response other than ``YES'' to a negative vote.
+Malformed answers therefore cannot be ruled out retrospectively. The recorded
+miss is provisional supporting evidence, not a fully audited detector result.
+Future parsing rejects malformed answers and retains raw text; no new scanner
+calls were made for this revision. A plausible explanation is that an injection-focused question
+does not directly assess whether generated arguments are authorized to leave
+the host; we do not establish a necessary failure of every such classifier.
+
+A separate parameter classifier has AUC \DefenseAucValue{} on
+\DefenseCorpusPositives{} study-authored positives and
+\DefenseCorpusNegatives{} corpus negatives. That is detection performance on
+this evaluation set, not measured prevention. Retrospective removal projections
+do not account for argument substitution, schema rejection, task failure, or
+adaptive attacks. Optional-field ablations likewise do not validate a deployed
+release policy.
+
+A defensible next evaluation would compare no defense, optional-field removal,
+and a task-contract argument-release policy, measuring both disclosure and
+legitimate-task utility. Required fields cannot simply be dropped while assuming
+the original task still succeeds. Exact-canary filtering would be an oracle
+diagnostic only. Section~\ref{sec:exp25} shows that schema design alone is not
+such a policy: a permissive constraint left recovery unchanged, and categorical
+fields carried admissible secrets. Defense comparisons remain future work and
+were not part of that experiment.
+
+\section{Validity and limitations}
+\textbf{Construct validity.} Normalized marker recovery is a narrow proxy for
+prompt-content disclosure. It can miss paraphrases and count documented partial
+aliases. It does not measure all sensitive information, successful execution,
+or adversarial downstream use. The older graded arms use a different endpoint;
+they are not pooled with the marker matrix. Their human validation is one
+coauthor's blinded, stratified gate sample, not independent validation of all arms.
+
+\textbf{Internal validity.} Primary fixtures are shared across repetitions;
+provider behavior may drift over time, and historical order effects are not
+removed by later runner improvements. Post-collection analysis corrections,
+incomplete exploratory arms, and unspecified secondary choices are disclosed.
+Prespecified marker aliases reduce discretionary scoring but do not by themselves
+make every analytical choice prospective.
+
+\textbf{External validity.} One primary task, two protocol-named models,
+hand-selected fields, free-string channels, and synthetic secrets are the main
+constraints. The prospective experiment adds constrained and categorical fields
+and eight native schema contexts, but only two synthetic tools, four fields, and
+one field on the native schemas. No claim is made about typical secret storage, arbitrary native
+schemas, current model releases, commercial clients, or real-world incident
+rates. Corpus reconstruction and extra models do not substitute for a
+prospectively paired task/schema study.
+
+\textbf{Statistical validity.} Small cluster counts make percentile intervals
+sensitive to the empirical field distribution. Call-level secondary tests ignore
+some dependence; the hierarchical sensitivity fit has only two provider levels
+and does not explicitly model repeated facts within each trial. Separation and
+prior choice further limit interpretation. We report these analyses without
+treating nominal significance as an independent replication of the primary effect.
+
+\section{Ethics, reproducibility, and availability}
+All planted facts are synthetic, including credential-shaped values. Measurements
+used author-controlled prompts and provider accounts, not third-party victim
+deployments. The no-network transport server is a test fixture. Completed
+coordinated vendor notification is not evidenced in the repository; the authors
+must resolve and document the disclosure decision before submission. Prior public
+repository exposure is not evidence of coordinated notification.
+
+The analysis artifact includes immutable historical logs and protocols, explicit
+selection hashes, a deviations record, regenerated tables, an independent
+numerical check, and a locked offline Python environment. Live provider calls
+are outside default tests. A clean-copy check excludes credentials, Git history,
+caches, and unrelated local documents. The prospective experiment used
+US\$\ExpCost{} of inference at list prices for its \ExpATrials{} and
+\ExpBTrials{} trials, recorded per call in a durable budget journal; no other
+paid inference was used for this revision. Code checks do not certify anonymity, redistribution rights, or
+scientific completeness. The final release URL, license permissions, funding,
+conflicts, authorship, prior-publication declarations, and venue-specific AI-use
+statement require author confirmation and are tracked separately, not invented.
+
+\section{Conclusion}
+Under a fixed order-lookup task, requested fields recover matching planted facts
+more often than nonmatching ones on both protocol-named models. The paired
+field-level effect survives a disclosed analysis correction and independent
+numerical recomputation. Field heterogeneity, generic-field negatives, and the
+failed earlier gate constrain the result to selective recovery under these
+fixtures. Recorded votes from one locally reproduced policy indicate misses,
+subject to the missing raw-response limitation; they do not establish universal
+detector failure. A prospective follow-up found that constraining the field's
+format, or restricting it to a categorical type, did not prevent recovery of
+admissible secrets. Evaluating argument-release policies with legitimate-task
+utility is the next step toward operational conclusions.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+\end{document}

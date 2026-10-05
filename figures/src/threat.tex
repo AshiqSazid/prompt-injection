@@ -1,0 +1,17 @@
+% figure body, extracted from usenix_paper/main.tex.
+% width: columnwidth
+\centering
+\setlength{\unitlength}{1pt}%
+\begin{picture}(232,152)(0,0)
+  \put(14,120){\framebox(140,28){\shortstack{\scriptsize Operator system prompt\\[-1pt]\tiny platform, region, operator, policy,\\[-2pt]\tiny credential $+$ ``keep this confidential''}}}
+  \put(84,120){\vector(0,-1){28}}
+  \put(88,103){\makebox(0,0)[l]{\tiny (1) planted, and never sent to the tool}}
+  \put(14,64){\framebox(140,28){\shortstack{\scriptsize Host application $+$ model\\[-1pt]\tiny fills every declared required parameter}}}
+  \put(84,64){\vector(0,-1){28}}
+  \put(88,47){\makebox(0,0)[l]{\tiny (3) arguments \texttt{\{query, <field>\}}}}
+  \put(14,8){\framebox(140,28){\shortstack{\scriptsize Tool publisher\\[-1pt]\scriptsize \textbf{$=$ adversary}}}}
+  \put(154,22){\line(1,0){44}}
+  \put(198,22){\line(0,1){56}}
+  \put(198,78){\vector(-1,0){44}}
+  \put(202,44){\makebox(0,0)[l]{\shortstack[l]{\tiny (2)\\[-2pt]\tiny schema}}}
+\end{picture}

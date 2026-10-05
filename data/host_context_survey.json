@@ -1,0 +1,149 @@
+{
+ "schema_version": 1,
+ "read_on": "2026-10-01 (UTC)",
+ "method": "Manual reading of one prompt source file per host, at the default-branch commit of a shallow clone. The quoted lines are copied from that file. A purposive sample of popular open-source agent hosts, not a random one. A host may inject more context from other files.",
+ "hosts": [
+  {
+   "repository": "cline/cline",
+   "commit": "227041a79ddbddcb366907f646f0aee8b77af036",
+   "path": "sdk/packages/shared/src/prompt/system/act.ts",
+   "quoted_lines": [
+    "Platform: {{PLATFORM_NAME}}",
+    "Date: {{CURRENT_DATE}}",
+    "IDE: {{IDE_NAME}}",
+    "Working Directory: {{CWD}}"
+   ],
+   "categories": [
+    "platform",
+    "date",
+    "IDE",
+    "working directory"
+   ]
+  },
+  {
+   "repository": "RooCodeInc/Roo-Code",
+   "commit": "b867ec9145750d0ae1ff7f02d35406e9bf2a0b16",
+   "path": "src/core/prompts/sections/system-info.ts",
+   "quoted_lines": [
+    "Operating System: ${osInfo}",
+    "Default Shell: ${getShell()}",
+    "Home Directory: ${os.homedir().toPosix()}",
+    "Current Workspace Directory: ${cwd.toPosix()}"
+   ],
+   "categories": [
+    "platform",
+    "shell",
+    "home directory",
+    "working directory"
+   ]
+  },
+  {
+   "repository": "Aider-AI/aider",
+   "commit": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+   "path": "aider/coders/base_coder.py",
+   "quoted_lines": [
+    "- Platform: {platform.platform()}",
+    "- Shell: {shell_var}={shell_val}",
+    "- Language: {user_lang}",
+    "- Current date: {dt}",
+    "- The user is operating inside a git repository"
+   ],
+   "categories": [
+    "platform",
+    "shell",
+    "user language",
+    "date",
+    "git state"
+   ]
+  },
+  {
+   "repository": "google-gemini/gemini-cli",
+   "commit": "2d1f92abd7c0d6ab042648f45dc1d3e3ea1a2325",
+   "path": "packages/core/src/utils/environmentContext.ts",
+   "quoted_lines": [
+    "Today's date is ${today} (formatted according to the user's locale).",
+    "My operating system is: ${platform}",
+    "The project's temporary directory is: ${tempDir}",
+    "- **Workspace Directories:**"
+   ],
+   "categories": [
+    "date",
+    "platform",
+    "working directory"
+   ]
+  },
+  {
+   "repository": "openai/codex",
+   "commit": "d91294c39edb93d204926b33f21310dc968edc34",
+   "path": "codex-rs/core/src/context/environment_context.rs",
+   "quoted_lines": [
+    "<filesystem>",
+    "<workspace_roots>",
+    "<permission_profile type=\"managed\">",
+    "<network enabled=\"true\">"
+   ],
+   "categories": [
+    "working directory",
+    "sandbox and network policy"
+   ]
+  },
+  {
+   "repository": "sst/opencode",
+   "commit": "aa481b8f5652f5576c55f914a64ed270e7daa7e0",
+   "path": "packages/opencode/src/session/system.ts",
+   "quoted_lines": [
+    "You are powered by the model named ${model.api.id}.",
+    "Working directory: ${ctx.directory}",
+    "Workspace root folder: ${ctx.worktree}",
+    "Is directory a git repo: ${ctx.project.vcs === \"git\" ? \"yes\" : \"no\"}",
+    "Platform: ${process.platform}",
+    "Today's date: ${new Date().toDateString()}"
+   ],
+   "categories": [
+    "model identifier",
+    "working directory",
+    "git state",
+    "platform",
+    "date"
+   ]
+  },
+  {
+   "repository": "charmbracelet/crush",
+   "commit": "76cc5c574e15072b15aaed0f4f843a5711fae0d9",
+   "path": "internal/agent/templates/coder.md.tpl",
+   "quoted_lines": [
+    "Working directory: {{.WorkingDir}}",
+    "Is directory a git repo: {{if .IsGitRepo}}yes{{else}}no{{end}}",
+    "Platform: {{.Platform}}",
+    "Today's date: {{.Date}}",
+    "{{.GitStatus}}"
+   ],
+   "categories": [
+    "working directory",
+    "git state",
+    "platform",
+    "date"
+   ]
+  },
+  {
+   "repository": "block/goose",
+   "commit": "bab8ff641039c9cd3331121cd84a5c6045f365ca",
+   "path": "crates/goose/src/agents/moim.rs",
+   "quoted_lines": [
+    "tag(CURRENT_TIME_TAG, &timestamp.to_string())",
+    "tag(WORKING_DIRECTORY_TAG, &working_dir.display().to_string())"
+   ],
+   "categories": [
+    "date",
+    "working directory"
+   ]
+  },
+  {
+   "repository": "continuedev/continue",
+   "commit": "5522c6f44ca0ac3528b37244818fbfa39b5af470",
+   "path": "core/llm/defaultSystemMessages.ts",
+   "quoted_lines": [],
+   "categories": []
+  }
+ ]
+}

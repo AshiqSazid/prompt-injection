@@ -1,0 +1,27 @@
+{
+  "_instructions": "Fill every null yourself. true means you personally checked it. approved_budget_usd is a number without quotes; disclosure_decision is text.",
+  "stage": "B",
+  "leg": "gemini-3-flash-preview",
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-4o-2024-08-06"
+    },
+    {
+      "provider": "google",
+      "model": "gemini-3-flash-preview"
+    }
+  ],
+  "design_sha256": "b26321f16057743903f9e473df40bb666deddc60c51b304128f3ce80ed15f8e6",
+  "protocol_sha256": "b3c1c3bbc90e7f1e979a0182b9f9e199a9efa81dba4f76e5805594c381568545",
+  "amendment": "docs/JOURNAL_EXTENSION_AMENDMENT_1.md",
+  "approved_by": "Md. Rafiur Rahman",
+  "approved_on": "2026-09-30",
+  "approved_budget_usd": 1.00,
+  "provider_schema_compatibility_checked": true,
+  "provider_prices_and_token_bounds_verified": true,
+  "task_fixtures_reviewed": true,
+  "statistical_review_completed": true,
+  "witness_verified": true,
+  "disclosure_decision": true
+}

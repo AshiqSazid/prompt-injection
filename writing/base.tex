@@ -1,0 +1,367 @@
+% =============================================================================
+% base.tex --- A WRITING BASE for the schema-disclosure-gap paper.
+%
+% THIS IS NOT THE PAPER. It is a section-by-section scaffold that tells the paper's
+% authors WHAT TO SAY, WHAT NOT TO HIDE, HOW TO PHRASE IT, and WHICH REVIEWER TRAP
+% each section must disarm --- plus a STARTER DRAFT they can cut down into real prose.
+% The guidance is distilled from the three companion documents in this folder:
+%   * tutorial.md          (esp. sec. 7: framing decisions + sentences to avoid)
+%   * PROJECT_JOURNEY.md   (esp. the "honest-claims cheat sheet")
+%   * SUPERVISOR_REVIEW.md (the neutral assessment + the related-work gap)
+% and from CLAUDE.md sec. 17 (the hard research-and-safety rules).
+%
+% TARGET VENUE: USENIX Security (systems-security measurement track). Two appendices
+% are MANDATORY there and are drafted at the end: "Ethical Considerations" (with a
+% stakeholder analysis) and "Open Science" (artifacts shared at submission).
+%
+% Compile with any full TeX distribution:  pdflatex base.tex
+% (Needs the `tcolorbox` package for the coloured guidance callouts --- standard in
+% TeX Live / MiKTeX.)
+%
+% RULE FOR THE AUTHORS: the real submission's numbers come from paper/numbers.tex
+% macros, never typed by hand. The figures shown in the STARTER DRAFT boxes below
+% are the current values for convenience; in the manuscript, replace each with its
+% \Macro so prose can never drift from the artifacts.
+% =============================================================================
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue!50!black, urlcolor=blue!50!black}
+
+% --- Guidance callouts --------------------------------------------------------
+\newtcolorbox{saybox}{colback=green!4,colframe=green!45!black,breakable,
+  fonttitle=\bfseries,title=SAY THIS (the claim to make)}
+\newtcolorbox{hidebox}{colback=red!4,colframe=red!55!black,breakable,
+  fonttitle=\bfseries,title=DO NOT HIDE (disclose it before a reviewer finds it)}
+\newtcolorbox{phrasebox}{colback=blue!4,colframe=blue!45!black,breakable,
+  fonttitle=\bfseries,title=HOW TO PHRASE IT}
+\newtcolorbox{trapbox}{colback=orange!6,colframe=orange!70!black,breakable,
+  fonttitle=\bfseries,title=REVIEWER TRAP to disarm}
+\newtcolorbox{draftbox}{colback=gray!4,colframe=gray!55!black,breakable,
+  fonttitle=\bfseries,title=STARTER DRAFT (cut this down; do not ship verbatim)}
+
+\newcommand{\fld}[1]{\texttt{#1}}   % a field/parameter name
+\setlist{nosep,leftmargin=1.4em}
+
+\title{\vspace{-2em}\textbf{Writing Base for the \emph{schema-disclosure-gap} Paper}\\[0.3em]
+\large A section-by-section scaffold: what to claim, what to disclose,\\
+how to phrase it, and the reviewer trap each section must disarm}
+\author{Internal authoring guide --- \emph{not} the submission}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-2em}
+
+% =============================================================================
+\section*{How to use this file}
+Each section below has up to five coloured boxes and a starter draft:
+\begin{itemize}
+  \item \textbf{\textcolor{green!45!black}{SAY THIS}} --- the claim the section should land, stated at the strength the evidence supports.
+  \item \textbf{\textcolor{red!55!black}{DO NOT HIDE}} --- the limitation or caveat to volunteer \emph{in} this section. Volunteering a limit is how you look careful rather than caught.
+  \item \textbf{\textcolor{blue!45!black}{HOW TO PHRASE IT}} --- exact wording to use or avoid (drawn from \texttt{tutorial.md} sec.~7.3, ``sentences you must not write'').
+  \item \textbf{\textcolor{orange!70!black}{REVIEWER TRAP}} --- the specific objection a USENIX reviewer will raise, and the one-line answer.
+  \item \textbf{\textcolor{gray!55!black}{STARTER DRAFT}} --- prose to cut down. Numbers shown are current values; in the manuscript replace each with its \verb|numbers.tex| macro.
+\end{itemize}
+
+\noindent\textbf{The three rules that govern every section} (from \texttt{CLAUDE.md} sec.~17, non-negotiable):
+\begin{enumerate}
+  \item Never claim the model discloses its \emph{genuine self-identity}. It copies \emph{planted} prompt content. The framework arm ($0/240$) is the proof and the retraction.
+  \item Never describe the \texttt{v2} matrix as confirmatory. Only \texttt{v3} is, and only for the two pre-registered models. The credential fixture is fabricated and must stay fabricated.
+  \item Never claim a field that \emph{never names} its target retrieves it. The gradient came back negative; report it as such.
+\end{enumerate}
+
+\noindent\textbf{The one-line identity of the paper.} A benign, scanner-clean required tool parameter selectively extracts \emph{planted} system-prompt content, the disclosure is steered by the field name (a ``query language''), and the tool-poisoning scanner the ecosystem ships cannot see it --- nor can it see the published explicit attack. Lead with the detection gap; it is the most durable, least-contestable claim.
+
+\medskip\noindent\textbf{Length budget (verify against the current CFP).} USENIX Security allows roughly 13 pages of body text excluding bibliography, with the mandatory Ethics and Open Science appendices outside that limit. A workable split: Intro $\sim$1.5pp, Background/Related $\sim$1.5pp, Threat Model $\sim$1pp, Methodology $\sim$2pp, Results $\sim$4pp (the core --- give it the space), Discussion+Limitations $\sim$2pp, the rest $\sim$1pp. Confirm the exact page limit and template on the cycle's Call for Papers before you start cutting.
+
+% =============================================================================
+\section{Title and Abstract \normalfont\small(MAIN FOCUS)}
+
+\subsection*{Title}
+\begin{phrasebox}
+Keep the current working title --- it is honest and it front-loads the novel word:
+\begin{quote}\itshape
+A Benign Schema Is a Query Language: Selective System-Prompt Disclosure Through Required Tool Parameters
+\end{quote}
+Two things it does right: (1) ``\emph{selective}'' is the genuinely new mechanistic claim, so it belongs in the title; (2) ``\emph{system-prompt disclosure},'' not ``prompt injection,'' places the paper in the leakage/extraction family where it actually lives (see the related-work gap, sec.~\ref{sec:related}). \textbf{Do not} put ``benign framing beats explicit asking'' in the title --- that ordering held on one model only.
+\end{phrasebox}
+
+\subsection*{Abstract}
+The abstract must do six things, in this order, and must not oversell any of them.
+
+\begin{saybox}
+\begin{enumerate}
+  \item \textbf{The setup and the attacker.} An agent must fill in a schema its tool's author controls; ask what one extra required parameter that never mentions identity, secrets, or the model can obtain.
+  \item \textbf{The pre-registered test FAILED} --- state it plainly, in the abstract. The wording control ($C>D$) \emph{passed} on all three models; report both.
+  \item \textbf{The detection gap} (lead finding): the shipped tool-poisoning policy flags command-phrased injections, rates the benign field clean, \emph{and} rates clean the published explicit attack whose parameters are named \fld{system\_prompt}/\fld{model\_name}.
+  \item \textbf{Selectivity} (confirmatory, the core positive result): plant many canaries, request one; the model returns the requested fact and withholds the others --- diagonal vs.\ off-diagonal vs.\ a zero control --- under an externally time-stamped protocol.
+  \item \textbf{The negative gradient, against your own interest}: fields that only \emph{gesture} at their target return it zero times; you show schemas \emph{steer} disclosure, not that a field which never names its target can retrieve it.
+  \item \textbf{The retraction as a negative result}: with nothing planted a real framework disclosed its identity $0/240$ times --- this is planted-content extraction, not self-knowledge.
+\end{enumerate}
+\end{saybox}
+
+\begin{hidebox}
+Inside the abstract itself, do not let any of these pass unqualified:
+\begin{itemize}
+  \item ``confirmatory'' --- scope it to the \emph{two} pre-registered models in the same breath.
+  \item the credential result ($20/20$) --- it rides on a \emph{fabricated} fixture and a planted prompt; say ``planted.''
+  \item the AUC $0.994$ --- immediately pair it with the realistic-base-rate precision, or omit it; a bare AUC reads as a solved defense.
+  \item the 92\% figure --- it is the \emph{single synthetic tool} rate. Cite the 69\% real-schema rate beside it, or a reader takes 92\% as the real-world number (the repo bans ``X\% in the real world''). Every synthetic-tool rate is an upper bound.
+\end{itemize}
+\end{hidebox}
+
+\begin{trapbox}
+``\emph{This is just HiddenLayer / just prompt stealing.}'' Disarm it \emph{in the abstract} by naming what is new: not the extraction (prior work), but its \emph{selectivity}, its \emph{invisibility to deployed scanners}, and a threat model with \emph{no query and no optimisation}. One clause is enough; the full contrast lives in sec.~\ref{sec:related}.
+\end{trapbox}
+
+\begin{phrasebox}
+Banned in the abstract (from \texttt{tutorial.md} sec.~7.3): ``models reveal their own identity''; ``benign framing beats explicit asking''; ``bounded to identifier-shaped content'' (withdrawn); ``anchored in Bitcoin'' (say ``lodged with four independent timestamping services, anchoring pending''); ``mcp-scan says'' (say ``the deployed policy, re-implemented locally'').
+
+\medskip\noindent\textbf{Length target:} a USENIX abstract runs $\approx$200--250 words. The starter draft below is $\approx$340 --- cut roughly a third; the first sentence of each paragraph is the load-bearing one.
+\end{phrasebox}
+
+\begin{draftbox}
+\small\itshape
+An agent that calls a third-party tool must fill in a schema the tool's author controls, and every value it writes is delivered to that author. We ask what an author obtains by declaring one additional required parameter that never mentions identity, secrets, or the model.
+
+We pre-registered the hypothesis that a benignly framed field extracts more than one that asks outright. \textbf{That test failed}: it required a 20-point gap on at least two of three models and held on one; the other two fill both fields at ceiling. The pre-registered wording control passed on all three. Against a neutral required field in the same tool, the benign field discloses at 92\% [82, 96] on our synthetic tool and 69\% across 25 authentic third-party MCP schemas --- treat the synthetic rate as an upper bound --- while the neutral field discloses on 0/228 calls.
+
+The defensive picture is worse than the offensive one. The tool-poisoning policy the ecosystem ships flags command-phrased injections, rates our benign field clean, and also rates clean the \emph{published} explicit attack whose parameters are named \fld{system\_prompt} and \fld{model\_name}: deployed scanners are injection-shaped and do not model parameter-based exfiltration at all. A black-box classifier over field names reaches AUC 0.994 yet only 3.8\% precision at a realistic attack base rate, so we report it as a negative result.
+
+Our positive result is that the disclosure is \emph{selective}. Planting five seed-derived canaries in every trial and requesting exactly one per schema, the model returns the requested fact and withholds the other four --- a diagonal of 68\% against an off-diagonal of 1\%, a neutral control of 0/800, and the same pattern on a second provider. This is \textbf{confirmatory}: the protocol's hash was published to four independent timestamping services before any of these trials existed. With nothing planted the same schemas recover a canary 0/367 times, so this is extraction, not invention. Unlike prompt-stealing attacks, the adversary issues no query and runs no optimisation; the leak is a side effect of a task the user initiated.
+
+\textbf{We report the following against our own interest.} Fields that name what they want succeed (94\% on gpt-4o); fields that merely gesture at it return the planted fact zero times out of twenty. We show that schemas steer disclosure; we do not show that a field which never names its target can retrieve it. Finally, with nothing planted a real agent framework disclosed its own identity in 0 of 240 trials: this is extraction of planted prompt content, not model self-knowledge.
+\end{draftbox}
+
+% =============================================================================
+\section{Introduction}
+\begin{saybox}
+Structure: (1) tool schemas are untrusted input the agent is nonetheless told to satisfy; (2) \textbf{name HiddenLayer by the second paragraph} --- the mechanism is theirs; (3) narrow the question to ``given the channel exists, \emph{what governs what comes through it, and would the deployed defense notice?}''; (4) a crisp contributions list.
+\end{saybox}
+\begin{trapbox}
+A reviewer who \emph{discovers} the mechanism is prior work distrusts the whole paper. A reviewer who is \emph{told} in paragraph two, then shown a precise novelty list, reads generously. Getting there first is worth more than the claim you would protect.
+\end{trapbox}
+\begin{hidebox}
+State up front that the study is one task, one tool family, and (for almost all arms) one temperature; and that the human validation the protocol asked for was not completed (carry this to Limitations too). Better volunteered here than extracted under review.
+\end{hidebox}
+\begin{draftbox}\small\itshape
+Contributions (order = importance; each maps to a section):
+\begin{itemize}
+  \item \textbf{A detection-shape gap} (lead): the shipped tool-poisoning policy misses the benign field \emph{and} the published explicit attack; deployed scanners ask whether a description contains an injection, and neither attack does. A property of the detector class, independent of everything else.
+  \item \textbf{Quantification with controls} where prior work gave demonstrations: rates, CIs, a pre-registered decision rule that \textbf{failed}, a neutral-field floor of 0/228.
+  \item \textbf{Selectivity} (confirmatory): the field name determines which planted fact returns; a fabrication control separates reading from inventing; the naming/non-naming gradient is reported as the \emph{negative} result it is.
+  \item \textbf{An occupied false-positive floor}: the best attack wording scores inside the legitimate-telemetry band, and a widely deployed benign server already asks agents to report their own reasoning.
+  \item \textbf{A negative result} (retraction): planted-content extraction, not self-knowledge ($0/240$).
+\end{itemize}
+\end{draftbox}
+
+% =============================================================================
+\section{Background and Related Work}\label{sec:related}
+\begin{saybox}
+Two lineages meet here. Position the paper in \emph{both}: (a) \textbf{tool poisoning / MCP security} (HiddenLayer, MCP-ITP, MCPTox, Invariant's TPA, OWASP MCP03); and (b) \textbf{system-prompt leakage / prompt stealing} (PLeak, PRSA, prompt-stealing, OWASP \textbf{LLM07}). Your distinctiveness is sharpest against (b): every prompt-stealing attack \emph{queries the model directly and optimises}; your adversary does neither.
+\end{saybox}
+\begin{hidebox}
+\textbf{The single biggest gap the supervisor review found:} the current draft engages lineage (a) well and lineage (b) almost not at all. A privacy/extraction reviewer \emph{will} ask how this differs from PLeak/PRSA. Add a paragraph that draws the line explicitly (no query, no optimisation, user-initiated task, schema channel), and cite OWASP LLM07 --- the more precise home for what you measure --- alongside MCP03.
+\end{hidebox}
+\begin{trapbox}
+``\emph{Newer MCP detectors already close your gap.}'' Scope the claim to \emph{deployed, shipped} tool-poisoning scanners in the pre-call schema path, and note that the academic detectors (MCP-Guard, MCPGuard, AegisMCP, tool-call-traffic detectors) mostly inspect \emph{traffic/outputs}, not the schema before the call --- and none ships in the MCP client path today. Cite the descriptor-level-attack paper (arXiv 2512.06556) \emph{for} you: it independently finds tool poisoning has the lowest detection rates.
+\end{trapbox}
+\begin{phrasebox}
+Must-cite, verified: HiddenLayer (2025); MCP-ITP (arXiv 2601.07395); MCPTox (arXiv 2508.14925); PLeak (CCS 2024); PRSA (USENIX Security 2025); OWASP LLM07:2025 and MCP03:2025; the descriptor-level attack paper (arXiv 2512.06556). Surfaced but \textbf{verify before citing}: SoK MCP (2512.08290), MCPSecBench (2508.13220), AgentDojo (2406.13352), the MCP detectors above. Distinguish ``Your LLM Agent Can Leak Your Data'' (they backdoor the tool; you only declare a parameter).
+\end{phrasebox}
+\begin{draftbox}\small\itshape
+That a required parameter can extract system-prompt contents is not new: HiddenLayer showed it with parameters named outright, across seven models and a shipped IDE, reporting demonstrations rather than rates and without comparison to asking directly, to a neutral field, or to what a scanner would catch. A separate literature extracts system prompts by \emph{querying} the model --- PLeak optimises adversarial queries; PRSA reconstructs prompts from limited input/output against real prompt marketplaces --- and OWASP names the risk directly (LLM07: System Prompt Leakage). Our adversary is different in kind: it is a passive tool provider that issues no query, runs no optimisation, and observes only the arguments delivered during a task the \emph{user} initiated. We measure what governs what comes through that channel, and whether the deployed defensive stack notices.
+\end{draftbox}
+
+% =============================================================================
+\section{Threat Model}
+\begin{saybox}
+Attacker = whoever publishes a tool the agent calls (an MCP server, plugin, API). Powers: write the schema, read the arguments. Cannot: see the system prompt, weights, host, or network; cannot talk to the user; does not fine-tune. Victim = the operator/user, whose deployment identity leaks. Gain: silent, population-scale fingerprinting with no refusal and no scanner alert.
+\end{saybox}
+\begin{trapbox}
+The decisive objection: ``\emph{the schema asked for a client string and the model supplied one --- that is compliance, not compromise.}'' The strong answer is the \emph{inconsistency}: the same model in the same session refuses or hedges when asked directly yet complies when filling the form. A control a rephrase defeats is not a control. Add: the confidentiality instruction is live and ignored, and a filled parameter has no consent surface (unlike a visible refusal).
+\end{trapbox}
+\begin{hidebox}
+Volunteer the ecological-validity limit \emph{here}, because it governs every severity claim: in a survey of real MCP tools, 0/401 parameter names are client-identity or credential shaped, and no surveyed host prompt carries a credential to take. So the attack needs a field unlike anything the ecosystem ships \emph{and} a deployment whose prompt holds the material --- neither attested today. State it as a genuine limit that simultaneously makes a family-keyed detector cheap.
+\end{hidebox}
+
+% =============================================================================
+\section{Study Design and Methodology}
+\begin{saybox}
+One fixed task; one tool; exactly one added field or sentence changes between conditions (A/A$'$/B/B$'$/C/D/E). The confirmatory matrix plants five \emph{seed-derived} canaries in every trial and requests one per schema, so recovery is deterministic and needs \emph{no grader}. A fabrication control (nothing planted) shows a filled field is not a leak. The protocol's hash was time-stamped before any confirmatory data existed.
+\end{saybox}
+\begin{hidebox}
+Label post-hoc honestly: B$'$, E, the reticence ladder, the primary wording (\fld{api\_documentation}, selected after the ablation), and the three post-hoc providers in \texttt{v3}. Disclose the grader lineage: an early judge revision scored below chance ($\kappa=-0.13$), which is exactly why the seed-derived canary design (no grader) is load-bearing.
+\end{hidebox}
+\begin{trapbox}
+``\emph{The model just fills boxes with plausible text.}'' Answer with the canaries: the markers are un-guessable seed-derived nonsense (e.g.\ \fld{svc\_a0086960eac4e052}), and with nothing planted the same fields are filled 0/367 times with a real canary. A recovered canary is proof; a filled field is not.
+\end{trapbox}
+\begin{phrasebox}
+Say ``planted system-prompt content'' everywhere; never ``the model's identity.'' Say ``seed-derived, held-out canaries.'' Report field-conditional rates \emph{and} an intention-to-treat cross-check beside them. Quote percentage-point differences, not odds ratios (the data have complete separation).
+\end{phrasebox}
+
+% =============================================================================
+\section{Results}
+Present in the order below; each subsection carries its own caveat.
+\begin{saybox}
+\begin{enumerate}
+  \item \textbf{The Gate (pre-registered, FAILED).} $\Delta = C-A'\ge 20$pp on 1 of 3 models; Claude and Gemini sit at ceiling (fill both fields). Report the failure and the ceiling explanation together. $H1b$ ($C>D$) passed on 3 of 3.
+  \item \textbf{External validity.} 25 authentic MCP tools: benign field $\approx$69\% on gpt-4o, neutral field 0/228. Read every synthetic-tool rate as an upper bound.
+  \item \textbf{Selectivity (confirmatory).} Diagonal 68\%/59\% vs.\ off-diagonal $\approx$1\% vs.\ control 0/800, on the two pre-registered models; three further providers post-hoc. The credential returns 20/20 through a field that names it, on all five models.
+  \item \textbf{The gradient (NEGATIVE).} Naming 78--100\%; adjacent 33\% --- and that 33\% is one near-synonym; the other two adjacent fields are 0/20 everywhere but one partial arm. Selectivity holds; ``non-naming retrieves'' does not.
+  \item \textbf{Fabrication control.} 0/367 canaries recovered with nothing planted (models do fabricate plausible junk).
+  \item \textbf{Detection gap.} Deployed policy flags B/B$'$; misses A$'$, all C wordings, D, \emph{and} E.
+  \item \textbf{Defense (NEGATIVE).} AUC 0.994 [0.986, 0.999] but 3.8\% precision at a 0.1\% base rate; the best attack wording sits inside the legitimate-telemetry band.
+\end{enumerate}
+\end{saybox}
+\begin{hidebox}
+Mark clearly: the \texttt{v2} matrix is \emph{exploratory} (provenance failure) and must never be pooled with \texttt{v3}; the Gemini-Pro arm is a partial, quota-killed file and is the \emph{sole} evidence for the capability-scaling reading --- a hypothesis, not a finding. The reticence-ladder ``one sentence closes it'' mitigation is Claude-specific, not universal.
+\end{hidebox}
+\begin{trapbox}
+``\emph{You picked the wording that works.}'' Yes --- \fld{api\_documentation} was chosen after the ablation; report all five wordings and say so. ``\emph{Your outcome measure was not the pre-registered conjunction.}'' The two-grader rule is implemented and changes no scaffolded number; the confirmatory matrix needs no grader at all.
+\end{trapbox}
+\begin{phrasebox}
+\textbf{Figures and tables this section must carry} (all regenerated by \texttt{make\_tables.py}, never hand-typed):
+\begin{itemize}
+  \item \emph{Pipeline figure} --- one diagram of the measurement flow (\texttt{docs/pipeline.svg}), ideally in the Methodology section.
+  \item \emph{Gate table} --- A/A$'$/B/C/D $\times$ three models, with the $\Delta$ column and the FAILED verdict.
+  \item \emph{Scanner table} (\texttt{tab:scanners}) --- conditions $\times$ \{deployed policy, our desc, our desc+name\}; the row that carries the paper is E clean under the deployed policy.
+  \item \emph{Selectivity / gradient table} --- per field, per model: naming vs.\ adjacent, so the reader sees the 33\% is one near-synonym and the other two adjacent fields are 0/20.
+  \item \emph{Defense ROC + operating-point table} --- AUC with the base-rate precision column beside it (\texttt{roc.tex}).
+  \item \emph{Real-schema table} --- conditional rate \emph{and} an ITT column, so conditional denominators do not flatter the result.
+\end{itemize}
+\end{phrasebox}
+
+% =============================================================================
+\section{Discussion}
+\begin{saybox}
+Draw the systems lesson: the confidentiality control is enforced against \emph{phrasing}, not \emph{content}, and the failure is \emph{silent} (a successful tool call, never a refusal). The defensive ecosystem is shaped to catch instructions, so a parameter that merely \emph{collects} matches no rule. Recommend two client-side levers that measurably moved: prompt scope (name tool parameters in the confidentiality instruction --- Claude-specific) and requiredness (optional fields cost the attack 30--60pp and a client can enforce this unilaterally).
+\end{saybox}
+\begin{phrasebox}
+Do not write ``zero-cost universal mitigation'' (withdrawn --- it does not transfer to Gemini). Do not generalise the User-Agent-convention mechanism beyond gpt-4o.
+\end{phrasebox}
+
+% =============================================================================
+\section{Limitations}
+\begin{saybox}
+List them plainly; a reviewer trusts a paper that indicts itself. (1) Ecological validity: neither the attacker's field family nor the victim's material is attested in real MCP data. (2) Human validation ($\kappa\ge0.80$) not completed --- moot for the grader-free matrix, open for the grader-dependent arms. (3) One task, one tool, one temperature for almost all arms. (4) Confirmatory on two models; three providers and the capability-scaling reading are post-hoc/partial. (5) Seeds steer sampling only on OpenAI-compatible endpoints. (6) The hosted scanner remains unrun (gated on disclosure); evidence is the published policy re-implemented locally.
+\end{saybox}
+\begin{trapbox}
+Do not bury the human-$\kappa$ gap. State exactly which claims depend on a grader (the Gate/wording/real-schema arms) and which do not (the canary matrix), so the scope of the gap is bounded and honest.
+\end{trapbox}
+
+% =============================================================================
+\section{Conclusion}
+\begin{draftbox}\small\itshape
+A required tool parameter is a channel the agent is instructed to fill and the tool's author is entitled to read. We show the channel is \emph{selective} --- a benign schema behaves as a query over the planted system prompt --- and that the defensive tool the ecosystem ships cannot see it, nor the published explicit attack it was ostensibly built to stop. The mechanism is prior work; the selectivity, the controls, and the detection-shape gap are not. The disclosure is steered by the field name, and a field that never names its target does not retrieve it --- a boundary we establish rather than assume.
+\end{draftbox}
+
+% =============================================================================
+\appendix
+\section{Ethical Considerations \normalfont\small(USENIX-mandatory --- do not omit or rename)}
+\begin{saybox}
+This appendix is a desk-reject trigger if missing or misnamed. Provide a stakeholder-based analysis (USENIX '26 requires it). Fortunately this project is unusually clean:
+\begin{itemize}
+  \item \textbf{No real target, no real secret.} The credential is a fabricated syntactic decoy; every planted prompt is authored by us; the study is purely observational and never makes a tool act against a caller.
+  \item \textbf{Coordinated disclosure by design.} Sending schemas to a scanner vendor \emph{is} disclosure and is gated (protocol sec.~14); the hosted service was deliberately not run. The detection evidence uses the vendor's \emph{published} policy re-implemented locally, egressing only to a provider that already sees every prompt.
+  \item \textbf{Stakeholders:} MCP tool authors, agent-host operators, end users, model providers, and scanner vendors. Harm surface is fingerprinting/exfiltration of \emph{planted} deployment identity; we reduce it by publishing the two client-side mitigations and by not enabling any new capability the published literature did not already establish.
+\end{itemize}
+\end{saybox}
+\begin{hidebox}
+Name the residual risk honestly: the paper describes an evasion of a deployed defense. Argue the disclosure benefit dominates --- the gap is a property of the detector class, defenders can act on it immediately (scope checks, requiredness), and no optimisation recipe or weaponised artifact is released.
+\end{hidebox}
+
+\section{Open Science \normalfont\small(USENIX-mandatory --- artifacts at submission)}
+\begin{saybox}
+Another desk-reject trigger if missing. This project is built for it --- foreground the strengths:
+\begin{itemize}
+  \item \textbf{Every number is generated from artifacts} (\texttt{manifest.py}, \texttt{make\_tables.py}); a checker fails the build if a retracted claim reappears in prose.
+  \item \textbf{Pre-registration with an external witness}: the confirmatory protocol's SHA-256 was lodged with four independent timestamping services before any confirmatory data existed (Bitcoin anchoring pending --- phrase it that way).
+  \item \textbf{Reproducible harness}: fixed conditions, a regression suite, per-module self-checks, raw + canonical + completion-stamped run artifacts.
+  \item \textbf{Corpora}: 25 authentic MCP tools and the benign-field negatives, rebuildable from the harvest scripts.
+\end{itemize}
+\end{saybox}
+\begin{hidebox}
+State what is \emph{not} shared or reproducible: raw provider payloads contain planted prompts (sensitive; release the derived artifacts, not the keys); seeds are labels, not controls, on Anthropic/Google; the hosted-scanner run is withheld pending disclosure.
+\end{hidebox}
+
+% =============================================================================
+\section{Number-to-macro map (replace every drafted figure)}
+\begin{phrasebox}
+The starter drafts show current values only for readability. In the manuscript, replace each with its macro from \texttt{paper/numbers.tex} (regenerate with \texttt{python manifest.py -{}-tex}) so prose can never drift from the artifacts. The most-used figures:
+\end{phrasebox}
+\footnotesize
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Quantity} & \textbf{Value now} & \textbf{Macro} \\
+\midrule
+\multicolumn{3}{@{}l}{\emph{Gate (pre-registered, failed)}}\\
+gpt-4o C / A$'$ & 29/30 / 9/30 & \verb|\GateGptFouroCFrac| / \verb|\GateGptFouroAPrimeFrac| \\
+gpt-4o C pooled & 92\% [82,96] & \verb|\PooledGptFouroCPct| / \verb|\PooledGptFouroCCI| \\
+\addlinespace
+\multicolumn{3}{@{}l}{\emph{External validity (25 real MCP tools)}}\\
+gpt-4o C (real) & 69\% (78/113) & \verb|\RealGptFouroCPct| / \verb|\RealGptFouroCFrac| \\
+neutral floor & 0/228 & \verb|\RealDCombinedFrac| \\
+corpus size & 25 & \verb|\RealCorpusTools| \\
+\addlinespace
+\multicolumn{3}{@{}l}{\emph{Selectivity (v3, confirmatory)}}\\
+gpt-4o diagonal & 68\% (95/140) & \verb|\VthreeGptFouroDiagonalPct| \\
+gpt-4o off-diagonal & 1\% (9/660) & \verb|\VthreeGptFouroOffdiagPct| \\
+gpt-4o control & 0/800 & \verb|\VthreeGptFouroControlFrac| \\
+gemini-flash diagonal & 59\% & \verb|\VthreeGeminiThreeFlashPreviewDiagonalPct| \\
+credential (per model) & 20/20 & \verb|\VthreeGptFouroCredentialFrac| \\
+providers confirm./total & 2 / 5 & \verb|\VthreeProvidersConfirmatory| / \verb|\VthreeProvidersTotal| \\
+fabrication control & 0/367 & \verb|\VthreeFabricationPooledFrac| \\
+\addlinespace
+\multicolumn{3}{@{}l}{\emph{Gradient (negative)}}\\
+gpt-4o naming & 94\% (75/80) & \verb|\VthreeGptFouroNamingPct| \\
+gpt-4o adjacent & 33\% (20/60) & \verb|\VthreeGptFouroAdjacentPct| \\
+region-synonym field & 20/20 & \verb|\VthreeGptFouroFieldGRegionAdjacentFrac| \\
+platform/cred adjacent & 0/20 & \verb|\VthreeGptFouroFieldGPlatformAdjacentFrac| \\
+\addlinespace
+\multicolumn{3}{@{}l}{\emph{Detection / defense / other}}\\
+deployed policy: E, C & clean (0) & \verb|\ScanInvariantEFlagged| / \verb|\ScanInvariantCApiDocumentationFlagged| \\
+defense AUC & 0.994 & \verb|\DefenseAucValue| \\
+PPV @ 0.1\% base rate & 3.8\% & \verb|\DefensePpvPointonePct| \\
+attack vs.\ legit band & 25 vs.\ 15 & \verb|\DefenseBandAttack| / \verb|\DefenseBandLegitimate| \\
+optional field cost (UA/cred) & $-$60 / $-$30 pp & \verb|\DepthUaOptionalDropPct| / \verb|\DepthCredOptionalDropPct| \\
+framework arm & 0/240 & \verb|\FrameworkArmDisclosed| / \verb|\FrameworkArmToolCalled| \\
+prevalence (identity/cred) & 0/401 & \verb|\PrevalenceAttackClientIdentityFrac| \\
+\bottomrule
+\end{tabular}
+\normalsize
+
+\medskip\noindent\emph{Exploratory (never pool with the above, mark clearly):} the \texttt{v2} matrix diagonal is 99\% (\verb|\VtwoGptFouroDiagonalPct|) --- \textbf{exploratory}, provenance failure; the Gemini-Pro arm (\verb|\VthreeGeminiThreeOneProPreview...|) is partial and quota-killed. The full macro list is \texttt{paper/numbers.tex}.
+
+% =============================================================================
+\section{Master checklist and sentences never to write}
+\begin{phrasebox}
+Before submission, every one of these must be true (from the honest-claims cheat sheet in \texttt{PROJECT\_JOURNEY.md} and \texttt{tutorial.md} sec.~7.3):
+\begin{itemize}
+  \item The failed pre-registration is in the abstract; $H1b$ passing is beside it.
+  \item ``Confirmatory'' appears only next to the two pre-registered models.
+  \item The gradient is reported as negative, per field, not as an aggregate ``33\%.''
+  \item Every ``benign field'' claim is scoped to \emph{naming} fields.
+  \item The detection claim says ``deployed/published policy, re-implemented locally,'' never ``mcp-scan says.''
+  \item The credential result always carries ``planted'' and ``fabricated fixture.''
+  \item The defense is framed as a negative result (precision at a realistic base rate), not an AUC.
+  \item Human $\kappa$ is disclosed as not done; the arms that depend on it are named.
+  \item Ethics + Open Science appendices are present and correctly titled.
+\end{itemize}
+\end{phrasebox}
+\begin{phrasebox}
+\textbf{Never write:} ``models reveal their own identity'' $\bullet$ ``benign framing beats explicit asking'' $\bullet$ ``bounded to identifier-shaped content'' $\bullet$ ``politeness beats honesty'' $\bullet$ ``zero-cost universal mitigation'' $\bullet$ ``anchored in Bitcoin'' $\bullet$ ``mcp-scan says'' $\bullet$ ``we discover parameter-based extraction'' $\bullet$ ``T3 = 0'' from any pre-2026-08-08 run.
+\end{phrasebox}
+
+\vspace{1em}
+\noindent\rule{\linewidth}{0.4pt}\\
+\footnotesize This base is a scaffold, not the submission. The authoritative numbers and their macros live in \texttt{paper/numbers.tex}; the current empirical state lives in \texttt{CLAUDE.md} sec.~13 and \texttt{updated\_v6\_result.md}. When this guide and an artifact disagree, the artifact wins.
+\end{document}

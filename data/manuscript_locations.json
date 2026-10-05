@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "coverage": "Primary matrix rows, introduction denominators and paired differences. Other literals require editorial review; the whole-file lock detects edits.",
+  "claims": [
+    {
+      "id": "matrix.gpt-4o",
+      "pattern": "^gpt\\-4o\\ \\&\\ \\\\textbf\\{conf\\.\\}\\ \\&\\ (\\d+\\\\%)~(\\[[^\\]]+\\]) & (\\d+\\\\%)~(\\[[^\\]]+\\])",
+      "macros": [
+        "VthreeGptFouroDiagonalPct",
+        "VthreeGptFouroDiagonalCI",
+        "VthreeGptFouroOffdiagPct",
+        "VthreeGptFouroOffdiagCI"
+      ]
+    },
+    {
+      "id": "matrix.gemini-3-flash-preview",
+      "pattern": "^gemini\\-3\\-flash\\ \\&\\ \\\\textbf\\{conf\\.\\}\\ \\&\\ (\\d+\\\\%)~(\\[[^\\]]+\\]) & (\\d+\\\\%)~(\\[[^\\]]+\\])",
+      "macros": [
+        "VthreeGeminiThreeFlashPreviewDiagonalPct",
+        "VthreeGeminiThreeFlashPreviewDiagonalCI",
+        "VthreeGeminiThreeFlashPreviewOffdiagPct",
+        "VthreeGeminiThreeFlashPreviewOffdiagCI"
+      ]
+    },
+    {
+      "id": "matrix.claude-sonnet-4-5",
+      "pattern": "^claude\\-sonnet\\-4\\-5\\ \\&\\ post\\-hoc\\ \\&\\ (\\d+\\\\%)~(\\[[^\\]]+\\]) & (\\d+\\\\%)~(\\[[^\\]]+\\])",
+      "macros": [
+        "VthreeClaudeSonnetFourFiveDiagonalPct",
+        "VthreeClaudeSonnetFourFiveDiagonalCI",
+        "VthreeClaudeSonnetFourFiveOffdiagPct",
+        "VthreeClaudeSonnetFourFiveOffdiagCI"
+      ]
+    },
+    {
+      "id": "matrix.deepseek-v4-flash",
+      "pattern": "^deepseek\\-v4\\-flash\\ \\&\\ post\\-hoc\\ \\&\\ (\\d+\\\\%)~(\\[[^\\]]+\\]) & (\\d+\\\\%)~(\\[[^\\]]+\\])",
+      "macros": [
+        "VthreeDeepseekVfourFlashDiagonalPct",
+        "VthreeDeepseekVfourFlashDiagonalCI",
+        "VthreeDeepseekVfourFlashOffdiagPct",
+        "VthreeDeepseekVfourFlashOffdiagCI"
+      ]
+    },
+    {
+      "id": "matrix.gemini-3.1-pro-preview",
+      "pattern": "^gemini\\-3\\.1\\-pro\\$\\^\\\\dagger\\$\\ \\&\\ post\\-hoc\\ \\&\\ (\\d+\\\\%)~(\\[[^\\]]+\\]) & (\\d+\\\\%)~(\\[[^\\]]+\\])",
+      "macros": [
+        "VthreeGeminiThreeOneProPreviewDiagonalPct",
+        "VthreeGeminiThreeOneProPreviewDiagonalCI",
+        "VthreeGeminiThreeOneProPreviewOffdiagPct",
+        "VthreeGeminiThreeOneProPreviewOffdiagCI"
+      ]
+    },
+    {
+      "id": "intro.selectivity",
+      "pattern": "gets it back on (\\d+\\\\%) of gpt-4o calls\\. The four strings it did not ask for come\\s+back on (\\d+\\\\%)\\.",
+      "macros": [
+        "VthreeGptFouroDiagonalPct",
+        "VthreeGptFouroOffdiagPct"
+      ]
+    },
+    {
+      "id": "intro.control",
+      "pattern": "returns none of them in\\s+(\\d+) calls \\((\\d+) correlated canary checks\\)",
+      "macros": [
+        "VthreeGptFouroControlcallsN",
+        "VthreeGptFouroControlN"
+      ]
+    },
+    {
+      "id": "primary.difference",
+      "pattern": "differences of (\\d+) percentage points (\\[[^\\]]+\\]) for gpt-4o and (\\d+) points (\\[[^\\]]+\\])\\s+for gemini-3-flash, over (\\d+) fields\\.",
+      "macros": [
+        "VthreeGptFouroDeltaPp",
+        "VthreeGptFouroDeltaCI",
+        "VthreeGeminiThreeFlashPreviewDeltaPp",
+        "VthreeGeminiThreeFlashPreviewDeltaCI",
+        "VthreeGptFouroDeltaClusters"
+      ]
+    }
+  ]
+}

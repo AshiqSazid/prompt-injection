@@ -1,0 +1,14 @@
+{
+  "_note": "Approval by the named author in the 2026-10-02 session for the recommended-tier flagship set (4 legs, cap US$40 total), after reviewing models, budget and the new planted prose. Study 4 is exploratory, run after the Study 1-3 witnesses, no OpenTimestamps anchor.",
+  "stage": "S4",
+  "leg": "claude-opus-5-5",
+  "design_sha256": "4390965272b58aec36323139a2e2d4bdf763c554b1566d5cfc8affd04d63f8b9",
+  "protocol_sha256": "150d5b358465ba869ec6395e12b66cab05902a98a360778de4158534e94f52f3",
+  "approved_by": "Ashiq Sazid",
+  "approved_on": "2026-10-02",
+  "approved_budget_usd": 12.0,
+  "field_texts_reviewed": true,
+  "provider_prices_and_token_bounds_verified": true,
+  "provider_schema_compatibility_checked": true,
+  "disclosure_decision": "deferred; to be decided before publication"
+}

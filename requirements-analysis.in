@@ -1,0 +1,6 @@
+# Offline analysis / regression environment. Provider SDKs are intentionally
+# absent: tests and artifact reproduction must not require API credentials.
+PyYAML==6.0.3
+mcp==1.27.0
+statsmodels==0.14.6
+jsonschema==4.26.0

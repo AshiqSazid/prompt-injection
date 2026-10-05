@@ -1,0 +1,13 @@
+\begin{center}\scriptsize\begin{longtable}{@{}llrrrrlp{.22\textwidth}@{}}
+\caption{Selected v3 artifact accounting. Last outcome is neutral any-canary recovery for matrix arms; any-canary recovery for unplanted arms.}\\
+\toprule Model & Arm & Attempts & Errors & Usable & Emitted & Outcome & Status \\\midrule
+Claude Sonnet & matrix & 320 & 0 & 320 & 320 & 0/160 & post-hoc \\
+DeepSeek Flash & matrix & 320 & 0 & 320 & 317 & 0/160 & post-hoc \\
+Gemini Flash & matrix & 320 & 0 & 320 & 320 & 0/160 & protocol-named \\
+Gemini Pro & matrix & 253 & 10 & 243 & 239 & 0/116 & post-hoc, incomplete \\
+GPT-4o & matrix & 320 & 0 & 320 & 320 & 0/160 & protocol-named \\
+Claude Sonnet & unplanted & 120 & 0 & 120 & 120 & 0/120 & post-hoc, partial fields \\
+DeepSeek Flash & unplanted & 120 & 0 & 120 & 77 & 0/77 & post-hoc, partial fields \\
+Gemini Flash & unplanted & 120 & 0 & 120 & 77 & 0/77 & protocol-named, partial fields \\
+GPT-4o & unplanted & 120 & 0 & 120 & 93 & 0/93 & protocol-named, partial fields \\
+\bottomrule\end{longtable}\end{center}

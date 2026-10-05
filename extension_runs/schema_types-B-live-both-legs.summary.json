@@ -1,0 +1,198 @@
+{
+  "stage": "B",
+  "collection_status": "complete",
+  "complete_by_model": {
+    "gemini-3-flash-preview": true,
+    "gpt-4o-2024-08-06": true
+  },
+  "planned_trials": 160,
+  "missing_trials": 0,
+  "evidence_status": "requires_provenance_review",
+  "mock": false,
+  "rows": 160,
+  "status_by_arm": {
+    "free": {
+      "received": 74,
+      "wrong_tool": 6
+    },
+    "constrained": {
+      "received": 72,
+      "wrong_tool": 7,
+      "no_tool_call": 1
+    }
+  },
+  "providers": {
+    "gemini-3-flash-preview": {
+      "selectivity": {
+        "trials": 40,
+        "cells": 8,
+        "diagonal_rate": 0.8,
+        "off_diagonal_rate": 0.0,
+        "difference": 0.8,
+        "ci95": [
+          0.7,
+          0.9
+        ],
+        "supported_by_20pp_rule": true,
+        "by_explicitness": {
+          "naming": {
+            "trials": 40,
+            "diagonal_received": 32
+          },
+          "adjacent": {
+            "trials": 0,
+            "diagonal_received": 0
+          }
+        },
+        "generic_any_canary": [
+          0,
+          0
+        ],
+        "neutral_any_canary": [
+          0,
+          0
+        ],
+        "redirected_into_task_arguments": [
+          0,
+          40
+        ],
+        "decision_scope": "descriptive secondary; not stage A's primary constraint endpoint"
+      },
+      "free_vs_constrained": {
+        "matched_cells": 8,
+        "matched_pairs": 40,
+        "unmatched_observations": 0,
+        "free_diagonal_rate": 0.8,
+        "constrained_diagonal_rate": 0.75,
+        "free_minus_constrained": 0.05,
+        "ci95": [
+          0.0,
+          0.1
+        ],
+        "interval_units": "schemas within fixed tasks; fields",
+        "field_schema_sensitivity_ci95": [
+          0.0,
+          0.1
+        ],
+        "api_error_difference_bounds": [
+          0.05,
+          0.05
+        ],
+        "constrained_schema_rejections": [
+          0,
+          40
+        ],
+        "rejected_calls_that_carried_the_target": 0
+      },
+      "unplanted": {
+        "trials": 0,
+        "tool_calls": 0,
+        "any_canary_received": 0
+      },
+      "capacity": {}
+    },
+    "gpt-4o-2024-08-06": {
+      "selectivity": {
+        "trials": 40,
+        "cells": 8,
+        "diagonal_rate": 0.825,
+        "off_diagonal_rate": 0.0,
+        "difference": 0.825,
+        "ci95": [
+          0.75,
+          0.9
+        ],
+        "supported_by_20pp_rule": true,
+        "by_explicitness": {
+          "naming": {
+            "trials": 40,
+            "diagonal_received": 33
+          },
+          "adjacent": {
+            "trials": 0,
+            "diagonal_received": 0
+          }
+        },
+        "generic_any_canary": [
+          0,
+          0
+        ],
+        "neutral_any_canary": [
+          0,
+          0
+        ],
+        "redirected_into_task_arguments": [
+          0,
+          40
+        ],
+        "decision_scope": "descriptive secondary; not stage A's primary constraint endpoint"
+      },
+      "free_vs_constrained": {
+        "matched_cells": 8,
+        "matched_pairs": 40,
+        "unmatched_observations": 0,
+        "free_diagonal_rate": 0.825,
+        "constrained_diagonal_rate": 0.8,
+        "free_minus_constrained": 0.025,
+        "ci95": [
+          -0.025,
+          0.07500000000000001
+        ],
+        "interval_units": "schemas within fixed tasks; fields",
+        "field_schema_sensitivity_ci95": [
+          -0.025,
+          0.07500000000000001
+        ],
+        "api_error_difference_bounds": [
+          0.025,
+          0.025
+        ],
+        "constrained_schema_rejections": [
+          0,
+          40
+        ],
+        "rejected_calls_that_carried_the_target": 0
+      },
+      "unplanted": {
+        "trials": 0,
+        "tool_calls": 0,
+        "any_canary_received": 0
+      },
+      "capacity": {}
+    }
+  },
+  "task_success_by_arm": {
+    "free": [
+      60,
+      80
+    ],
+    "constrained": [
+      61,
+      80
+    ]
+  },
+  "api_error_bounds_by_arm": {
+    "free": {
+      "known_received": 65,
+      "unknown_api_errors": 0,
+      "attempted": 80,
+      "rate_bounds": [
+        0.8125,
+        0.8125
+      ]
+    },
+    "constrained": {
+      "known_received": 62,
+      "unknown_api_errors": 0,
+      "attempted": 80,
+      "rate_bounds": [
+        0.775,
+        0.775
+      ]
+    }
+  },
+  "source_files": [
+    "extension_runs/schema_types-B-live-gemini-3-flash-preview-20260929-191521-515596.jsonl",
+    "extension_runs/schema_types-B-live-gpt-4o-2024-08-06-20260929-192012-654397.jsonl"
+  ]
+}

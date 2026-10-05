@@ -1,0 +1,13 @@
+{
+  "run_id": "20260808-121319",
+  "stage": "explicit_payloads_openai",
+  "dry_run": false,
+  "expected_trials": 100,
+  "rows_written": 100,
+  "ok": 100,
+  "errors": 0,
+  "limit": null,
+  "complete": true,
+  "canonical_path": "runs/explicit_payloads_openai-live-20260808-121319.jsonl",
+  "finished_at": "2026-08-08T12:16:44.090304"
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "scope": "Fresh tables and source-edit detection; not semantic review or author approval.",
+  "manuscripts": {
+    "journal_paper/main.tex": "e04dae1cdd54634eac25c137b5352c8056e563ce4bf09faa3d45be861e847ab0",
+    "journal_paper/supplement.tex": "b6d99eda1272e6945a0791364bc320d82242830d60290889174442c879a7f123"
+  },
+  "selection_sha256": "7ab10d4fbf85bbb8f21ba7da3641eb1cc8d70d59f11d477fe50ca42454407f9e",
+  "generated_sha256": {
+    "numbers.tex": "5d6131759a854cb18ca442432c465305130587f70740ddb1b1627374494b8c64",
+    "journal_numbers.tex": "c7b965f30ee2f199a03f190495e2da83421ca115600d86fd13f3a5e0429a2dda",
+    "primary_table.tex": "e5c63ae9fa12f08debc90432f0570cbc21587a7a84a99278201aa73cffb43d85",
+    "field_table.tex": "7846f7e04b840a7aa3473ce27e816c7664478075f28f2edad4cf5251da4e83d0",
+    "fixture_table.tex": "a4e3f7b8d397759fb5b54363f2736067f0e2f6702e46299f21394528fedb87ae",
+    "accounting_table.tex": "07872e94955689103c32c6c4c8f86fe759627e13e9cde8de09634b174aed5297",
+    "secondary_table.tex": "1d329cc59440021b14e05338c63b31004c50da12e18da9277139df77145a8d73",
+    "exp25_table.tex": "da58f5f9077bd9b357be0e4b495d8ac058b2bfcea1057748a7bb5e38881fd210",
+    "exp25_capacity_table.tex": "18a3eabfa162ca92f448cc320e8e47d97c74e4a76be01bbf3b12e5ace7d5ddb1",
+    "sensitivity_table.tex": "89775d2524fcdf37822270b103252db7d6dd33256ffb5c544d5c3eb5cd1aae58",
+    "refs.bib": "a16bdfebebc532dfbf63175d273861341a255176690a689189b3d7afbf6c3e1c"
+  },
+  "scoring_sensitivity": [
+    {
+      "model": "gemini-3-flash-preview",
+      "rule": "registered",
+      "matched": [
+        82,
+        140
+      ],
+      "unmatched": [
+        4,
+        560
+      ],
+      "difference": [
+        0.5785714285714286,
+        0.17142857142857143,
+        0.8642857142857143
+      ]
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "rule": "full_normalized",
+      "matched": [
+        82,
+        140
+      ],
+      "unmatched": [
+        4,
+        560
+      ],
+      "difference": [
+        0.5785714285714286,
+        0.17142857142857143,
+        0.8642857142857143
+      ]
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "rule": "full_verbatim",
+      "matched": [
+        82,
+        140
+      ],
+      "unmatched": [
+        4,
+        560
+      ],
+      "difference": [
+        0.5785714285714286,
+        0.17142857142857143,
+        0.8642857142857143
+      ]
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "rule": "all_arguments",
+      "matched": [
+        82,
+        140
+      ],
+      "unmatched": [
+        4,
+        560
+      ],
+      "difference": [
+        0.5785714285714286,
+        0.17142857142857143,
+        0.8642857142857143
+      ]
+    },
+    {
+      "model": "gpt-4o",
+      "rule": "registered",
+      "matched": [
+        95,
+        140
+      ],
+      "unmatched": [
+        9,
+        560
+      ],
+      "difference": [
+        0.6625000000000001,
+        0.32321428571428573,
+        0.9500000000000001
+      ]
+    },
+    {
+      "model": "gpt-4o",
+      "rule": "full_normalized",
+      "matched": [
+        95,
+        140
+      ],
+      "unmatched": [
+        9,
+        560
+      ],
+      "difference": [
+        0.6625000000000001,
+        0.32321428571428573,
+        0.9500000000000001
+      ]
+    },
+    {
+      "model": "gpt-4o",
+      "rule": "full_verbatim",
+      "matched": [
+        95,
+        140
+      ],
+      "unmatched": [
+        9,
+        560
+      ],
+      "difference": [
+        0.6625000000000001,
+        0.32321428571428573,
+        0.9500000000000001
+      ]
+    },
+    {
+      "model": "gpt-4o",
+      "rule": "all_arguments",
+      "matched": [
+        95,
+        140
+      ],
+      "unmatched": [
+        9,
+        560
+      ],
+      "difference": [
+        0.6625000000000001,
+        0.32321428571428573,
+        0.9500000000000001
+      ]
+    }
+  ]
+}

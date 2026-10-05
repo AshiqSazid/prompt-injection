@@ -1,0 +1,2 @@
+  100/460 recorded, $0.70 committed
+162/460 rows -> extension_runs/flagship-live-gemini-3.1-pro-preview-20261001-235131-590277.jsonl   complete: False   stop: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 

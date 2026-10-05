@@ -1,0 +1,173 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,booktabs,longtable,amsmath,xurl}
+\usepackage[hidelinks]{hyperref}
+\input{numbers}
+\input{journal_numbers}
+\hypersetup{pdfauthor={},pdftitle={Supplement: Selective Recovery of Prompt-Resident Facts}}
+\title{Supplementary Evidence and Analysis Record}
+\author{Companion to the IEEE TDSC preparation manuscript}
+\date{}
+\begin{document}
+\maketitle
+\section{Scope and artifact selection}
+This supplement reports existing observations only. Historical raw files and
+protocols are preserved. The selected matrix and unplanted paths and SHA-256
+digests are declared in \texttt{data/artifact\_selection.json}; all experiment
+artifacts are inventoried in \texttt{data/evidence\_inventory.json}.
+The two protocol-named matrix arms alone supply the primary decision.
+Extra providers, incomplete arms, and unplanted observations are not independent
+replications of that decision. ``Usable'' below excludes recorded API errors;
+``emitted'' is the historical tool-call indicator, not handler receipt.
+\input{accounting_table}
+Each unplanted stage contains six wordings rather than the matrix's eight:
+\texttt{g\_platform\_adjacent} and \texttt{g\_region\_adjacent} are absent.
+This is a coverage deviation from the protocol's same-field description, not
+missing data that may be imputed as nonrecovery. ``Partial fields'' distinguishes
+this from the metadata's completed six-field collection stage.
+
+\section{Exact field and marker fixtures}
+These are the implemented v3 field names, descriptions and marker aliases;
+they are generated from \texttt{conditions.py} without editorial paraphrase.
+The generic field has no target. D is repeated under the wording labels for
+the matched experimental schedule, not nine different neutral interfaces.
+The primary system-prompt fixture and base task remain available in the code
+and preserved raw artifacts; exposing synthetic markers here does not make
+them real credentials.
+\input{fixture_table}
+
+\section{Secondary and sensitivity analyses}
+The primary bootstrap is paired by field. The independently implemented count
+and NumPy resampling check uses 100,000 draws with seed 928, whereas the production
+bootstrap uses 10,000 draws with seed zero. Agreement is a software diagnostic;
+the two implementations analyze the same observations and are not independent
+experimental evidence. The leave-one-field-out contrast ranges are
+\JournalGptLoo{} and \JournalGeminiLoo{} percentage points.
+
+The following table supplies Wilson intervals for matched rates, Newcombe
+intervals for matched-minus-nonmatched differences, and one-sided Fisher tests.
+Holm correction is applied across the eight estimable all-stratum tests on the
+primary pair; naming/adjacent tests form a separate family. This family definition
+was settled after collection and is recorded in \texttt{docs/DEVIATIONS.md}.
+The opaque fact has no targeted field and therefore no estimable diagonal test.
+These call-level intervals and tests do not model all field/trial dependence;
+they should not overrule the paired field-bootstrap interpretation.
+\input{secondary_table}
+
+\paragraph{Hierarchical sensitivity model.}
+The specified formula is
+\texttt{disclosed \string~ matched + (1|field) + (1|fact) + (1|provider)}.
+The analysis uses a variational Bayesian binomial mixed model with
+\texttt{fe\_p=2}, \texttt{vcp\_p=1}, zero initial means and unit initial standard
+deviations. Fit status: \JournalMixedStatus{}. The full coefficients, posterior
+standard deviations and warnings are in \texttt{data/q1\_analysis.json}.
+This is a sensitivity analysis: provider variance is weakly informed by only
+two levels, repeated fact outcomes within a trial are not given a separate
+random effect, and complete separation makes prior choices consequential.
+Log-odds coefficients are not substituted for the primary risk differences.
+
+\paragraph{Generic stratum.}
+The protocol defines a targetless generic field but also requests a generic
+diagonal contrast. Those definitions are incompatible. We report any-canary
+recovery, \VthreeGptFouroGenericFrac{} and
+\VthreeGeminiThreeFlashPreviewGenericFrac{} on the primary pair, but do not
+invent a target or declare the undefined secondary rule satisfied.
+
+\section{Older and exploratory evidence}
+\subsection*{Post-collection scorer sensitivity}
+We additionally recompute the existing primary observations with three
+alternative scoring rules: full markers after the historical normalization,
+full markers without normalization, and the registered marker/alias rule
+including the previously excluded \texttt{query} argument. The latter measures
+recovery anywhere in the recorded argument object, not a server receipt.
+Each alternative retains the same field clusters and emitted-call denominator.
+These analyses were introduced during manuscript revision, not registered
+before data collection; the original endpoint and decision rule are unchanged.
+The registered baseline is checked against the production scorer before any
+sensitivity result is generated.
+\input{sensitivity_table}
+
+\subsection*{Earlier experiments}
+The original gate's majority rule failed; the favorable result on one model
+does not rescue it. The wording selection was post hoc. Earlier grader-based
+analyses and the reconstructed-listing arm retain their historical outcome,
+which differs from normalized v3 marker matching. The author-labeled gate
+sample is narrow and does not validate all later experiments.
+The v2 temperature-zero arm reports \JournalTzeroDiagonal{} matched,
+\JournalTzeroOff{} nonmatched, and \JournalTzeroNeutral{} neutral outcomes.
+Its fixtures and collection time differ from v3, so no isolated temperature
+effect is estimated. Detailed historical arms remain available in
+\texttt{updated\_v6\_result.md}, the two earlier manuscript versions, and the
+artifact manifest; this focused manuscript does not suppress their existence
+or pool them with the primary analysis.
+
+\section{What the artifact tests establish}
+The offline suite checks model-prefix collisions, malformed records and
+classifier scores, duplicate trials, resume identity/configuration, interruption
+state, paired-bootstrap invariants, denominator accounting, incomplete
+conclusions, numerical drift, and mock MCP receipt/rejection/no-call behavior.
+These checks detect implementation faults; they do not establish efficacy on
+unseen agents, native-schema coverage, or task utility. Paid runs require a
+separately witnessed protocol and explicit, stage- and leg-specific budget
+approval; Experiment~25 is the only such collection (next section).
+
+\section{Experiment 25 accounting and deviations}
+\textbf{Plan and provenance.} The protocol
+(\texttt{docs/JOURNAL\_EXTENSION\_PROTOCOL.md}) records the frozen design hash
+for each stage; the runner refuses a live leg unless a signed approval names the
+same design hash, stage and leg, and refuses the GPT-4o leg until a complete
+Gemini leg exists under that hash. The protocol's SHA-256 was submitted to four
+OpenTimestamps calendars before any planted call; amendment~1
+(\texttt{docs/JOURNAL\_EXTENSION\_AMENDMENT\_1.md}) was timestamped the same way
+before stage~B. Anchoring was pending when this supplement was written.
+
+\textbf{Reviews.} A coauthor reviewed the four stage~A field texts against a
+seven-point checklist and accepted all four without change, and later accepted
+the eight native task fixtures without change. The second review deliberately
+counts two observed GPT-4o alternatives as task failures: a subject-only search
+without a mailbox, and a calendar URL supplied as the calendar identifier. Both
+records declare which unplanted compatibility outputs the reviewer had seen.
+
+\textbf{Unplanted compatibility checks.} No canary, secret or hidden label
+appeared in any of these prompts. Gemini: 7 calls rejected by the API
+(\texttt{additionalProperties} is not accepted through its restricted schema
+interface; the runner thereafter passed standard JSON Schema), then 7 accepted.
+GPT-4o: 7 calls, one of which exercised the wrong tool because of a check-script
+error, then 7 corrected calls, all accepted. Stage~B: 32 calls on the native
+schemas plus 3 repeats identifying tools that Gemini invented. Both APIs
+accepted every stage~A and stage~B schema.
+
+\textbf{Collection.} Stage~A comprised \ExpATrials{} trials and stage~B
+\ExpBTrials{}, all with zero API errors, served model identities matching the
+pinned identifiers, and trial identities equal to the frozen schedules. The
+first Gemini launch failed inside the client before any request was sent,
+because the runner did not load the credential file; it is retained, not
+analysed, and was relaunched by loading the credential in the caller without
+changing any hashed source file. The output-token bound stopped collection three
+times (twice in stage~A, once in stage~B) on Gemini calls reporting 1,352--1,994
+output tokens against a 1,024-token cap: Gemini's output limit does not bound
+its thinking tokens. Each stopped leg resumed under the prespecified policy,
+which skips recorded trials and counts earlier attempts. No retries were
+needed. Billed cost at list prices was US\$\ExpACost{} for stage~A and
+US\$\ExpBCost{} for stage~B.
+
+\textbf{Scoring and descriptive misses.} Recovery is full normalized marker
+matching in non-task arguments received by the local handler; the historical
+prefix aliases are not used. Of the \ExpAMisses{} stage~A non-recoveries,
+\ExpAFirstWord{} sent only the first word of the platform canary. In stage~B,
+\ExpBGemWrongTool{} Gemini calls named tools that were not offered, and
+\ExpBFirstWord{} of \ExpBMisses{} non-recoveries were first-word truncations.
+These classifications were made after collection and do not change the
+registered endpoint.
+
+\section{Reproduction}
+Use Python 3.12, \texttt{requirements-analysis.lock}, and
+\texttt{code/reproduce.py}. Rebuild this manuscript and supplement with
+\texttt{code/reproduce.py --write-papers}. Tables are generated by
+\texttt{code/journal\_assets.py}; its check mode recomputes from source artifacts
+and fails on stale generated content. \texttt{code/submission\_check.py} is a
+separate administrative gate and deliberately fails while author decisions,
+venue verification, or release review remain unresolved. A passing numerical
+build is not a submission authorization.
+\end{document}

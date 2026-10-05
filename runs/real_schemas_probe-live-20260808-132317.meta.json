@@ -1,0 +1,13 @@
+{
+  "run_id": "20260808-132317",
+  "stage": "real_schemas_probe",
+  "dry_run": false,
+  "expected_trials": 5,
+  "rows_written": 5,
+  "ok": 5,
+  "errors": 0,
+  "limit": null,
+  "complete": true,
+  "canonical_path": "runs/real_schemas_probe-live-20260808-132317.jsonl",
+  "finished_at": "2026-08-08T13:23:26.428332"
+}

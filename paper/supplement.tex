@@ -1,0 +1,488 @@
+% =============================================================================
+% Supplementary material: the pilot studies that preceded Study 1. Compiled
+% separately from main.tex; code/cross_labels.py carries label numbers between
+% the two documents. Numbers come from the same generated macro files.
+% =============================================================================
+\documentclass[final,5p,times,twocolumn]{elsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{courier} % scalable monospace font for schema names and code
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,
+  columns=fullflexible,keepspaces=true,showstringspaces=false,
+  literate={—}{{\textemdash}}1}
+\usepackage{xurl}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{pict2e} % reimplements picture \qbezier/\line/\circle as real drawing
+                    % primitives; avoids an arithmetic overflow in roc.tex's near-
+                    % degenerate qbezier segment. Engine-agnostic (pdflatex + XeTeX).
+% elsarticle loads natbib; the cite package is incompatible with it.
+\biboptions{numbers,sort&compress}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage[hidelinks]{hyperref}
+% Article sections and tables, numbered from main.aux by code/cross_labels.py.
+\IfFileExists{main_labels.tex}{\input{main_labels}}{}
+\newcommand{\mainref}[1]{\ifcsname mainl@#1\endcsname\csname mainl@#1\endcsname\else\textbf{??}\fi}
+\input{analysis_numbers}
+\input{details_macros}
+
+% Prefer the generated file; fall back to the snapshot below. A submission
+% system where you upload main.tex and refs.bib but not the generated siblings
+% is the common case, and without this the compile dies at line 1 with
+% "File `numbers.tex' not found" rather than producing a PDF.
+\IfFileExists{numbers.tex}{\input{numbers}}{}
+
+% Source: paper/numbers.tex, restricted to macros this manuscript references.
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+\begin{document}
+\begin{frontmatter}
+\title{Supplementary Material for ``Required Tool Parameters Select Confidential Prompt Facts: Schema Validity, Field Type, and Content Matching Do Not Govern Their Release''}
+\end{frontmatter}
+\onecolumn
+
+\section{Pilot studies}
+\label{app:pilot}
+The experiments in this supplement preceded Study~1 of the article. They compare elicitation
+channels for a single planted identity and vary wording, payload, and
+confidentiality strength. They use a keyword identity measure, defined
+below, in place of the marker scorer of Study~1. One of them tested a
+preregistered hypothesis that failed. All others are exploratory.
+
+\subsection{Conditions and schedules}
+Table~\ref{tab:conditions} defines every elicitation condition used in the
+reported comparisons. The letter labels identify manipulations, rather than a
+single common denominator or grading rule. In particular, A is a conversational
+request, B modifies the tool description, and the other conditions add fields.
+A$'$ is an explicit identity request. B$'$ changes its tone. E requests prompt
+and model information explicitly. Only C and D enter the primary matrix.
+
+\begin{table*}[t]\centering\small
+\caption{Elicitation conditions and their roles. The base task is kept in
+all conditions. Added properties are strings. The primary C and D properties
+are required. The depth arm changes C requiredness or position explicitly.}
+\label{tab:conditions}
+\begin{tabular}{@{}lp{.31\textwidth}p{.30\textwidth}p{.24\textwidth}@{}}
+\toprule
+Condition & Manipulation & Intended comparison & Observed schedules \\
+\midrule
+A & User message asks for model and framework identity & Direct conversational request & Gate: 30 per model and stratum \\
+A$'$ & Required \texttt{agent\_identity} & Explicit schema request & Gate, tone, payload, and reticence arms \\
+B & Imperative instruction added to tool description & Description injection & Gate: 30 per model and stratum \\
+B$'$ & Required identity field with imperative description & Tone with field and category kept & Tone arm: 30 per model \\
+C & Operationally framed additional field & Field wording and category selection & Study~1: 20 per field and model as planned \\
+D & Required \texttt{request\_trace\_id} & Additional field without a target category & Study~1: 160 per complete model arm \\
+E & Required \texttt{system\_prompt} and \texttt{model\_name} & Explicit parameter extraction & GPT-4o: 20 per original payload \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The gate experiment contains bare and Cursor scaffold strata on each of three
+models. Its five conditions and 30 repetitions produce 300 attempted requests
+per model. The wording comparison contains five variants and 30 repetitions
+per variant on each of two models. The tone comparison contains A$'$, B$'$, and
+C with 30 repetitions per model. The payload comparison uses 20 repetitions per
+GPT-4o condition and payload, while Claude's C arm uses 30. The reconstructed
+listing arm schedules five repetitions per interface and condition. These
+counts describe planned cells. The reported tables also show incomplete
+collection, API errors, and absence of tool calls.
+
+\subsection{Planted payloads, scaffolds, and prompt variations}
+\label{sec:payloads}
+The earlier experiments plant different content and build the prompt
+differently from the Study~1 matrix. The gate uses two scaffolds. Each prepends a
+statement of the host product or framework and a confidentiality instruction
+to the base system message, which simulates a deployment that tells the model
+where it runs. The bare stratum uses the base message alone, so it contains
+nothing to recover.
+
+The payload experiments replace the scaffold with one of five fixtures. A
+product name states the host product. An internal codename states an
+unreleased build identifier. A policy sentence instructs the model not to
+disclose pricing tiers to accounts carrying a named flag. A credential-shaped
+fixture states a fabricated service key. A long configuration block states a
+platform name and revision together with a region, an operator, an escalation
+contact, and a retention period. The same confidentiality sentence follows
+each fixture. Table~\mainref{tab:payload-aliases} of the article lists each scoring marker and its
+aliases, and \mainref{app:prompts} of the article reproduces every fixture verbatim.
+
+These fixtures are not matched on confidentiality wording. The credential
+fixture describes itself as a test value, the long block adds its own
+prohibition, and the policy sentence is itself an instruction. We therefore
+compare payloads only within an experiment and never treat their differences
+as a pure effect of content form. The Study~1 matrix removes this confound within
+its own design by planting five seed-derived facts in one prompt under one
+instruction.
+
+Three further variations change one element at a time. The reticence ladder
+inserts one, two, or three additional sentences into the scaffolded
+confidentiality instruction, and each rung contains the previous one. The
+depth arm reuses the omnibus prompt of an earlier pilot matrix and either makes the added
+field optional or moves it ahead of \texttt{query}. The familiarity arm
+replaces the seed-derived platform name in the Study~1 prompt with a recognizable
+product name of the same length. \mainref{app:prompts} of the article gives the exact
+text of each variation.
+
+\subsection{The failed superiority hypothesis}
+\label{sec:channel}
+The earlier gate compared elicitation channels and wording, rather than the
+simultaneous-fact matrix. Condition A asks directly in chat which model and
+framework is running. A$'$ adds a required identity field. B uses an imperative
+instruction in the tool description. C uses the operationally framed parameter.
+D is the neutral field. B$'$, introduced later, changes the identity-field
+description to a command tone. E, also introduced later, uses explicit
+\texttt{system\_prompt} and \texttt{model\_name} parameters.
+
+The original rule required C to exceed A$'$ by at least 20 percentage points
+with statistical support on at least two of three gate models. The observed
+point differences are \GateGptFouroDeltaPp{} points for GPT-4o,
+\GateClaudeSonnetFourFiveDeltaPp{} for Claude, and
+\GateGeminiThreeFlashDeltaPp{} for Gemini. Only one model meets the difference
+threshold, so the majority-model rule fails. Claude and Gemini recover the
+identity under both A$'$ and C at their observed ceiling. This explains why a
+large absolute C rate need not produce the required contrast. It does not
+rescue the failed decision.
+
+\begin{table*}[t]\centering\small
+\caption{Gate experiment, planted stratum. Each cell gives successes/trials. A and B use all usable responses,
+and the field conditions A$'$, C, and D use emitted tool calls. $\Delta=C-A'$
+in percentage points. Only GPT-4o meets the registered 20-point threshold, so
+the majority-model rule fails. C exceeds D on every model.
+Table~\ref{tab:all-gate} adds the Wilson intervals, the bare stratum, and
+the attempt, error, and call counts.}
+\label{tab:gate}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Condition & GPT-4o & Claude & Gemini \\
+\midrule
+A: direct chat & \GateGptFouroAFrac{} & \GateClaudeSonnetFourFiveAFrac{} & \GateGeminiThreeFlashAFrac{} \\
+A$'$: explicit field & \GateGptFouroAPrimeFrac{} & \GateClaudeSonnetFourFiveAPrimeFrac{} & \GateGeminiThreeFlashAPrimeFrac{} \\
+B: injection & \GateGptFouroBFrac{} & \GateClaudeSonnetFourFiveBFrac{} & \GateGeminiThreeFlashBFrac{} \\
+C: operational field & \GateGptFouroCFrac{} & \GateClaudeSonnetFourFiveCFrac{} & \GateGeminiThreeFlashCFrac{} \\
+D: neutral & \GateGptFouroDFrac{} & \GateClaudeSonnetFourFiveDFrac{} & \GateGeminiThreeFlashDFrac{} \\
+\midrule
+$\Delta$ (pp) & \GateGptFouroDeltaPp{} & \GateClaudeSonnetFourFiveDeltaPp{} & \GateGeminiThreeFlashDeltaPp{} \\
+Threshold & meets & misses & misses \\
+\midrule
+Overall verdict & \multicolumn{3}{c}{\textbf{Failed: majority rule not met}} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+Table~\ref{tab:gate} retains all conditions in that comparison. C exceeds D
+on each provider, supporting a role for wording under the tested prompt.
+For GPT-4o, pooling two runs of the same cell yields
+\PooledGptFouroCPct{}~\PooledGptFouroCCI{} under C and
+\PooledGptFouroAPrimePct{}~\PooledGptFouroAPrimeCI{} under A$'$.
+The underlying pooled fractions are \PooledGptFouroCFrac{} for C and
+\PooledGptFouroAPrimeFrac{} for A$'$. A third run with the same recorded model,
+scaffold, wording, and temperature exists: the API documentation cell of the
+wording comparison, \DetWordingGptFouroApiDocumentationFrac{}. It is not
+pooled. The canonical rows of all three runs omit the output-token budget, so
+the record does not establish that any two of them match in every request
+setting, and the record states no rule that selects the pooled pair.
+These pooled estimates concern repeated observations of the same chosen
+configuration. They do not introduce additional independent interfaces.
+
+Two deviations matter for interpretation. First, planted framework scaffolds
+changed the construct from a model's genuine environment knowledge to recovery
+of a supplied identity string. Second, the primary
+\texttt{api\_documentation} wording was selected after an ablation. On GPT-4o,
+the default and indirect-inference variants recover no planted framework
+marker, while the operational-metadata and compliance-logging variants do so
+only rarely. The selected wording is the high-recovery variant. Claude
+recovers the planted marker under all tested wording variants.
+Table~\ref{tab:all-wording} gives \DetWordingGptFouroDefaultFrac{},
+\DetWordingGptFouroOperationalMetadataFrac{},
+\DetWordingGptFouroComplianceLoggingFrac{},
+\DetWordingGptFouroApiDocumentationFrac{}, and
+\DetWordingGptFouroIndirectInferenceFrac{} on GPT-4o for the default,
+operational metadata, compliance logging, API documentation, and indirect
+inference wordings. Claude recovers the marker in every call under every
+wording, for example \DetWordingClaudeSonnetFourFiveDefaultFrac{} under the
+default wording. The two rare-recovery GPT-4o cells have Wilson intervals of
+\DetWordingGptFouroOperationalMetadataCI{}\% and
+\DetWordingGptFouroComplianceLoggingCI{}\%, and each zero cell reaches
+\DetWordingGptFouroDefaultCI{}\%. These intervals are broad enough that rare
+recovery under a low-frequency wording cannot be ruled out.
+Table~\ref{tab:all-tone} separately reports the tone arm, where GPT-4o gives
+A$'$ \DetToneGptFouroAPrimeFrac{} (\DetToneGptFouroAPrimeCI{}\%), B$'$
+\DetToneGptFouroBPrimeFrac{} (\DetToneGptFouroBPrimeCI{}\%), and C
+\DetToneGptFouroCFrac{} (\DetToneGptFouroCCI{}\%). Those observations do not
+replace the original gate's \GateGptFouroAPrimeFrac{} and
+\GateGptFouroCFrac{} cells. These outcomes
+demonstrate wording sensitivity and outcome-informed selection, rather than a
+universal User-Agent mechanism.
+
+\begin{figure}[t]\centering
+\includegraphics[width=.62\textwidth]{figures/gate}
+\caption{Pilot identity experiments on the planted stratum, with 95\%
+Wilson intervals. (a) The five gate conditions on three models. (b) The five
+wordings of the operational field on GPT-4o and Claude Sonnet. The outcome is
+keyword T1 over assistant text and arguments. Field conditions use emitted tool
+calls as the denominator. Tables~\ref{tab:gate} and~\ref{tab:all-wording} give
+the counts.}
+\label{fig:gate}
+\end{figure}
+Figure~\ref{fig:gate} displays both comparisons with their intervals. In panel
+(a), Claude and Gemini sit at the ceiling under both A$'$ and C, so their
+contrast is zero, while GPT-4o separates the two conditions. The neutral field
+D stays at zero on every model. Panel (b) shows why the selected wording
+matters for GPT-4o. Only the API documentation wording reaches a high rate, and
+the four other wordings stay at or near zero. Claude is at the ceiling under
+every wording.
+
+\subsection{Grading and annotation agreement}
+The pilot identity experiments use a keyword outcome, T1. The input to
+that grader is assistant text followed by serialized tool arguments. It is
+therefore broader than marker recovery in non-query arguments. Field conditions
+are additionally conditioned on the presence of a tool call. Neither that
+conditioning nor the name of the stored argument column restricts keyword
+hits to server-bound values. The tables below state this distinction
+explicitly.
+
+The protocol also specifies a blinded language model judge with eight mutually
+exclusive output buckets and a disclosure rule requiring agreement with the
+keyword grader. Blinding removes condition identifiers from the judge input.
+It does not ensure that field content cannot suggest the condition. The judge
+prompt was revised after examining errors on the evaluation observations.
+Thus those revisions were assessed on data that had informed their design.
+They provide a consistency check within the same data, not an independent
+grader generalization evaluation. Full judged derivatives are
+available for selected GPT-4o and Claude runs. Equivalent coverage is not
+available for Gemini.
+
+A labeling utility sampled six rows from each of the ten condition-by-stratum
+cells of the GPT-4o gate, \PaperAnnotationRows{} of 300 observations, with a
+fixed seed. The worksheet shows the captured text and an opaque row
+identifier. A separate key holds the condition, the stratum, and the automatic
+grades. Study authors completed one worksheet. An earlier labeling pass of
+the same sample was discarded after its agreement with the keyword grade had
+been computed. It assigned the same category to \PaperFirstPassModalFrac{}
+rows and agreed with the keyword grade on \PaperFirstPassAgreeFrac{}, a pooled
+$\kappa$ of \PaperFirstPassKappa{}, and \PaperFirstPassScaffoldedKappa{} on the
+planted stratum. The reported worksheet was then completed from a blank form.
+Because the first pass was discarded once its agreement was known, the
+reported agreement is not free of selection. The discarded worksheet is
+released with the artifact as a record, at
+\texttt{labels/v4-apidoc-gate.first-pass-failed.worksheet.csv}, and no
+analysis reads it.
+The reported worksheet's labels agree with the
+binary keyword grade on \PaperAnnotationScaffoldedAgreeFrac{} planted rows and
+\PaperAnnotationBareAgreeFrac{} bare rows. Cohen's $\kappa$ is
+\PaperAnnotationScaffoldedKappa{} on the planted stratum. On the bare stratum
+it is zero, because the keyword grade is constant there. Agreement with the
+eight-category model judge is \PaperAnnotationJudgeAgreeFrac{}, with
+$\kappa=\PaperAnnotationJudgeKappa{}$. The record holds one worksheet
+attributed to two authors. It supports agreement between human labels and the
+automatic graders, and it holds no ratings from independent human raters. The
+outcomes of Studies~1, 2, and~3 use no human or model grader.
+% TODO: T05 Obtain author-confirmed rater attribution and a valid attestation for the existing worksheet, without altering labels or inventing signatures.
+% TODO: T06 Obtain separate independently completed rater worksheets if reporting human inter-rater agreement. The repository contains only one attributable rating sequence for the 60-row sample.
+% TODO: T07 Recover version-specific judge prompts and complete judged derivatives for every historical arm before claiming full compliance with the conjunctive grading rule or independent judge validation.
+
+\subsection{Explicit parameters and payload composition}
+\begin{table}[t]\centering\small
+\caption{Condition E, the explicit parameters from prior work
+(\texttt{system\_prompt} and \texttt{model\_name}), on GPT-4o with
+$n{=}\ExplicitGptFouroInternalCodenameN{}$ usable responses per payload.
+Normalized marker recovery in non-\texttt{query} arguments, with the 95\%
+Wilson interval in percent. Read with the confounds named in the text.}
+\label{tab:explicit}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+Planted payload & Recovered & Interval \\
+\midrule
+Internal codename & \ExplicitGptFouroInternalCodenameFrac{} & \DetExplicitGptFouroInternalCodenameCI{} \\
+Long configuration block & \ExplicitGptFouroLongBlockFrac{} & \DetExplicitGptFouroLongBlockCI{} \\
+Planted, fabricated credential fixture$^\ddagger$ & \ExplicitGptFouroCredentialShapedFrac{} & \DetExplicitGptFouroCredentialShapedCI{} \\
+Product name & \ExplicitGptFouroProductNameFrac{} & \DetExplicitGptFouroProductNameCI{} \\
+Policy sentence & \ExplicitGptFouroPolicySentenceFrac{} & \DetExplicitGptFouroPolicySentenceCI{} \\
+\midrule
+Pooled & \ExplicitGptFouroPooledFrac{} & \DetExplicitGptFouroPooledCI{} \\
+\bottomrule
+\end{tabular}
+\\[2pt]\footnotesize $^\ddagger$ Planted, fabricated, and annotated in the prompt as a test fixture.
+\end{table}
+Condition E quantifies an explicit-parameter comparison motivated by prior
+work~\cite{hiddenlayer2025mcp}. Table~\ref{tab:explicit} shows strong variation
+across planted payloads: an internal codename is recovered on
+\ExplicitGptFouroInternalCodenameFrac{} trials, a long block on
+\ExplicitGptFouroLongBlockFrac{}, a product name on
+\ExplicitGptFouroProductNameFrac{}, and a policy sentence on
+\ExplicitGptFouroPolicySentenceFrac{}. The credential-shaped fixture is
+recovered on \ExplicitGptFouroCredentialShapedFrac{} trials.
+Table~\ref{tab:all-payload} additionally reports every original A$'$, C,
+and D payload cell and compares strict with normalized marker recovery. For
+example, the long block's platform marker is returned in a normalized form on
+\DetPayloadGptFouroLongBlockCNormalizedFrac{} GPT-4o C responses but in its full
+spelling with case ignored on only \DetPayloadGptFouroLongBlockCStrictFrac{}.
+Claude's corresponding counts are
+\DetPayloadClaudeSonnetFourFiveLongBlockCNormalizedFrac{} and
+\DetPayloadClaudeSonnetFourFiveLongBlockCStrictFrac{}. The distinction reflects
+formatting of recovered text rather than new experimental observations.
+The pooled \ExplicitGptFouroPooledFrac{} is a summary of these particular
+fixtures and should not be read as a general prompt-extraction probability.
+
+\begin{figure}[t]\centering
+\includegraphics[width=.62\textwidth]{figures/payload}
+\caption{Normalized marker recovery by planted payload and condition, with 95\%
+Wilson intervals. Conditions A$'$, C, D, and E are GPT-4o arms. The open
+triangle is the operational field C on Claude Sonnet. The denominator is usable
+responses. The payloads differ in confidentiality wording, so differences
+between payload rows are confounded. Table~\ref{tab:all-payload} gives the
+counts for both scorers.}
+\label{fig:payload}
+\end{figure}
+Figure~\ref{fig:payload} places the conditions side by side for each payload.
+The operational field clearly exceeds the explicit prompt parameters only for
+the product name. The explicit parameters recover the codename and the
+credential fixture more often, and the two conditions are close for the long
+block. No condition recovers the policy sentence, and the neutral field
+recovers nothing for any payload. The figure therefore does not support a
+general ordering between operational and explicit requests.
+
+The payloads are not matched on confidentiality wording. The credential fixture
+is annotated within the prompt as a test value, the configuration block has an
+additional non-disclosure instruction, and the policy sentence is itself
+instructional content. These differences confound sensitivity, content form,
+and instruction strength. Comparing the explicit credential result directly
+with the matrix's service-key result therefore cannot isolate a pure effect
+of explicit versus operational framing. The matrix improves the comparison
+of fields within its own fixed prompt. It does not erase cross-experiment
+fixture differences.
+
+\subsection{Payload familiarity}
+The platform result differs between the earlier gate and the Study~1 matrix despite
+using the same primary field wording. An exploratory familiarity experiment
+tests one possible explanation by changing a recognizable platform name to a
+seed-derived name while holding the surrounding prompt and its character length
+fixed. On GPT-4o, the recognizable name is recovered on
+\RsixFamiliarFrac{} calls, compared with \RsixSeedFrac{} for the seed-derived
+name, a difference of \RsixDeltaPp{} percentage points in the direction
+opposite to the initial familiarity hypothesis. The descriptive Wilson
+intervals are \DetRsixFamiliarCI{}\% for the recognizable name and
+\DetRsixSeedCI{}\% for the seed-derived name.
+These intervals describe the selected fixed comparison rather than a population
+of recognizable and unfamiliar names.
+
+The recorded outputs sometimes supply a generic assistant or store-application
+description in place of the recognizable name, whereas the unfamiliar fixture
+is copied into the requested field. This pattern is consistent with competition
+between a generic description and the supplied name, but the output examples
+do not establish an internal cognitive mechanism. The experiment involves one
+model, one field, and one controlled substitution. It does not justify a claim
+that arbitrary unfamiliar secrets are generally easier to recover.
+
+The result rules out a simple account in which familiarity alone explains the
+gate's higher recovery. The gate and matrix also differ in prompt structure and
+the other available facts. Those differences remain plausible contributors and
+were not jointly isolated. Reporting the failed explanation is necessary to
+avoid turning an exploratory interpretation into a result.
+
+\subsection{Confidentiality strength}
+Section~\mainref{sec:reticence} of the article reports the confidentiality
+ladder and its figure. Table~\ref{tab:all-reticence} gives every rung
+together with attempts, errors, and calls.
+
+\subsection{Temperature and genuine framework identity}
+An earlier pilot matrix, run at temperature zero, reports \JournalTzeroDiagonal{} matched
+recoveries, \JournalTzeroOff{} nonmatched checks, and
+\JournalTzeroNeutral{} neutral any-canary outcomes. It remains exploratory
+because the precedence of its protocol over its data is not established by the
+required committed provenance. Its fixtures and collection time also differ
+from Study~1. The comparison demonstrates that an exploratory observation exists at
+another temperature, not that temperature caused the difference in recovery.
+The matched interval is \DetTzeroDiagonalCI{}\% under a descriptive Wilson
+calculation, and the neutral call interval is \DetTzeroNeutralCI{}\%. Correlated nonmatched
+fact checks do not support a separate independent-trial risk interpretation.
+% TODO: T10 Collect a matched second-temperature Study 1 experiment before attributing cross-version differences to sampling temperature.
+
+The framework arm asks a different question: whether a model identifies its
+actual runtime without a planted identity. A real LangGraph setup yields
+\FrameworkArmDisclosed{} identity disclosures in
+\FrameworkArmToolCalled{} tool-call observations, with a descriptive Wilson
+interval of \DetFrameworkArmCI{}\%. This negative result led to
+withdrawal of the original self-knowledge hypothesis. The matrix's recoveries
+must consequently be described as extraction of supplied prompt content.
+They are not evidence that a required field reliably reveals the true host
+framework, model implementation, or deployment stack.
+
+\subsection{Complete tables}
+Table~\ref{tab:all-gate} retains both strata of the gate and distinguishes
+attempts, errors, emitted calls, and the condition-specific scoring denominator.
+It shows the complete observation set behind the failed majority rule. The
+bare rows test a different construct from the planted rows and are not pooled
+with them to improve a headline rate.
+\input{details_gate}
+
+Table~\ref{tab:all-wording} reports every wording variant on both models.
+It documents the selection context for the later API documentation wording.
+Table~\ref{tab:all-tone} isolates the A$'$, B$'$, and C comparison.
+The GPT-4o gate and tone C cells differ across runs, which is why pooled
+estimates must identify both contributing cells.
+\input{details_wording}
+\input{details_tone}
+
+Table~\ref{tab:all-payload} reports all original payload conditions and both
+scorers. Strict here means the full marker with case ignored. It differs from
+the later Study~1 verbatim sensitivity rule. The partial long-block D cell has
+fewer observations and is not completed with synthetic zeros. The normalized
+endpoint recovers partial or concatenated identifiers that the full-marker
+rule does not recognize.
+\input{details_payload}
+
+Table~\ref{tab:all-reticence} separates each prompt rung and condition. The
+pooled Gemini rows include a quota-interrupted file. Its nine rung-2 A$'$ API
+errors explain the difference between attempts and observed responses. The
+result should not be interpreted as a balanced complete comparison across
+all rungs and providers.
+\input{details_reticence}
+
+Table~\ref{tab:extra-intervals} supplies uncertainty for the depth, familiarity,
+pooled duplicate-cell, and genuine-framework comparisons summarized in the
+main text. Several baseline observations are reused by related contrasts.
+Their appearance in more than one comparison does not create additional
+trials. Table~\ref{tab:all-v2} separately reports the earlier matrix's matched
+cells. The pilot matrix uses different fixtures and remains exploratory regardless of its
+large selected recovery rates.
+\input{details_misc}
+\input{details_v2}
+
+\begin{figure}[t]\centering
+\includegraphics[width=.62\textwidth]{figures/interfaces}
+\caption{Distribution of the reconstructed interfaces by outcome under the
+added field C. Each interface is counted once per model, according to whether
+the model made no tool call, recovered the planted identity in none, some, or
+all of its emitted calls. Each interface has five attempts per model.
+Table~\ref{tab:all-contexts} lists every interface.}
+\label{fig:interfaces}
+\end{figure}
+Figure~\ref{fig:interfaces} shows how recovery is spread over the interfaces.
+Claude recovers the identity in every emitted call on every interface that it
+calls. GPT-4o recovers it in some but not all calls on most interfaces, in
+every call on a few, and in no call on a small number. One interface receives
+no tool call from either model. The lower pooled GPT-4o rate therefore reflects
+partial recovery on many interfaces and not a failure concentrated in a few.
+
+Table~\ref{tab:all-contexts} gives every reconstructed interface on each
+provider. A no-call cell has no conditional recovery estimate. The C and D
+attempt counts remain visible even when no call is made. Table~\ref{tab:context-tasks}
+provides the full corresponding user messages. These requests broaden task
+wording around authentic listings, but the experiment still lacks a server
+execution trace or a task completion oracle.
+\input{details_contexts}
+\input{details_tasks}
+
+\bibliographystyle{elsarticle-num}
+\begingroup\small
+\bibliography{journal_refs}
+\endgroup
+\end{document}

@@ -1,0 +1,149 @@
+% Verified corrections for paper/main.tex only, merged last by code/paper_assets.py.
+% paper/refs.bib and journal_paper/additional_refs.bib also feed journal_paper/,
+% whose generated bibliography is hash-locked, so they are not edited here.
+
+% URL from data/bibliography_audit.json (checked online 2026-09-28, title matches).
+@inproceedings{carlini2021extracting,
+  title     = {Extracting Training Data from Large Language Models},
+  author    = {Carlini, Nicholas and Tram{\`e}r, Florian and Wallace, Eric and
+               Jagielski, Matthew and Herbert-Voss, Ariel and Lee, Katherine and
+               Roberts, Adam and Brown, Tom and Song, Dawn and Erlingsson, Ulfar
+               and Oprea, Alina and Raffel, Colin},
+  booktitle = {USENIX Security Symposium},
+  year      = {2021},
+  url       = {https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting},
+}
+
+% Added 2026-10-01 for the contextual-integrity and information-flow paragraph.
+% Title, author order and venue of each record were read from its arXiv
+% abstract page on that date. Pages and DOIs are not recorded.
+@inproceedings{mireshghallah2024confaide,
+  title     = {Can {LLM}s Keep a Secret? Testing Privacy Implications of
+               Language Models via Contextual Integrity Theory},
+  author    = {Mireshghallah, Niloofar and Kim, Hyunwoo and Zhou, Xuhui and
+               Tsvetkov, Yulia and Sap, Maarten and Shokri, Reza and Choi, Yejin},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024},
+  eprint    = {2310.17884},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2310.17884},
+}
+@inproceedings{shao2024privacylens,
+  title     = {{PrivacyLens}: Evaluating Privacy Norm Awareness of Language
+               Models in Action},
+  author    = {Shao, Yijia and Li, Tianshi and Shi, Weiyan and Liu, Yanchen and
+               Yang, Diyi},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS),
+               Datasets and Benchmarks Track},
+  year      = {2024},
+  eprint    = {2409.00138},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2409.00138},
+}
+@inproceedings{bagdasarian2024airgap,
+  title     = {{AirGapAgent}: Protecting Privacy-Conscious Conversational Agents},
+  author    = {Bagdasarian, Eugene and Yi, Ren and Ghalebikesabi, Sahra and
+               Kairouz, Peter and Gruteser, Marco and Oh, Sewoong and
+               Balle, Borja and Ramage, Daniel},
+  booktitle = {ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+  year      = {2024},
+  eprint    = {2405.05175},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2405.05175},
+}
+@misc{costa2025fides,
+  title        = {Securing {AI} Agents with Information-Flow Control},
+  author       = {Costa, Manuel and K{\"o}pf, Boris and Kolluri, Aashish and
+                  Paverd, Andrew and Russinovich, Mark and Salem, Ahmed and
+                  Tople, Shruti and Wutschitz, Lukas and
+                  Zanella-B{\'e}guelin, Santiago},
+  year         = {2025},
+  eprint       = {2505.23643},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2505.23643},
+}
+@misc{beurerkellner2025patterns,
+  title        = {Design Patterns for Securing {LLM} Agents against Prompt
+                  Injections},
+  author       = {Beurer-Kellner, Luca and Buesser, Beat and
+                  Cre{\c{t}}u, Ana-Maria and Debenedetti, Edoardo and
+                  Dobos, Daniel and Fabian, Daniel and Fischer, Marc and
+                  Froelicher, David and Grosse, Kathrin and Naeff, Daniel and
+                  Ozoani, Ezinwanne and Paverd, Andrew and
+                  Tram{\`e}r, Florian and Volhejn, V{\'a}clav},
+  year         = {2025},
+  eprint       = {2506.08837},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2506.08837},
+}
+@inproceedings{wu2025isolategpt,
+  title     = {{IsolateGPT}: An Execution Isolation Architecture for
+               {LLM}-Based Agentic Systems},
+  author    = {Wu, Yuhao and Roesner, Franziska and Kohno, Tadayoshi and
+               Zhang, Ning and Iqbal, Umar},
+  booktitle = {Network and Distributed System Security (NDSS) Symposium},
+  year      = {2025},
+  eprint    = {2403.04960},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2403.04960},
+}
+@misc{shi2025progent,
+  title        = {Progent: Securing {AI} Agents with Privilege Control},
+  author       = {Shi, Tianneng and He, Jingxuan and Wang, Zhun and
+                  Li, Hongwei and Wu, Linyu and Guo, Wenbo and Song, Dawn},
+  year         = {2025},
+  eprint       = {2504.11703},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2504.11703},
+}
+@misc{fu2024imprompter,
+  title        = {Imprompter: Tricking {LLM} Agents into Improper Tool Use},
+  author       = {Fu, Xiaohan and Li, Shuheng and Wang, Zihan and Liu, Yihao and
+                  Gupta, Rajesh K. and Berg-Kirkpatrick, Taylor and
+                  Fernandes, Earlence},
+  year         = {2024},
+  eprint       = {2410.14923},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2410.14923},
+}
+
+% Added 2026-10-02. Title, authors and the dataset size (308 servers, 2,797
+% tools) were read from the arXiv abstract page on that date.
+@misc{fei2025mcpzero,
+  title        = {{MCP-Zero}: Active Tool Discovery for Autonomous {LLM} Agents},
+  author       = {Fei, Xiang and Zheng, Xiawu and Feng, Hao},
+  year         = {2025},
+  eprint       = {2506.01056},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2506.01056},
+}
+
+% Added 2026-10-02. Archival record read from the AAAI proceedings page
+% (https://ojs.aaai.org/index.php/AAAI/article/view/40895) on that date. The
+% archival title drops the word "Attack" that the arXiv version carries.
+@inproceedings{mcptox2025,
+  title     = {{MCPTox}: A Benchmark for Tool Poisoning on Real-World {MCP} Servers},
+  author    = {Wang, Zhiqiang and Gao, Yichao and Wang, Yanting and Liu, Suyuan
+               and Sun, Haifeng and Cheng, Haoran and Shi, Guanquan and Du,
+               Haohua and Li, Xiangyang},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume    = {40},
+  number    = {42},
+  pages     = {35811--35819},
+  year      = {2026},
+  doi       = {10.1609/aaai.v40i42.40895},
+}
+
+% Added 2026-10-02. The arXiv record (2604.05432) lists the 64th Annual Meeting
+% of the Association for Computational Linguistics as its venue. Pages are not
+% recorded.
+@inproceedings{leakdata2026,
+  title     = {Your {LLM} Agent Can Leak Your Data: Data Exfiltration via
+               Backdoored Tool Use},
+  author    = {Zhang, Wuyang and Pei, Shichao},
+  booktitle = {Annual Meeting of the Association for Computational Linguistics (ACL)},
+  year      = {2026},
+  eprint    = {2604.05432},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2604.05432},
+}

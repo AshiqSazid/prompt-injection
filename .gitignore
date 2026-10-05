@@ -1,12 +1,68 @@
-# Only the code and the abstract are tracked. Everything else at the repo root
-# (runs/, paper/, labels/, docs/, data/, figures/, PDFs, protocols) is ignored.
-/*
-!/.gitignore
-!/abstract.md
-!/requirements.txt
-!/code/
-
-# Never track, under any of the negations above.
-__pycache__/
 .env
-.venv*/
+.venv/
+.venv-q1/
+__pycache__/
+
+.cache/
+.firecrawl/
+
+# Rebuilt journal PDFs and TeX intermediates; sources and generated tables stay.
+journal_paper/*.pdf
+journal_paper/*.aux
+journal_paper/*.bbl
+journal_paper/*.blg
+journal_paper/*.log
+journal_paper/*.out
+journal_paper/*.fls
+journal_paper/*.fdb_latexmk
+
+# LaTeX build intermediates. paper/numbers.tex IS tracked: it is generated, but
+# tracking it keeps the PDF reproducible from any commit. `make` regenerates it
+# before every compile, so it cannot go stale in practice.
+paper/*.aux
+paper/*.log
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.out
+paper/*.spl
+paper/*.pdf
+paper/overleaf.zip
+
+# BibTeX build products. refs.bib and Makefile are SOURCES and are tracked:
+# an untracked .bib means a fresh clone compiles with every \cite unresolved.
+paper/*.bbl
+paper/*.blg
+
+# The flattened USENIX bundle keeps its PDF and BBL, but not local build state.
+usenix_paper/*.aux
+usenix_paper/*.blg
+usenix_paper/*.fdb_latexmk
+usenix_paper/*.fls
+usenix_paper/*.log
+usenix_paper/*.out
+
+# The IEEE manuscript builds at the REPOSITORY ROOT (it reads paper/numbers.tex
+# and paper/refs.bib, so it cannot sit inside paper/ without doubling the paths).
+# IEEE.tex is the source and is tracked; everything else here is build product.
+IEEE.aux
+IEEE.bbl
+IEEE.blg
+IEEE.fdb_latexmk
+IEEE.fls
+IEEE.log
+IEEE.out
+IEEE.pdf
+
+# Dry-run artifacts are MOCK data: `_mock()` fills grade as real disclosures,
+# which has already produced one wrong number in this project. They prove
+# plumbing, never a result, so they do not belong in the evidentiary record.
+# (Nine predate this rule and stay tracked rather than being rewritten out.)
+runs/*-dry-*
+
+# A failed first labelling pass is a record, never data. It was ignored until
+# 2026-10-04 and is now released so the supplement's account of it can be
+# checked; code/paper_assets.py reads it only to print that account.
+
+# Experiment #25 (schema_types_*.py) mock output is from a scripted fake model:
+# plumbing checks, never evidence. Kept out of runs/ and out of version control.
+extension_runs/*-mock-*

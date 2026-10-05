@@ -1,0 +1,28 @@
+{
+  "experiment": "release-controls-stage1",
+  "stage": "S3-1",
+  "mode": "live",
+  "leg": "gemini-3-flash-preview",
+  "evidence": "live",
+  "design_sha256": "493849c0253062fc4a7ab439f25271070c9c98a07579288266746212d8b87ec4",
+  "expected_trials": 800,
+  "rows_written": 800,
+  "errors": 0,
+  "complete": true,
+  "stop_reason": null,
+  "resumes": 50,
+  "committed_usd": 1.1362175,
+  "prices_usd_per_million": {
+    "gemini-3-flash-preview": [
+      0.5,
+      3.0
+    ],
+    "gpt-4o-2024-08-06": [
+      2.5,
+      10.0
+    ]
+  },
+  "canonical_path": "extension_runs/release_stage1-live-gemini-3-flash-preview-20261001-200709-654593.jsonl",
+  "started_at": "2026-10-01T20:07:09.654637+00:00",
+  "finished_at": "2026-10-01T20:52:18.763066+00:00"
+}

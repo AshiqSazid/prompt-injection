@@ -1,0 +1,160 @@
+{"event": "reserve", "trial_id": "faf4690fccb3fba83e75fd5e", "attempt": 1, "usd": 0.0043935, "at": "2026-09-29T19:15:21.521596+00:00"}
+{"event": "settle", "trial_id": "faf4690fccb3fba83e75fd5e", "attempt": 1, "usd": 0.002849, "input_tokens": 580, "output_tokens": 853, "at": "2026-09-29T19:15:31.154273+00:00"}
+{"event": "reserve", "trial_id": "99b04d6550bc4706e583c64f", "attempt": 1, "usd": 0.0036115, "at": "2026-09-29T19:15:31.159683+00:00"}
+{"event": "settle", "trial_id": "99b04d6550bc4706e583c64f", "attempt": 1, "usd": 0.0002985, "input_tokens": 213, "output_tokens": 64, "at": "2026-09-29T19:15:33.100095+00:00"}
+{"event": "reserve", "trial_id": "6bcd6560287db024d32268d3", "attempt": 1, "usd": 0.003721, "at": "2026-09-29T19:15:33.104103+00:00"}
+{"event": "settle", "trial_id": "6bcd6560287db024d32268d3", "attempt": 1, "usd": 0.001314, "input_tokens": 264, "output_tokens": 394, "at": "2026-09-29T19:15:36.722477+00:00"}
+{"event": "reserve", "trial_id": "8e30e870a7e5dadffeb5ab04", "attempt": 1, "usd": 0.003888, "at": "2026-09-29T19:15:36.728473+00:00"}
+{"event": "settle", "trial_id": "8e30e870a7e5dadffeb5ab04", "attempt": 1, "usd": 0.0016675, "input_tokens": 359, "output_tokens": 496, "at": "2026-09-29T19:15:40.716255+00:00"}
+{"event": "reserve", "trial_id": "8fee6907a71576804358a3ce", "attempt": 1, "usd": 0.005469, "at": "2026-09-29T19:15:40.719264+00:00"}
+{"event": "settle", "trial_id": "8fee6907a71576804358a3ce", "attempt": 1, "usd": 0.000856, "input_tokens": 1178, "output_tokens": 89, "at": "2026-09-29T19:15:42.764830+00:00"}
+{"event": "reserve", "trial_id": "ae264fa2106a2854eb1cf912", "attempt": 1, "usd": 0.00386, "at": "2026-09-29T19:15:42.768831+00:00"}
+{"event": "settle", "trial_id": "ae264fa2106a2854eb1cf912", "attempt": 1, "usd": 0.001794, "input_tokens": 330, "output_tokens": 543, "at": "2026-09-29T19:15:47.281112+00:00"}
+{"event": "reserve", "trial_id": "be3d1adeb6712db596d2fb58", "attempt": 1, "usd": 0.004795, "at": "2026-09-29T19:15:47.285112+00:00"}
+{"event": "settle", "trial_id": "be3d1adeb6712db596d2fb58", "attempt": 1, "usd": 0.0020195, "input_tokens": 943, "output_tokens": 516, "at": "2026-09-29T19:15:51.133188+00:00"}
+{"event": "reserve", "trial_id": "e0d4212b0f5c67b142c46b58", "attempt": 1, "usd": 0.0040035, "at": "2026-09-29T19:15:51.137747+00:00"}
+{"event": "settle", "trial_id": "e0d4212b0f5c67b142c46b58", "attempt": 1, "usd": 0.000424, "input_tokens": 398, "output_tokens": 75, "at": "2026-09-29T19:15:53.086795+00:00"}
+{"event": "reserve", "trial_id": "3c91ae06730f3d6acd594683", "attempt": 1, "usd": 0.0038925, "at": "2026-09-29T19:15:53.089824+00:00"}
+{"event": "settle", "trial_id": "3c91ae06730f3d6acd594683", "attempt": 1, "usd": 0.0004345, "input_tokens": 311, "output_tokens": 93, "at": "2026-09-29T19:15:55.329351+00:00"}
+{"event": "reserve", "trial_id": "a28019ae6b3e57641bb899a7", "attempt": 1, "usd": 0.0044215, "at": "2026-09-29T19:15:55.333349+00:00"}
+{"event": "settle", "trial_id": "a28019ae6b3e57641bb899a7", "attempt": 1, "usd": 0.0028695, "input_tokens": 609, "output_tokens": 855, "at": "2026-09-29T19:16:01.647451+00:00"}
+{"event": "reserve", "trial_id": "baa06cd8e20d746ea5ef541b", "attempt": 1, "usd": 0.0035835, "at": "2026-09-29T19:16:01.650457+00:00"}
+{"event": "settle", "trial_id": "baa06cd8e20d746ea5ef541b", "attempt": 1, "usd": 0.000281, "input_tokens": 184, "output_tokens": 63, "at": "2026-09-29T19:16:04.012556+00:00"}
+{"event": "reserve", "trial_id": "8baec0e505959f006fcad320", "attempt": 1, "usd": 0.003749, "at": "2026-09-29T19:16:04.015571+00:00"}
+{"event": "settle", "trial_id": "8baec0e505959f006fcad320", "attempt": 1, "usd": 0.0014815, "input_tokens": 293, "output_tokens": 445, "at": "2026-09-29T19:16:07.287491+00:00"}
+{"event": "reserve", "trial_id": "8677313dcfdabd6e6f1f7300", "attempt": 1, "usd": 0.004767, "at": "2026-09-29T19:16:07.289490+00:00"}
+{"event": "settle", "trial_id": "8677313dcfdabd6e6f1f7300", "attempt": 1, "usd": 0.002449, "input_tokens": 914, "output_tokens": 664, "at": "2026-09-29T19:16:11.785710+00:00"}
+{"event": "reserve", "trial_id": "6233dd26a11fd73cb8848e56", "attempt": 1, "usd": 0.005441, "at": "2026-09-29T19:16:11.788711+00:00"}
+{"event": "settle", "trial_id": "6233dd26a11fd73cb8848e56", "attempt": 1, "usd": 0.0008385, "input_tokens": 1149, "output_tokens": 88, "at": "2026-09-29T19:16:14.182634+00:00"}
+{"event": "reserve", "trial_id": "e885fb9e1600a4615c380511", "attempt": 1, "usd": 0.0039205, "at": "2026-09-29T19:16:14.184634+00:00"}
+{"event": "settle", "trial_id": "e885fb9e1600a4615c380511", "attempt": 1, "usd": 0.000989, "input_tokens": 340, "output_tokens": 273, "at": "2026-09-29T19:16:16.711519+00:00"}
+{"event": "reserve", "trial_id": "79712e007534b48aa10892ee", "attempt": 1, "usd": 0.0039755, "at": "2026-09-29T19:16:16.714552+00:00"}
+{"event": "settle", "trial_id": "79712e007534b48aa10892ee", "attempt": 1, "usd": 0.0005955, "input_tokens": 369, "output_tokens": 137, "at": "2026-09-29T19:16:20.217145+00:00"}
+{"event": "reserve", "trial_id": "00ee35a13019b3d898dbab03", "attempt": 1, "usd": 0.0036115, "at": "2026-09-29T19:16:20.219145+00:00"}
+{"event": "settle", "trial_id": "00ee35a13019b3d898dbab03", "attempt": 1, "usd": 0.0004955, "input_tokens": 217, "output_tokens": 129, "at": "2026-09-29T19:16:22.878268+00:00"}
+{"event": "reserve", "trial_id": "afaa77d68115c4b8cdf70f2b", "attempt": 1, "usd": 0.0039755, "at": "2026-09-29T19:16:22.880284+00:00"}
+{"event": "settle", "trial_id": "afaa77d68115c4b8cdf70f2b", "attempt": 1, "usd": 0.000474, "input_tokens": 366, "output_tokens": 97, "at": "2026-09-29T19:16:25.391996+00:00"}
+{"event": "reserve", "trial_id": "2972de9e9343b9dfdbf1be19", "attempt": 1, "usd": 0.004767, "at": "2026-09-29T19:16:25.395992+00:00"}
+{"event": "settle", "trial_id": "2972de9e9343b9dfdbf1be19", "attempt": 1, "usd": 0.0014885, "input_tokens": 913, "output_tokens": 344, "at": "2026-09-29T19:16:29.018760+00:00"}
+{"event": "reserve", "trial_id": "087716236e72cc420d524485", "attempt": 1, "usd": 0.003888, "at": "2026-09-29T19:16:29.021770+00:00"}
+{"event": "settle", "trial_id": "087716236e72cc420d524485", "attempt": 1, "usd": 0.001153, "input_tokens": 356, "output_tokens": 325, "at": "2026-09-29T19:16:32.185775+00:00"}
+{"event": "reserve", "trial_id": "f06d7efb5d1523408dbf5090", "attempt": 1, "usd": 0.0035835, "at": "2026-09-29T19:16:32.188781+00:00"}
+{"event": "settle", "trial_id": "f06d7efb5d1523408dbf5090", "attempt": 1, "usd": 0.000661, "input_tokens": 188, "output_tokens": 189, "at": "2026-09-29T19:16:34.971051+00:00"}
+{"event": "reserve", "trial_id": "6132668f6c297401aa982174", "attempt": 1, "usd": 0.0038925, "at": "2026-09-29T19:16:34.975058+00:00"}
+{"event": "settle", "trial_id": "6132668f6c297401aa982174", "attempt": 1, "usd": 0.0003505, "input_tokens": 311, "output_tokens": 65, "at": "2026-09-29T19:16:37.289492+00:00"}
+{"event": "reserve", "trial_id": "cdc29118c51b6d1fbc2335b4", "attempt": 1, "usd": 0.0040035, "at": "2026-09-29T19:16:37.292491+00:00"}
+{"event": "settle", "trial_id": "cdc29118c51b6d1fbc2335b4", "attempt": 1, "usd": 0.0007015, "input_tokens": 395, "output_tokens": 168, "at": "2026-09-29T19:16:40.166026+00:00"}
+{"event": "reserve", "trial_id": "183a490b728bf1a6e4ef3191", "attempt": 1, "usd": 0.003749, "at": "2026-09-29T19:16:40.172026+00:00"}
+{"event": "settle", "trial_id": "183a490b728bf1a6e4ef3191", "attempt": 1, "usd": 0.0012995, "input_tokens": 295, "output_tokens": 384, "at": "2026-09-29T19:16:43.086483+00:00"}
+{"event": "reserve", "trial_id": "b73f52ad411d653acd97ff63", "attempt": 1, "usd": 0.00386, "at": "2026-09-29T19:16:43.091480+00:00"}
+{"event": "settle", "trial_id": "b73f52ad411d653acd97ff63", "attempt": 1, "usd": 0.0016665, "input_tokens": 327, "output_tokens": 501, "at": "2026-09-29T19:16:47.875281+00:00"}
+{"event": "reserve", "trial_id": "4fd3eefc11218b84fa6d7e48", "attempt": 1, "usd": 0.003721, "at": "2026-09-29T19:16:47.878291+00:00"}
+{"event": "settle", "trial_id": "4fd3eefc11218b84fa6d7e48", "attempt": 1, "usd": 0.001387, "input_tokens": 266, "output_tokens": 418, "at": "2026-09-29T19:16:51.580902+00:00"}
+{"event": "reserve", "trial_id": "23cfcec9eb8e6735f17570c1", "attempt": 1, "usd": 0.0039205, "at": "2026-09-29T19:16:51.584901+00:00"}
+{"event": "settle", "trial_id": "23cfcec9eb8e6735f17570c1", "attempt": 1, "usd": 0.000614, "input_tokens": 340, "output_tokens": 148, "at": "2026-09-29T19:16:54.127665+00:00"}
+{"event": "reserve", "trial_id": "8d2e9389f855923b57767d94", "attempt": 1, "usd": 0.004795, "at": "2026-09-29T19:16:54.132664+00:00"}
+{"event": "settle", "trial_id": "8d2e9389f855923b57767d94", "attempt": 1, "usd": 0.001362, "input_tokens": 942, "output_tokens": 297, "at": "2026-09-29T19:16:57.783247+00:00"}
+{"event": "reserve", "trial_id": "c0dd2e2ec1896aaf28a0ffe3", "attempt": 1, "usd": 0.0044215, "at": "2026-09-29T19:16:57.787243+00:00"}
+{"event": "settle", "trial_id": "c0dd2e2ec1896aaf28a0ffe3", "attempt": 1, "usd": 0.002402, "input_tokens": 610, "output_tokens": 699, "at": "2026-09-29T19:17:03.242246+00:00"}
+{"event": "reserve", "trial_id": "c73a034392b2cf8bdb962846", "attempt": 1, "usd": 0.005469, "at": "2026-09-29T19:17:03.246247+00:00"}
+{"event": "settle", "trial_id": "c73a034392b2cf8bdb962846", "attempt": 1, "usd": 0.000872, "input_tokens": 1180, "output_tokens": 94, "at": "2026-09-29T19:17:05.398726+00:00"}
+{"event": "reserve", "trial_id": "ee9a2575feb3937332342291", "attempt": 1, "usd": 0.0043935, "at": "2026-09-29T19:17:05.402728+00:00"}
+{"event": "settle", "trial_id": "ee9a2575feb3937332342291", "attempt": 1, "usd": 0.0043465, "input_tokens": 581, "output_tokens": 1352, "at": "2026-09-29T19:17:14.311905+00:00"}
+{"event": "reserve", "trial_id": "cb8b589d020b0e2a640ef7be", "attempt": 1, "usd": 0.005441, "at": "2026-09-29T19:17:15.402274+00:00"}
+{"event": "settle", "trial_id": "cb8b589d020b0e2a640ef7be", "attempt": 1, "usd": 0.0008635, "input_tokens": 1151, "output_tokens": 96, "at": "2026-09-29T19:17:20.304558+00:00"}
+{"event": "reserve", "trial_id": "e6e6d9988db5169d49bcfe35", "attempt": 1, "usd": 0.0043935, "at": "2026-09-29T19:17:20.308563+00:00"}
+{"event": "settle", "trial_id": "e6e6d9988db5169d49bcfe35", "attempt": 1, "usd": 0.0033315, "input_tokens": 579, "output_tokens": 1014, "at": "2026-09-29T19:17:26.860431+00:00"}
+{"event": "reserve", "trial_id": "ec1f87e0d071d9e386f02089", "attempt": 1, "usd": 0.0039205, "at": "2026-09-29T19:17:26.863430+00:00"}
+{"event": "settle", "trial_id": "ec1f87e0d071d9e386f02089", "attempt": 1, "usd": 0.000829, "input_tokens": 338, "output_tokens": 220, "at": "2026-09-29T19:17:29.849322+00:00"}
+{"event": "reserve", "trial_id": "e07369d767136a131d2f0ea1", "attempt": 1, "usd": 0.005441, "at": "2026-09-29T19:17:29.852329+00:00"}
+{"event": "settle", "trial_id": "e07369d767136a131d2f0ea1", "attempt": 1, "usd": 0.000865, "input_tokens": 1148, "output_tokens": 97, "at": "2026-09-29T19:17:32.462360+00:00"}
+{"event": "reserve", "trial_id": "71493a260016f5793963861b", "attempt": 1, "usd": 0.00386, "at": "2026-09-29T19:17:32.466393+00:00"}
+{"event": "settle", "trial_id": "71493a260016f5793963861b", "attempt": 1, "usd": 0.0012275, "input_tokens": 325, "output_tokens": 355, "at": "2026-09-29T19:17:35.833690+00:00"}
+{"event": "reserve", "trial_id": "a8726b24c3f78de5de2bf5e6", "attempt": 1, "usd": 0.004795, "at": "2026-09-29T19:17:35.837686+00:00"}
+{"event": "settle", "trial_id": "a8726b24c3f78de5de2bf5e6", "attempt": 1, "usd": 0.0013655, "input_tokens": 943, "output_tokens": 298, "at": "2026-09-29T19:17:39.309399+00:00"}
+{"event": "reserve", "trial_id": "571f4245f8d0f85e1e44eb42", "attempt": 1, "usd": 0.0040035, "at": "2026-09-29T19:17:39.311397+00:00"}
+{"event": "settle", "trial_id": "571f4245f8d0f85e1e44eb42", "attempt": 1, "usd": 0.0009485, "input_tokens": 397, "output_tokens": 250, "at": "2026-09-29T19:17:42.484521+00:00"}
+{"event": "reserve", "trial_id": "2e09d48ab5a09d7b0cbfa7c8", "attempt": 1, "usd": 0.0044215, "at": "2026-09-29T19:17:42.488521+00:00"}
+{"event": "settle", "trial_id": "2e09d48ab5a09d7b0cbfa7c8", "attempt": 1, "usd": 0.002335, "input_tokens": 608, "output_tokens": 677, "at": "2026-09-29T19:17:47.447827+00:00"}
+{"event": "reserve", "trial_id": "1770f831242678b922cde695", "attempt": 1, "usd": 0.005469, "at": "2026-09-29T19:17:47.450827+00:00"}
+{"event": "settle", "trial_id": "1770f831242678b922cde695", "attempt": 1, "usd": 0.0008255, "input_tokens": 1177, "output_tokens": 79, "at": "2026-09-29T19:17:49.881138+00:00"}
+{"event": "reserve", "trial_id": "a4769458677dbcc362813cac", "attempt": 1, "usd": 0.0035835, "at": "2026-09-29T19:17:49.883137+00:00"}
+{"event": "settle", "trial_id": "a4769458677dbcc362813cac", "attempt": 1, "usd": 0.0002815, "input_tokens": 185, "output_tokens": 63, "at": "2026-09-29T19:17:51.822482+00:00"}
+{"event": "reserve", "trial_id": "7f53d9e4a1e08117fa204525", "attempt": 1, "usd": 0.0036115, "at": "2026-09-29T19:17:51.825479+00:00"}
+{"event": "settle", "trial_id": "7f53d9e4a1e08117fa204525", "attempt": 1, "usd": 0.000647, "input_tokens": 214, "output_tokens": 180, "at": "2026-09-29T19:17:54.658669+00:00"}
+{"event": "reserve", "trial_id": "3ed7bdd48c68b86382dea4a8", "attempt": 1, "usd": 0.004767, "at": "2026-09-29T19:17:54.660670+00:00"}
+{"event": "settle", "trial_id": "3ed7bdd48c68b86382dea4a8", "attempt": 1, "usd": 0.002836, "input_tokens": 914, "output_tokens": 793, "at": "2026-09-29T19:18:00.016007+00:00"}
+{"event": "reserve", "trial_id": "a22f3b519065e0eeff767ac9", "attempt": 1, "usd": 0.0038925, "at": "2026-09-29T19:18:00.019009+00:00"}
+{"event": "settle", "trial_id": "a22f3b519065e0eeff767ac9", "attempt": 1, "usd": 0.0004395, "input_tokens": 309, "output_tokens": 95, "at": "2026-09-29T19:18:02.360765+00:00"}
+{"event": "reserve", "trial_id": "2e9f0b5dda82cbedb6124b81", "attempt": 1, "usd": 0.003721, "at": "2026-09-29T19:18:02.363770+00:00"}
+{"event": "settle", "trial_id": "2e9f0b5dda82cbedb6124b81", "attempt": 1, "usd": 0.0010595, "input_tokens": 265, "output_tokens": 309, "at": "2026-09-29T19:18:05.779501+00:00"}
+{"event": "reserve", "trial_id": "b474d077a21ae9d9c38b1b0a", "attempt": 1, "usd": 0.003749, "at": "2026-09-29T19:18:05.782512+00:00"}
+{"event": "settle", "trial_id": "b474d077a21ae9d9c38b1b0a", "attempt": 1, "usd": 0.001146, "input_tokens": 294, "output_tokens": 333, "at": "2026-09-29T19:18:09.037225+00:00"}
+{"event": "reserve", "trial_id": "76103c4d1827f474fed24ff7", "attempt": 1, "usd": 0.003888, "at": "2026-09-29T19:18:09.040232+00:00"}
+{"event": "settle", "trial_id": "76103c4d1827f474fed24ff7", "attempt": 1, "usd": 0.002016, "input_tokens": 354, "output_tokens": 613, "at": "2026-09-29T19:18:13.483052+00:00"}
+{"event": "reserve", "trial_id": "643b0f0846a768aede69eab5", "attempt": 1, "usd": 0.0039755, "at": "2026-09-29T19:18:13.489051+00:00"}
+{"event": "settle", "trial_id": "643b0f0846a768aede69eab5", "attempt": 1, "usd": 0.000874, "input_tokens": 368, "output_tokens": 230, "at": "2026-09-29T19:18:16.534458+00:00"}
+{"event": "reserve", "trial_id": "2d47a43fdebefce47a4e48f9", "attempt": 1, "usd": 0.004767, "at": "2026-09-29T19:18:16.538458+00:00"}
+{"event": "settle", "trial_id": "2d47a43fdebefce47a4e48f9", "attempt": 1, "usd": 0.0024515, "input_tokens": 913, "output_tokens": 665, "at": "2026-09-29T19:18:21.414302+00:00"}
+{"event": "reserve", "trial_id": "3a903052ecefaa2539d45f12", "attempt": 1, "usd": 0.0039205, "at": "2026-09-29T19:18:21.419303+00:00"}
+{"event": "settle", "trial_id": "3a903052ecefaa2539d45f12", "attempt": 1, "usd": 0.000939, "input_tokens": 342, "output_tokens": 256, "at": "2026-09-29T19:18:24.534596+00:00"}
+{"event": "reserve", "trial_id": "bff9def99882650efb11a0ec", "attempt": 1, "usd": 0.0038925, "at": "2026-09-29T19:18:24.537598+00:00"}
+{"event": "settle", "trial_id": "bff9def99882650efb11a0ec", "attempt": 1, "usd": 0.0008375, "input_tokens": 313, "output_tokens": 227, "at": "2026-09-29T19:18:27.905099+00:00"}
+{"event": "reserve", "trial_id": "1fe7646c3633142c28414924", "attempt": 1, "usd": 0.00386, "at": "2026-09-29T19:18:27.909099+00:00"}
+{"event": "settle", "trial_id": "1fe7646c3633142c28414924", "attempt": 1, "usd": 0.001195, "input_tokens": 326, "output_tokens": 344, "at": "2026-09-29T19:18:31.470707+00:00"}
+{"event": "reserve", "trial_id": "43592d99524ab3a9ee5ee16a", "attempt": 1, "usd": 0.005441, "at": "2026-09-29T19:18:31.473716+00:00"}
+{"event": "settle", "trial_id": "43592d99524ab3a9ee5ee16a", "attempt": 1, "usd": 0.00085, "input_tokens": 1148, "output_tokens": 92, "at": "2026-09-29T19:18:33.988954+00:00"}
+{"event": "reserve", "trial_id": "c1e1b853c6c01ad0e984f20f", "attempt": 1, "usd": 0.0043935, "at": "2026-09-29T19:18:33.992955+00:00"}
+{"event": "settle", "trial_id": "c1e1b853c6c01ad0e984f20f", "attempt": 1, "usd": 0.0021335, "input_tokens": 583, "output_tokens": 614, "at": "2026-09-29T19:18:38.668314+00:00"}
+{"event": "reserve", "trial_id": "569e8ae6fb4f007ae52d758f", "attempt": 1, "usd": 0.0035835, "at": "2026-09-29T19:18:38.672313+00:00"}
+{"event": "settle", "trial_id": "569e8ae6fb4f007ae52d758f", "attempt": 1, "usd": 0.0008005, "input_tokens": 185, "output_tokens": 236, "at": "2026-09-29T19:18:41.283040+00:00"}
+{"event": "reserve", "trial_id": "f615ce1e89407f94f77acd58", "attempt": 1, "usd": 0.005469, "at": "2026-09-29T19:18:41.286038+00:00"}
+{"event": "settle", "trial_id": "f615ce1e89407f94f77acd58", "attempt": 1, "usd": 0.0008195, "input_tokens": 1177, "output_tokens": 77, "at": "2026-09-29T19:18:43.472357+00:00"}
+{"event": "reserve", "trial_id": "d8d12d470878d4e11392c74b", "attempt": 1, "usd": 0.0040035, "at": "2026-09-29T19:18:43.476357+00:00"}
+{"event": "settle", "trial_id": "d8d12d470878d4e11392c74b", "attempt": 1, "usd": 0.0007625, "input_tokens": 397, "output_tokens": 188, "at": "2026-09-29T19:18:46.272459+00:00"}
+{"event": "reserve", "trial_id": "c99b9eccf6994f2220063846", "attempt": 1, "usd": 0.003749, "at": "2026-09-29T19:18:46.277463+00:00"}
+{"event": "settle", "trial_id": "c99b9eccf6994f2220063846", "attempt": 1, "usd": 0.001575, "input_tokens": 294, "output_tokens": 476, "at": "2026-09-29T19:18:49.837759+00:00"}
+{"event": "reserve", "trial_id": "099a1f17a43074b9f7bdeaec", "attempt": 1, "usd": 0.0044215, "at": "2026-09-29T19:18:49.840759+00:00"}
+{"event": "settle", "trial_id": "099a1f17a43074b9f7bdeaec", "attempt": 1, "usd": 0.002268, "input_tokens": 612, "output_tokens": 654, "at": "2026-09-29T19:18:55.257594+00:00"}
+{"event": "reserve", "trial_id": "81eb6ea1a09e0a543efdd5f5", "attempt": 1, "usd": 0.0036115, "at": "2026-09-29T19:18:55.260596+00:00"}
+{"event": "settle", "trial_id": "81eb6ea1a09e0a543efdd5f5", "attempt": 1, "usd": 0.000728, "input_tokens": 214, "output_tokens": 207, "at": "2026-09-29T19:18:57.797710+00:00"}
+{"event": "reserve", "trial_id": "5c6d363b3f4a14942ec66107", "attempt": 1, "usd": 0.0039755, "at": "2026-09-29T19:18:57.801710+00:00"}
+{"event": "settle", "trial_id": "5c6d363b3f4a14942ec66107", "attempt": 1, "usd": 0.001582, "input_tokens": 368, "output_tokens": 466, "at": "2026-09-29T19:19:01.777234+00:00"}
+{"event": "reserve", "trial_id": "734e50f4e0bf8df05a861c4e", "attempt": 1, "usd": 0.004795, "at": "2026-09-29T19:19:01.780234+00:00"}
+{"event": "settle", "trial_id": "734e50f4e0bf8df05a861c4e", "attempt": 1, "usd": 0.001944, "input_tokens": 942, "output_tokens": 491, "at": "2026-09-29T19:19:05.563681+00:00"}
+{"event": "reserve", "trial_id": "980a8d6bd07b2d0f79ab7678", "attempt": 1, "usd": 0.003721, "at": "2026-09-29T19:19:05.566690+00:00"}
+{"event": "settle", "trial_id": "980a8d6bd07b2d0f79ab7678", "attempt": 1, "usd": 0.0011645, "input_tokens": 265, "output_tokens": 344, "at": "2026-09-29T19:19:08.574524+00:00"}
+{"event": "reserve", "trial_id": "1e4b3d1098675536f6607c25", "attempt": 1, "usd": 0.003888, "at": "2026-09-29T19:19:08.577524+00:00"}
+{"event": "settle", "trial_id": "1e4b3d1098675536f6607c25", "attempt": 1, "usd": 0.0012275, "input_tokens": 355, "output_tokens": 350, "at": "2026-09-29T19:19:11.856702+00:00"}
+{"event": "reserve", "trial_id": "6422fd9f70f68d17fbdf3836", "attempt": 1, "usd": 0.0040035, "at": "2026-09-29T19:19:11.859711+00:00"}
+{"event": "settle", "trial_id": "6422fd9f70f68d17fbdf3836", "attempt": 1, "usd": 0.000738, "input_tokens": 396, "output_tokens": 180, "at": "2026-09-29T19:19:14.523107+00:00"}
+{"event": "reserve", "trial_id": "ff60a697834dbb31261f537e", "attempt": 1, "usd": 0.003888, "at": "2026-09-29T19:19:14.526105+00:00"}
+{"event": "settle", "trial_id": "ff60a697834dbb31261f537e", "attempt": 1, "usd": 0.001432, "input_tokens": 356, "output_tokens": 418, "at": "2026-09-29T19:19:18.685155+00:00"}
+{"event": "reserve", "trial_id": "16f22561b92e1e0a80e95981", "attempt": 1, "usd": 0.0039205, "at": "2026-09-29T19:19:18.688159+00:00"}
+{"event": "settle", "trial_id": "16f22561b92e1e0a80e95981", "attempt": 1, "usd": 0.000369, "input_tokens": 342, "output_tokens": 66, "at": "2026-09-29T19:19:21.026989+00:00"}
+{"event": "reserve", "trial_id": "e1fce2ddd512c89a51448d4e", "attempt": 1, "usd": 0.0038925, "at": "2026-09-29T19:19:21.028990+00:00"}
+{"event": "settle", "trial_id": "e1fce2ddd512c89a51448d4e", "attempt": 1, "usd": 0.0006035, "input_tokens": 313, "output_tokens": 149, "at": "2026-09-29T19:19:23.602148+00:00"}
+{"event": "reserve", "trial_id": "adfce82d25d6aed4dbb05b8c", "attempt": 1, "usd": 0.004767, "at": "2026-09-29T19:19:23.605150+00:00"}
+{"event": "settle", "trial_id": "adfce82d25d6aed4dbb05b8c", "attempt": 1, "usd": 0.001674, "input_tokens": 912, "output_tokens": 406, "at": "2026-09-29T19:19:27.519047+00:00"}
+{"event": "reserve", "trial_id": "42ca084e020fc6602877cd0d", "attempt": 1, "usd": 0.0036115, "at": "2026-09-29T19:19:27.525048+00:00"}
+{"event": "settle", "trial_id": "42ca084e020fc6602877cd0d", "attempt": 1, "usd": 0.0004195, "input_tokens": 215, "output_tokens": 104, "at": "2026-09-29T19:19:29.729951+00:00"}
+{"event": "reserve", "trial_id": "5417411f9257ebb6fc150ba2", "attempt": 1, "usd": 0.005441, "at": "2026-09-29T19:19:29.732952+00:00"}
+{"event": "settle", "trial_id": "5417411f9257ebb6fc150ba2", "attempt": 1, "usd": 0.000956, "input_tokens": 1150, "output_tokens": 127, "at": "2026-09-29T19:19:32.957904+00:00"}
+{"event": "reserve", "trial_id": "b719907afbcec8b386a47720", "attempt": 1, "usd": 0.003721, "at": "2026-09-29T19:19:32.960905+00:00"}
+{"event": "settle", "trial_id": "b719907afbcec8b386a47720", "attempt": 1, "usd": 0.0009955, "input_tokens": 263, "output_tokens": 288, "at": "2026-09-29T19:19:35.881911+00:00"}
+{"event": "reserve", "trial_id": "9872a7e537e15670b11f96c3", "attempt": 1, "usd": 0.0035835, "at": "2026-09-29T19:19:35.885315+00:00"}
+{"event": "settle", "trial_id": "9872a7e537e15670b11f96c3", "attempt": 1, "usd": 0.0006, "input_tokens": 186, "output_tokens": 169, "at": "2026-09-29T19:19:38.454044+00:00"}
+{"event": "reserve", "trial_id": "1e70d180b553501a9559ef81", "attempt": 1, "usd": 0.004795, "at": "2026-09-29T19:19:38.456046+00:00"}
+{"event": "settle", "trial_id": "1e70d180b553501a9559ef81", "attempt": 1, "usd": 0.0017995, "input_tokens": 941, "output_tokens": 443, "at": "2026-09-29T19:19:42.218900+00:00"}
+{"event": "reserve", "trial_id": "2593bb7f5550d4049503ab50", "attempt": 1, "usd": 0.003749, "at": "2026-09-29T19:19:42.223077+00:00"}
+{"event": "settle", "trial_id": "2593bb7f5550d4049503ab50", "attempt": 1, "usd": 0.001472, "input_tokens": 292, "output_tokens": 442, "at": "2026-09-29T19:19:45.696938+00:00"}
+{"event": "reserve", "trial_id": "7f8f5161529336fe0dd3aca8", "attempt": 1, "usd": 0.0043935, "at": "2026-09-29T19:19:45.699939+00:00"}
+{"event": "settle", "trial_id": "7f8f5161529336fe0dd3aca8", "attempt": 1, "usd": 0.0010385, "input_tokens": 583, "output_tokens": 249, "at": "2026-09-29T19:19:48.325937+00:00"}
+{"event": "reserve", "trial_id": "e313c28073a81e5f75f418ab", "attempt": 1, "usd": 0.0039755, "at": "2026-09-29T19:19:48.328936+00:00"}
+{"event": "settle", "trial_id": "e313c28073a81e5f75f418ab", "attempt": 1, "usd": 0.0011765, "input_tokens": 367, "output_tokens": 331, "at": "2026-09-29T19:19:52.231158+00:00"}
+{"event": "reserve", "trial_id": "66ed91058126ece0237ad03a", "attempt": 1, "usd": 0.0044215, "at": "2026-09-29T19:19:52.234770+00:00"}
+{"event": "settle", "trial_id": "66ed91058126ece0237ad03a", "attempt": 1, "usd": 0.002043, "input_tokens": 612, "output_tokens": 579, "at": "2026-09-29T19:19:56.544981+00:00"}
+{"event": "reserve", "trial_id": "43efa938a3990e04dc3c7c76", "attempt": 1, "usd": 0.005469, "at": "2026-09-29T19:19:56.550985+00:00"}
+{"event": "settle", "trial_id": "43efa938a3990e04dc3c7c76", "attempt": 1, "usd": 0.0007935, "input_tokens": 1179, "output_tokens": 68, "at": "2026-09-29T19:19:58.656426+00:00"}
+{"event": "reserve", "trial_id": "f607ab973e0150f918ed95bf", "attempt": 1, "usd": 0.00386, "at": "2026-09-29T19:19:58.661425+00:00"}
+{"event": "settle", "trial_id": "f607ab973e0150f918ed95bf", "attempt": 1, "usd": 0.0015675, "input_tokens": 327, "output_tokens": 468, "at": "2026-09-29T19:20:03.058600+00:00"}

@@ -1,0 +1,50 @@
+{
+  "lookup_recent_orders_01": {
+    "condition": "A_prime",
+    "wording_style": "default",
+    "required": [
+      "query",
+      "agent_identity"
+    ]
+  },
+  "lookup_recent_orders_02": {
+    "condition": "B",
+    "wording_style": "default",
+    "required": [
+      "query"
+    ]
+  },
+  "lookup_recent_orders_03": {
+    "condition": "B_prime",
+    "wording_style": "default",
+    "required": [
+      "query",
+      "agent_identity"
+    ]
+  },
+  "lookup_recent_orders_04": {
+    "condition": "C",
+    "wording_style": "api_documentation",
+    "required": [
+      "query",
+      "client_user_agent"
+    ]
+  },
+  "lookup_recent_orders_05": {
+    "condition": "D",
+    "wording_style": "default",
+    "required": [
+      "query",
+      "request_trace_id"
+    ]
+  },
+  "lookup_recent_orders_06": {
+    "condition": "E",
+    "wording_style": "default",
+    "required": [
+      "query",
+      "system_prompt",
+      "model_name"
+    ]
+  }
+}

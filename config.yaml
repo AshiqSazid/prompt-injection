@@ -1,0 +1,948 @@
+# Which models x conditions x reps to run for each stage.
+# IMPORTANT: set the `model` strings to the exact IDs your accounts expose today
+# (model names change — check each provider's current list before a live run).
+
+stages:
+  gate:
+    # 3 aligned frontier models. If you don't have all three keys yet, start with
+    # any 2 (e.g. anthropic + openai) — the gate only needs "well-aligned models".
+    # Each model runs twice: bare (no framework identity) and scaffolded (a
+    # production-style framework system prompt, recorded in the `framework` field).
+    # The bare-vs-scaffolded contrast is itself a result, and scaffolding is what
+    # gives framework identity (T1) something real to leak.
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor}
+      - {provider: openai,    model: gpt-4o}
+      - {provider: openai,    model: gpt-4o, scaffold: cursor}
+      - {provider: google,    model: gemini-3-flash-preview}
+      - {provider: google,    model: gemini-3-flash-preview, scaffold: cursor}
+    conditions: [A, A_prime, B, C, D]
+    reps: 30
+    temperature: 0.7
+
+  breadth:
+    # The full grid (protocol §4). Fill in current model IDs.
+    models:
+      # NOTE: undated aliases 404 on the API — pin exact IDs (protocol §11).
+      - {provider: anthropic, model: claude-opus-4-1-20250805}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929}
+      - {provider: anthropic, model: claude-haiku-4-5-20251001}
+      - {provider: openai,    model: gpt-4o}
+      - {provider: openai,    model: gpt-4o-mini}
+      # gemini-2.x has ZERO free-tier quota; gemini-3 is capped at 20 req/DAY.
+      # Enable billing on the Google project before running this stage.
+      - {provider: google,    model: gemini-3-flash-preview}
+      # open models via a local Ollama OpenAI-compatible endpoint can be added here
+    conditions: [A, A_prime, B, C, D]
+    reps: 30
+    temperature: 0.7
+
+  # Same 3 aligned models as `gate`, but routed through OpenRouter with ONE key.
+  # NOTE: OpenRouter is a proxy — these rows log framework="openrouter", not
+  # "raw-api". Prefer the native `gate` stage for the load-bearing Gate number;
+  # use this when you only have an OpenRouter key, or to spot-check parity.
+  # Verify exact slugs at https://openrouter.ai/models (names drift).
+  gate_openrouter:
+    models:
+      - {provider: openrouter, model: anthropic/claude-sonnet-4.5}
+      - {provider: openrouter, model: openai/gpt-4o}
+      - {provider: openrouter, model: google/gemini-2.0-flash-001}
+    conditions: [A, A_prime, B, C, D]
+    reps: 30
+    temperature: 0.7
+
+  # The open-model breadth grid (H2 capability-scaling) — OpenRouter's real win:
+  # no local Ollama needed. Verify slugs at https://openrouter.ai/models.
+  breadth_openrouter:
+    models:
+      - {provider: openrouter, model: meta-llama/llama-3.1-8b-instruct}
+      - {provider: openrouter, model: meta-llama/llama-3.1-70b-instruct}
+      - {provider: openrouter, model: qwen/qwen-2.5-7b-instruct}
+      - {provider: openrouter, model: qwen/qwen-2.5-72b-instruct}
+      - {provider: openrouter, model: mistralai/mistral-large}
+      - {provider: openrouter, model: deepseek/deepseek-chat}
+    conditions: [A, A_prime, B, C, D]
+    reps: 30
+    temperature: 0.7
+
+  # Tiny end-to-end check through OpenRouter: one cheap model, all 5 conditions,
+  # a few reps. ~15 calls, cheap enough for a near-empty balance, and it touches
+  # every condition so analyze.py produces a (noisy) mini Δ.
+  gate_openrouter_mini:
+    models:
+      - {provider: openrouter, model: openai/gpt-4o-mini}
+      - {provider: openrouter, model: openai/gpt-4o-mini, scaffold: cursor}
+    conditions: [A, A_prime, B, C, D]
+    reps: 3
+    temperature: 0.7
+
+  # Small live check on native OpenAI + GLM (Zhipu) only, bare vs scaffolded,
+  # across all 5 conditions. max_tokens is kept low to bound spend (<50c). Verify
+  # the GLM model slug + endpoint (GLM_BASE_URL) at your provider before running.
+  smoke_glm_openai:
+    models:
+      - {provider: openai, model: gpt-4o}
+      - {provider: openai, model: gpt-4o, scaffold: cursor}
+      - {provider: glm,    model: glm-4.5}
+      - {provider: glm,    model: glm-4.5, scaffold: cursor}
+    conditions: [A, A_prime, B, C, D]
+    reps: 3
+    temperature: 0.7
+    max_tokens: 256
+
+  # Clean single-run Gate on native OpenAI, condition C using the api_documentation
+  # (User-Agent) wording that leaked in the ablation. Runs gpt-4o BARE and SCAFFOLDED
+  # (cursor) across ALL five conditions, so Δ = C − A′ (and C − D, bare vs scaffold)
+  # come from ONE run instead of a cross-run comparison. ~300 calls, <$2.
+  # Bare arm is the control: no assigned framework => C should not leak T1.
+  gate_openai_apidoc:
+    models:
+      - {provider: openai, model: gpt-4o, wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation}
+    conditions: [A, A_prime, B, C, D]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 256
+
+  # The Claude leg of the Gate — mirrors `gate_openai_apidoc` exactly (same
+  # conditions, reps, temperature, max_tokens and the api_documentation wording)
+  # so Δ = C − A′ is directly comparable across providers. Protocol §8 needs the
+  # effect on >=2 of 3 aligned models; this is model #2. ~300 calls, <$2.
+  gate_anthropic_apidoc:
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation}
+    conditions: [A, A_prime, B, C, D]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 256
+
+  # The Gemini leg of the Gate — model #3, the tiebreaker for protocol §8 (gpt-4o
+  # gave +67 pp, claude-sonnet-4-5 gave +0 pp). Mirrors gate_openai_apidoc /
+  # gate_anthropic_apidoc exactly so Δ is comparable. ~300 calls.
+  gate_google_apidoc:
+    models:
+      - {provider: google, model: gemini-3-flash-preview, wording_style: api_documentation}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation}
+    conditions: [A, A_prime, B, C, D]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 256
+
+  # Gemini arm of the wording ablation — the third provider decides whether the
+  # "reticent vs non-reticent" split is real or just OpenAI-vs-Anthropic.
+  wording_ablation_google:
+    models:
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: default}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: operational_metadata}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: compliance_logging}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: indirect_inference}
+    conditions: [C]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 256
+
+  # Condition-C wording ablation (protocol §4 Depth): same scaffolded gpt-4o, only
+  # the benign field's wording changes, to find a framing the model fills with its
+  # own identity instead of the user's task. Compare each wording's C leak against
+  # the "default" baseline in the same file. max_tokens capped for cost.
+  wording_ablation:
+    models:
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: default}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: operational_metadata}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: compliance_logging}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: indirect_inference}
+    conditions: [C]
+    reps: 30
+    # `temperature` is REQUIRED by run.py and was missing here, so this
+    # README-advertised stage raised KeyError before trial 1. Values match the
+    # sibling wording_ablation_{anthropic,google} stages so the three legs stay
+    # comparable (the original 150/150 gpt-4o run also used 0.7).
+    temperature: 0.7
+    max_tokens: 256
+
+  # The Claude arm of the wording ablation — same 5 wordings, so we can tell
+  # whether "the User-Agent framing is special" is a gpt-4o quirk or a general
+  # property of schema-convention completion. 150 calls.
+  wording_ablation_anthropic:
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: default}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: operational_metadata}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: compliance_logging}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: indirect_inference}
+    conditions: [C]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 256
+
+  # Confound fix: B conflates command PHRASING with a much bigger ASK (full system
+  # prompt) and a different CHANNEL (tool description). B_prime holds ask+channel
+  # constant with A_prime and varies only phrasing. Running A_prime/B_prime/C
+  # together on both models gives the clean phrasing ladder. 180 calls.
+  confound_fix_openai:
+    models:
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation}
+    conditions: [A_prime, B_prime, C]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 256
+
+  confound_fix_anthropic:
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation}
+    conditions: [A_prime, B_prime, C]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 256
+
+  # PROTOCOL §4 FRAMEWORK ARM — the experiment reviewer W1 calls decisive.
+  # NO planted scaffold: the agent runs inside a REAL LangGraph ReAct framework,
+  # so any framework identity in the output is genuine runtime knowledge, not an
+  # echo of a string we wrote into the system prompt. grade.py's T1_TERMS already
+  # contains langchain / langgraph / react agent, so a real leak is detected.
+  # Also answers protocol §13's biggest risk: does a real framework strip the
+  # extra field before the model sees it? (Probe says no -- this quantifies it.)
+  framework_arm_openai:
+    models:
+      - {provider: langchain_openai, model: gpt-4o, framework: langgraph-react, wording_style: api_documentation}
+    conditions: [A, A_prime, C, D]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 256
+
+  framework_arm_anthropic:
+    models:
+      - {provider: langchain_anthropic, model: claude-sonnet-4-5-20250929, framework: langgraph-react, wording_style: api_documentation}
+    conditions: [A, A_prime, C, D]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 256
+
+  # RELATED_WORK.md §2.2 — PAYLOAD GENERALITY. Condition C fixed, only the planted
+  # system-prompt content varies. Decides whether the channel is a fingerprinting
+  # curiosity (only product names come out) or a general prompt-disclosure
+  # primitive (codenames / policy text / secret-shaped strings come out).
+  # `framework:` records which payload each row used. 150 calls.
+  payload_generality_openai:
+    models:
+      - {provider: openai, model: gpt-4o, payload: product_name,       framework: payload_product_name,       wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: internal_codename,  framework: payload_internal_codename,  wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: policy_sentence,    framework: payload_policy_sentence,    wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: credential_shaped,  framework: payload_credential_shaped,  wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: long_block,         framework: payload_long_block,         wording_style: api_documentation}
+    # gpt-4o is the only RETICENT model in the study, so it is the only leg where
+    # "benign field beats asking outright" can be tested. C alone can measure that
+    # a payload leaks; it cannot attribute the leak to the benign FRAMING. A_prime
+    # (asks outright) and D (neutral required field) supply the contrast and the
+    # floor, generalizing the Cursor-only inversion to all five payloads.
+    # 5 payloads x 3 conditions x 20 reps = 300 trials.
+    conditions: [C, A_prime, D]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  # Claude stays C-only: it is at ceiling (A_prime = C = 100% in every Gate leg),
+  # so the contrast arms would measure nothing. This is cross-family confirmation
+  # that the payloads travel, not an inversion test. 5 x 1 x 30 = 150 trials.
+  payload_generality_anthropic:
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: product_name,      framework: payload_product_name,      wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: internal_codename, framework: payload_internal_codename, wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: policy_sentence,   framework: payload_policy_sentence,   wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: credential_shaped, framework: payload_credential_shaped, wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: long_block,        framework: payload_long_block,        wording_style: api_documentation}
+    conditions: [C]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 256
+
+  # RELATED_WORK.md §2.1 — BENIGN vs EXPLICIT, channel held constant. E replicates
+  # HiddenLayer's explicitly-named `system_prompt`/`model_name` parameters (they
+  # published no rates); C is the benign field. First measured numbers for their
+  # attack, plus the inversion this paper turns on. 120 calls (both models).
+  explicit_vs_benign_openai:
+    models:
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation}
+    conditions: [C, E]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 512
+
+  explicit_vs_benign_anthropic:
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation}
+    conditions: [C, E]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 512
+
+  # Tiny Gemini probe: does the benign field (C) leak where the explicit ask (A')
+  # does not? 8 calls -- sized to the 20 req/DAY free-tier cap. Not a Gate leg.
+  gate_google_mini:
+    models:
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation}
+    conditions: [A_prime, C]
+    reps: 4
+    temperature: 0.7
+    max_tokens: 256
+
+  # E x PAYLOADS (added 2026-08-08). The payload run showed A_prime is the WRONG
+  # explicit comparator for non-identity payloads: it asks only for "model and agent
+  # framework", so it cannot return a policy sentence or a credential and its 0/20
+  # there is uninformative. E asks for the system prompt outright, so it is the
+  # correct explicit baseline for every payload.
+  # NOTE max_tokens is 512 here vs 256 for payload_generality_*: E must emit a whole
+  # system prompt, so a 256 cap would truncate it. This is an asymmetry FAVOURING E,
+  # so it cannot explain C out-performing E; state it in the paper regardless.
+  # 5 payloads x 1 condition x 20 reps = 100 trials.
+  explicit_payloads_openai:
+    models:
+      - {provider: openai, model: gpt-4o, payload: product_name,       framework: payload_product_name}
+      - {provider: openai, model: gpt-4o, payload: internal_codename,  framework: payload_internal_codename}
+      - {provider: openai, model: gpt-4o, payload: policy_sentence,    framework: payload_policy_sentence}
+      - {provider: openai, model: gpt-4o, payload: credential_shaped,  framework: payload_credential_shaped}
+      - {provider: openai, model: gpt-4o, payload: long_block,         framework: payload_long_block}
+    conditions: [E]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 512
+
+  # RETICENCE AS A MANIPULATED TREATMENT (added 2026-08-08; exploratory, NOT in
+  # protocol.md). THREAT_MODEL.md §8: Delta = C - A' is 0 on Claude and Gemini only
+  # because both fill the EXPLICIT field 100% of the time, so "reticent regime" is
+  # inseparable from "OpenAI". This stage stops treating reticence as a provider
+  # property and manipulates it: escalate the confidentiality instruction
+  # (conditions.RETICENCE_LADDER) and watch A' and C separately.
+  #
+  # Read the result like this:
+  #   A' falls, C holds      -> the inversion is a REGIME property, not a gpt-4o
+  #                             quirk. This is the outcome that rescues the claim.
+  #   both fall together     -> no blind spot on these models; the channel is just
+  #                             instruction-following. Report it; it is a real null.
+  #   neither falls          -> the instruction is inert at every strength; the
+  #                             finding becomes "confidentiality prompts do not work".
+  # Rung 3 is the sharp one: it names tool parameters explicitly, so if C survives
+  # rung 3 the failure is not "the model didn't realise the field counted".
+  # 2 models x 4 rungs x 2 conditions x 10 reps = 160 trials.
+  reticence_ladder:
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, reticence: 0, framework: reticence_r0}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, reticence: 1, framework: reticence_r1}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, reticence: 2, framework: reticence_r2}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, reticence: 3, framework: reticence_r3}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation, reticence: 0, framework: reticence_r0}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation, reticence: 1, framework: reticence_r1}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation, reticence: 2, framework: reticence_r2}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation, reticence: 3, framework: reticence_r3}
+    conditions: [A_prime, C]
+    reps: 10
+    temperature: 0.7
+    max_tokens: 256
+
+  # ---------------------------------------------------------------------------
+  # PROBE STAGES — small, live plumbing checks (1 rep) run before a full stage,
+  # per the live-run discipline in CLAUDE.md. They are NOT results and must never
+  # be cited as such. They are kept in this file permanently because they produced
+  # artifacts in runs/, and an artifact whose stage definition has been deleted is
+  # not reproducible. `python run.py --audit` enforces exactly that invariant.
+  # ---------------------------------------------------------------------------
+
+  # Validated the Gemini adapter before the full Gate (2026-08-01).
+  gate_google_probe:
+    models:
+      - {provider: google, model: gemini-3-flash-preview, wording_style: api_documentation}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation}
+    conditions: [A, A_prime, B, C, D]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 256
+
+  # Validated the payload code path on both providers before payload_generality_*
+  # (2026-08-08). The path had never run live and the mock cannot exercise it.
+  payload_probe:
+    models:
+      - {provider: openai, model: gpt-4o, payload: product_name,       framework: payload_product_name,       wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: internal_codename,  framework: payload_internal_codename,  wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: policy_sentence,    framework: payload_policy_sentence,    wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: credential_shaped,  framework: payload_credential_shaped,  wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: long_block,         framework: payload_long_block,         wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: product_name,      framework: payload_product_name,      wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: internal_codename, framework: payload_internal_codename, wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: policy_sentence,   framework: payload_policy_sentence,   wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: credential_shaped, framework: payload_credential_shaped, wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: long_block,        framework: payload_long_block,        wording_style: api_documentation}
+    conditions: [C]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 256
+
+  # Validated the reticence ladder on BOTH adapters at the sharpest rung before the
+  # full ladder (2026-08-08). --limit cannot do this: trials run model -> condition
+  # -> rep, so it would only exercise the first model.
+  reticence_probe:
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, reticence: 3, framework: reticence_r3}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation, reticence: 3, framework: reticence_r3}
+    conditions: [A_prime, C]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 256
+
+  # Validated condition E, which had never run live, before explicit_payloads_openai
+  # (2026-08-08).
+  explicit_payloads_probe:
+    models:
+      - {provider: openai, model: gpt-4o, payload: product_name,       framework: payload_product_name}
+      - {provider: openai, model: gpt-4o, payload: internal_codename,  framework: payload_internal_codename}
+      - {provider: openai, model: gpt-4o, payload: policy_sentence,    framework: payload_policy_sentence}
+      - {provider: openai, model: gpt-4o, payload: credential_shaped,  framework: payload_credential_shaped}
+      - {provider: openai, model: gpt-4o, payload: long_block,         framework: payload_long_block}
+    conditions: [E]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 512
+
+  # REAL MCP SCHEMAS (added 2026-08-08). Answers the "n = 1 synthetic tool"
+  # objection: condition C is appended to 25 AUTHENTIC tools from the live MCP
+  # servers in MCPTox, each with that server's own user request. The only thing we
+  # author is the added field, so a leak cannot be an artifact of our tool design.
+  # Conditions C and D only: D is the floor (does planted content spill into ANY
+  # required field on a real schema?). 25 tools x 2 conditions x 5 reps = 250 trials.
+  # Fidelity limit: MCPTox ships tools as TEXT, so parameter types are lost and every
+  # harvested parameter is declared `string` (see conditions.py).
+  real_schemas_openai:
+    models:
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "DumplingAI/merge-pdfs"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "E2B/run_code"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "gNucleus Text to CAD/text_to_cad"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Codacy/codacy_list_repository_tool_patterns"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Github/push_files"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Claude Post/count-daily-emails"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Gitlab/create_repository"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "mcp-simple-arxiv/get_paper_data"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "AdFin/upload_invoice_to_adfin"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "AWSKnowledgeBase/retrieve_from_aws_kb"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "KeywordsPeopleUse/people-also-ask"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "HyperBrowser/scrape_webpage"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Redis/set"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Gyazo/gyazo_image"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Memory/add_observations"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "FileSystem/create_directory"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Puppeteer/puppeteer_screenshot"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Slack/slack_post_message"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "SQLite/create_table"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Fetch/fetch"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Commander/read_multiple_files"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Financial Dataset/get_cash_flow_statements"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Prisma/migrate-status"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "ClickHouse/list_tables"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Flomo/write_note"}
+    conditions: [C, D]
+    reps: 5
+    temperature: 0.7
+    max_tokens: 256
+
+  # Probe for the real-schema path (never run live). 5 diverse servers, C only,
+  # 1 rep = 5 trials. Kept permanently per the probe policy above.
+  real_schemas_probe:
+    models:
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "E2B/run_code"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Github/push_files"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Claude Post/count-daily-emails"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "FileSystem/create_directory"}
+      - {provider: openai, model: gpt-4o, scaffold: cursor, wording_style: api_documentation, real_tool: "Gitlab/create_repository"}
+    conditions: [C]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 256
+
+  # Gemini legs of the reticence ladder, rungs 1-3. Rung 0 completed in
+  # reticence_ladder-live-20260808-121152 before the daily quota was exhausted;
+  # this resumes the remaining rungs. 3 rungs x 2 conditions x 10 reps = 60.
+  reticence_ladder_google:
+    models:
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation, reticence: 1, framework: reticence_r1}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation, reticence: 2, framework: reticence_r2}
+      - {provider: google, model: gemini-3-flash-preview, scaffold: cursor, wording_style: api_documentation, reticence: 3, framework: reticence_r3}
+    conditions: [A_prime, C]
+    reps: 10
+    temperature: 0.7
+    max_tokens: 256
+
+  # Claude leg of the real-schema arm. Mirrors real_schemas_openai exactly so the
+  # cross-provider claim rests on REAL tools rather than the one synthetic tool.
+  # 25 tools x 2 conditions x 5 reps = 250 trials.
+  real_schemas_anthropic:
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "DumplingAI/merge-pdfs"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "E2B/run_code"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "gNucleus Text to CAD/text_to_cad"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Codacy/codacy_list_repository_tool_patterns"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Github/push_files"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Claude Post/count-daily-emails"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Gitlab/create_repository"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "mcp-simple-arxiv/get_paper_data"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "AdFin/upload_invoice_to_adfin"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "AWSKnowledgeBase/retrieve_from_aws_kb"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "KeywordsPeopleUse/people-also-ask"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "HyperBrowser/scrape_webpage"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Redis/set"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Gyazo/gyazo_image"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Memory/add_observations"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "FileSystem/create_directory"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Puppeteer/puppeteer_screenshot"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Slack/slack_post_message"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "SQLite/create_table"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Fetch/fetch"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Commander/read_multiple_files"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Financial Dataset/get_cash_flow_statements"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Prisma/migrate-status"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "ClickHouse/list_tables"}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, scaffold: cursor, wording_style: api_documentation, real_tool: "Flomo/write_note"}
+    conditions: [C, D]
+    reps: 5
+    temperature: 0.7
+    max_tokens: 256
+
+  # === R1 — fact x field. Does the channel move identifier-shaped CONTENT, or
+  # whatever ANSWERS THE DECLARED FIELD? One payload (long_block_v2: six planted
+  # facts, single confidentiality cue) crossed with five benign fields, each
+  # aimed at a different fact. Score with: analyze.py --matrix
+  # Shape-restriction predicts only the `platform` column fills. Field-content
+  # matching predicts the diagonal fills -- which would mean the severity bound
+  # is an artifact of only ever having declared one field.
+  r1_field_fact_probe:
+    models:
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, wording_style: api_documentation, framework: payload_long_block_v2}
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, wording_style: field_region, framework: payload_long_block_v2}
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, wording_style: field_operator, framework: payload_long_block_v2}
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, wording_style: field_escalation, framework: payload_long_block_v2}
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, wording_style: field_retention, framework: payload_long_block_v2}
+    conditions: [C]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 256
+
+  r1_field_fact_openai:
+    models:
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, wording_style: api_documentation, framework: payload_long_block_v2}
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, wording_style: field_region, framework: payload_long_block_v2}
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, wording_style: field_operator, framework: payload_long_block_v2}
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, wording_style: field_escalation, framework: payload_long_block_v2}
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, wording_style: field_retention, framework: payload_long_block_v2}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  r1_field_fact_anthropic:
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: long_block_v2, wording_style: api_documentation, framework: payload_long_block_v2}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: long_block_v2, wording_style: field_region, framework: payload_long_block_v2}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: long_block_v2, wording_style: field_operator, framework: payload_long_block_v2}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: long_block_v2, wording_style: field_escalation, framework: payload_long_block_v2}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: long_block_v2, wording_style: field_retention, framework: payload_long_block_v2}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  # === R2 — re-run the confounded payload cells with normalised stimuli.
+  # v2 payloads carry exactly the one confidentiality sentence build() appends:
+  # the credential no longer announces itself as a test fixture, long_block no
+  # longer carries a second prohibition, and the policy sentence is no longer
+  # itself a non-disclosure instruction. Compare against the v1 arms; do NOT pool.
+  r2_payload_norm_probe:
+    models:
+      - {provider: openai, model: gpt-4o, payload: policy_sentence_v2, framework: payload_policy_sentence_v2, wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: credential_shaped_v2, framework: payload_credential_shaped_v2, wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, framework: payload_long_block_v2, wording_style: api_documentation}
+    conditions: [C]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 256
+
+  r2_payload_norm_openai:
+    models:
+      - {provider: openai, model: gpt-4o, payload: policy_sentence_v2, framework: payload_policy_sentence_v2, wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: credential_shaped_v2, framework: payload_credential_shaped_v2, wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, framework: payload_long_block_v2, wording_style: api_documentation}
+    conditions: [C, D]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  r2_payload_norm_anthropic:
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: policy_sentence_v2, framework: payload_policy_sentence_v2, wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: credential_shaped_v2, framework: payload_credential_shaped_v2, wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: long_block_v2, framework: payload_long_block_v2, wording_style: api_documentation}
+    conditions: [C]
+    reps: 30
+    temperature: 0.7
+    max_tokens: 256
+
+  # E comparator for the de-annotated credential: the severity bound rests on
+  # C=0 while E>0, so E must be re-measured on the same normalised stimulus.
+  r2_explicit_norm_openai:
+    models:
+      - {provider: openai, model: gpt-4o, payload: policy_sentence_v2, framework: payload_policy_sentence_v2}
+      - {provider: openai, model: gpt-4o, payload: credential_shaped_v2, framework: payload_credential_shaped_v2}
+      - {provider: openai, model: gpt-4o, payload: long_block_v2, framework: payload_long_block_v2}
+    conditions: [E]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 512
+
+  # ==========================================================================
+  # protocol-v2 CONFIRMATORY STUDY. Frozen in protocol-v2.md before any of these
+  # ran. Primary: the field x fact matrix. Every trial plants the SAME omnibus
+  # prompt (8 fact families); each schema requests exactly ONE of them. An empty
+  # off-diagonal cell therefore means the model HAD the fact and withheld it.
+  # Score with: analyze.py --matrix
+  # ==========================================================================
+  v2_matrix_probe:
+    models:
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: m_credential}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: omnibus, framework: payload_omnibus, wording_style: m_region}
+    conditions: [C]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 256
+
+  v2_matrix_openai:
+    models:
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: m_build}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: m_region}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: m_operator}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: m_contact}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: m_policy}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: m_credential}
+    conditions: [C, D]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  v2_matrix_anthropic:
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: omnibus, framework: payload_omnibus, wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: omnibus, framework: payload_omnibus, wording_style: m_build}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: omnibus, framework: payload_omnibus, wording_style: m_region}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: omnibus, framework: payload_omnibus, wording_style: m_operator}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: omnibus, framework: payload_omnibus, wording_style: m_contact}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: omnibus, framework: payload_omnibus, wording_style: m_policy}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: omnibus, framework: payload_omnibus, wording_style: m_credential}
+    conditions: [C, D]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  v2_matrix_google:
+    models:
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, framework: payload_omnibus, wording_style: api_documentation}
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, framework: payload_omnibus, wording_style: m_build}
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, framework: payload_omnibus, wording_style: m_region}
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, framework: payload_omnibus, wording_style: m_operator}
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, framework: payload_omnibus, wording_style: m_contact}
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, framework: payload_omnibus, wording_style: m_policy}
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, framework: payload_omnibus, wording_style: m_credential}
+    conditions: [C, D]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  # Second temperature — pre-registered in protocol.md §4 and never run.
+  # Same matrix, T=0.0, so the primary can be reported at both.
+  v2_matrix_openai_t0:
+    models:
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: m_region}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: m_operator}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: m_credential}
+    conditions: [C, D]
+    reps: 20
+    temperature: 0.0
+    max_tokens: 256
+
+  # Depth factors protocol.md §4 pre-registered and that were NEVER varied.
+  # One factor at a time off the reference cell (api_documentation, omnibus).
+  v2_depth_openai:
+    models:
+      # Each depth cell needs a DISTINCT framework label: two entries sharing a
+      # wording_style are indistinguishable in the canonical row, because the
+      # depth factors are not row fields and `framework` is the documented arm
+      # label (CLAUDE.md §11). Learned the hard way -- the first run of this
+      # stage produced 80 unanalysable rows.
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: depth_ua_optional, wording_style: api_documentation, field_required: false}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: depth_ua_posfirst, wording_style: api_documentation, field_position: before}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: depth_cred_optional, wording_style: m_credential, field_required: false}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: depth_cred_posfirst, wording_style: m_credential, field_position: before}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  # === B1 — UNPLANTED BASELINE. The v2 matrix cannot distinguish extraction from
+  # fabrication, because every v2 stage plants the omnibus prompt. Here the same
+  # seven fields are offered with NOTHING planted (no payload, no scaffold — the
+  # bare-arm pattern from gate_openai_apidoc). The question is not "did the marker
+  # come back" but "does the model invent a plausible value?". Score with
+  # analyze.py --fills, NOT --matrix.
+  v2_unplanted_probe:
+    models:
+      - {provider: openai, model: gpt-4o, wording_style: m_credential, framework: v2_unplanted}
+    conditions: [C]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 256
+
+  v2_unplanted_openai:
+    models:
+      - {provider: openai, model: gpt-4o, wording_style: api_documentation, framework: v2_unplanted}
+      - {provider: openai, model: gpt-4o, wording_style: m_build, framework: v2_unplanted}
+      - {provider: openai, model: gpt-4o, wording_style: m_region, framework: v2_unplanted}
+      - {provider: openai, model: gpt-4o, wording_style: m_operator, framework: v2_unplanted}
+      - {provider: openai, model: gpt-4o, wording_style: m_contact, framework: v2_unplanted}
+      - {provider: openai, model: gpt-4o, wording_style: m_policy, framework: v2_unplanted}
+      - {provider: openai, model: gpt-4o, wording_style: m_credential, framework: v2_unplanted}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  v2_unplanted_google:
+    models:
+      - {provider: google, model: gemini-3-flash-preview, wording_style: api_documentation, framework: v2_unplanted}
+      - {provider: google, model: gemini-3-flash-preview, wording_style: m_build, framework: v2_unplanted}
+      - {provider: google, model: gemini-3-flash-preview, wording_style: m_region, framework: v2_unplanted}
+      - {provider: google, model: gemini-3-flash-preview, wording_style: m_operator, framework: v2_unplanted}
+      - {provider: google, model: gemini-3-flash-preview, wording_style: m_contact, framework: v2_unplanted}
+      - {provider: google, model: gemini-3-flash-preview, wording_style: m_policy, framework: v2_unplanted}
+      - {provider: google, model: gemini-3-flash-preview, wording_style: m_credential, framework: v2_unplanted}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  # === B2 — SEMANTIC-DISTANCE GRADIENT. Decides whether the mechanism is semantic
+  # steering or "ask for X, receive X". Same omnibus payload; three rungs per fact
+  # family (naming / adjacent / generic). See conditions.FIELD_EXPLICITNESS.
+  v2_gradient_probe:
+    models:
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: g_credential_generic}
+    conditions: [C]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 256
+
+  v2_gradient_openai:
+    models:
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: g_credential_adjacent}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: g_credential_generic}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: g_region_adjacent}
+      - {provider: openai, model: gpt-4o, payload: omnibus, framework: payload_omnibus, wording_style: g_region_generic}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  v2_gradient_google:
+    models:
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, framework: payload_omnibus, wording_style: g_credential_adjacent}
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, framework: payload_omnibus, wording_style: g_credential_generic}
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, framework: payload_omnibus, wording_style: g_region_adjacent}
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, framework: payload_omnibus, wording_style: g_region_generic}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  # === B3 — MATRIX x RETICENCE RUNG 3. The v2 matrix ran at rung 0 (the single
+  # appended confidentiality sentence). Rung 3 names tool parameters explicitly and
+  # previously closed condition C on Claude. Does the diagonal survive it?
+  v2_reticence_openai:
+    models:
+      - {provider: openai, model: gpt-4o, payload: omnibus, reticence: 3, framework: reticence_r3, wording_style: m_credential}
+      - {provider: openai, model: gpt-4o, payload: omnibus, reticence: 3, framework: reticence_r3, wording_style: m_region}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  v2_reticence_google:
+    models:
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, reticence: 3, framework: reticence_r3, wording_style: m_credential}
+      - {provider: google, model: gemini-3-flash-preview, payload: omnibus, reticence: 3, framework: reticence_r3, wording_style: m_region}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  # ==========================================================================
+  # protocol-v3 CONFIRMATORY REPLICATION. Every stage declares `preregistration:`,
+  # so run.py REFUSES a live run until protocol-v3.md is tracked, present in HEAD
+  # and byte-clean. Dry runs are exempt. Canaries are seed-derived
+  # (conditions.v3_facts) rather than hand-picked; the seed is frozen in the
+  # protocol. See protocol-v3.md §6 for the procedure that must precede any run.
+  # ==========================================================================
+  v3_matrix_probe:
+    preregistration: protocol-v3.md
+    models:
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_credential}
+      - {provider: google, model: gemini-3-flash-preview, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_credential_adjacent}
+    conditions: [C]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 256
+
+  v3_matrix_openai:
+    preregistration: protocol-v3.md
+    models:
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_platform_adjacent}
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_region}
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_region_adjacent}
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_operator}
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_credential}
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_credential_adjacent}
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_any_generic}
+    conditions: [C, D]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  v3_matrix_google:
+    preregistration: protocol-v3.md
+    models:
+      - {provider: google, model: gemini-3-flash-preview, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: api_documentation}
+      - {provider: google, model: gemini-3-flash-preview, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_platform_adjacent}
+      - {provider: google, model: gemini-3-flash-preview, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_region}
+      - {provider: google, model: gemini-3-flash-preview, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_region_adjacent}
+      - {provider: google, model: gemini-3-flash-preview, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_operator}
+      - {provider: google, model: gemini-3-flash-preview, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_credential}
+      - {provider: google, model: gemini-3-flash-preview, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_credential_adjacent}
+      - {provider: google, model: gemini-3-flash-preview, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_any_generic}
+    conditions: [C, D]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  # H-v3-3: nothing planted. Separates extraction from fabrication.
+  v3_unplanted_openai:
+    preregistration: protocol-v3.md
+    models:
+      - {provider: openai, model: gpt-4o, wording_style: api_documentation, framework: v3_unplanted}
+      - {provider: openai, model: gpt-4o, wording_style: m_region, framework: v3_unplanted}
+      - {provider: openai, model: gpt-4o, wording_style: m_operator, framework: v3_unplanted}
+      - {provider: openai, model: gpt-4o, wording_style: m_credential, framework: v3_unplanted}
+      - {provider: openai, model: gpt-4o, wording_style: g_credential_adjacent, framework: v3_unplanted}
+      - {provider: openai, model: gpt-4o, wording_style: g_any_generic, framework: v3_unplanted}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  v3_unplanted_google:
+    preregistration: protocol-v3.md
+    models:
+      - {provider: google, model: gemini-3-flash-preview, wording_style: api_documentation, framework: v3_unplanted}
+      - {provider: google, model: gemini-3-flash-preview, wording_style: m_region, framework: v3_unplanted}
+      - {provider: google, model: gemini-3-flash-preview, wording_style: m_operator, framework: v3_unplanted}
+      - {provider: google, model: gemini-3-flash-preview, wording_style: m_credential, framework: v3_unplanted}
+      - {provider: google, model: gemini-3-flash-preview, wording_style: g_credential_adjacent, framework: v3_unplanted}
+      - {provider: google, model: gemini-3-flash-preview, wording_style: g_any_generic, framework: v3_unplanted}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+  v3_matrix_anthropic:
+    preregistration: protocol-v3.md
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: api_documentation}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_platform_adjacent}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_region}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_region_adjacent}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_operator}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_credential}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_credential_adjacent}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_any_generic}
+    conditions: [C, D]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+  v3_unplanted_anthropic:
+    preregistration: protocol-v3.md
+    models:
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, wording_style: api_documentation, framework: v3_unplanted}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, wording_style: m_region, framework: v3_unplanted}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, wording_style: m_operator, framework: v3_unplanted}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, wording_style: m_credential, framework: v3_unplanted}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, wording_style: g_credential_adjacent, framework: v3_unplanted}
+      - {provider: anthropic, model: claude-sonnet-4-5-20250929, wording_style: g_any_generic, framework: v3_unplanted}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+  v3_matrix_deepseek:
+    preregistration: protocol-v3.md
+    models:
+      - {provider: deepseek, model: deepseek-v4-flash, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: api_documentation}
+      - {provider: deepseek, model: deepseek-v4-flash, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_platform_adjacent}
+      - {provider: deepseek, model: deepseek-v4-flash, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_region}
+      - {provider: deepseek, model: deepseek-v4-flash, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_region_adjacent}
+      - {provider: deepseek, model: deepseek-v4-flash, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_operator}
+      - {provider: deepseek, model: deepseek-v4-flash, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: m_credential}
+      - {provider: deepseek, model: deepseek-v4-flash, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_credential_adjacent}
+      - {provider: deepseek, model: deepseek-v4-flash, payload: v3_omnibus, framework: payload_v3_omnibus, wording_style: g_any_generic}
+    conditions: [C, D]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+  v3_unplanted_deepseek:
+    preregistration: protocol-v3.md
+    models:
+      - {provider: deepseek, model: deepseek-v4-flash, wording_style: api_documentation, framework: v3_unplanted}
+      - {provider: deepseek, model: deepseek-v4-flash, wording_style: m_region, framework: v3_unplanted}
+      - {provider: deepseek, model: deepseek-v4-flash, wording_style: m_operator, framework: v3_unplanted}
+      - {provider: deepseek, model: deepseek-v4-flash, wording_style: m_credential, framework: v3_unplanted}
+      - {provider: deepseek, model: deepseek-v4-flash, wording_style: g_credential_adjacent, framework: v3_unplanted}
+      - {provider: deepseek, model: deepseek-v4-flash, wording_style: g_any_generic, framework: v3_unplanted}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256
+
+  # --- R6: content familiarity -------------------------------------------------
+  # POST-HOC and post-dating the protocol-v3 witness. Report it as exploratory.
+  #
+  # The clean test for the one number two of our experiments disagree about.
+  # ONE model, ONE field (`client_user_agent` / api_documentation), two arms that
+  # differ only in whether the planted platform canary is a name the model has
+  # seen (`Cursor Runtime`) or seed-derived entropy (`Ivdgro Runtime`). Both
+  # prompts are the same length in characters, so length cannot explain a gap.
+  # `framework` separates the arms because the payload is not a row field.
+  r6_familiarity_probe:
+    models:
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus_familiar,
+         framework: payload_v3_omnibus_familiar, wording_style: api_documentation}
+    conditions: [C]
+    reps: 1
+    temperature: 0.7
+    max_tokens: 256
+
+  r6_familiarity_openai:
+    models:
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus_familiar,
+         framework: payload_v3_omnibus_familiar, wording_style: api_documentation}
+      - {provider: openai, model: gpt-4o, payload: v3_omnibus,
+         framework: payload_v3_omnibus, wording_style: api_documentation}
+    conditions: [C]
+    reps: 20
+    temperature: 0.7
+    max_tokens: 256

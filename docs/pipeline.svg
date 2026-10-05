@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 560" width="1180" height="560"
+     color="#151922" role="img"
+     aria-label="Measurement pipeline: config and conditions define a stage; preflight and the preregistration guard admit a live run or exit 1 when the protocol is untracked; run.py calls a provider and grades inline, writing three artifacts per trial; analysis reads them read-only; manifest check gates prose claims; and the scanner, defense and MCP-client paths never write a stage artifact.">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+    </marker>
+    <marker id="ar-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d1495b"/>
+    </marker>
+  </defs>
+
+  <g font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" fill="currentColor">
+
+    <text x="24" y="26" font-size="15" font-weight="600">schema-disclosure-gap — measurement pipeline</text>
+    <text x="24" y="44" font-size="11" opacity="0.65">One trial = one model × condition × repetition. Only run.py writes a stage artifact.</text>
+
+    <g font-size="10" font-weight="700" letter-spacing="1.2" opacity="0.55">
+      <text x="24" y="80">DEFINE</text>
+      <text x="264" y="80">GATE</text>
+      <text x="438" y="80">EXECUTE</text>
+      <text x="692" y="80">RECORD</text>
+      <text x="942" y="80">ANALYSE</text>
+    </g>
+
+    <g fill="none" stroke="currentColor" stroke-width="1.25">
+      <rect x="24" y="90" width="170" height="42" rx="3"/>
+      <rect x="24" y="144" width="170" height="52" rx="3"/>
+      <rect x="24" y="208" width="170" height="38" rx="3"/>
+
+      <rect x="438" y="90" width="180" height="42" rx="3"/>
+      <rect x="438" y="144" width="180" height="42" rx="3"/>
+      <rect x="438" y="198" width="180" height="42" rx="3"/>
+
+      <rect x="692" y="90" width="176" height="40" rx="3"/>
+      <rect x="692" y="142" width="176" height="36" rx="3"/>
+      <rect x="692" y="190" width="176" height="36" rx="3"/>
+
+      <rect x="942" y="86" width="214" height="34" rx="3"/>
+      <rect x="942" y="130" width="214" height="34" rx="3"/>
+      <rect x="942" y="174" width="214" height="34" rx="3"/>
+      <rect x="942" y="218" width="214" height="34" rx="3"/>
+
+      <rect x="692" y="292" width="176" height="36" rx="3"/>
+    </g>
+
+    <rect x="264" y="136" width="104" height="68" rx="3" fill="none" stroke="#d1495b" stroke-width="2"/>
+
+    <g font-size="11.5">
+      <text x="34" y="107">config.yaml</text>
+      <text x="34" y="122" font-size="10" opacity="0.62">57 stages · 9,407 trials</text>
+
+      <text x="34" y="162">conditions.build()</text>
+      <text x="34" y="176" font-size="10" opacity="0.62">7 conditions · 9 C wordings</text>
+      <text x="34" y="189" font-size="10" opacity="0.62">8 payloads · seed canaries</text>
+
+      <text x="34" y="225">data/real_tools.json</text>
+      <text x="34" y="239" font-size="10" opacity="0.62">25 authentic MCP tools</text>
+
+      <text x="316" y="162" font-size="11" font-weight="600" fill="#d1495b" text-anchor="middle">preflight</text>
+      <text x="316" y="177" font-size="10" fill="#d1495b" text-anchor="middle">+ prereg guard</text>
+      <text x="316" y="193" font-size="9.5" opacity="0.75" fill="#d1495b" text-anchor="middle">keys · schema · git</text>
+
+      <text x="448" y="108">run.py --stage</text>
+      <text x="448" y="123" font-size="10" opacity="0.62">expand model × cond × rep</text>
+
+      <text x="448" y="162">providers.call()</text>
+      <text x="448" y="177" font-size="10" opacity="0.62">8 adapters · retry on 429</text>
+
+      <text x="448" y="216">grade.keyword_grade()</text>
+      <text x="448" y="231" font-size="10" opacity="0.62">kw-3 inline · T1/T2/T3</text>
+
+      <text x="702" y="107">&lt;stage&gt;.jsonl</text>
+      <text x="702" y="122" font-size="10" opacity="0.62">canonical · append-only</text>
+      <text x="702" y="159">.raw.jsonl</text>
+      <text x="702" y="171" font-size="10" opacity="0.62">provider payloads</text>
+      <text x="702" y="207">.meta.json</text>
+      <text x="702" y="219" font-size="10" opacity="0.62">COMPLETE / PARTIAL</text>
+
+      <text x="952" y="101">analyze.py</text>
+      <text x="952" y="114" font-size="10" opacity="0.62">--payload · --matrix · --fills</text>
+      <text x="952" y="145">stats.py</text>
+      <text x="952" y="158" font-size="10" opacity="0.62">--v2 · --cluster · Holm</text>
+      <text x="952" y="189">make_tables.py</text>
+      <text x="952" y="202" font-size="10" opacity="0.62">every paper table</text>
+      <text x="952" y="233">manifest.py</text>
+      <text x="952" y="246" font-size="10" opacity="0.62">registered numbers</text>
+
+      <text x="702" y="309">docs/ · CLAUDE.md</text>
+      <text x="702" y="322" font-size="10" opacity="0.62">prose claims</text>
+    </g>
+
+    <g stroke="currentColor" stroke-width="1.25" fill="none" marker-end="url(#ar)">
+      <line x1="194" y1="170" x2="258" y2="170"/>
+      <line x1="618" y1="170" x2="686" y2="170"/>
+      <line x1="868" y1="170" x2="936" y2="170"/>
+    </g>
+    <line x1="368" y1="170" x2="432" y2="170" stroke="#d1495b" stroke-width="1.6"
+          fill="none" marker-end="url(#ar-a)"/>
+
+    <path d="M316,136 L316,112" stroke="#d1495b" stroke-width="1.6" fill="none" marker-end="url(#ar-a)"/>
+    <text x="316" y="104" font-size="10" font-weight="600" fill="#d1495b" text-anchor="middle">exit 1</text>
+    <text x="316" y="92" font-size="9.5" fill="#d1495b" opacity="0.85" text-anchor="middle">protocol untracked</text>
+
+    <g font-size="9.5" opacity="0.7" text-anchor="middle">
+      <text x="226" y="162">stage spec</text>
+      <text x="400" y="162" fill="#d1495b" opacity="0.9">admitted</text>
+      <text x="652" y="162">3 files / trial</text>
+      <text x="902" y="162">read-only</text>
+    </g>
+
+    <path d="M1049,252 L1049,310 L874,310" stroke="currentColor" stroke-width="1.25"
+          fill="none" stroke-dasharray="4 3" marker-end="url(#ar)"/>
+    <text x="1040" y="283" font-size="9.5" opacity="0.7" text-anchor="end">--check fails on stale claims</text>
+
+    <line x1="24" y1="372" x2="1156" y2="372" stroke="currentColor" stroke-width="1" opacity="0.25"/>
+    <text x="24" y="394" font-size="10" font-weight="700" letter-spacing="1.2" opacity="0.55">PATHS THAT NEVER WRITE A STAGE ARTIFACT</text>
+
+    <g fill="none" stroke="currentColor" stroke-width="1.25" stroke-dasharray="4 3">
+      <rect x="24" y="408" width="210" height="34" rx="3"/>
+      <rect x="300" y="408" width="220" height="34" rx="3"/>
+      <rect x="24" y="456" width="210" height="34" rx="3"/>
+      <rect x="300" y="456" width="220" height="34" rx="3"/>
+      <rect x="24" y="504" width="210" height="34" rx="3"/>
+      <rect x="300" y="504" width="220" height="34" rx="3"/>
+    </g>
+
+    <g font-size="11">
+      <text x="34" y="423">conditions.build()</text>
+      <text x="34" y="436" font-size="10" opacity="0.62">tool schema only</text>
+      <text x="310" y="423">scan.py · scan_invariant.py</text>
+      <text x="310" y="436" font-size="10" opacity="0.62">2 profiles · Invariant policy</text>
+      <text x="596" y="429" font-size="10.5">B/B′ FLAGGED · C clean · E clean</text>
+
+      <text x="34" y="471">C_WORDINGS + benign_fields</text>
+      <text x="34" y="484" font-size="10" opacity="0.62">9 positives · 506 negatives</text>
+      <text x="310" y="471">defense.py</text>
+      <text x="310" y="484" font-size="10" opacity="0.62">--operating · --sweep</text>
+      <text x="596" y="477" font-size="10.5">AUC 0.994 · PPV 3.8% at 0.1% base rate</text>
+
+      <text x="34" y="519">mcp_server.py --record</text>
+      <text x="34" y="532" font-size="10" opacity="0.62">stdio MCP · blinded names</text>
+      <text x="310" y="519">real MCP client session</text>
+      <text x="310" y="532" font-size="10" opacity="0.62">mcp_client_probe.py</text>
+      <text x="596" y="525" font-size="10.5">runs/mcp_client_capture.jsonl</text>
+    </g>
+
+    <g stroke="currentColor" stroke-width="1.25" fill="none" marker-end="url(#ar)" opacity="0.8">
+      <line x1="234" y1="425" x2="294" y2="425"/>
+      <line x1="520" y1="425" x2="588" y2="425"/>
+      <line x1="234" y1="473" x2="294" y2="473"/>
+      <line x1="520" y1="473" x2="588" y2="473"/>
+      <line x1="234" y1="521" x2="294" y2="521"/>
+      <line x1="520" y1="521" x2="588" y2="521"/>
+    </g>
+  </g>
+</svg>

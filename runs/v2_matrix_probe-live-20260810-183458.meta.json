@@ -1,0 +1,13 @@
+{
+  "run_id": "20260810-183458",
+  "stage": "v2_matrix_probe",
+  "dry_run": false,
+  "expected_trials": 3,
+  "rows_written": 3,
+  "ok": 2,
+  "errors": 1,
+  "limit": null,
+  "complete": false,
+  "canonical_path": "runs/v2_matrix_probe-live-20260810-183458.jsonl",
+  "finished_at": "2026-08-10T18:35:06.001562"
+}

@@ -1,0 +1,13 @@
+{
+  "run_id": "20260817-142809",
+  "stage": "r6_familiarity_probe",
+  "dry_run": false,
+  "expected_trials": 1,
+  "rows_written": 1,
+  "ok": 1,
+  "errors": 0,
+  "limit": null,
+  "complete": true,
+  "canonical_path": "runs/r6_familiarity_probe-live-20260817-142809.jsonl",
+  "finished_at": "2026-08-17T14:28:14.300438"
+}

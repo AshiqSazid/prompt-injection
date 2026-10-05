@@ -1,0 +1,425 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "source_url": "https://github.com/mark3labs/mcp-filesystem-server",
+    "commit": "ba3f07f22c309d932fa9b1cebe1eb7c55fcbb83b",
+    "license": "MIT",
+    "task": "files",
+    "selected_tool": "read_file",
+    "capture": {
+      "captured_at": "2026-09-28T17:30:38.733963+00:00",
+      "method": "tools/list only; no tool called",
+      "transport": "stdio",
+      "network": "none",
+      "protocol_version_requested": "2025-06-18",
+      "docker_image_id": "sha256:c261c0376229c08d29d3aea46f92b5bf6ecbcee459981cf4622002f4b50aa9e4",
+      "dockerfile": "repo:Dockerfile",
+      "dockerfile_sha256": "725f6749cbf3492e295fe4b510e62fd729c5964732cb6919363d01f7c3ddd33e",
+      "docker_server_version": "28.5.1",
+      "placeholder_env": {},
+      "server_args": [
+        "/tmp"
+      ],
+      "initialize_response_sha256": "098900c32bee3d01b044881322134d8fe8f37d21d8f9f0ef0aff6d042cac1596",
+      "tools_list_page_sha256": [
+        "557d05d483f4b4afe9f62bec564a446a7ad05dc0d228472cd109b59e51ec8713"
+      ],
+      "tool_count": 14
+    }
+  },
+  "native_tools_list": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Copy files and directories.",
+          "inputSchema": {
+            "properties": {
+              "destination": {
+                "description": "Destination path",
+                "type": "string"
+              },
+              "source": {
+                "description": "Source path of the file or directory",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source",
+              "destination"
+            ],
+            "type": "object"
+          },
+          "name": "copy_file"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Create a new directory or ensure a directory exists.",
+          "inputSchema": {
+            "properties": {
+              "path": {
+                "description": "Path of the directory to create",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "type": "object"
+          },
+          "name": "create_directory"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Delete a file or directory from the file system.",
+          "inputSchema": {
+            "properties": {
+              "path": {
+                "description": "Path to the file or directory to delete",
+                "type": "string"
+              },
+              "recursive": {
+                "description": "Whether to recursively delete directories (default: false)",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "type": "object"
+          },
+          "name": "delete_file"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Retrieve detailed metadata about a file or directory.",
+          "inputSchema": {
+            "properties": {
+              "path": {
+                "description": "Path to the file or directory",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "type": "object"
+          },
+          "name": "get_file_info"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Returns the list of directories that this server is allowed to access.",
+          "inputSchema": {
+            "properties": {},
+            "type": "object"
+          },
+          "name": "list_allowed_directories"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Get a detailed listing of all files and directories in a specified path.",
+          "inputSchema": {
+            "properties": {
+              "path": {
+                "description": "Path of the directory to list",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "type": "object"
+          },
+          "name": "list_directory"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Update file by finding and replacing text. Provides a simple pattern matching interface without needing exact character positions.",
+          "inputSchema": {
+            "properties": {
+              "all_occurrences": {
+                "description": "Replace all occurrences of the matching text (default: true)",
+                "type": "boolean"
+              },
+              "find": {
+                "description": "Text to search for (exact match or regex pattern)",
+                "type": "string"
+              },
+              "path": {
+                "description": "Path to the file to modify",
+                "type": "string"
+              },
+              "regex": {
+                "description": "Treat the find pattern as a regular expression (default: false)",
+                "type": "boolean"
+              },
+              "replace": {
+                "description": "Text to replace with",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "find",
+              "replace"
+            ],
+            "type": "object"
+          },
+          "name": "modify_file"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Move or rename files and directories.",
+          "inputSchema": {
+            "properties": {
+              "destination": {
+                "description": "Destination path",
+                "type": "string"
+              },
+              "source": {
+                "description": "Source path of the file or directory",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source",
+              "destination"
+            ],
+            "type": "object"
+          },
+          "name": "move_file"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Read the complete contents of a file from the file system.",
+          "inputSchema": {
+            "properties": {
+              "path": {
+                "description": "Path to the file to read",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "type": "object"
+          },
+          "name": "read_file"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Read the contents of multiple files in a single operation.",
+          "inputSchema": {
+            "properties": {
+              "paths": {
+                "description": "List of file paths to read",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "paths"
+            ],
+            "type": "object"
+          },
+          "name": "read_multiple_files"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Recursively search for files and directories matching a pattern.",
+          "inputSchema": {
+            "properties": {
+              "path": {
+                "description": "Starting path for the search",
+                "type": "string"
+              },
+              "pattern": {
+                "description": "Search pattern to match against file names",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "pattern"
+            ],
+            "type": "object"
+          },
+          "name": "search_files"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Search for text within file contents. Unlike search_files which only searches file names, this tool scans the actual contents of text files for matching substrings. Binary files are automatically excluded from the search. Reports file paths and line numbers where matches are found.",
+          "inputSchema": {
+            "properties": {
+              "depth": {
+                "description": "Maximum directory depth to search (default: unlimited)",
+                "type": "number"
+              },
+              "max_results": {
+                "description": "Maximum number of results to return (default: 1000)",
+                "type": "number"
+              },
+              "path": {
+                "description": "Starting path for the search (must be a directory)",
+                "type": "string"
+              },
+              "substring": {
+                "description": "Text to search for within file contents",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "substring"
+            ],
+            "type": "object"
+          },
+          "name": "search_within_files"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Returns a hierarchical JSON representation of a directory structure.",
+          "inputSchema": {
+            "properties": {
+              "depth": {
+                "description": "Maximum depth to traverse (default: 3)",
+                "type": "number"
+              },
+              "follow_symlinks": {
+                "description": "Whether to follow symbolic links (default: false)",
+                "type": "boolean"
+              },
+              "path": {
+                "description": "Path of the directory to traverse",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "type": "object"
+          },
+          "name": "tree"
+        },
+        {
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": true
+          },
+          "description": "Create a new file or overwrite an existing file with new content.",
+          "inputSchema": {
+            "properties": {
+              "content": {
+                "description": "Content to write to the file",
+                "type": "string"
+              },
+              "path": {
+                "description": "Path where to write the file",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ],
+            "type": "object"
+          },
+          "name": "write_file"
+        }
+      ]
+    }
+  },
+  "source_sha256": "557d05d483f4b4afe9f62bec564a446a7ad05dc0d228472cd109b59e51ec8713",
+  "initialize_response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {
+        "resources": {
+          "subscribe": true,
+          "listChanged": true
+        },
+        "tools": {
+          "listChanged": true
+        }
+      },
+      "serverInfo": {
+        "name": "secure-filesystem-server",
+        "version": "dev"
+      }
+    }
+  }
+}

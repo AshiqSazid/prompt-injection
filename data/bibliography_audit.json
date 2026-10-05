@@ -1,0 +1,3411 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-09-28",
+  "online": true,
+  "missing_keys": [],
+  "duplicate_keys": [],
+  "entries": [
+    {
+      "key": "hiddenlayer2025mcp",
+      "title": "Beyond MCP: Expanding Agentic Function Parameter Abuse",
+      "author": "HiddenLayer",
+      "year": "2025",
+      "url": "https://www.hiddenlayer.com/research/beyond-mcp-expanding-agentic-function-parameter-abuse",
+      "metadata_status": "manual_review_title_difference",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "e host, no\ninjected instruction, and no contact with the user. They need the tool to be\ncalled once, for a task the user actually wanted.\n\nPrior work established that this channel exists. HiddenLayer~\\cite{hiddenlayer2025mcp}\ndeclared parameters named \\texttt{system\\_prompt}, \\texttt{model\\_name}, and\n\\texttt{chain\\_of\\_thought}, and several production models filled them with the\ncontents of their system prompts. That rep",
+        "equired\nparameter. We therefore limit our detector claim to the published pre-call schema\npolicy we re-run, not to every proposed traffic or runtime defense.\n\n\\paragraph*{Parameter abuse}\nHiddenLayer~\\cite{hiddenlayer2025mcp} showed that a declared \\emph{parameter} is\nenough: name one \\texttt{system\\_prompt} or \\texttt{model\\_name} and several\nproduction models fill it with prompt contents. Their report gives\ndemonstratio",
+        "ef{sec:defense}) is black-box, and why we report its\nprecision under low base rates rather than its AUC alone.\n\n\\paragraph*{What is new here}\nNot that a parameter can extract prompt contents; that\nis~\\cite{hiddenlayer2025mcp}. Not that attacker-controlled input reaches a model\nthrough a trusted channel; that is~\\cite{greshake2023not}. We contribute the\nmeasurement, the finding that disclosure is selected by the parameter ",
+        "}, \\texttt{nextThoughtNeeded}, \\texttt{totalThoughts}, and\n\\texttt{revisesThought}. That is the same neighbourhood as\n\\texttt{chain\\_of\\_thought}, which prior work published as an exfiltration\nvector~\\cite{hiddenlayer2025mcp}, and it is offered in good faith. When we score\nreal schemas with the classifier of \\S\\ref{sec:defense}, 4 of its parameters land\namong the 5/13 false positives at the operating threshold. A defender",
+        "textbf{D} adds a required \\texttt{request\\_trace\\_id}, which pulls at no\nidentity, and is the neutral control. \\textbf{E} adds \\texttt{system\\_prompt}\nand \\texttt{model\\_name}, reproducing prior work~\\cite{hiddenlayer2025mcp}.\nA$'$, B$'$ and E were added after we had seen data, and we label them post-hoc\nwherever they appear.\n\nWe ablated condition~C across five wordings: \\texttt{default},\n\\texttt{operational\\_metadata}, \\",
+        "s. We report the levers a client can pull without\nanyone's cooperation, namely scope and requiredness. And we recommend keeping\ncredentials out of prompts. The extraction mechanism was already\npublic~\\cite{hiddenlayer2025mcp}; what we add is measurement, controls, and\ndefensive analysis, not an optimized attack. The artifact includes an inert MCP\nserver for transport testing, not a deployment against third-party users.\n\n\\"
+      ],
+      "resolved_url": "https://www.hiddenlayer.com/research/beyond-mcp-expanding-agentic-function-parameter-abuse",
+      "observed_title": "LLM Fake Function Injection: How to Prevent System Prompt and Tool Leaks",
+      "metadata": {
+        "description": [
+          "Discover how attackers exploit agentic function parameters beyond MCP, enabling new classes of AI system manipulation."
+        ],
+        "og:title": [
+          "LLM Fake Function Injection: How to Prevent System Prompt and Tool Leaks"
+        ],
+        "og:description": [
+          "Discover how attackers exploit agentic function parameters beyond MCP, enabling new classes of AI system manipulation."
+        ],
+        "og:image": [
+          "https://cdn.prod.website-files.com/694066252c49b2800c70cf5e/69791944321893e2fda5d998_MCP-Expanding-Agentic_FeaturedImage-scaled.webp"
+        ],
+        "twitter:title": [
+          "LLM Fake Function Injection: How to Prevent System Prompt and Tool Leaks"
+        ],
+        "twitter:description": [
+          "Discover how attackers exploit agentic function parameters beyond MCP, enabling new classes of AI system manipulation."
+        ],
+        "twitter:image": [
+          "https://cdn.prod.website-files.com/694066252c49b2800c70cf5e/69791944321893e2fda5d998_MCP-Expanding-Agentic_FeaturedImage-scaled.webp"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "generator": [
+          "Webflow"
+        ]
+      }
+    },
+    {
+      "key": "mcpitp2026",
+      "title": "MCP-ITP: An Automated Framework for Implicit Tool Poisoning in MCP",
+      "author": "Li, Ruiqi and Wang, Zhiqiang and Yao, Yunhao and Li, Xiang-Yang",
+      "year": "2026",
+      "url": "https://arxiv.org/abs/2601.07395",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        " rates,\nmatched controls, or a scanner evaluation. This is the closest prior work. We\nreproduce it as condition~E and measure it in Table~\\ref{tab:explicit}.\n\n\\paragraph*{Optimised poisoning}\nMCP-ITP~\\cite{mcpitp2026} tunes poisoned tool metadata against detector\nfeedback, reaching high attack success while staying undetected. The difference\nthat matters here is effort. Their adversary runs a search loop and write"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2601.07395",
+      "observed_title": "MCP-ITP: An Automated Framework for Implicit Tool Poisoning in MCP",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2601.07395: MCP-ITP: An Automated Framework for Implicit Tool Poisoning in MCP"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "MCP-ITP: An Automated Framework for Implicit Tool Poisoning in MCP"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2601.07395v1"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "To standardize interactions between LLM-based agents and their environments, the Model Context Protocol (MCP) was proposed and has since been widely adopted. However, integrating external tools expands the attack surface, exposing agents to tool poisoning attacks. In such attacks, malicious instructions embedded in tool metadata are injected into the agent context during MCP registration phase, thereby manipulating agent behavior. Prior work primarily focuses on explicit tool poisoning or relied on manually crafted poisoned tools. In contrast, we focus on a particularly stealthy variant: implicit tool poisoning, where the poisoned tool itself remains uninvoked. Instead, the instructions embedded in the tool metadata induce the agent to invoke a legitimate but high-privilege tool to perform malicious operations. We propose MCP-ITP, the first automated and adaptive framework for implicit tool poisoning within the MCP ecosystem. MCP-ITP formulates poisoned tool generation as a black-box optimization problem and employs an iterative optimization strategy that leverages feedback from both an evaluation LLM and a detection LLM to maximize Attack Success Rate (ASR) while evading current detection mechanisms. Experimental results on the MCPTox dataset across 12 LLM agents demonstrate that MCP-ITP consistently outperforms the manually crafted baseline, achieving up to 84.2% ASR while suppressing the Malicious Tool Detection Rate (MDR) to as low as 0.3%."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "MCP-ITP: An Automated Framework for Implicit Tool Poisoning in MCP"
+        ],
+        "twitter:description": [
+          "To standardize interactions between LLM-based agents and their environments, the Model Context Protocol (MCP) was proposed and has since been widely adopted. However, integrating external tools..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "MCP-ITP: An Automated Framework for Implicit Tool Poisoning in MCP"
+        ],
+        "citation_author": [
+          "Li, Ruiqi",
+          "Wang, Zhiqiang",
+          "Yao, Yunhao",
+          "Li, Xiang-Yang"
+        ],
+        "citation_date": [
+          "2026/01/12"
+        ],
+        "citation_online_date": [
+          "2026/01/12"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2601.07395"
+        ],
+        "citation_arxiv_id": [
+          "2601.07395"
+        ],
+        "citation_abstract": [
+          "To standardize interactions between LLM-based agents and their environments, the Model Context Protocol (MCP) was proposed and has since been widely adopted. However, integrating external tools expands the attack surface, exposing agents to tool poisoning attacks. In such attacks, malicious instructions embedded in tool metadata are injected into the agent context during MCP registration phase, thereby manipulating agent behavior. Prior work primarily focuses on explicit tool poisoning or relied on manually crafted poisoned tools. In contrast, we focus on a particularly stealthy variant: implicit tool poisoning, where the poisoned tool itself remains uninvoked. Instead, the instructions embedded in the tool metadata induce the agent to invoke a legitimate but high-privilege tool to perform malicious operations. We propose MCP-ITP, the first automated and adaptive framework for implicit tool poisoning within the MCP ecosystem. MCP-ITP formulates poisoned tool generation as a black-box optimization problem and employs an iterative optimization strategy that leverages feedback from both an evaluation LLM and a detection LLM to maximize Attack Success Rate (ASR) while evading current detection mechanisms. Experimental results on the MCPTox dataset across 12 LLM agents demonstrate that MCP-ITP consistently outperforms the manually crafted baseline, achieving up to 84.2% ASR while suppressing the Malicious Tool Detection Rate (MDR) to as low as 0.3%."
+        ]
+      }
+    },
+    {
+      "key": "mcptox2025",
+      "title": "MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers",
+      "author": "Wang, Zhiqiang and Gao, Yichao and Wang, Yanting and Liu, Suyuan and Sun, Haifeng and Cheng, Haoran and Shi, Guanquan and Du, Haohua and Li, Xiangyang",
+      "year": "2025",
+      "url": "https://arxiv.org/abs/2508.14925",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "surement crosses multiple\nsimultaneously planted facts with requested fields and scores selective recovery\nby fixed canary matching; it does not introduce parameter-based extraction. We do\nuse MCPTox~\\cite{mcptox2025}, for external validity (\\S\\ref{sec:external}) and\nprevalence (\\S\\ref{sec:prevalence}), because it supplies real schemas rather\nthan a taxonomy.\n\n\\paragraph*{Which defenses could apply}\nAn instruction",
+        "eal Schemas?}\n\\label{sec:external}\n\nOne synthetic tool cannot show that the channel survives contact with schemas we\ndid not write. So we took 25 authentic tool listings from 25 MCPTox server\nentries~\\cite{mcptox2025} and appended one parameter. Because MCPTox's tool-name\nand request arrays are not index-aligned, we paired them by greedy token overlap\nand retained each match score for audit.\n\nUnder the benign para"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2508.14925",
+      "observed_title": "MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2508.14925: MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2508.14925v1"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "By providing a standardized interface for LLM agents to interact with external tools, the Model Context Protocol (MCP) is quickly becoming a cornerstone of the modern autonomous agent ecosystem. However, it creates novel attack surfaces due to untrusted external tools. While prior work has focused on attacks injected through external tool outputs, we investigate a more fundamental vulnerability: Tool Poisoning, where malicious instructions are embedded within a tool's metadata without execution. To date, this threat has been primarily demonstrated through isolated cases, lacking a systematic, large-scale evaluation.\n  We introduce MCPTox, the first benchmark to systematically evaluate agent robustness against Tool Poisoning in realistic MCP settings. MCPTox is constructed upon 45 live, real-world MCP servers and 353 authentic tools. To achieve this, we design three distinct attack templates to generate a comprehensive suite of 1312 malicious test cases by few-shot learning, covering 10 categories of potential risks. Our evaluation on 20 prominent LLM agents setting reveals a widespread vulnerability to Tool Poisoning, with o1-mini, achieving an attack success rate of 72.8\\%. We find that more capable models are often more susceptible, as the attack exploits their superior instruction-following abilities. Finally, the failure case analysis reveals that agents rarely refuse these attacks, with the highest refused rate (Claude-3.7-Sonnet) less than 3\\%, demonstrating that existing safety alignment is ineffective against malicious actions that use legitimate tools for unauthorized operation. Our findings create a crucial empirical baseline for understanding and mitigating this widespread threat, and we release MCPTox for the development of verifiably safer AI agents. Our dataset is available at an anonymized repository: \\textit{https://anonymous.4open.science/r/AAAI26-7C02}."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers"
+        ],
+        "twitter:description": [
+          "By providing a standardized interface for LLM agents to interact with external tools, the Model Context Protocol (MCP) is quickly becoming a cornerstone of the modern autonomous agent ecosystem...."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers"
+        ],
+        "citation_author": [
+          "Wang, Zhiqiang",
+          "Gao, Yichao",
+          "Wang, Yanting",
+          "Liu, Suyuan",
+          "Sun, Haifeng",
+          "Cheng, Haoran",
+          "Shi, Guanquan",
+          "Du, Haohua",
+          "Li, Xiangyang"
+        ],
+        "citation_date": [
+          "2025/08/19"
+        ],
+        "citation_online_date": [
+          "2025/08/19"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2508.14925"
+        ],
+        "citation_arxiv_id": [
+          "2508.14925"
+        ],
+        "citation_abstract": [
+          "By providing a standardized interface for LLM agents to interact with external tools, the Model Context Protocol (MCP) is quickly becoming a cornerstone of the modern autonomous agent ecosystem. However, it creates novel attack surfaces due to untrusted external tools. While prior work has focused on attacks injected through external tool outputs, we investigate a more fundamental vulnerability: Tool Poisoning, where malicious instructions are embedded within a tool's metadata without execution. To date, this threat has been primarily demonstrated through isolated cases, lacking a systematic, large-scale evaluation. We introduce MCPTox, the first benchmark to systematically evaluate agent robustness against Tool Poisoning in realistic MCP settings. MCPTox is constructed upon 45 live, real-world MCP servers and 353 authentic tools. To achieve this, we design three distinct attack templates to generate a comprehensive suite of 1312 malicious test cases by few-shot learning, covering 10 categories of potential risks. Our evaluation on 20 prominent LLM agents setting reveals a widespread vulnerability to Tool Poisoning, with o1-mini, achieving an attack success rate of 72.8\\%. We find that more capable models are often more susceptible, as the attack exploits their superior instruction-following abilities. Finally, the failure case analysis reveals that agents rarely refuse these attacks, with the highest refused rate (Claude-3.7-Sonnet) less than 3\\%, demonstrating that existing safety alignment is ineffective against malicious actions that use legitimate tools for unauthorized operation. Our findings create a crucial empirical baseline for understanding and mitigating this widespread threat, and we release MCPTox for the development of verifiably safer AI agents. Our dataset is available at an anonymized repository: \\textit{https://anonymous.4open.science/r/AAAI26-7C02}."
+        ]
+      }
+    },
+    {
+      "key": "mindguard2025",
+      "title": "MindGuard: Intrinsic Decision Inspection for Securing LLM Agents Against Metadata Poisoning",
+      "author": "Wang, Zhiqiang and Du, Haohua and Shi, Guanquan and Zhang, Junyang and Cheng, HaoRan and Yao, Yunhao and Guo, Kaiwen and Li, Xiang-Yang",
+      "year": "2025",
+      "url": "https://arxiv.org/abs/2508.20412",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "e next. Runtime trust layers that score a server's\nbehaviour during operation~\\cite{zhou2026mcpshield} are complementary, but they\nact after the call the adversary has already been paid by.\nMindGuard~\\cite{mindguard2025} detects manipulated agent decisions from\nattention structure with high precision, but needs white-box access and reports\nno false-positive rate on benign tools. Our defender runs against a hosted API"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2508.20412",
+      "observed_title": "MindGuard: Intrinsic Decision Inspection for Securing LLM Agents Against Metadata Poisoning",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2508.20412: MindGuard: Intrinsic Decision Inspection for Securing LLM Agents Against Metadata Poisoning"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "MindGuard: Intrinsic Decision Inspection for Securing LLM Agents Against Metadata Poisoning"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2508.20412v3"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "The Model Context Protocol (MCP) is increasingly adopted to standardize the interaction between LLM agents and external tools. However, this trend introduces a new threat: Tool Poisoning Attacks (TPA), where tool metadata is poisoned to induce the agent to perform unauthorized operations. Existing defenses that primarily focus on behavior-level analysis are fundamentally ineffective against TPA, as poisoned tools need not be executed, leaving no behavioral trace to monitor.\n  Thus, we propose MindGuard, a decision-level guardrail for LLM agents, providing provenance tracking of call decisions, policy-agnostic detection, and poisoning source attribution against TPA. While fully explaining LLM decision remains challenging, our empirical findings uncover a strong correlation between LLM attention mechanisms and tool invocation decisions. Therefore, we choose attention as an empirical signal for decision tracking and formalize this as the Decision Dependence Graph (DDG), which models the LLM's reasoning process as a weighted, directed graph where vertices represent logical concepts and edges quantify the attention-based dependencies. We further design robust DDG construction and graph-based anomaly analysis mechanisms that efficiently detect and attribute TPA attacks. Extensive experiments on real-world datasets demonstrate that MindGuard achieves 94\\%-99\\% average precision in detecting poisoned invocations, 95\\%-100\\% attribution accuracy, with processing times under one second and no additional token cost. Moreover, DDG can be viewed as an adaptation of the classical Program Dependence Graph (PDG), providing a solid foundation for applying traditional security policies at the decision level."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "MindGuard: Intrinsic Decision Inspection for Securing LLM Agents..."
+        ],
+        "twitter:description": [
+          "The Model Context Protocol (MCP) is increasingly adopted to standardize the interaction between LLM agents and external tools. However, this trend introduces a new threat: Tool Poisoning Attacks..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "MindGuard: Intrinsic Decision Inspection for Securing LLM Agents Against Metadata Poisoning"
+        ],
+        "citation_author": [
+          "Wang, Zhiqiang",
+          "Du, Haohua",
+          "Shi, Guanquan",
+          "Zhang, Junyang",
+          "Cheng, HaoRan",
+          "Yao, Yunhao",
+          "Guo, Kaiwen",
+          "Li, Xiang-Yang"
+        ],
+        "citation_date": [
+          "2025/08/28"
+        ],
+        "citation_online_date": [
+          "2026/01/15"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2508.20412"
+        ],
+        "citation_arxiv_id": [
+          "2508.20412"
+        ],
+        "citation_abstract": [
+          "The Model Context Protocol (MCP) is increasingly adopted to standardize the interaction between LLM agents and external tools. However, this trend introduces a new threat: Tool Poisoning Attacks (TPA), where tool metadata is poisoned to induce the agent to perform unauthorized operations. Existing defenses that primarily focus on behavior-level analysis are fundamentally ineffective against TPA, as poisoned tools need not be executed, leaving no behavioral trace to monitor. Thus, we propose MindGuard, a decision-level guardrail for LLM agents, providing provenance tracking of call decisions, policy-agnostic detection, and poisoning source attribution against TPA. While fully explaining LLM decision remains challenging, our empirical findings uncover a strong correlation between LLM attention mechanisms and tool invocation decisions. Therefore, we choose attention as an empirical signal for decision tracking and formalize this as the Decision Dependence Graph (DDG), which models the LLM's reasoning process as a weighted, directed graph where vertices represent logical concepts and edges quantify the attention-based dependencies. We further design robust DDG construction and graph-based anomaly analysis mechanisms that efficiently detect and attribute TPA attacks. Extensive experiments on real-world datasets demonstrate that MindGuard achieves 94\\%-99\\% average precision in detecting poisoned invocations, 95\\%-100\\% attribution accuracy, with processing times under one second and no additional token cost. Moreover, DDG can be viewed as an adaptation of the classical Program Dependence Graph (PDG), providing a solid foundation for applying traditional security policies at the decision level."
+        ]
+      }
+    },
+    {
+      "key": "owasp_mcp03",
+      "title": "MCP03:2025 --- Tool Poisoning",
+      "author": "OWASP",
+      "year": "2025",
+      "url": "https://owasp.org/www-project-mcp-top-10/",
+      "metadata_status": "manual_review_title_difference",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "\nsurface, usually the description, so the model follows it while appearing to do\nits job. Invariant Labs disclosed it for MCP~\\cite{invariant2025toolpoisoning},\nit is catalogued as a top-ten MCP risk~\\cite{owasp_mcp03}, and it is what\npublished tool-poisoning policies are built to catch, including the policy we\nre-run in \\S\\ref{sec:detection}. Our condition~B reproduces it for comparison.\n\nA recent study of tool de"
+      ],
+      "resolved_url": "https://owasp.org/projects/mcp-top-10",
+      "observed_title": "OWASP MCP Top 10 | OWASP Foundation",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "description": [
+          "As AI systems become increasingly integrated into software supply chains, enterprise applications, and security infrastructure, the need for structured, secure, and interpretable model interaction…"
+        ],
+        "application-name": [
+          "OWASP Foundation"
+        ],
+        "author": [
+          "OWASP Foundation"
+        ],
+        "keywords": [
+          "OWASP MCP Top 10,OWASP project,open source security,OWASP,OWASP Foundation,application security,software security"
+        ],
+        "publisher": [
+          "OWASP Foundation"
+        ],
+        "google": [
+          "notranslate"
+        ],
+        "og:title": [
+          "OWASP MCP Top 10 | OWASP Foundation"
+        ],
+        "og:description": [
+          "As AI systems become increasingly integrated into software supply chains, enterprise applications, and security infrastructure, the need for structured, secure, and interpretable model interaction…"
+        ],
+        "og:url": [
+          "https://owasp.org/projects/mcp-top-10"
+        ],
+        "og:site_name": [
+          "OWASP Foundation"
+        ],
+        "og:locale": [
+          "en_US"
+        ],
+        "og:image": [
+          "https://owasp.org/images/og/owasp-default.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "630"
+        ],
+        "og:image:alt": [
+          "OWASP Foundation — the open source foundation for application security"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:site": [
+          "@owasp"
+        ],
+        "twitter:creator": [
+          "@owasp"
+        ],
+        "twitter:title": [
+          "OWASP MCP Top 10 | OWASP Foundation"
+        ],
+        "twitter:description": [
+          "As AI systems become increasingly integrated into software supply chains, enterprise applications, and security infrastructure, the need for structured, secure, and interpretable model interaction…"
+        ],
+        "twitter:image": [
+          "https://owasp.org/images/og/owasp-default.png"
+        ],
+        "twitter:image:alt": [
+          "OWASP Foundation — the open source foundation for application security"
+        ],
+        "twitter:image:width": [
+          "1200"
+        ],
+        "twitter:image:height": [
+          "630"
+        ]
+      }
+    },
+    {
+      "key": "asb2024",
+      "title": "Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents",
+      "author": "Zhang, Hanrong and Huang, Jingyuan and Mei, Kai and Yao, Yifei and Wang, Zhenting and Zhan, Chenlu and Wang, Hongwei and Zhang, Yongfeng",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2410.02644",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "er\ninjection. InjecAgent~\\cite{zhan2024injecagent} carries the injection in tool\n\\emph{output}. ToolEmu~\\cite{ruan2024toolemu} emulates execution to surface\nrisky \\emph{actions}. Agent Security Bench~\\cite{asb2024} organises attacks by\nagent component. All of them score injections that carry an instruction, or\nrisky actions. None supplies the unit we need, where the adversary's whole\npayload is a required param"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2410.02644",
+      "observed_title": "Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2410.02644: Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2410.02644v4"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Although LLM-based agents, powered by Large Language Models (LLMs), can use external tools and memory mechanisms to solve complex real-world tasks, they may also introduce critical security vulnerabilities. However, the existing literature does not comprehensively evaluate attacks and defenses against LLM-based agents. To address this, we introduce Agent Security Bench (ASB), a comprehensive framework designed to formalize, benchmark, and evaluate the attacks and defenses of LLM-based agents, including 10 scenarios (e.g., e-commerce, autonomous driving, finance), 10 agents targeting the scenarios, over 400 tools, 27 different types of attack/defense methods, and 7 evaluation metrics. Based on ASB, we benchmark 10 prompt injection attacks, a memory poisoning attack, a novel Plan-of-Thought backdoor attack, 4 mixed attacks, and 11 corresponding defenses across 13 LLM backbones. Our benchmark results reveal critical vulnerabilities in different stages of agent operation, including system prompt, user prompt handling, tool usage, and memory retrieval, with the highest average attack success rate of 84.30\\%, but limited effectiveness shown in current defenses, unveiling important works to be done in terms of agent security for the community. We also introduce a new metric to evaluate the agents' capability to balance utility and security. Our code can be found at https://github.com/agiresearch/ASB."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "Agent Security Bench (ASB): Formalizing and Benchmarking Attacks..."
+        ],
+        "twitter:description": [
+          "Although LLM-based agents, powered by Large Language Models (LLMs), can use external tools and memory mechanisms to solve complex real-world tasks, they may also introduce critical security..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents"
+        ],
+        "citation_author": [
+          "Zhang, Hanrong",
+          "Huang, Jingyuan",
+          "Mei, Kai",
+          "Yao, Yifei",
+          "Wang, Zhenting",
+          "Zhan, Chenlu",
+          "Wang, Hongwei",
+          "Zhang, Yongfeng"
+        ],
+        "citation_date": [
+          "2024/10/03"
+        ],
+        "citation_online_date": [
+          "2025/05/30"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2410.02644"
+        ],
+        "citation_arxiv_id": [
+          "2410.02644"
+        ],
+        "citation_abstract": [
+          "Although LLM-based agents, powered by Large Language Models (LLMs), can use external tools and memory mechanisms to solve complex real-world tasks, they may also introduce critical security vulnerabilities. However, the existing literature does not comprehensively evaluate attacks and defenses against LLM-based agents. To address this, we introduce Agent Security Bench (ASB), a comprehensive framework designed to formalize, benchmark, and evaluate the attacks and defenses of LLM-based agents, including 10 scenarios (e.g., e-commerce, autonomous driving, finance), 10 agents targeting the scenarios, over 400 tools, 27 different types of attack/defense methods, and 7 evaluation metrics. Based on ASB, we benchmark 10 prompt injection attacks, a memory poisoning attack, a novel Plan-of-Thought backdoor attack, 4 mixed attacks, and 11 corresponding defenses across 13 LLM backbones. Our benchmark results reveal critical vulnerabilities in different stages of agent operation, including system prompt, user prompt handling, tool usage, and memory retrieval, with the highest average attack success rate of 84.30\\%, but limited effectiveness shown in current defenses, unveiling important works to be done in terms of agent security for the community. We also introduce a new metric to evaluate the agents' capability to balance utility and security. Our code can be found at https://github.com/agiresearch/ASB."
+        ]
+      }
+    },
+    {
+      "key": "leakdata2026",
+      "title": "Your LLM Agent Can Leak Your Data: Data Exfiltration via Backdoored Tool Use",
+      "author": "Zhang, Wuyang and Pei, Shichao",
+      "year": "2026",
+      "url": "https://arxiv.org/abs/2604.05432",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        " defender who\nassumes attacks must look adversarial is wrong even against an adversary who\ndoes no work. Closer in outcome, and further in capability, is exfiltration\nthrough a \\emph{backdoored} tool~\\cite{leakdata2026}: the leak is comparable,\nbut that adversary controls what the tool does, where ours controls only what\nthe tool declares.\n\n\\paragraph*{Agent-security benchmarks, and why we do not evaluate on them}\nA"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2604.05432",
+      "observed_title": "Your LLM Agent Can Leak Your Data: Data Exfiltration via Backdoored Tool Use",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2604.05432: Your LLM Agent Can Leak Your Data: Data Exfiltration via Backdoored Tool Use"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Your LLM Agent Can Leak Your Data: Data Exfiltration via Backdoored Tool Use"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2604.05432v1"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Tool-use large language model (LLM) agents are increasingly deployed to support sensitive workflows, relying on tool calls for retrieval, external API access, and session memory management. While prior research has examined various threats, the risk of systematic data exfiltration by backdoored agents remains underexplored. In this work, we present Back-Reveal, a data exfiltration attack that embeds semantic triggers into fine-tuned LLM agents. When triggered, the backdoored agent invokes memory-access tool calls to retrieve stored user context and exfiltrates it via disguised retrieval tool calls. We further demonstrate that multi-turn interaction amplifies the impact of data exfiltration, as attacker-controlled retrieval responses can subtly steer subsequent agent behavior and user interactions, enabling sustained and cumulative information leakage over time. Our experimental results expose a critical vulnerability in LLM agents with tool access and highlight the need for defenses against exfiltration-oriented backdoors."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "Your LLM Agent Can Leak Your Data: Data Exfiltration via..."
+        ],
+        "twitter:description": [
+          "Tool-use large language model (LLM) agents are increasingly deployed to support sensitive workflows, relying on tool calls for retrieval, external API access, and session memory management. While..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "Your LLM Agent Can Leak Your Data: Data Exfiltration via Backdoored Tool Use"
+        ],
+        "citation_author": [
+          "Zhang, Wuyang",
+          "Pei, Shichao"
+        ],
+        "citation_date": [
+          "2026/04/07"
+        ],
+        "citation_online_date": [
+          "2026/04/07"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2604.05432"
+        ],
+        "citation_arxiv_id": [
+          "2604.05432"
+        ],
+        "citation_abstract": [
+          "Tool-use large language model (LLM) agents are increasingly deployed to support sensitive workflows, relying on tool calls for retrieval, external API access, and session memory management. While prior research has examined various threats, the risk of systematic data exfiltration by backdoored agents remains underexplored. In this work, we present Back-Reveal, a data exfiltration attack that embeds semantic triggers into fine-tuned LLM agents. When triggered, the backdoored agent invokes memory-access tool calls to retrieve stored user context and exfiltrates it via disguised retrieval tool calls. We further demonstrate that multi-turn interaction amplifies the impact of data exfiltration, as attacker-controlled retrieval responses can subtly steer subsequent agent behavior and user interactions, enabling sustained and cumulative information leakage over time. Our experimental results expose a critical vulnerability in LLM agents with tool access and highlight the need for defenses against exfiltration-oriented backdoors."
+        ]
+      }
+    },
+    {
+      "key": "opentelemetry_semconv",
+      "title": "OpenTelemetry Semantic Conventions",
+      "author": "OpenTelemetry Authors",
+      "year": null,
+      "url": "https://github.com/open-telemetry/semantic-conventions",
+      "metadata_status": "manual_review_title_difference",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "n.\n\n\\paragraph*{And name-based detection has an occupied floor}\nOur intent classifier scores the most effective attack wording at 25.\n\\texttt{user\\_agent.original}, a standardised OpenTelemetry\nfield~\\cite{opentelemetry_semconv}, scores 15. The usable band between them is\nnarrow, and legitimate telemetry already sits inside it.\n\nThe Sequential Thinking parameters from \\S\\ref{sec:threat} account for 5/13 of\nthe false positive"
+      ],
+      "resolved_url": "https://github.com/open-telemetry/semantic-conventions",
+      "observed_title": "GitHub - open-telemetry/semantic-conventions: Defines standards for generating consistent, accessible telemetry across a variety of domains",
+      "metadata": {
+        "react-profiling": [
+          "0"
+        ],
+        "react-import-map": [
+          "react,react-dom,react-dom/client,react-dom/profiling,react-is,react-reconciler,react/compiler-runtime,react/jsx-dev-runtime,react/jsx-runtime,scheduler@777f63f87cd0"
+        ],
+        "route-pattern": [
+          "/:user_id/:repository"
+        ],
+        "route-controller": [
+          "files"
+        ],
+        "route-action": [
+          "disambiguate"
+        ],
+        "fetch-nonce": [
+          "v2:351b5e20-45dd-a0b4-2f64-8420f0a7ef30"
+        ],
+        "current-catalog-service-hash": [
+          "f3abb0cc802f3d7b95fc8762b94bdcb13bf39634c40c357301c4aa1d67a256fb"
+        ],
+        "request-id": [
+          "D0E6:1A2468:484DD0:4D6D51:6AB9FF74"
+        ],
+        "html-safe-nonce": [
+          "b806a135e42e20d6ffc05dbdf0b4de305d83c95b18b99e99e182bd613a24922d"
+        ],
+        "visitor-payload": [
+          "eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJEMEU2OjFBMjQ2ODo0ODRERDA6NEQ2RDUxOjZBQjlGRjc0IiwidmlzaXRvcl9pZCI6IjQ2OTU1Mjk0NjQwNzc2MTQ5NjQiLCJyZWdpb25fZWRnZSI6InNvdXRoZWFzdGFzaWEiLCJyZWdpb25fcmVuZGVyIjoic291dGhlYXN0YXNpYSJ9"
+        ],
+        "visitor-hmac": [
+          "4fb82dc51436cdc12e15824867ba9f69c1cfe6057f00368f34754ffddf48ffd1"
+        ],
+        "hovercard-subject-tag": [
+          "repository:638591290"
+        ],
+        "github-keyboard-shortcuts": [
+          "repository,copilot"
+        ],
+        "google-site-verification": [
+          "Apib7-x98H0j5cPqHWwSMm6dNU4GmODRoqxLiDzdx9I"
+        ],
+        "octolytics-url": [
+          "https://collector.github.com/github/collect"
+        ],
+        "analytics-location": [
+          "/<user-name>/<repo-name>"
+        ],
+        "viewport": [
+          "width=device-width"
+        ],
+        "description": [
+          "Defines standards for generating consistent, accessible telemetry across a variety of domains - open-telemetry/semantic-conventions"
+        ],
+        "fb:app_id": [
+          "1401488693436528"
+        ],
+        "apple-itunes-app": [
+          "app-id=1477376905, app-argument=https://github.com/open-telemetry/semantic-conventions"
+        ],
+        "twitter:image": [
+          "https://opengraph.githubassets.com/fc0b7c9ffcba4fcc81bf845347bf9cd24afe3c1ec15ac09f74b6639d560ac3ea/open-telemetry/semantic-conventions"
+        ],
+        "twitter:site": [
+          "@github"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:title": [
+          "GitHub - open-telemetry/semantic-conventions: Defines standards for generating consistent, accessible telemetry across a variety of domains"
+        ],
+        "twitter:description": [
+          "Defines standards for generating consistent, accessible telemetry across a variety of domains - open-telemetry/semantic-conventions"
+        ],
+        "og:image": [
+          "https://opengraph.githubassets.com/fc0b7c9ffcba4fcc81bf845347bf9cd24afe3c1ec15ac09f74b6639d560ac3ea/open-telemetry/semantic-conventions"
+        ],
+        "og:image:alt": [
+          "Defines standards for generating consistent, accessible telemetry across a variety of domains - open-telemetry/semantic-conventions"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "600"
+        ],
+        "og:site_name": [
+          "GitHub"
+        ],
+        "og:type": [
+          "object"
+        ],
+        "og:title": [
+          "GitHub - open-telemetry/semantic-conventions: Defines standards for generating consistent, accessible telemetry across a variety of domains"
+        ],
+        "og:url": [
+          "https://github.com/open-telemetry/semantic-conventions"
+        ],
+        "og:description": [
+          "Defines standards for generating consistent, accessible telemetry across a variety of domains - open-telemetry/semantic-conventions"
+        ],
+        "hostname": [
+          "github.com"
+        ],
+        "expected-hostname": [
+          "github.com"
+        ],
+        "turbo-cache-control": [
+          "no-preview",
+          "no-cache"
+        ],
+        "go-import": [
+          "github.com/open-telemetry/semantic-conventions git https://github.com/open-telemetry/semantic-conventions.git"
+        ],
+        "octolytics-dimension-user_id": [
+          "49998002"
+        ],
+        "octolytics-dimension-user_login": [
+          "open-telemetry"
+        ],
+        "octolytics-dimension-repository_id": [
+          "638591290"
+        ],
+        "octolytics-dimension-repository_nwo": [
+          "open-telemetry/semantic-conventions"
+        ],
+        "octolytics-dimension-repository_public": [
+          "true"
+        ],
+        "octolytics-dimension-repository_is_fork": [
+          "false"
+        ],
+        "octolytics-dimension-repository_network_root_id": [
+          "638591290"
+        ],
+        "octolytics-dimension-repository_network_root_nwo": [
+          "open-telemetry/semantic-conventions"
+        ],
+        "turbo-body-classes": [
+          "logged-out env-production page-responsive"
+        ],
+        "disable-turbo": [
+          "false"
+        ],
+        "browser-stats-url": [
+          "https://api.github.com/_private/browser/stats"
+        ],
+        "browser-errors-url": [
+          "https://api.github.com/_private/browser/errors"
+        ],
+        "release": [
+          "31e4ad8aebc022621d4160e05696cecd598d8331"
+        ],
+        "ui-target": [
+          "full"
+        ],
+        "theme-color": [
+          "#1e2327"
+        ],
+        "color-scheme": [
+          "light dark"
+        ]
+      }
+    },
+    {
+      "key": "perez2022ignore",
+      "title": "Ignore Previous Prompt: Attack Techniques For Language Models",
+      "author": "Perez, F\\'abio and Ribeiro, Ian",
+      "year": "2022",
+      "url": "https://arxiv.org/abs/2211.09527",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "t carry an\ninstruction. Neither covers the parameter channel we measure.\n\n\\paragraph*{Declarative parameters and prompt injection}\nText placed in a model's input can redirect it or extract its\nprompt~\\cite{perez2022ignore}. The form that matters in practice is\n\\emph{indirect}: the text arrives through a channel the user trusts, such as a\nretrieved page, an email, or a document~\\cite{greshake2023not}. Later work\nformali"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2211.09527",
+      "observed_title": "Ignore Previous Prompt: Attack Techniques For Language Models",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2211.09527: Ignore Previous Prompt: Attack Techniques For Language Models"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Ignore Previous Prompt: Attack Techniques For Language Models"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2211.09527v1"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Transformer-based large language models (LLMs) provide a powerful foundation for natural language tasks in large-scale customer-facing applications. However, studies that explore their vulnerabilities emerging from malicious user interaction are scarce. By proposing PromptInject, a prosaic alignment framework for mask-based iterative adversarial prompt composition, we examine how GPT-3, the most widely deployed language model in production, can be easily misaligned by simple handcrafted inputs. In particular, we investigate two types of attacks -- goal hijacking and prompt leaking -- and demonstrate that even low-aptitude, but sufficiently ill-intentioned agents, can easily exploit GPT-3's stochastic nature, creating long-tail risks. The code for PromptInject is available at https://github.com/agencyenterprise/PromptInject."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "Ignore Previous Prompt: Attack Techniques For Language Models"
+        ],
+        "twitter:description": [
+          "Transformer-based large language models (LLMs) provide a powerful foundation for natural language tasks in large-scale customer-facing applications. However, studies that explore their..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "Ignore Previous Prompt: Attack Techniques For Language Models"
+        ],
+        "citation_author": [
+          "Perez, Fábio",
+          "Ribeiro, Ian"
+        ],
+        "citation_date": [
+          "2022/11/17"
+        ],
+        "citation_online_date": [
+          "2022/11/17"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2211.09527"
+        ],
+        "citation_arxiv_id": [
+          "2211.09527"
+        ],
+        "citation_abstract": [
+          "Transformer-based large language models (LLMs) provide a powerful foundation for natural language tasks in large-scale customer-facing applications. However, studies that explore their vulnerabilities emerging from malicious user interaction are scarce. By proposing PromptInject, a prosaic alignment framework for mask-based iterative adversarial prompt composition, we examine how GPT-3, the most widely deployed language model in production, can be easily misaligned by simple handcrafted inputs. In particular, we investigate two types of attacks -- goal hijacking and prompt leaking -- and demonstrate that even low-aptitude, but sufficiently ill-intentioned agents, can easily exploit GPT-3's stochastic nature, creating long-tail risks. The code for PromptInject is available at https://github.com/agencyenterprise/PromptInject."
+        ]
+      }
+    },
+    {
+      "key": "greshake2023not",
+      "title": "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+      "author": "Greshake, Kai and Abdelnabi, Sahar and Mishra, Shailesh and Endres, Christoph and Holz, Thorsten and Fritz, Mario",
+      "year": "2023",
+      "url": "https://arxiv.org/abs/2302.12173",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        " extract its\nprompt~\\cite{perez2022ignore}. The form that matters in practice is\n\\emph{indirect}: the text arrives through a channel the user trusts, such as a\nretrieved page, an email, or a document~\\cite{greshake2023not}. Later work\nformalises the family and evaluates defenses against it~\\cite{liu2023prompt}. A\ntool schema is such a channel, so it is fair to read this paper as an\nindirect-injection result. Our operat",
+        "paragraph*{What is new here}\nNot that a parameter can extract prompt contents; that\nis~\\cite{hiddenlayer2025mcp}. Not that attacker-controlled input reaches a model\nthrough a trusted channel; that is~\\cite{greshake2023not}. We contribute the\nmeasurement, the finding that disclosure is selected by the parameter rather\nthan wholesale, and the finding that the reproduced injection-oriented policy is\nbuilt for a different "
+      ],
+      "resolved_url": "https://arxiv.org/abs/2302.12173",
+      "observed_title": "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2302.12173: Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2302.12173v2"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Large Language Models (LLMs) are increasingly being integrated into various applications. The functionalities of recent LLMs can be flexibly modulated via natural language prompts. This renders them susceptible to targeted adversarial prompting, e.g., Prompt Injection (PI) attacks enable attackers to override original instructions and employed controls. So far, it was assumed that the user is directly prompting the LLM. But, what if it is not the user prompting? We argue that LLM-Integrated Applications blur the line between data and instructions. We reveal new attack vectors, using Indirect Prompt Injection, that enable adversaries to remotely (without a direct interface) exploit LLM-integrated applications by strategically injecting prompts into data likely to be retrieved. We derive a comprehensive taxonomy from a computer security perspective to systematically investigate impacts and vulnerabilities, including data theft, worming, information ecosystem contamination, and other novel security risks. We demonstrate our attacks' practical viability against both real-world systems, such as Bing's GPT-4 powered Chat and code-completion engines, and synthetic applications built on GPT-4. We show how processing retrieved prompts can act as arbitrary code execution, manipulate the application's functionality, and control how and if other APIs are called. Despite the increasing integration and reliance on LLMs, effective mitigations of these emerging threats are currently lacking. By raising awareness of these vulnerabilities and providing key insights into their implications, we aim to promote the safe and responsible deployment of these powerful models and the development of robust defenses that protect users and systems from potential attacks."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "Not what you've signed up for: Compromising Real-World..."
+        ],
+        "twitter:description": [
+          "Large Language Models (LLMs) are increasingly being integrated into various applications. The functionalities of recent LLMs can be flexibly modulated via natural language prompts. This renders..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection"
+        ],
+        "citation_author": [
+          "Greshake, Kai",
+          "Abdelnabi, Sahar",
+          "Mishra, Shailesh",
+          "Endres, Christoph",
+          "Holz, Thorsten",
+          "Fritz, Mario"
+        ],
+        "citation_date": [
+          "2023/02/23"
+        ],
+        "citation_online_date": [
+          "2023/05/05"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2302.12173"
+        ],
+        "citation_arxiv_id": [
+          "2302.12173"
+        ],
+        "citation_abstract": [
+          "Large Language Models (LLMs) are increasingly being integrated into various applications. The functionalities of recent LLMs can be flexibly modulated via natural language prompts. This renders them susceptible to targeted adversarial prompting, e.g., Prompt Injection (PI) attacks enable attackers to override original instructions and employed controls. So far, it was assumed that the user is directly prompting the LLM. But, what if it is not the user prompting? We argue that LLM-Integrated Applications blur the line between data and instructions. We reveal new attack vectors, using Indirect Prompt Injection, that enable adversaries to remotely (without a direct interface) exploit LLM-integrated applications by strategically injecting prompts into data likely to be retrieved. We derive a comprehensive taxonomy from a computer security perspective to systematically investigate impacts and vulnerabilities, including data theft, worming, information ecosystem contamination, and other novel security risks. We demonstrate our attacks' practical viability against both real-world systems, such as Bing's GPT-4 powered Chat and code-completion engines, and synthetic applications built on GPT-4. We show how processing retrieved prompts can act as arbitrary code execution, manipulate the application's functionality, and control how and if other APIs are called. Despite the increasing integration and reliance on LLMs, effective mitigations of these emerging threats are currently lacking. By raising awareness of these vulnerabilities and providing key insights into their implications, we aim to promote the safe and responsible deployment of these powerful models and the development of robust defenses that protect users and systems from potential attacks."
+        ]
+      }
+    },
+    {
+      "key": "liu2023prompt",
+      "title": "Formalizing and Benchmarking Prompt Injection Attacks and Defenses",
+      "author": "Liu, Yupei and Jia, Yuqi and Geng, Runpeng and Jia, Jinyuan and Gong, Neil Zhenqiang",
+      "year": "2024",
+      "url": "https://www.usenix.org/conference/usenixsecurity24/presentation/liu-yupei",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "rect}: the text arrives through a channel the user trusts, such as a\nretrieved page, an email, or a document~\\cite{greshake2023not}. Later work\nformalises the family and evaluates defenses against it~\\cite{liu2023prompt}. A\ntool schema is such a channel, so it is fair to read this paper as an\nindirect-injection result. Our operational distinction is declarative parameter\nwording versus an imperative override, not an "
+      ],
+      "resolved_url": "https://www.usenix.org/conference/usenixsecurity24/presentation/liu-yupei",
+      "observed_title": "Formalizing and Benchmarking Prompt Injection Attacks and Defenses",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "citation_title": [
+          "Formalizing and Benchmarking Prompt Injection Attacks and Defenses"
+        ],
+        "citation_author": [
+          "Yupei Liu",
+          "Yuqi Jia",
+          "Runpeng Geng",
+          "Jinyuan Jia",
+          "Neil Zhenqiang Gong"
+        ],
+        "citation_author_institution": [
+          "The Pennsylvania State University",
+          "Duke University",
+          "The Pennsylvania State University",
+          "The Pennsylvania State University",
+          "Duke University"
+        ],
+        "citation_author_email": [
+          "yzl6415@psu.edu",
+          "yuqi.jia@duke.edu",
+          "kevingeng@psu.edu",
+          "jinyuan@psu.edu",
+          "neil.gong@duke.edu"
+        ],
+        "citation_publication_date": [
+          "2024"
+        ],
+        "citation_conference_title": [
+          "33rd USENIX Security Symposium (USENIX Security 24)"
+        ],
+        "citation_firstpage": [
+          "1831"
+        ],
+        "citation_lastpage": [
+          "1847"
+        ],
+        "citation_isbn": [
+          "978-1-939133-44-1"
+        ],
+        "citation_pdf_url": [
+          "https://www.usenix.org/system/files/usenixsecurity24-liu-yupei.pdf"
+        ]
+      }
+    },
+    {
+      "key": "carlini2021extracting",
+      "title": "Extracting Training Data from Large Language Models",
+      "author": "Carlini, Nicholas and Tram\\`er, Florian and Wallace, Eric and Jagielski, Matthew and Herbert-Voss, Ariel and Lee, Katherine and Roberts, Adam and Brown, Tom and Song, Dawn and Erlingsson, Ulfar and Oprea, Alina and Raffel, Colin",
+      "year": "2021",
+      "url": "https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "uring a task the user started.\n\n\\paragraph*{Measuring disclosure with canaries}\nPlanting an unlikely string and checking whether a system emits it is the\nstandard way to measure unintended disclosure~\\cite{carlini2021extracting}. We\nborrow the method for a different target. We are not asking what a model\nmemorised during training; we are asking what it forwards out of its prompt\nduring ordinary operation. The requirement is "
+      ],
+      "resolved_url": "https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting",
+      "observed_title": "Extracting Training Data from Large Language Models",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "citation_title": [
+          "Extracting Training Data from Large Language Models"
+        ],
+        "citation_author": [
+          "Nicholas Carlini",
+          "Florian Tramèr",
+          "Eric Wallace",
+          "Matthew Jagielski",
+          "Ariel Herbert-Voss",
+          "Katherine Lee",
+          "Adam Roberts",
+          "Tom Brown",
+          "Dawn Song",
+          "Úlfar Erlingsson",
+          "Alina Oprea",
+          "Colin Raffel"
+        ],
+        "citation_author_institution": [
+          "Google",
+          "Stanford University",
+          "UC Berkeley",
+          "Northeastern University",
+          "OpenAI and Harvard University",
+          "Google",
+          "Google",
+          "OpenAI",
+          "UC Berkeley",
+          "Apple",
+          "Northeastern University",
+          "Google"
+        ],
+        "citation_author_email": [
+          "nicholas@carlini.com",
+          "tramer@cs.stanford.edu",
+          "ericwallace@berkeley.edu",
+          "jagielski.m@northeastern.edu",
+          "adversariel@openai.com",
+          "katherinelee@google.com",
+          "adarob@google.com",
+          "nottombrown@gmail.com",
+          "dawnsong@gmail.com",
+          "ulfar.erlingsson@gmail.com",
+          "a.oprea@northeastern.edu",
+          "craffel@google.com"
+        ],
+        "citation_publication_date": [
+          "2021"
+        ],
+        "citation_conference_title": [
+          "30th USENIX Security Symposium (USENIX Security 21)"
+        ],
+        "citation_firstpage": [
+          "2633"
+        ],
+        "citation_lastpage": [
+          "2650"
+        ],
+        "citation_isbn": [
+          "978-1-939133-24-3"
+        ],
+        "citation_pdf_url": [
+          "https://www.usenix.org/system/files/sec21-carlini-extracting.pdf"
+        ]
+      }
+    },
+    {
+      "key": "mcp_spec",
+      "title": "Model Context Protocol Specification",
+      "author": "Anthropic",
+      "year": "2024",
+      "url": "https://modelcontextprotocol.io/specification",
+      "metadata_status": "manual_review_title_difference",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "sfy.\nThe schema comes from whoever published the tool. The agent is told to fill in\nthe required parameters, and the values it fills in are sent to that publisher.\nIn the Model Context Protocol (MCP)~\\cite{mcp_spec}, the publisher is whoever\nwrote a server the user installed. They need no foothold in the host, no\ninjected instruction, and no contact with the user. They need the tool to be\ncalled once, for a task",
+        " set of tools. Each tool has a name, a\ndescription in plain language, and a JSON Schema listing its parameters. The\nmodel emits a call; the host sends the arguments to whoever published the tool.\nMCP~\\cite{mcp_spec} standardises this so that tools can be installed from third\nparties. That makes the schema an untrusted input which the agent is\nnevertheless instructed to satisfy. Our adversary relies on three thin"
+      ],
+      "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28",
+      "observed_title": "Specification - Model Context Protocol",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1, viewport-fit=cover"
+        ],
+        "application-name": [
+          "Model Context Protocol"
+        ],
+        "generator": [
+          "Mintlify"
+        ],
+        "msapplication-config": [
+          "/mintlify-assets/_mintlify/favicons/mcp/ebiVJzri-bsiCfVZ/_generated/favicon/browserconfig.xml"
+        ],
+        "apple-mobile-web-app-title": [
+          "Model Context Protocol"
+        ],
+        "msapplication-tilecolor": [
+          "#09090b"
+        ],
+        "og:title": [
+          "Specification - Model Context Protocol"
+        ],
+        "og:url": [
+          "https://modelcontextprotocol.io/specification/2026-07-28"
+        ],
+        "og:site_name": [
+          "Model Context Protocol"
+        ],
+        "og:image": [
+          "https://raw.githubusercontent.com/modelcontextprotocol/docs/2eb6171ddbfeefde349dc3b8d5e2b87414c26250/images/og-image.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "630"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:title": [
+          "Specification - Model Context Protocol"
+        ],
+        "twitter:image": [
+          "https://raw.githubusercontent.com/modelcontextprotocol/docs/2eb6171ddbfeefde349dc3b8d5e2b87414c26250/images/og-image.png"
+        ],
+        "twitter:image:width": [
+          "1200"
+        ],
+        "twitter:image:height": [
+          "630"
+        ]
+      }
+    },
+    {
+      "key": "hou2025mcp",
+      "title": "Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions",
+      "author": "Hou, Xinyi and Zhao, Yanjie and Wang, Shenao and Wang, Haoyu",
+      "year": "2025",
+      "url": "https://arxiv.org/abs/2503.23278",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "eters can be required, and arguments reach the\npublisher. All three are in the specification, not in any one implementation.\nRecent work maps the protocol's threat surface across a server's\nlifecycle~\\cite{hou2025mcp} and audits live deployments for\nexploits~\\cite{radosevich2025mcpaudit}. Both catalogue attacks that carry an\ninstruction. Neither covers the parameter channel we measure.\n\n\\paragraph*{Declarative par"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2503.23278",
+      "observed_title": "Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2503.23278: Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2503.23278v3"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "The Model Context Protocol (MCP) is an emerging open standard that defines a unified, bi-directional communication and dynamic discovery protocol between AI models and external tools or resources, aiming to enhance interoperability and reduce fragmentation across diverse systems. This paper presents a systematic study of MCP from both architectural and security perspectives. We first define the full lifecycle of an MCP server, comprising four phases (creation, deployment, operation, and maintenance), further decomposed into 16 key activities that capture its functional evolution. Building on this lifecycle analysis, we construct a comprehensive threat taxonomy that categorizes security and privacy risks across four major attacker types: malicious developers, external attackers, malicious users, and security flaws, encompassing 16 distinct threat scenarios. To validate these risks, we develop and analyze real-world case studies that demonstrate concrete attack surfaces and vulnerability manifestations within MCP implementations. Based on these findings, the paper proposes a set of fine-grained, actionable security safeguards tailored to each lifecycle phase and threat category, offering practical guidance for secure MCP adoption. We also analyze the current MCP landscape, covering industry adoption, integration patterns, and supporting tools, to identify its technological strengths as well as existing limitations that constrain broader deployment. Finally, we outline future research and development directions aimed at strengthening MCP's standardization, trust boundaries, and sustainable growth within the evolving ecosystem of tool-augmented AI systems."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "Model Context Protocol (MCP): Landscape, Security Threats, and..."
+        ],
+        "twitter:description": [
+          "The Model Context Protocol (MCP) is an emerging open standard that defines a unified, bi-directional communication and dynamic discovery protocol between AI models and external tools or resources,..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions"
+        ],
+        "citation_author": [
+          "Hou, Xinyi",
+          "Zhao, Yanjie",
+          "Wang, Shenao",
+          "Wang, Haoyu"
+        ],
+        "citation_date": [
+          "2025/03/30"
+        ],
+        "citation_online_date": [
+          "2025/10/07"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2503.23278"
+        ],
+        "citation_arxiv_id": [
+          "2503.23278"
+        ],
+        "citation_abstract": [
+          "The Model Context Protocol (MCP) is an emerging open standard that defines a unified, bi-directional communication and dynamic discovery protocol between AI models and external tools or resources, aiming to enhance interoperability and reduce fragmentation across diverse systems. This paper presents a systematic study of MCP from both architectural and security perspectives. We first define the full lifecycle of an MCP server, comprising four phases (creation, deployment, operation, and maintenance), further decomposed into 16 key activities that capture its functional evolution. Building on this lifecycle analysis, we construct a comprehensive threat taxonomy that categorizes security and privacy risks across four major attacker types: malicious developers, external attackers, malicious users, and security flaws, encompassing 16 distinct threat scenarios. To validate these risks, we develop and analyze real-world case studies that demonstrate concrete attack surfaces and vulnerability manifestations within MCP implementations. Based on these findings, the paper proposes a set of fine-grained, actionable security safeguards tailored to each lifecycle phase and threat category, offering practical guidance for secure MCP adoption. We also analyze the current MCP landscape, covering industry adoption, integration patterns, and supporting tools, to identify its technological strengths as well as existing limitations that constrain broader deployment. Finally, we outline future research and development directions aimed at strengthening MCP's standardization, trust boundaries, and sustainable growth within the evolving ecosystem of tool-augmented AI systems."
+        ]
+      }
+    },
+    {
+      "key": "radosevich2025mcpaudit",
+      "title": "MCP Safety Audit: LLMs with the Model Context Protocol Allow Major Security Exploits",
+      "author": "Radosevich, Brandon and Halloran, John",
+      "year": "2025",
+      "url": "https://arxiv.org/abs/2504.03767",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "ll three are in the specification, not in any one implementation.\nRecent work maps the protocol's threat surface across a server's\nlifecycle~\\cite{hou2025mcp} and audits live deployments for\nexploits~\\cite{radosevich2025mcpaudit}. Both catalogue attacks that carry an\ninstruction. Neither covers the parameter channel we measure.\n\n\\paragraph*{Declarative parameters and prompt injection}\nText placed in a model's input can redire"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2504.03767",
+      "observed_title": "MCP Safety Audit: LLMs with the Model Context Protocol Allow Major Security Exploits",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2504.03767: MCP Safety Audit: LLMs with the Model Context Protocol Allow Major Security Exploits"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "MCP Safety Audit: LLMs with the Model Context Protocol Allow Major Security Exploits"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2504.03767v2"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "To reduce development overhead and enable seamless integration between potential components comprising any given generative AI application, the Model Context Protocol (MCP) (Anthropic, 2024) has recently been released and subsequently widely adopted. The MCP is an open protocol that standardizes API calls to large language models (LLMs), data sources, and agentic tools. By connecting multiple MCP servers, each defined with a set of tools, resources, and prompts, users are able to define automated workflows fully driven by LLMs. However, we show that the current MCP design carries a wide range of security risks for end users. In particular, we demonstrate that industry-leading LLMs may be coerced into using MCP tools to compromise an AI developer's system through various attacks, such as malicious code execution, remote access control, and credential theft. To proactively mitigate these and related attacks, we introduce a safety auditing tool, MCPSafetyScanner, the first agentic tool to assess the security of an arbitrary MCP server. MCPScanner uses several agents to (a) automatically determine adversarial samples given an MCP server's tools and resources; (b) search for related vulnerabilities and remediations based on those samples; and (c) generate a security report detailing all findings. Our work highlights serious security issues with general-purpose agentic workflows while also providing a proactive tool to audit MCP server safety and address detected vulnerabilities before deployment.\n  The described MCP server auditing tool, MCPSafetyScanner, is freely available at: https://github.com/johnhalloran321/mcpSafetyScanner"
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "MCP Safety Audit: LLMs with the Model Context Protocol Allow Major..."
+        ],
+        "twitter:description": [
+          "To reduce development overhead and enable seamless integration between potential components comprising any given generative AI application, the Model Context Protocol (MCP) (Anthropic, 2024) has..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "MCP Safety Audit: LLMs with the Model Context Protocol Allow Major Security Exploits"
+        ],
+        "citation_author": [
+          "Radosevich, Brandon",
+          "Halloran, John"
+        ],
+        "citation_date": [
+          "2025/04/02"
+        ],
+        "citation_online_date": [
+          "2025/04/11"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2504.03767"
+        ],
+        "citation_arxiv_id": [
+          "2504.03767"
+        ],
+        "citation_abstract": [
+          "To reduce development overhead and enable seamless integration between potential components comprising any given generative AI application, the Model Context Protocol (MCP) (Anthropic, 2024) has recently been released and subsequently widely adopted. The MCP is an open protocol that standardizes API calls to large language models (LLMs), data sources, and agentic tools. By connecting multiple MCP servers, each defined with a set of tools, resources, and prompts, users are able to define automated workflows fully driven by LLMs. However, we show that the current MCP design carries a wide range of security risks for end users. In particular, we demonstrate that industry-leading LLMs may be coerced into using MCP tools to compromise an AI developer's system through various attacks, such as malicious code execution, remote access control, and credential theft. To proactively mitigate these and related attacks, we introduce a safety auditing tool, MCPSafetyScanner, the first agentic tool to assess the security of an arbitrary MCP server. MCPScanner uses several agents to (a) automatically determine adversarial samples given an MCP server's tools and resources; (b) search for related vulnerabilities and remediations based on those samples; and (c) generate a security report detailing all findings. Our work highlights serious security issues with general-purpose agentic workflows while also providing a proactive tool to audit MCP server safety and address detected vulnerabilities before deployment. The described MCP server auditing tool, MCPSafetyScanner, is freely available at: https://github.com/johnhalloran321/mcpSafetyScanner"
+        ]
+      }
+    },
+    {
+      "key": "invariant2025toolpoisoning",
+      "title": "MCP Security Notification: Tool Poisoning Attacks",
+      "author": "Invariant Labs",
+      "year": "2025",
+      "url": "https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "}\nThe known attack puts an \\emph{instruction} in a tool's natural-language\nsurface, usually the description, so the model follows it while appearing to do\nits job. Invariant Labs disclosed it for MCP~\\cite{invariant2025toolpoisoning},\nit is catalogued as a top-ten MCP risk~\\cite{owasp_mcp03}, and it is what\npublished tool-poisoning policies are built to catch, including the policy we\nre-run in \\S\\ref{sec:detection}. Our condition"
+      ],
+      "resolved_url": "https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks",
+      "observed_title": "MCP Security Notification: Tool Poisoning Attacks",
+      "metadata": {
+        "generator": [
+          "Pelican"
+        ],
+        "viewport": [
+          "width=device-width, initial-scale=1.0",
+          "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+        ],
+        "tags": [
+          "[security",
+          "mcp",
+          "tool poisoning",
+          "attack vector",
+          "cursor",
+          "agent security",
+          "mcp security",
+          "agentic systems]"
+        ],
+        "og:image": [
+          "https://invariantlabs.ai/theme/images/mcp-preview.png"
+        ],
+        "twitter:image:src": [
+          "https://invariantlabs.ai/theme/images/mcp-preview.png"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:site": [
+          "@invariantlabsai"
+        ],
+        "twitter:creator": [
+          "@invariantlabsai"
+        ],
+        "twitter:url": [
+          "https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks.html"
+        ],
+        "twitter:description": [
+          "We have discovered a critical vulnerability in the Model Context Protocol (MCP) that allows for "
+        ],
+        "twitter:title": [
+          "MCP Security Notification: Tool Poisoning Attacks"
+        ],
+        "twitter:image:alt": [
+          "MCP Security Notification: Tool Poisoning Attacks"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "630"
+        ],
+        "og:image:alt": [
+          "MCP Security Notification: Tool Poisoning Attacks"
+        ],
+        "og:type": [
+          "article"
+        ],
+        "article:published_time": [
+          "2025-04-01T10:00:00+02:00"
+        ],
+        "article:modified_time": [
+          "2025-04-01T10:00:00+02:00"
+        ],
+        "article:author": [
+          "<br/><br/>Luca Beurer-Kellner<br/>Marc Fischer"
+        ],
+        "og:description": [
+          "We have discovered a critical vulnerability in the Model Context Protocol (MCP) that allows for "
+        ],
+        "theme-color": [
+          "#FFFFFF"
+        ],
+        "msapplication-navbutton-color": [
+          "#FFFFFF"
+        ],
+        "apple-mobile-web-app-status-bar-style": [
+          "#FFFFFF"
+        ]
+      }
+    },
+    {
+      "key": "jamshidi2025semantic",
+      "title": "Semantic Attacks on Tool-Augmented LLMs: Securing the Model Context Protocol Against Descriptor-Level Manipulation",
+      "author": "Jamshidi, Saeid and Moradi Dakhel, Arghavan and Nafi, Kawser Wazed and Khomh, Foutse",
+      "year": "2025",
+      "url": "https://arxiv.org/abs/2512.06556",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        " it for comparison.\n\nA recent study of tool descriptors finds tool poisoning the hardest of three\nsemantic MCP attack classes to detect, and proposes vetting descriptors before\nthey enter the context~\\cite{jamshidi2025semantic}. Its attacks still change\nnatural-language descriptors. It does not study values pulled out by a required\nparameter. We therefore limit our detector claim to the published pre-call schema\npolicy we r"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2512.06556",
+      "observed_title": "Semantic Attacks on Tool-Augmented LLMs: Securing the Model Context Protocol Against Descriptor-Level Manipulation",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2512.06556: Semantic Attacks on Tool-Augmented LLMs: Securing the Model Context Protocol Against Descriptor-Level Manipulation"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Semantic Attacks on Tool-Augmented LLMs: Securing the Model Context Protocol Against Descriptor-Level Manipulation"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2512.06556v2"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "The Model Context Protocol (MCP) enables Large Language Models (LLMs) to interact with external tools via tool descriptors, thereby extending their capabilities for task execution, autonomous decision-making, and multi-agent coordination. Existing MCP deployments treat tool descriptors as trusted metadata, despite their direct integration into the LLM reasoning context. This introduces a previously underexplored semantic attack surface. Current defenses primarily target prompt injection, neglecting descriptor-level manipulation that can bias tool selection and downstream reasoning. To address this gap, we formalize three descriptor-driven attack classes: Tool Poisoning, Shadowing, and Rug Pull. We propose a layered defense solution that integrates descriptor integrity verification, pre-context semantic vetting with an auxiliary LLM, and lightweight runtime guardrails, without requiring model retraining. We evaluate GPT-5.3, DeepSeek-V3, and LLaMA-3.5 across eight prompting strategies in controlled, adversarial MCP scenarios in which tool metadata is manipulated to simulate realistic attacks. Results demonstrate that descriptor manipulation can substantially alter tool-selection behavior, producing unsafe tool invocations in up to 36% of trials under baseline configurations. The proposed full-stack mitigation reduces unsafe invocations to 15% while increasing the block rate to 74%, demonstrating substantial improvement in resistance to descriptor-driven attacks. Cross-model analysis further reveals significant differences in robustness, latency, and sensitivity to descriptor-level manipulation across LLM architectures and prompting strategies. This study provides a controlled cross-model evaluation of descriptor-level threats and mitigation strategies in tool-calling LLM systems, establishing an empirical foundation for deploying secure and resilient tool-augmented LLMs."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "Semantic Attacks on Tool-Augmented LLMs: Securing the Model..."
+        ],
+        "twitter:description": [
+          "The Model Context Protocol (MCP) enables Large Language Models (LLMs) to interact with external tools via tool descriptors, thereby extending their capabilities for task execution, autonomous..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "Semantic Attacks on Tool-Augmented LLMs: Securing the Model Context Protocol Against Descriptor-Level Manipulation"
+        ],
+        "citation_author": [
+          "Jamshidi, Saeid",
+          "Dakhel, Arghavan Moradi",
+          "Nafi, Kawser Wazed",
+          "Khomh, Foutse"
+        ],
+        "citation_date": [
+          "2025/12/06"
+        ],
+        "citation_online_date": [
+          "2026/05/21"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2512.06556"
+        ],
+        "citation_arxiv_id": [
+          "2512.06556"
+        ],
+        "citation_abstract": [
+          "The Model Context Protocol (MCP) enables Large Language Models (LLMs) to interact with external tools via tool descriptors, thereby extending their capabilities for task execution, autonomous decision-making, and multi-agent coordination. Existing MCP deployments treat tool descriptors as trusted metadata, despite their direct integration into the LLM reasoning context. This introduces a previously underexplored semantic attack surface. Current defenses primarily target prompt injection, neglecting descriptor-level manipulation that can bias tool selection and downstream reasoning. To address this gap, we formalize three descriptor-driven attack classes: Tool Poisoning, Shadowing, and Rug Pull. We propose a layered defense solution that integrates descriptor integrity verification, pre-context semantic vetting with an auxiliary LLM, and lightweight runtime guardrails, without requiring model retraining. We evaluate GPT-5.3, DeepSeek-V3, and LLaMA-3.5 across eight prompting strategies in controlled, adversarial MCP scenarios in which tool metadata is manipulated to simulate realistic attacks. Results demonstrate that descriptor manipulation can substantially alter tool-selection behavior, producing unsafe tool invocations in up to 36% of trials under baseline configurations. The proposed full-stack mitigation reduces unsafe invocations to 15% while increasing the block rate to 74%, demonstrating substantial improvement in resistance to descriptor-driven attacks. Cross-model analysis further reveals significant differences in robustness, latency, and sensitivity to descriptor-level manipulation across LLM architectures and prompting strategies. This study provides a controlled cross-model evaluation of descriptor-level threats and mitigation strategies in tool-calling LLM systems, establishing an empirical foundation for deploying secure and resilient tool-augmented LLMs."
+        ]
+      }
+    },
+    {
+      "key": "debenedetti2024agentdojo",
+      "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "author": "Debenedetti, Edoardo and Zhang, Jie and Balunovi\\'c, Mislav and Beurer-Kellner, Luca and Fischer, Marc and Tram\\`er, Florian",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2406.13352",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "k is comparable,\nbut that adversary controls what the tool does, where ours controls only what\nthe tool declares.\n\n\\paragraph*{Agent-security benchmarks, and why we do not evaluate on them}\nAgentDojo~\\cite{debenedetti2024agentdojo} runs tool-calling agents under\ninjection. InjecAgent~\\cite{zhan2024injecagent} carries the injection in tool\n\\emph{output}. ToolEmu~\\cite{ruan2024toolemu} emulates execution to surface\nrisky \\emph{ac"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2406.13352",
+      "observed_title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2406.13352: AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2406.13352v3"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "AI agents aim to solve complex tasks by combining text-based reasoning with external tool calls. Unfortunately, AI agents are vulnerable to prompt injection attacks where data returned by external tools hijacks the agent to execute malicious tasks. To measure the adversarial robustness of AI agents, we introduce AgentDojo, an evaluation framework for agents that execute tools over untrusted data. To capture the evolving nature of attacks and defenses, AgentDojo is not a static test suite, but rather an extensible environment for designing and evaluating new agent tasks, defenses, and adaptive attacks. We populate the environment with 97 realistic tasks (e.g., managing an email client, navigating an e-banking website, or making travel bookings), 629 security test cases, and various attack and defense paradigms from the literature. We find that AgentDojo poses a challenge for both attacks and defenses: state-of-the-art LLMs fail at many tasks (even in the absence of attacks), and existing prompt injection attacks break some security properties but not all. We hope that AgentDojo can foster research on new design principles for AI agents that solve common tasks in a reliable and robust manner.. We release the code for AgentDojo at https://github.com/ethz-spylab/agentdojo."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection..."
+        ],
+        "twitter:description": [
+          "AI agents aim to solve complex tasks by combining text-based reasoning with external tool calls. Unfortunately, AI agents are vulnerable to prompt injection attacks where data returned by external..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents"
+        ],
+        "citation_author": [
+          "Debenedetti, Edoardo",
+          "Zhang, Jie",
+          "Balunović, Mislav",
+          "Beurer-Kellner, Luca",
+          "Fischer, Marc",
+          "Tramèr, Florian"
+        ],
+        "citation_date": [
+          "2024/06/19"
+        ],
+        "citation_online_date": [
+          "2024/11/24"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2406.13352"
+        ],
+        "citation_arxiv_id": [
+          "2406.13352"
+        ],
+        "citation_abstract": [
+          "AI agents aim to solve complex tasks by combining text-based reasoning with external tool calls. Unfortunately, AI agents are vulnerable to prompt injection attacks where data returned by external tools hijacks the agent to execute malicious tasks. To measure the adversarial robustness of AI agents, we introduce AgentDojo, an evaluation framework for agents that execute tools over untrusted data. To capture the evolving nature of attacks and defenses, AgentDojo is not a static test suite, but rather an extensible environment for designing and evaluating new agent tasks, defenses, and adaptive attacks. We populate the environment with 97 realistic tasks (e.g., managing an email client, navigating an e-banking website, or making travel bookings), 629 security test cases, and various attack and defense paradigms from the literature. We find that AgentDojo poses a challenge for both attacks and defenses: state-of-the-art LLMs fail at many tasks (even in the absence of attacks), and existing prompt injection attacks break some security properties but not all. We hope that AgentDojo can foster research on new design principles for AI agents that solve common tasks in a reliable and robust manner.. We release the code for AgentDojo at https://github.com/ethz-spylab/agentdojo."
+        ]
+      }
+    },
+    {
+      "key": "zhan2024injecagent",
+      "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+      "author": "Zhan, Qiusi and Liang, Zhixiang and Ying, Zifan and Kang, Daniel",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2403.02691",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "only what\nthe tool declares.\n\n\\paragraph*{Agent-security benchmarks, and why we do not evaluate on them}\nAgentDojo~\\cite{debenedetti2024agentdojo} runs tool-calling agents under\ninjection. InjecAgent~\\cite{zhan2024injecagent} carries the injection in tool\n\\emph{output}. ToolEmu~\\cite{ruan2024toolemu} emulates execution to surface\nrisky \\emph{actions}. Agent Security Bench~\\cite{asb2024} organises attacks by\nagent componen"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2403.02691",
+      "observed_title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2403.02691: InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2403.02691v3"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Recent work has embodied LLMs as agents, allowing them to access tools, perform actions, and interact with external content (e.g., emails or websites). However, external content introduces the risk of indirect prompt injection (IPI) attacks, where malicious instructions are embedded within the content processed by LLMs, aiming to manipulate these agents into executing detrimental actions against users. Given the potentially severe consequences of such attacks, establishing benchmarks to assess and mitigate these risks is imperative.\n  In this work, we introduce InjecAgent, a benchmark designed to assess the vulnerability of tool-integrated LLM agents to IPI attacks. InjecAgent comprises 1,054 test cases covering 17 different user tools and 62 attacker tools. We categorize attack intentions into two primary types: direct harm to users and exfiltration of private data. We evaluate 30 different LLM agents and show that agents are vulnerable to IPI attacks, with ReAct-prompted GPT-4 vulnerable to attacks 24% of the time. Further investigation into an enhanced setting, where the attacker instructions are reinforced with a hacking prompt, shows additional increases in success rates, nearly doubling the attack success rate on the ReAct-prompted GPT-4. Our findings raise questions about the widespread deployment of LLM Agents. Our benchmark is available at https://github.com/uiuc-kang-lab/InjecAgent."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "InjecAgent: Benchmarking Indirect Prompt Injections in..."
+        ],
+        "twitter:description": [
+          "Recent work has embodied LLMs as agents, allowing them to access tools, perform actions, and interact with external content (e.g., emails or websites). However, external content introduces the..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents"
+        ],
+        "citation_author": [
+          "Zhan, Qiusi",
+          "Liang, Zhixiang",
+          "Ying, Zifan",
+          "Kang, Daniel"
+        ],
+        "citation_date": [
+          "2024/03/05"
+        ],
+        "citation_online_date": [
+          "2024/08/04"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2403.02691"
+        ],
+        "citation_arxiv_id": [
+          "2403.02691"
+        ],
+        "citation_abstract": [
+          "Recent work has embodied LLMs as agents, allowing them to access tools, perform actions, and interact with external content (e.g., emails or websites). However, external content introduces the risk of indirect prompt injection (IPI) attacks, where malicious instructions are embedded within the content processed by LLMs, aiming to manipulate these agents into executing detrimental actions against users. Given the potentially severe consequences of such attacks, establishing benchmarks to assess and mitigate these risks is imperative. In this work, we introduce InjecAgent, a benchmark designed to assess the vulnerability of tool-integrated LLM agents to IPI attacks. InjecAgent comprises 1,054 test cases covering 17 different user tools and 62 attacker tools. We categorize attack intentions into two primary types: direct harm to users and exfiltration of private data. We evaluate 30 different LLM agents and show that agents are vulnerable to IPI attacks, with ReAct-prompted GPT-4 vulnerable to attacks 24% of the time. Further investigation into an enhanced setting, where the attacker instructions are reinforced with a hacking prompt, shows additional increases in success rates, nearly doubling the attack success rate on the ReAct-prompted GPT-4. Our findings raise questions about the widespread deployment of LLM Agents. Our benchmark is available at https://github.com/uiuc-kang-lab/InjecAgent."
+        ]
+      }
+    },
+    {
+      "key": "ruan2024toolemu",
+      "title": "Identifying the Risks of LM Agents with an LM-Emulated Sandbox",
+      "author": "Ruan, Yangjun and Dong, Honghua and Wang, Andrew and Pitis, Silviu and Zhou, Yongchao and Ba, Jimmy and Dubois, Yann and Maddison, Chris J. and Hashimoto, Tatsunori",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2309.15817",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        " do not evaluate on them}\nAgentDojo~\\cite{debenedetti2024agentdojo} runs tool-calling agents under\ninjection. InjecAgent~\\cite{zhan2024injecagent} carries the injection in tool\n\\emph{output}. ToolEmu~\\cite{ruan2024toolemu} emulates execution to surface\nrisky \\emph{actions}. Agent Security Bench~\\cite{asb2024} organises attacks by\nagent component. All of them score injections that carry an instruction, or\nrisky actions."
+      ],
+      "resolved_url": "https://arxiv.org/abs/2309.15817",
+      "observed_title": "Identifying the Risks of LM Agents with an LM-Emulated Sandbox",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2309.15817: Identifying the Risks of LM Agents with an LM-Emulated Sandbox"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Identifying the Risks of LM Agents with an LM-Emulated Sandbox"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2309.15817v2"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Recent advances in Language Model (LM) agents and tool use, exemplified by applications like ChatGPT Plugins, enable a rich set of capabilities but also amplify potential risks - such as leaking private data or causing financial losses. Identifying these risks is labor-intensive, necessitating implementing the tools, setting up the environment for each test scenario manually, and finding risky cases. As tools and agents become more complex, the high cost of testing these agents will make it increasingly difficult to find high-stakes, long-tailed risks. To address these challenges, we introduce ToolEmu: a framework that uses an LM to emulate tool execution and enables the testing of LM agents against a diverse range of tools and scenarios, without manual instantiation. Alongside the emulator, we develop an LM-based automatic safety evaluator that examines agent failures and quantifies associated risks. We test both the tool emulator and evaluator through human evaluation and find that 68.8% of failures identified with ToolEmu would be valid real-world agent failures. Using our curated initial benchmark consisting of 36 high-stakes tools and 144 test cases, we provide a quantitative risk analysis of current LM agents and identify numerous failures with potentially severe outcomes. Notably, even the safest LM agent exhibits such failures 23.9% of the time according to our evaluator, underscoring the need to develop safer LM agents for real-world deployment."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "Identifying the Risks of LM Agents with an LM-Emulated Sandbox"
+        ],
+        "twitter:description": [
+          "Recent advances in Language Model (LM) agents and tool use, exemplified by applications like ChatGPT Plugins, enable a rich set of capabilities but also amplify potential risks - such as leaking..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "Identifying the Risks of LM Agents with an LM-Emulated Sandbox"
+        ],
+        "citation_author": [
+          "Ruan, Yangjun",
+          "Dong, Honghua",
+          "Wang, Andrew",
+          "Pitis, Silviu",
+          "Zhou, Yongchao",
+          "Ba, Jimmy",
+          "Dubois, Yann",
+          "Maddison, Chris J.",
+          "Hashimoto, Tatsunori"
+        ],
+        "citation_date": [
+          "2023/09/25"
+        ],
+        "citation_online_date": [
+          "2024/05/17"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2309.15817"
+        ],
+        "citation_arxiv_id": [
+          "2309.15817"
+        ],
+        "citation_abstract": [
+          "Recent advances in Language Model (LM) agents and tool use, exemplified by applications like ChatGPT Plugins, enable a rich set of capabilities but also amplify potential risks - such as leaking private data or causing financial losses. Identifying these risks is labor-intensive, necessitating implementing the tools, setting up the environment for each test scenario manually, and finding risky cases. As tools and agents become more complex, the high cost of testing these agents will make it increasingly difficult to find high-stakes, long-tailed risks. To address these challenges, we introduce ToolEmu: a framework that uses an LM to emulate tool execution and enables the testing of LM agents against a diverse range of tools and scenarios, without manual instantiation. Alongside the emulator, we develop an LM-based automatic safety evaluator that examines agent failures and quantifies associated risks. We test both the tool emulator and evaluator through human evaluation and find that 68.8% of failures identified with ToolEmu would be valid real-world agent failures. Using our curated initial benchmark consisting of 36 high-stakes tools and 144 test cases, we provide a quantitative risk analysis of current LM agents and identify numerous failures with potentially severe outcomes. Notably, even the safest LM agent exhibits such failures 23.9% of the time according to our evaluator, underscoring the need to develop safer LM agents for real-world deployment."
+        ]
+      }
+    },
+    {
+      "key": "zhang2024promptextraction",
+      "title": "Effective Prompt Extraction from Language Models",
+      "author": "Zhang, Yiming and Carlini, Nicholas and Ippolito, Daphne",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2307.06865",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "em prompt}\nWhat this channel carries is system-prompt content, which OWASP lists as LLM07:\nSystem Prompt Leakage~\\cite{owasp_llm07}. Prior methods extract prompts by\nquerying the deployed application~\\cite{zhang2024promptextraction}, by\noptimising those queries~\\cite{hui2024pleak}, by inferring an equivalent prompt\nfrom a limited set of input--output pairs~\\cite{yang2025prsa}, or by inverting\nordinary outputs with no adversarial"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2307.06865",
+      "observed_title": "Effective Prompt Extraction from Language Models",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2307.06865: Effective Prompt Extraction from Language Models"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Effective Prompt Extraction from Language Models"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2307.06865v3"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "The text generated by large language models is commonly controlled by prompting, where a prompt prepended to a user's query guides the model's output. The prompts used by companies to guide their models are often treated as secrets, to be hidden from the user making the query. They have even been treated as commodities to be bought and sold on marketplaces. However, anecdotal reports have shown adversarial users employing prompt extraction attacks to recover these prompts. In this paper, we present a framework for systematically measuring the effectiveness of these attacks. In experiments with 3 different sources of prompts and 11 underlying large language models, we find that simple text-based attacks can in fact reveal prompts with high probability. Our framework determines with high precision whether an extracted prompt is the actual secret prompt, rather than a model hallucination. Prompt extraction from real systems such as Claude 3 and ChatGPT further suggest that system prompts can be revealed by an adversary despite existing defenses in place."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "Effective Prompt Extraction from Language Models"
+        ],
+        "twitter:description": [
+          "The text generated by large language models is commonly controlled by prompting, where a prompt prepended to a user's query guides the model's output. The prompts used by companies to guide their..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "Effective Prompt Extraction from Language Models"
+        ],
+        "citation_author": [
+          "Zhang, Yiming",
+          "Carlini, Nicholas",
+          "Ippolito, Daphne"
+        ],
+        "citation_date": [
+          "2023/07/13"
+        ],
+        "citation_online_date": [
+          "2024/08/07"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2307.06865"
+        ],
+        "citation_arxiv_id": [
+          "2307.06865"
+        ],
+        "citation_abstract": [
+          "The text generated by large language models is commonly controlled by prompting, where a prompt prepended to a user's query guides the model's output. The prompts used by companies to guide their models are often treated as secrets, to be hidden from the user making the query. They have even been treated as commodities to be bought and sold on marketplaces. However, anecdotal reports have shown adversarial users employing prompt extraction attacks to recover these prompts. In this paper, we present a framework for systematically measuring the effectiveness of these attacks. In experiments with 3 different sources of prompts and 11 underlying large language models, we find that simple text-based attacks can in fact reveal prompts with high probability. Our framework determines with high precision whether an extracted prompt is the actual secret prompt, rather than a model hallucination. Prompt extraction from real systems such as Claude 3 and ChatGPT further suggest that system prompts can be revealed by an adversary despite existing defenses in place."
+        ]
+      }
+    },
+    {
+      "key": "hui2024pleak",
+      "title": "PLeak: Prompt Leaking Attacks against Large Language Model Applications",
+      "author": "Hui, Bo and Yuan, Haolin and Gong, Neil and Burlina, Philippe and Cao, Yinzhi",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2405.06823",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        " which OWASP lists as LLM07:\nSystem Prompt Leakage~\\cite{owasp_llm07}. Prior methods extract prompts by\nquerying the deployed application~\\cite{zhang2024promptextraction}, by\noptimising those queries~\\cite{hui2024pleak}, by inferring an equivalent prompt\nfrom a limited set of input--output pairs~\\cite{yang2025prsa}, or by inverting\nordinary outputs with no adversarial query at\nall~\\cite{zhang2024output2prompt}. We s"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2405.06823",
+      "observed_title": "PLeak: Prompt Leaking Attacks against Large Language Model Applications",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2405.06823: PLeak: Prompt Leaking Attacks against Large Language Model Applications"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "PLeak: Prompt Leaking Attacks against Large Language Model Applications"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2405.06823v3"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Large Language Models (LLMs) enable a new ecosystem with many downstream applications, called LLM applications, with different natural language processing tasks. The functionality and performance of an LLM application highly depend on its system prompt, which instructs the backend LLM on what task to perform. Therefore, an LLM application developer often keeps a system prompt confidential to protect its intellectual property. As a result, a natural attack, called prompt leaking, is to steal the system prompt from an LLM application, which compromises the developer's intellectual property. Existing prompt leaking attacks primarily rely on manually crafted queries, and thus achieve limited effectiveness.\n  In this paper, we design a novel, closed-box prompt leaking attack framework, called PLeak, to optimize an adversarial query such that when the attacker sends it to a target LLM application, its response reveals its own system prompt. We formulate finding such an adversarial query as an optimization problem and solve it with a gradient-based method approximately. Our key idea is to break down the optimization goal by optimizing adversary queries for system prompts incrementally, i.e., starting from the first few tokens of each system prompt step by step until the entire length of the system prompt.\n  We evaluate PLeak in both offline settings and for real-world LLM applications, e.g., those on Poe, a popular platform hosting such applications. Our results show that PLeak can effectively leak system prompts and significantly outperforms not only baselines that manually curate queries but also baselines with optimized queries that are modified and adapted from existing jailbreaking attacks. We responsibly reported the issues to Poe and are still waiting for their response. Our implementation is available at this repository: https://github.com/BHui97/PLeak."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "PLeak: Prompt Leaking Attacks against Large Language Model Applications"
+        ],
+        "twitter:description": [
+          "Large Language Models (LLMs) enable a new ecosystem with many downstream applications, called LLM applications, with different natural language processing tasks. The functionality and performance..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "PLeak: Prompt Leaking Attacks against Large Language Model Applications"
+        ],
+        "citation_author": [
+          "Hui, Bo",
+          "Yuan, Haolin",
+          "Gong, Neil",
+          "Burlina, Philippe",
+          "Cao, Yinzhi"
+        ],
+        "citation_date": [
+          "2024/05/10"
+        ],
+        "citation_online_date": [
+          "2025/06/13"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2405.06823"
+        ],
+        "citation_arxiv_id": [
+          "2405.06823"
+        ],
+        "citation_abstract": [
+          "Large Language Models (LLMs) enable a new ecosystem with many downstream applications, called LLM applications, with different natural language processing tasks. The functionality and performance of an LLM application highly depend on its system prompt, which instructs the backend LLM on what task to perform. Therefore, an LLM application developer often keeps a system prompt confidential to protect its intellectual property. As a result, a natural attack, called prompt leaking, is to steal the system prompt from an LLM application, which compromises the developer's intellectual property. Existing prompt leaking attacks primarily rely on manually crafted queries, and thus achieve limited effectiveness. In this paper, we design a novel, closed-box prompt leaking attack framework, called PLeak, to optimize an adversarial query such that when the attacker sends it to a target LLM application, its response reveals its own system prompt. We formulate finding such an adversarial query as an optimization problem and solve it with a gradient-based method approximately. Our key idea is to break down the optimization goal by optimizing adversary queries for system prompts incrementally, i.e., starting from the first few tokens of each system prompt step by step until the entire length of the system prompt. We evaluate PLeak in both offline settings and for real-world LLM applications, e.g., those on Poe, a popular platform hosting such applications. Our results show that PLeak can effectively leak system prompts and significantly outperforms not only baselines that manually curate queries but also baselines with optimized queries that are modified and adapted from existing jailbreaking attacks. We responsibly reported the issues to Poe and are still waiting for their response. Our implementation is available at this repository: https://github.com/BHui97/PLeak."
+        ]
+      }
+    },
+    {
+      "key": "yang2025prsa",
+      "title": "PRSA: Prompt Stealing Attacks against Real-World Prompt Services",
+      "author": "Yang, Yong and Li, Changjiang and Li, Qingming and Ma, Oubo and Wang, Haoyu and Wang, Zonghui and Gao, Yandong and Chen, Wenzhi and Ji, Shouling",
+      "year": "2025",
+      "url": "https://www.usenix.org/conference/usenixsecurity25/presentation/yang-yong",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "pts by\nquerying the deployed application~\\cite{zhang2024promptextraction}, by\noptimising those queries~\\cite{hui2024pleak}, by inferring an equivalent prompt\nfrom a limited set of input--output pairs~\\cite{yang2025prsa}, or by inverting\nordinary outputs with no adversarial query at\nall~\\cite{zhang2024output2prompt}. We share the target and differ in who the\nattacker is. Each of those methods talks to the service or "
+      ],
+      "resolved_url": "https://www.usenix.org/conference/usenixsecurity25/presentation/yang-yong",
+      "observed_title": "{PRSA}: Prompt Stealing Attacks against {Real-World} Prompt Services",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "citation_title": [
+          "{PRSA}: Prompt Stealing Attacks against {Real-World} Prompt Services"
+        ],
+        "citation_author": [
+          "Yong Yang",
+          "Changjiang Li",
+          "Qingming Li",
+          "Oubo Ma",
+          "Haoyu Wang",
+          "Zonghui Wang",
+          "Yandong Gao",
+          "Wenzhi Chen",
+          "Shouling Ji"
+        ],
+        "citation_author_institution": [
+          "Zhejiang University",
+          "Stony Brook University",
+          "Zhejiang University",
+          "Zhejiang University",
+          "Zhejiang University",
+          "Zhejiang University",
+          "Zhejiang University",
+          "Zhejiang University",
+          "Zhejiang University"
+        ],
+        "citation_author_email": [
+          "yangyong2022@zju.edu.cn",
+          "meet.cjli@gmail.com",
+          "liqm@zju.edu.cn",
+          "mob@zju.edu.cn",
+          "whaoyu@zju.edu.cn",
+          "zhwang@zju.edu.cn",
+          "yandonggao@126.com",
+          "chenwz@zju.edu.cn",
+          "sji@zju.edu.cn"
+        ],
+        "citation_publication_date": [
+          "2025"
+        ],
+        "citation_conference_title": [
+          "34th USENIX Security Symposium (USENIX Security 25)"
+        ],
+        "citation_firstpage": [
+          "2283"
+        ],
+        "citation_lastpage": [
+          "2302"
+        ],
+        "citation_isbn": [
+          "978-1-939133-52-6"
+        ],
+        "citation_pdf_url": [
+          "https://www.usenix.org/system/files/usenixsecurity25-yang-yong.pdf"
+        ]
+      }
+    },
+    {
+      "key": "owasp_llm07",
+      "title": "LLM07:2025 --- System Prompt Leakage",
+      "author": "OWASP",
+      "year": "2025",
+      "url": "https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        " that every\ninjection-oriented defense must miss them.\n\n\\paragraph*{Extracting the system prompt}\nWhat this channel carries is system-prompt content, which OWASP lists as LLM07:\nSystem Prompt Leakage~\\cite{owasp_llm07}. Prior methods extract prompts by\nquerying the deployed application~\\cite{zhang2024promptextraction}, by\noptimising those queries~\\cite{hui2024pleak}, by inferring an equivalent prompt\nfrom a limited",
+        "es not need\nbefore dispatch. Review unfamiliar naming families. Enforce source-to-sink\npolicy outside the model rather than by instructing it.\n\nKeeping credentials out of prompts, as OWASP recommends~\\cite{owasp_llm07},\nremoves the most consequential source. Prompt scoping helped Claude and not\nGemini, so we do not offer it as universal. Capability-based control\nflow~\\cite{debenedetti2025camel} is the broader desig"
+      ],
+      "resolved_url": "https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/",
+      "observed_title": "LLM07:2025 System Prompt Leakage",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "author": [
+          "OWASPGenAIProject Editor"
+        ],
+        "robots": [
+          "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        ],
+        "dlm-version": [
+          "5.2.9"
+        ],
+        "og:locale": [
+          "en_US"
+        ],
+        "og:type": [
+          "article"
+        ],
+        "og:title": [
+          "LLM07:2025 System Prompt Leakage"
+        ],
+        "og:description": [
+          "The system prompt leakage vulnerability in LLMs refers to the risk that the system prompts or instructions used to steer the behavior of the model can also contain sensitive information that was not intended to be discovered. System prompts are designed to guide the model’s output based on the requirements of the application, but may […]"
+        ],
+        "og:url": [
+          "https://genai.owasp.org/llmrisk/llm07-insecure-plugin-design/"
+        ],
+        "og:site_name": [
+          "OWASP Gen AI Security Project"
+        ],
+        "article:modified_time": [
+          "2025-04-28T18:07:48+00:00"
+        ],
+        "og:image": [
+          "https://i0.wp.com/genai.owasp.org/wp-content/uploads/2024/04/Feature-Image-LLM07.jpg?fit=2400%2C1216&ssl=1"
+        ],
+        "og:image:width": [
+          "2400"
+        ],
+        "og:image:height": [
+          "1216"
+        ],
+        "og:image:type": [
+          "image/jpeg"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:site": [
+          "@LLM_Top10"
+        ],
+        "twitter:label1": [
+          "Est. reading time"
+        ],
+        "twitter:data1": [
+          "5 minutes"
+        ],
+        "generator": [
+          "Elementor 4.1.4; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-internal, google_font-enabled, font_display-swap"
+        ],
+        "msapplication-tileimage": [
+          "https://genai.owasp.org/wp-content/uploads/2024/04/favicon-300x300.png"
+        ]
+      }
+    },
+    {
+      "key": "zhang2024output2prompt",
+      "title": "Extracting Prompts by Inverting LLM Outputs",
+      "author": "Zhang, Collin and Morris, John X. and Shmatikov, Vitaly",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2405.15012",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "g those queries~\\cite{hui2024pleak}, by inferring an equivalent prompt\nfrom a limited set of input--output pairs~\\cite{yang2025prsa}, or by inverting\nordinary outputs with no adversarial query at\nall~\\cite{zhang2024output2prompt}. We share the target and differ in who the\nattacker is. Each of those methods talks to the service or reasons over its\noutputs. Our tool provider does neither. It publishes a schema and reads the\narg"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2405.15012",
+      "observed_title": "Extracting Prompts by Inverting LLM Outputs",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2405.15012: Extracting Prompts by Inverting LLM Outputs"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Extracting Prompts by Inverting LLM Outputs"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2405.15012v2"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "We consider the problem of language model inversion: given outputs of a language model, we seek to extract the prompt that generated these outputs. We develop a new black-box method, output2prompt, that learns to extract prompts without access to the model's logits and without adversarial or jailbreaking queries. In contrast to previous work, output2prompt only needs outputs of normal user queries. To improve memory efficiency, output2prompt employs a new sparse encoding techique. We measure the efficacy of output2prompt on a variety of user and system prompts and demonstrate zero-shot transferability across different LLMs."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "Extracting Prompts by Inverting LLM Outputs"
+        ],
+        "twitter:description": [
+          "We consider the problem of language model inversion: given outputs of a language model, we seek to extract the prompt that generated these outputs. We develop a new black-box method,..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "Extracting Prompts by Inverting LLM Outputs"
+        ],
+        "citation_author": [
+          "Zhang, Collin",
+          "Morris, John X.",
+          "Shmatikov, Vitaly"
+        ],
+        "citation_date": [
+          "2024/05/23"
+        ],
+        "citation_online_date": [
+          "2024/10/08"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2405.15012"
+        ],
+        "citation_arxiv_id": [
+          "2405.15012"
+        ],
+        "citation_abstract": [
+          "We consider the problem of language model inversion: given outputs of a language model, we seek to extract the prompt that generated these outputs. We develop a new black-box method, output2prompt, that learns to extract prompts without access to the model's logits and without adversarial or jailbreaking queries. In contrast to previous work, output2prompt only needs outputs of normal user queries. To improve memory efficiency, output2prompt employs a new sparse encoding techique. We measure the efficacy of output2prompt on a variety of user and system prompts and demonstrate zero-shot transferability across different LLMs."
+        ]
+      }
+    },
+    {
+      "key": "wallace2024hierarchy",
+      "title": "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions",
+      "author": "Wallace, Eric and Xiao, Kai and Leike, Reimar and Weng, Lilian and Heidecke, Johannes and Beutel, Alex",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2404.13208",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "nal validity (\\S\\ref{sec:external}) and\nprevalence (\\S\\ref{sec:prevalence}), because it supplies real schemas rather\nthan a taxonomy.\n\n\\paragraph*{Which defenses could apply}\nAn instruction hierarchy~\\cite{wallace2024hierarchy} ranks instructions that\nconflict. Our prompts explicitly prohibit disclosure of the planted confidential\nfacts, but a schema need not contain an imperative injection to elicit them.\nWhether hierarchy"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2404.13208",
+      "observed_title": "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2404.13208: The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2404.13208v1"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Today's LLMs are susceptible to prompt injections, jailbreaks, and other attacks that allow adversaries to overwrite a model's original instructions with their own malicious prompts. In this work, we argue that one of the primary vulnerabilities underlying these attacks is that LLMs often consider system prompts (e.g., text from an application developer) to be the same priority as text from untrusted users and third parties. To address this, we propose an instruction hierarchy that explicitly defines how models should behave when instructions of different priorities conflict. We then propose a data generation method to demonstrate this hierarchical instruction following behavior, which teaches LLMs to selectively ignore lower-privileged instructions. We apply this method to GPT-3.5, showing that it drastically increases robustness -- even for attack types not seen during training -- while imposing minimal degradations on standard capabilities."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "The Instruction Hierarchy: Training LLMs to Prioritize Privileged..."
+        ],
+        "twitter:description": [
+          "Today's LLMs are susceptible to prompt injections, jailbreaks, and other attacks that allow adversaries to overwrite a model's original instructions with their own malicious prompts. In this work,..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions"
+        ],
+        "citation_author": [
+          "Wallace, Eric",
+          "Xiao, Kai",
+          "Leike, Reimar",
+          "Weng, Lilian",
+          "Heidecke, Johannes",
+          "Beutel, Alex"
+        ],
+        "citation_date": [
+          "2024/04/19"
+        ],
+        "citation_online_date": [
+          "2024/04/19"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2404.13208"
+        ],
+        "citation_arxiv_id": [
+          "2404.13208"
+        ],
+        "citation_abstract": [
+          "Today's LLMs are susceptible to prompt injections, jailbreaks, and other attacks that allow adversaries to overwrite a model's original instructions with their own malicious prompts. In this work, we argue that one of the primary vulnerabilities underlying these attacks is that LLMs often consider system prompts (e.g., text from an application developer) to be the same priority as text from untrusted users and third parties. To address this, we propose an instruction hierarchy that explicitly defines how models should behave when instructions of different priorities conflict. We then propose a data generation method to demonstrate this hierarchical instruction following behavior, which teaches LLMs to selectively ignore lower-privileged instructions. We apply this method to GPT-3.5, showing that it drastically increases robustness -- even for attack types not seen during training -- while imposing minimal degradations on standard capabilities."
+        ]
+      }
+    },
+    {
+      "key": "chen2025struq",
+      "title": "StruQ: Defending Against Prompt Injection with Structured Queries",
+      "author": "Chen, Sizhe and Piet, Julien and Sitawarin, Chawin and Wagner, David",
+      "year": "2025",
+      "url": "https://arxiv.org/abs/2402.06363",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "fidential\nfacts, but a schema need not contain an imperative injection to elicit them.\nWhether hierarchy-trained models prevent this requires direct testing. Channel-separation\ndefenses such as StruQ~\\cite{chen2025struq} and\nspotlighting~\\cite{hines2024spotlighting} do not say how a client should treat a\nschema that is untrusted but operational. Detector-based defenses are also\nfragile under adaptive rewording~\\cite{"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2402.06363",
+      "observed_title": "StruQ: Defending Against Prompt Injection with Structured Queries",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2402.06363: StruQ: Defending Against Prompt Injection with Structured Queries"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "StruQ: Defending Against Prompt Injection with Structured Queries"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2402.06363v2"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Recent advances in Large Language Models (LLMs) enable exciting LLM-integrated applications, which perform text-based tasks by utilizing their advanced language understanding capabilities. However, as LLMs have improved, so have the attacks against them. Prompt injection attacks are an important threat: they trick the model into deviating from the original application's instructions and instead follow user directives. These attacks rely on the LLM's ability to follow instructions and inability to separate prompts and user data. We introduce structured queries, a general approach to tackle this problem. Structured queries separate prompts and data into two channels. We implement a system that supports structured queries. This system is made of (1) a secure front-end that formats a prompt and user data into a special format, and (2) a specially trained LLM that can produce high-quality outputs from these inputs. The LLM is trained using a novel fine-tuning strategy: we convert a base (non-instruction-tuned) LLM to a structured instruction-tuned model that will only follow instructions in the prompt portion of a query. To do so, we augment standard instruction tuning datasets with examples that also include instructions in the data portion of the query, and fine-tune the model to ignore these. Our system significantly improves resistance to prompt injection attacks, with little or no impact on utility. Our code is released at https://github.com/Sizhe-Chen/StruQ."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "StruQ: Defending Against Prompt Injection with Structured Queries"
+        ],
+        "twitter:description": [
+          "Recent advances in Large Language Models (LLMs) enable exciting LLM-integrated applications, which perform text-based tasks by utilizing their advanced language understanding capabilities...."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "StruQ: Defending Against Prompt Injection with Structured Queries"
+        ],
+        "citation_author": [
+          "Chen, Sizhe",
+          "Piet, Julien",
+          "Sitawarin, Chawin",
+          "Wagner, David"
+        ],
+        "citation_date": [
+          "2024/02/09"
+        ],
+        "citation_online_date": [
+          "2024/09/25"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2402.06363"
+        ],
+        "citation_arxiv_id": [
+          "2402.06363"
+        ],
+        "citation_abstract": [
+          "Recent advances in Large Language Models (LLMs) enable exciting LLM-integrated applications, which perform text-based tasks by utilizing their advanced language understanding capabilities. However, as LLMs have improved, so have the attacks against them. Prompt injection attacks are an important threat: they trick the model into deviating from the original application's instructions and instead follow user directives. These attacks rely on the LLM's ability to follow instructions and inability to separate prompts and user data. We introduce structured queries, a general approach to tackle this problem. Structured queries separate prompts and data into two channels. We implement a system that supports structured queries. This system is made of (1) a secure front-end that formats a prompt and user data into a special format, and (2) a specially trained LLM that can produce high-quality outputs from these inputs. The LLM is trained using a novel fine-tuning strategy: we convert a base (non-instruction-tuned) LLM to a structured instruction-tuned model that will only follow instructions in the prompt portion of a query. To do so, we augment standard instruction tuning datasets with examples that also include instructions in the data portion of the query, and fine-tune the model to ignore these. Our system significantly improves resistance to prompt injection attacks, with little or no impact on utility. Our code is released at https://github.com/Sizhe-Chen/StruQ."
+        ]
+      }
+    },
+    {
+      "key": "hines2024spotlighting",
+      "title": "Defending Against Indirect Prompt Injection Attacks With Spotlighting",
+      "author": "Hines, Keegan and Lopez, Gary and Hall, Matthew and Zarfati, Federico and Zunger, Yonatan and Kiciman, Emre",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2403.14720",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        " contain an imperative injection to elicit them.\nWhether hierarchy-trained models prevent this requires direct testing. Channel-separation\ndefenses such as StruQ~\\cite{chen2025struq} and\nspotlighting~\\cite{hines2024spotlighting} do not say how a client should treat a\nschema that is untrusted but operational. Detector-based defenses are also\nfragile under adaptive rewording~\\cite{zhan2025adaptive}; \\S\\ref{sec:defense}\nshows a"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2403.14720",
+      "observed_title": "Defending Against Indirect Prompt Injection Attacks With Spotlighting",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2403.14720: Defending Against Indirect Prompt Injection Attacks With Spotlighting"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Defending Against Indirect Prompt Injection Attacks With Spotlighting"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2403.14720v1"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Large Language Models (LLMs), while powerful, are built and trained to process a single text input. In common applications, multiple inputs can be processed by concatenating them together into a single stream of text. However, the LLM is unable to distinguish which sections of prompt belong to various input sources. Indirect prompt injection attacks take advantage of this vulnerability by embedding adversarial instructions into untrusted data being processed alongside user commands. Often, the LLM will mistake the adversarial instructions as user commands to be followed, creating a security vulnerability in the larger system. We introduce spotlighting, a family of prompt engineering techniques that can be used to improve LLMs' ability to distinguish among multiple sources of input. The key insight is to utilize transformations of an input to provide a reliable and continuous signal of its provenance. We evaluate spotlighting as a defense against indirect prompt injection attacks, and find that it is a robust defense that has minimal detrimental impact to underlying NLP tasks. Using GPT-family models, we find that spotlighting reduces the attack success rate from greater than {50}\\% to below {2}\\% in our experiments with minimal impact on task efficacy."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "Defending Against Indirect Prompt Injection Attacks With Spotlighting"
+        ],
+        "twitter:description": [
+          "Large Language Models (LLMs), while powerful, are built and trained to process a single text input. In common applications, multiple inputs can be processed by concatenating them together into a..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "Defending Against Indirect Prompt Injection Attacks With Spotlighting"
+        ],
+        "citation_author": [
+          "Hines, Keegan",
+          "Lopez, Gary",
+          "Hall, Matthew",
+          "Zarfati, Federico",
+          "Zunger, Yonatan",
+          "Kiciman, Emre"
+        ],
+        "citation_date": [
+          "2024/03/20"
+        ],
+        "citation_online_date": [
+          "2024/03/20"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2403.14720"
+        ],
+        "citation_arxiv_id": [
+          "2403.14720"
+        ],
+        "citation_abstract": [
+          "Large Language Models (LLMs), while powerful, are built and trained to process a single text input. In common applications, multiple inputs can be processed by concatenating them together into a single stream of text. However, the LLM is unable to distinguish which sections of prompt belong to various input sources. Indirect prompt injection attacks take advantage of this vulnerability by embedding adversarial instructions into untrusted data being processed alongside user commands. Often, the LLM will mistake the adversarial instructions as user commands to be followed, creating a security vulnerability in the larger system. We introduce spotlighting, a family of prompt engineering techniques that can be used to improve LLMs' ability to distinguish among multiple sources of input. The key insight is to utilize transformations of an input to provide a reliable and continuous signal of its provenance. We evaluate spotlighting as a defense against indirect prompt injection attacks, and find that it is a robust defense that has minimal detrimental impact to underlying NLP tasks. Using GPT-family models, we find that spotlighting reduces the attack success rate from greater than {50}\\% to below {2}\\% in our experiments with minimal impact on task efficacy."
+        ]
+      }
+    },
+    {
+      "key": "debenedetti2025camel",
+      "title": "Defeating Prompt Injections by Design",
+      "author": "Debenedetti, Edoardo and Shumailov, Ilia and Fan, Tianqi and Hayes, Jamie and Carlini, Nicholas and Fabian, Daniel and Kern, Christoph and Shi, Chongyang and Terzis, Andreas and Tram\\`er, Florian",
+      "year": "2025",
+      "url": "https://arxiv.org/abs/2503.18813",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "ng~\\cite{zhan2025adaptive}; \\S\\ref{sec:defense}\nshows a nearby false-positive floor even without an adaptive search.\n\nThe class that fits the problem is capability-based control flow around the\nmodel~\\cite{debenedetti2025camel} and information-flow tracking through the\nagent's execution~\\cite{zhong2025rtbas}. Both constrain which data can reach\nwhich sink, whether or not an instruction was present. That is the right shape\nh",
+        " prompts, as OWASP recommends~\\cite{owasp_llm07},\nremoves the most consequential source. Prompt scoping helped Claude and not\nGemini, so we do not offer it as universal. Capability-based control\nflow~\\cite{debenedetti2025camel} is the broader design that could enforce this\nboundary regardless of how the model is asked.\n\n\\section{Limitations}\n\\label{sec:limits}\n\n\\paragraph*{Evidence status}\nOnly 2 of the 5 models in Table~\\r"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2503.18813",
+      "observed_title": "Defeating Prompt Injections by Design",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2503.18813: Defeating Prompt Injections by Design"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Defeating Prompt Injections by Design"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2503.18813v2"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Large Language Models (LLMs) are increasingly deployed in agentic systems that interact with an untrusted environment. However, LLM agents are vulnerable to prompt injection attacks when handling untrusted data. In this paper we propose CaMeL, a robust defense that creates a protective system layer around the LLM, securing it even when underlying models are susceptible to attacks. To operate, CaMeL explicitly extracts the control and data flows from the (trusted) query; therefore, the untrusted data retrieved by the LLM can never impact the program flow. To further improve security, CaMeL uses a notion of a capability to prevent the exfiltration of private data over unauthorized data flows by enforcing security policies when tools are called. We demonstrate effectiveness of CaMeL by solving $77\\%$ of tasks with provable security (compared to $84\\%$ with an undefended system) in AgentDojo. We release CaMeL at https://github.com/google-research/camel-prompt-injection."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "Defeating Prompt Injections by Design"
+        ],
+        "twitter:description": [
+          "Large Language Models (LLMs) are increasingly deployed in agentic systems that interact with an untrusted environment. However, LLM agents are vulnerable to prompt injection attacks when handling..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "Defeating Prompt Injections by Design"
+        ],
+        "citation_author": [
+          "Debenedetti, Edoardo",
+          "Shumailov, Ilia",
+          "Fan, Tianqi",
+          "Hayes, Jamie",
+          "Carlini, Nicholas",
+          "Fabian, Daniel",
+          "Kern, Christoph",
+          "Shi, Chongyang",
+          "Terzis, Andreas",
+          "Tramèr, Florian"
+        ],
+        "citation_date": [
+          "2025/03/24"
+        ],
+        "citation_online_date": [
+          "2025/06/24"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2503.18813"
+        ],
+        "citation_arxiv_id": [
+          "2503.18813"
+        ],
+        "citation_abstract": [
+          "Large Language Models (LLMs) are increasingly deployed in agentic systems that interact with an untrusted environment. However, LLM agents are vulnerable to prompt injection attacks when handling untrusted data. In this paper we propose CaMeL, a robust defense that creates a protective system layer around the LLM, securing it even when underlying models are susceptible to attacks. To operate, CaMeL explicitly extracts the control and data flows from the (trusted) query; therefore, the untrusted data retrieved by the LLM can never impact the program flow. To further improve security, CaMeL uses a notion of a capability to prevent the exfiltration of private data over unauthorized data flows by enforcing security policies when tools are called. We demonstrate effectiveness of CaMeL by solving $77\\%$ of tasks with provable security (compared to $84\\%$ with an undefended system) in AgentDojo. We release CaMeL at https://github.com/google-research/camel-prompt-injection."
+        ]
+      }
+    },
+    {
+      "key": "zhan2025adaptive",
+      "title": "Adaptive Attacks Break Defenses Against Indirect Prompt Injection Attacks on LLM Agents",
+      "author": "Zhan, Qiusi and Fang, Richard and Panchal, Henil Shalin and Kang, Daniel",
+      "year": "2025",
+      "url": "https://aclanthology.org/2025.findings-naacl.395/",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "struq} and\nspotlighting~\\cite{hines2024spotlighting} do not say how a client should treat a\nschema that is untrusted but operational. Detector-based defenses are also\nfragile under adaptive rewording~\\cite{zhan2025adaptive}; \\S\\ref{sec:defense}\nshows a nearby false-positive floor even without an adaptive search.\n\nThe class that fits the problem is capability-based control flow around the\nmodel~\\cite{debenedetti2025camel"
+      ],
+      "resolved_url": "https://aclanthology.org/2025.findings-naacl.395/",
+      "observed_title": "Adaptive Attacks Break Defenses Against Indirect Prompt Injection Attacks on LLM Agents",
+      "metadata": {
+        "viewport": [
+          "width=device-width,initial-scale=1,shrink-to-fit=no"
+        ],
+        "generator": [
+          "Hugo 0.160.0"
+        ],
+        "citation_title": [
+          "Adaptive Attacks Break Defenses Against Indirect Prompt Injection Attacks on LLM Agents"
+        ],
+        "citation_author": [
+          "Qiusi Zhan",
+          "Richard Fang",
+          "Henil Shalin Panchal",
+          "Daniel Kang"
+        ],
+        "citation_conference_title": [
+          "Findings of the Association for Computational Linguistics: NAACL 2025"
+        ],
+        "citation_publication_date": [
+          "2025/4"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2025.findings-naacl.395.pdf"
+        ],
+        "citation_firstpage": [
+          "7116"
+        ],
+        "citation_lastpage": [
+          "7132"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2025.findings-naacl.395"
+        ],
+        "og:title": [
+          "Adaptive Attacks Break Defenses Against Indirect Prompt Injection Attacks on LLM Agents"
+        ],
+        "og:image": [
+          "https://aclanthology.org/thumb/2025.findings-naacl.395.jpg"
+        ],
+        "og:image:alt": [
+          "First page of paper PDF."
+        ],
+        "og:type": [
+          "article"
+        ],
+        "og:site_name": [
+          "ACL Anthology"
+        ],
+        "og:url": [
+          "https://aclanthology.org/2025.findings-naacl.395/"
+        ],
+        "og:description": [
+          "Qiusi Zhan, Richard Fang, Henil Shalin Panchal, Daniel Kang. Findings of the Association for Computational Linguistics: NAACL 2025. 2025."
+        ]
+      }
+    },
+    {
+      "key": "zhong2025rtbas",
+      "title": "RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage",
+      "author": "Zhong, Peter Yong and Chen, Siyuan and Wang, Ruiqi and McCall, McKenna and Titzer, Ben L. and Miller, Heather and Gibbons, Phillip B.",
+      "year": "2025",
+      "url": "https://arxiv.org/abs/2502.08966",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        " without an adaptive search.\n\nThe class that fits the problem is capability-based control flow around the\nmodel~\\cite{debenedetti2025camel} and information-flow tracking through the\nagent's execution~\\cite{zhong2025rtbas}. Both constrain which data can reach\nwhich sink, whether or not an instruction was present. That is the right shape\nhere precisely because there is no instruction to detect. A taint label on the\nsyst"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2502.08966",
+      "observed_title": "RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2502.08966: RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2502.08966v2"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Tool-Based Agent Systems (TBAS) allow Language Models (LMs) to use external tools for tasks beyond their standalone capabilities, such as searching websites, booking flights, or making financial transactions. However, these tools greatly increase the risks of prompt injection attacks, where malicious content hijacks the LM agent to leak confidential data or trigger harmful actions. Existing defenses (OpenAI GPTs) require user confirmation before every tool call, placing onerous burdens on users. We introduce Robust TBAS (RTBAS), which automatically detects and executes tool calls that preserve integrity and confidentiality, requiring user confirmation only when these safeguards cannot be ensured. RTBAS adapts Information Flow Control to the unique challenges presented by TBAS. We present two novel dependency screeners, using LM-as-a-judge and attention-based saliency, to overcome these challenges. Experimental results on the AgentDojo Prompt Injection benchmark show RTBAS prevents all targeted attacks with only a 2% loss of task utility when under attack, and further tests confirm its ability to obtain near-oracle performance on detecting both subtle and direct privacy leaks."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage"
+        ],
+        "twitter:description": [
+          "Tool-Based Agent Systems (TBAS) allow Language Models (LMs) to use external tools for tasks beyond their standalone capabilities, such as searching websites, booking flights, or making financial..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage"
+        ],
+        "citation_author": [
+          "Zhong, Peter Yong",
+          "Chen, Siyuan",
+          "Wang, Ruiqi",
+          "McCall, McKenna",
+          "Titzer, Ben L.",
+          "Miller, Heather",
+          "Gibbons, Phillip B."
+        ],
+        "citation_date": [
+          "2025/02/13"
+        ],
+        "citation_online_date": [
+          "2025/02/14"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2502.08966"
+        ],
+        "citation_arxiv_id": [
+          "2502.08966"
+        ],
+        "citation_abstract": [
+          "Tool-Based Agent Systems (TBAS) allow Language Models (LMs) to use external tools for tasks beyond their standalone capabilities, such as searching websites, booking flights, or making financial transactions. However, these tools greatly increase the risks of prompt injection attacks, where malicious content hijacks the LM agent to leak confidential data or trigger harmful actions. Existing defenses (OpenAI GPTs) require user confirmation before every tool call, placing onerous burdens on users. We introduce Robust TBAS (RTBAS), which automatically detects and executes tool calls that preserve integrity and confidentiality, requiring user confirmation only when these safeguards cannot be ensured. RTBAS adapts Information Flow Control to the unique challenges presented by TBAS. We present two novel dependency screeners, using LM-as-a-judge and attention-based saliency, to overcome these challenges. Experimental results on the AgentDojo Prompt Injection benchmark show RTBAS prevents all targeted attacks with only a 2% loss of task utility when under attack, and further tests confirm its ability to obtain near-oracle performance on detecting both subtle and direct privacy leaks."
+        ]
+      }
+    },
+    {
+      "key": "zhang2025msb",
+      "title": "MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents",
+      "author": "Zhang, Dongsen and Li, Zekun and Luo, Xu and Liu, Xuannan and Li, Peipei and Xu, Wenjun",
+      "year": "2025",
+      "url": "https://arxiv.org/abs/2510.15994",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        " instruction, or\nrisky actions. None supplies the unit we need, where the adversary's whole\npayload is a required parameter and success is the value written during a task\nthat otherwise succeeds. MSB~\\cite{zhang2025msb} is closest, since it already\nscores out-of-scope parameters. Our distinct measurement crosses multiple\nsimultaneously planted facts with requested fields and scores selective recovery\nby fixed canary"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2510.15994",
+      "observed_title": "MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2510.15994: MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2510.15994v2"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "The Model Context Protocol (MCP) standardizes how large language model (LLM) agents discover, describe, and call external tools. While MCP unlocks broad interoperability, it also enlarges the attack surface by making tools first-class, composable objects with natural-language metadata, and standardized I/O. We present MSB (MCP Security Benchmark), the first end-to-end evaluation suite that systematically measures how well LLM agents resist MCP-specific attacks throughout the full tool-use pipeline: task planning, tool invocation, and response handling. MSB contributes: (1) a taxonomy of 12 attacks including name-collision, preference manipulation, prompt injections embedded in tool descriptions, out-of-scope parameter requests, user-impersonating responses, false-error escalation, tool-transfer, retrieval injection, and mixed attacks; (2) an evaluation harness that executes attacks by running real tools (both benign and malicious) via MCP rather than simulation; and (3) a robustness metric that quantifies the trade-off between security and performance: Net Resilient Performance (NRP). We evaluate nine popular LLM agents across 10 domains and 405 tools, producing 2,000 attack instances. Results reveal the effectiveness of attacks against each stage of MCP. Models with stronger performance are more vulnerable to attacks due to their outstanding tool calling and instruction following capabilities. MSB provides a practical baseline for researchers and practitioners to study, compare, and harden MCP agents. Code: https://github.com/dongsenzhang/MSB"
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "MCP Security Bench (MSB): Benchmarking Attacks Against Model..."
+        ],
+        "twitter:description": [
+          "The Model Context Protocol (MCP) standardizes how large language model (LLM) agents discover, describe, and call external tools. While MCP unlocks broad interoperability, it also enlarges the..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents"
+        ],
+        "citation_author": [
+          "Zhang, Dongsen",
+          "Li, Zekun",
+          "Luo, Xu",
+          "Liu, Xuannan",
+          "Li, Peipei",
+          "Xu, Wenjun"
+        ],
+        "citation_date": [
+          "2025/10/14"
+        ],
+        "citation_online_date": [
+          "2026/03/24"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2510.15994"
+        ],
+        "citation_arxiv_id": [
+          "2510.15994"
+        ],
+        "citation_abstract": [
+          "The Model Context Protocol (MCP) standardizes how large language model (LLM) agents discover, describe, and call external tools. While MCP unlocks broad interoperability, it also enlarges the attack surface by making tools first-class, composable objects with natural-language metadata, and standardized I/O. We present MSB (MCP Security Benchmark), the first end-to-end evaluation suite that systematically measures how well LLM agents resist MCP-specific attacks throughout the full tool-use pipeline: task planning, tool invocation, and response handling. MSB contributes: (1) a taxonomy of 12 attacks including name-collision, preference manipulation, prompt injections embedded in tool descriptions, out-of-scope parameter requests, user-impersonating responses, false-error escalation, tool-transfer, retrieval injection, and mixed attacks; (2) an evaluation harness that executes attacks by running real tools (both benign and malicious) via MCP rather than simulation; and (3) a robustness metric that quantifies the trade-off between security and performance: Net Resilient Performance (NRP). We evaluate nine popular LLM agents across 10 domains and 405 tools, producing 2,000 attack instances. Results reveal the effectiveness of attacks against each stage of MCP. Models with stronger performance are more vulnerable to attacks due to their outstanding tool calling and instruction following capabilities. MSB provides a practical baseline for researchers and practitioners to study, compare, and harden MCP agents. Code: https://github.com/dongsenzhang/MSB"
+        ]
+      }
+    },
+    {
+      "key": "wang2025mcpguard",
+      "title": "MCPGuard: Automatically Detecting Vulnerabilities in MCP Servers",
+      "author": "Wang, Bin and Liu, Zexin and Yu, Hao and Yang, Ao and Huang, Yenan and Guo, Jing and Cheng, Huangsheng and Li, Hui and Wu, Huiyu",
+      "year": "2025",
+      "url": "https://arxiv.org/abs/2510.23673",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "ing.\n\nOthers reach the same conclusion from the defensive side. Work on automated MCP\nserver vetting reports that static inspection alone is not enough for\nexfiltration that rides ordinary parameters~\\cite{wang2025mcpguard}. An analysis\nof where defenses belong puts the enforcement point in the client or host,\nrather than in a scan of descriptions before the call~\\cite{rostamzadeh2026dpt}. Our\nmeasurement supplies the e"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2510.23673",
+      "observed_title": "MCPGuard : Automatically Detecting Vulnerabilities in MCP Servers",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2510.23673: MCPGuard : Automatically Detecting Vulnerabilities in MCP Servers"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "MCPGuard : Automatically Detecting Vulnerabilities in MCP Servers"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2510.23673v1"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "The Model Context Protocol (MCP) has emerged as a standardized interface enabling seamless integration between Large Language Models (LLMs) and external data sources and tools. While MCP significantly reduces development complexity and enhances agent capabilities, its openness and extensibility introduce critical security vulnerabilities that threaten system trustworthiness and user data protection. This paper systematically analyzes the security landscape of MCP-based systems, identifying three principal threat categories: (1) agent hijacking attacks stemming from protocol design deficiencies; (2) traditional web vulnerabilities in MCP servers; and (3) supply chain security. To address these challenges, we comprehensively survey existing defense strategies, examining both proactive server-side scanning approaches, ranging from layered detection pipelines and agentic auditing frameworks to zero-trust registry systems, and runtime interaction monitoring solutions that provide continuous oversight and policy enforcement. Our analysis reveals that MCP security fundamentally represents a paradigm shift where the attack surface extends from traditional code execution to semantic interpretation of natural language metadata, necessitating novel defense mechanisms tailored to this unique threat model."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "MCPGuard : Automatically Detecting Vulnerabilities in MCP Servers"
+        ],
+        "twitter:description": [
+          "The Model Context Protocol (MCP) has emerged as a standardized interface enabling seamless integration between Large Language Models (LLMs) and external data sources and tools. While MCP..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "MCPGuard : Automatically Detecting Vulnerabilities in MCP Servers"
+        ],
+        "citation_author": [
+          "Wang, Bin",
+          "Liu, Zexin",
+          "Yu, Hao",
+          "Yang, Ao",
+          "Huang, Yenan",
+          "Guo, Jing",
+          "Cheng, Huangsheng",
+          "Li, Hui",
+          "Wu, Huiyu"
+        ],
+        "citation_date": [
+          "2025/10/27"
+        ],
+        "citation_online_date": [
+          "2025/10/27"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2510.23673"
+        ],
+        "citation_arxiv_id": [
+          "2510.23673"
+        ],
+        "citation_abstract": [
+          "The Model Context Protocol (MCP) has emerged as a standardized interface enabling seamless integration between Large Language Models (LLMs) and external data sources and tools. While MCP significantly reduces development complexity and enhances agent capabilities, its openness and extensibility introduce critical security vulnerabilities that threaten system trustworthiness and user data protection. This paper systematically analyzes the security landscape of MCP-based systems, identifying three principal threat categories: (1) agent hijacking attacks stemming from protocol design deficiencies; (2) traditional web vulnerabilities in MCP servers; and (3) supply chain security. To address these challenges, we comprehensively survey existing defense strategies, examining both proactive server-side scanning approaches, ranging from layered detection pipelines and agentic auditing frameworks to zero-trust registry systems, and runtime interaction monitoring solutions that provide continuous oversight and policy enforcement. Our analysis reveals that MCP security fundamentally represents a paradigm shift where the attack surface extends from traditional code execution to semantic interpretation of natural language metadata, necessitating novel defense mechanisms tailored to this unique threat model."
+        ]
+      }
+    },
+    {
+      "key": "rostamzadeh2026dpt",
+      "title": "MCP-DPT: A Defense-Placement Taxonomy and Coverage Analysis for Model Context Protocol Security",
+      "author": "Rostamzadeh, Mehrdad and Narula, Sidhant and Birhan, Nahom and Ghasemigol, Mohammad and Takabi, Daniel",
+      "year": "2026",
+      "url": "https://arxiv.org/abs/2604.07551",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "on that rides ordinary parameters~\\cite{wang2025mcpguard}. An analysis\nof where defenses belong puts the enforcement point in the client or host,\nrather than in a scan of descriptions before the call~\\cite{rostamzadeh2026dpt}. Our\nmeasurement supplies the empirical case: the artifact a scanner reads is exactly\nthe artifact that carries no evidence of the attack.\n\n\\paragraph*{Reading parameter names does not close it}\nExte"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2604.07551",
+      "observed_title": "MCP-DPT: A Defense-Placement Taxonomy and Coverage Analysis for Model Context Protocol Security",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2604.07551: MCP-DPT: A Defense-Placement Taxonomy and Coverage Analysis for Model Context Protocol Security"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "MCP-DPT: A Defense-Placement Taxonomy and Coverage Analysis for Model Context Protocol Security"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2604.07551v1"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "The Model Context Protocol (MCP) enables large language models (LLMs) to dynamically discover and invoke third-party tools, significantly expanding agent capabilities while introducing a distinct security landscape. Unlike prompt-only interactions, MCP exposes pre-execution artifacts, shared context, multi-turn workflows, and third-party supply chains to adversarial influence across independently operated components. While recent work has identified MCP-specific attacks and evaluated defenses, existing studies are largely attack-centric or benchmark-driven, providing limited guidance on where mitigation responsibility should reside within the MCP architecture. This is problematic given MCP's multi-party design and distributed trust boundaries. We present a defense-placement-oriented security analysis of MCP, introducing a layer-aligned taxonomy that organizes attacks by the architectural component responsible for enforcement. Threats are mapped across six MCP layers, and primary and secondary defense points are identified to support principled defense-in-depth reasoning under adversaries controlling tools, servers, or ecosystem components. A structured mapping of existing academic and industry defenses onto this framework reveals uneven and predominantly tool-centric protection, with persistent gaps at the host orchestration, transport, and supply-chain layers. These findings suggest that many MCP security weaknesses stem from architectural misalignment rather than isolated implementation flaws."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "MCP-DPT: A Defense-Placement Taxonomy and Coverage Analysis for..."
+        ],
+        "twitter:description": [
+          "The Model Context Protocol (MCP) enables large language models (LLMs) to dynamically discover and invoke third-party tools, significantly expanding agent capabilities while introducing a distinct..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "MCP-DPT: A Defense-Placement Taxonomy and Coverage Analysis for Model Context Protocol Security"
+        ],
+        "citation_author": [
+          "Rostamzadeh, Mehrdad",
+          "Narula, Sidhant",
+          "Birhan, Nahom",
+          "Ghasemigol, Mohammad",
+          "Takabi, Daniel"
+        ],
+        "citation_date": [
+          "2026/04/08"
+        ],
+        "citation_online_date": [
+          "2026/04/08"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2604.07551"
+        ],
+        "citation_arxiv_id": [
+          "2604.07551"
+        ],
+        "citation_abstract": [
+          "The Model Context Protocol (MCP) enables large language models (LLMs) to dynamically discover and invoke third-party tools, significantly expanding agent capabilities while introducing a distinct security landscape. Unlike prompt-only interactions, MCP exposes pre-execution artifacts, shared context, multi-turn workflows, and third-party supply chains to adversarial influence across independently operated components. While recent work has identified MCP-specific attacks and evaluated defenses, existing studies are largely attack-centric or benchmark-driven, providing limited guidance on where mitigation responsibility should reside within the MCP architecture. This is problematic given MCP's multi-party design and distributed trust boundaries. We present a defense-placement-oriented security analysis of MCP, introducing a layer-aligned taxonomy that organizes attacks by the architectural component responsible for enforcement. Threats are mapped across six MCP layers, and primary and secondary defense points are identified to support principled defense-in-depth reasoning under adversaries controlling tools, servers, or ecosystem components. A structured mapping of existing academic and industry defenses onto this framework reveals uneven and predominantly tool-centric protection, with persistent gaps at the host orchestration, transport, and supply-chain layers. These findings suggest that many MCP security weaknesses stem from architectural misalignment rather than isolated implementation flaws."
+        ]
+      }
+    },
+    {
+      "key": "zhou2026mcpshield",
+      "title": "MCPShield: A Security Cognition Layer for Adaptive Trust Calibration in Model Context Protocol Agents",
+      "author": "Zhou, Zhenhong and Zhang, Yuanhe and Cai, Hongwei and Aloqaily, Moayad and Bouachir, Ouns and Pang, Linsey and Mehrotra, Prakhar and Wang, Kun and Wen, Qingsong",
+      "year": "2026",
+      "url": "https://arxiv.org/abs/2602.14281",
+      "metadata_status": "title_matches",
+      "claim_review": "pending passage-level verification",
+      "contexts": [
+        "hird-party argument\nwhatever the parameter is called. We do not evaluate either, and we name them as\nwhat we would evaluate next. Runtime trust layers that score a server's\nbehaviour during operation~\\cite{zhou2026mcpshield} are complementary, but they\nact after the call the adversary has already been paid by.\nMindGuard~\\cite{mindguard2025} detects manipulated agent decisions from\nattention structure with high precision,"
+      ],
+      "resolved_url": "https://arxiv.org/abs/2602.14281",
+      "observed_title": "MCPShield: A Security Cognition Layer for Adaptive Trust Calibration in Model Context Protocol Agents",
+      "metadata": {
+        "viewport": [
+          "width=device-width, initial-scale=1"
+        ],
+        "msapplication-tilecolor": [
+          "#da532c"
+        ],
+        "theme-color": [
+          "#ffffff"
+        ],
+        "description": [
+          "Abstract page for arXiv paper 2602.14281: MCPShield: A Security Cognition Layer for Adaptive Trust Calibration in Model Context Protocol Agents"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "MCPShield: A Security Cognition Layer for Adaptive Trust Calibration in Model Context Protocol Agents"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2602.14281v3"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "The Model Context Protocol (MCP) standardizes tool use for LLM-based agents and enable third-party servers. This openness introduces a security misalignment: agents implicitly trust tools exposed by potentially untrusted MCP servers. However, despite its excellent utility, existing agents typically offer limited validation for third-party MCP servers. As a result, agents remain vulnerable to MCP-based attacks that exploit the misalignment between agents and servers throughout the tool invocation lifecycle. In this paper, we propose MCPShield as a plug-in security cognition layer that mitigates this misalignment and ensures agent security when invoking MCP-based tools. Drawing inspiration from human experience-driven tool validation, MCPShield assists agent forms security cognition with metadata-guided probing before invocation. Our method constrains execution within controlled boundaries while cognizing runtime events, and subsequently updates security cognition by reasoning over historical traces after invocation, building on human post-use reflection on tool behavior. Experiments demonstrate that MCPShield exhibits strong generalization in defending against six novel MCP-based attack scenarios across six widely used agentic LLMs, while avoiding false positives on benign servers and incurring low deployment overhead. Overall, our work provides a practical and robust security safeguard for MCP-based tool invocation in open agent ecosystems."
+        ],
+        "twitter:site": [
+          "@arxiv"
+        ],
+        "twitter:card": [
+          "summary"
+        ],
+        "twitter:title": [
+          "MCPShield: A Security Cognition Layer for Adaptive Trust..."
+        ],
+        "twitter:description": [
+          "The Model Context Protocol (MCP) standardizes tool use for LLM-based agents and enable third-party servers. This openness introduces a security misalignment: agents implicitly trust tools exposed..."
+        ],
+        "twitter:image": [
+          "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+        ],
+        "twitter:image:alt": [
+          "arXiv logo"
+        ],
+        "citation_title": [
+          "MCPShield: A Security Cognition Layer for Adaptive Trust Calibration in Model Context Protocol Agents"
+        ],
+        "citation_author": [
+          "Zhou, Zhenhong",
+          "Zhang, Yuanhe",
+          "Cai, Hongwei",
+          "Aloqaily, Moayad",
+          "Bouachir, Ouns",
+          "Pang, Linsey",
+          "Mehrotra, Prakhar",
+          "Wang, Kun",
+          "Wen, Qingsong"
+        ],
+        "citation_date": [
+          "2026/02/15"
+        ],
+        "citation_online_date": [
+          "2026/02/24"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2602.14281"
+        ],
+        "citation_arxiv_id": [
+          "2602.14281"
+        ],
+        "citation_abstract": [
+          "The Model Context Protocol (MCP) standardizes tool use for LLM-based agents and enable third-party servers. This openness introduces a security misalignment: agents implicitly trust tools exposed by potentially untrusted MCP servers. However, despite its excellent utility, existing agents typically offer limited validation for third-party MCP servers. As a result, agents remain vulnerable to MCP-based attacks that exploit the misalignment between agents and servers throughout the tool invocation lifecycle. In this paper, we propose MCPShield as a plug-in security cognition layer that mitigates this misalignment and ensures agent security when invoking MCP-based tools. Drawing inspiration from human experience-driven tool validation, MCPShield assists agent forms security cognition with metadata-guided probing before invocation. Our method constrains execution within controlled boundaries while cognizing runtime events, and subsequently updates security cognition by reasoning over historical traces after invocation, building on human post-use reflection on tool behavior. Experiments demonstrate that MCPShield exhibits strong generalization in defending against six novel MCP-based attack scenarios across six widely used agentic LLMs, while avoiding false positives on benign servers and incurring low deployment overhead. Overall, our work provides a practical and robust security safeguard for MCP-based tool invocation in open agent ecosystems."
+        ]
+      }
+    }
+  ],
+  "limitation": "Metadata reachability/title checking does not establish all authors, venue, date, or claim support. See publication checklist."
+}

@@ -1,0 +1,4 @@
+345/600 rows -> extension_runs\schema_types-A-live-gemini-3-flash-preview-20260929-173652-035844.jsonl
+errors: 0   complete: False
+next: python code/schema_types_analyze.py extension_runs\schema_types-A-live-gemini-3-flash-preview-20260929-173652-035844.jsonl
+exit=0

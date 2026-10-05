@@ -1,0 +1,14 @@
+{
+  "_note": "Approval by the named author in the 2026-10-02 session for the recommended-tier flagship set (4 legs, cap US$40 total).",
+  "stage": "S4",
+  "leg": "gemini-3.8-flash",
+  "design_sha256": "372f611983392c4d5c7dbb4a7efdcf23078136e0e46ee6cf99eb489caa18ed2b",
+  "protocol_sha256": "150d5b358465ba869ec6395e12b66cab05902a98a360778de4158534e94f52f3",
+  "approved_by": "Ashiq Sazid",
+  "approved_on": "2026-10-02",
+  "approved_budget_usd": 6.0,
+  "field_texts_reviewed": true,
+  "provider_prices_and_token_bounds_verified": true,
+  "provider_schema_compatibility_checked": true,
+  "disclosure_decision": "deferred; to be decided before publication"
+}

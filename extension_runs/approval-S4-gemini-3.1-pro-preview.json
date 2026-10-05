@@ -1,0 +1,14 @@
+{
+  "_note": "Approval by the named author in the 2026-10-02 session; author directed using the Google PRO flagship (gemini-3.1-pro-preview), which has credit; the 429s are a per-minute rate limit, so the leg runs serially (--workers 1). Schemas confirmed accepted (14/14 that passed the limit, plus 5/5 spaced single calls).",
+  "stage": "S4",
+  "leg": "gemini-3.1-pro-preview",
+  "design_sha256": "423a187181cb9fa7e5a631fa1bc70f88e7eee5d2056fd6c206182ea41b1d38c1",
+  "protocol_sha256": "150d5b358465ba869ec6395e12b66cab05902a98a360778de4158534e94f52f3",
+  "approved_by": "Ashiq Sazid",
+  "approved_on": "2026-10-02",
+  "approved_budget_usd": 15.0,
+  "field_texts_reviewed": true,
+  "provider_prices_and_token_bounds_verified": true,
+  "provider_schema_compatibility_checked": true,
+  "disclosure_decision": "deferred; to be decided before publication"
+}

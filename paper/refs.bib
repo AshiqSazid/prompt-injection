@@ -1,0 +1,432 @@
+% =============================================================================
+% Bibliography for BOTH manuscripts (IEEE.tex and paper/main.tex).
+%
+% Supersedes paper/refs.bib, which held only the original 12 entries. Two .bib
+% files with overlapping keys is how a citation silently resolves to the wrong
+% paper in one manuscript and not the other, so there is one file and both
+% \bibliography commands point at it.
+%
+% ---------------------------------------------------------------------------
+% Verify remaining legacy entries against the publisher or arXiv before
+% submission. Records marked 2026-08-16 below were checked against primary
+% publisher or arXiv pages.
+%
+% Keep literature-review commentary in docs/RELATED_WORK.md, not in BibTeX
+% `note` fields: IEEEtran prints those fields verbatim in the reference list.
+%
+% Entries added 2026-08-13 remain grouped by argument. Metadata corrections and
+% the three sources required by the 2026-08-16 writing guide are marked below.
+% ---------------------------------------------------------------------------
+%
+% Cite HiddenLayer by the second paragraph of the introduction -- the mechanism
+% is theirs, and burying it in related work is the fastest way to lose a
+% reviewer's trust.
+% =============================================================================
+
+% =============================================================================
+% ORIGINAL ENTRIES (unchanged from paper/refs.bib)
+% =============================================================================
+
+@misc{hiddenlayer2025mcp,
+  title        = {Beyond {MCP}: Expanding Agentic Function Parameter Abuse},
+  author       = {{HiddenLayer}},
+  year         = {2025},
+  howpublished = {\url{https://www.hiddenlayer.com/research/beyond-mcp-expanding-agentic-function-parameter-abuse}},
+}
+
+@misc{mcpitp2026,
+  title        = {{MCP-ITP}: An Automated Framework for Implicit Tool Poisoning
+                  in {MCP}},
+  author       = {Li, Ruiqi and Wang, Zhiqiang and Yao, Yunhao and Li, Xiang-Yang},
+  year         = {2026},
+  eprint       = {2601.07395},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2601.07395},
+}
+
+@misc{mcptox2025,
+  title        = {{MCPTox}: A Benchmark for Tool Poisoning Attack on Real-World
+                  {MCP} Servers},
+  author       = {Wang, Zhiqiang and Gao, Yichao and Wang, Yanting and Liu, Suyuan
+                  and Sun, Haifeng and Cheng, Haoran and Shi, Guanquan and Du,
+                  Haohua and Li, Xiangyang},
+  year         = {2025},
+  eprint       = {2508.14925},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2508.14925},
+}
+
+@misc{mindguard2025,
+  title        = {{MindGuard}: Intrinsic Decision Inspection for Securing {LLM}
+                  Agents Against Metadata Poisoning},
+  author       = {Wang, Zhiqiang and Du, Haohua and Shi, Guanquan and Zhang,
+                  Junyang and Cheng, HaoRan and Yao, Yunhao and Guo, Kaiwen and
+                  Li, Xiang-Yang},
+  year         = {2025},
+  eprint       = {2508.20412},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2508.20412},
+}
+
+@misc{owasp_mcp03,
+  title        = {{MCP03:2025} --- Tool Poisoning},
+  author       = {{OWASP}},
+  year         = {2025},
+  howpublished = {\url{https://owasp.org/www-project-mcp-top-10/}},
+}
+
+@misc{asb2024,
+  title        = {Agent Security Bench ({ASB}): Formalizing and Benchmarking
+                  Attacks and Defenses in {LLM}-based Agents},
+  author       = {Zhang, Hanrong and Huang, Jingyuan and Mei, Kai and Yao, Yifei
+                  and Wang, Zhenting and Zhan, Chenlu and Wang, Hongwei and
+                  Zhang, Yongfeng},
+  year         = {2024},
+  eprint       = {2410.02644},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2410.02644},
+}
+
+@misc{leakdata2026,
+  title        = {Your {LLM} Agent Can Leak Your Data: Data Exfiltration via
+                  Backdoored Tool Use},
+  author       = {Zhang, Wuyang and Pei, Shichao},
+  year         = {2026},
+  eprint       = {2604.05432},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2604.05432},
+}
+
+@misc{opentelemetry_semconv,
+  title        = {{OpenTelemetry} Semantic Conventions},
+  author       = {{OpenTelemetry Authors}},
+  howpublished = {\url{https://github.com/open-telemetry/semantic-conventions}},
+  note         = {Accessed: Aug. 16, 2026},
+}
+
+% --- Prompt injection: the lineage a reviewer will expect, added 2026-08-12 ----
+
+@inproceedings{perez2022ignore,
+  title     = {Ignore Previous Prompt: Attack Techniques For Language Models},
+  author    = {Perez, F{\'a}bio and Ribeiro, Ian},
+  booktitle = {NeurIPS ML Safety Workshop},
+  year      = {2022},
+  eprint    = {2211.09527},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2211.09527},
+}
+
+@inproceedings{greshake2023not,
+  title     = {Not What You've Signed Up For: Compromising Real-World
+               {LLM}-Integrated Applications with Indirect Prompt Injection},
+  author    = {Greshake, Kai and Abdelnabi, Sahar and Mishra, Shailesh and
+               Endres, Christoph and Holz, Thorsten and Fritz, Mario},
+  booktitle = {ACM Workshop on Artificial Intelligence and Security (AISec)},
+  year      = {2023},
+  eprint    = {2302.12173},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2302.12173},
+}
+
+@inproceedings{liu2023prompt,
+  title     = {Formalizing and Benchmarking Prompt Injection Attacks and Defenses},
+  author    = {Liu, Yupei and Jia, Yuqi and Geng, Runpeng and Jia, Jinyuan and
+               Gong, Neil Zhenqiang},
+  booktitle = {33rd USENIX Security Symposium (USENIX Security 24)},
+  year      = {2024},
+  month     = aug,
+  pages     = {1831--1847},
+  publisher = {USENIX Association},
+  address   = {Philadelphia, PA},
+  isbn      = {978-1-939133-44-1},
+  url       = {https://www.usenix.org/conference/usenixsecurity24/presentation/liu-yupei},
+}
+
+@inproceedings{carlini2021extracting,
+  title     = {Extracting Training Data from Large Language Models},
+  author    = {Carlini, Nicholas and Tram{\`e}r, Florian and Wallace, Eric and
+               Jagielski, Matthew and Herbert-Voss, Ariel and Lee, Katherine and
+               Roberts, Adam and Brown, Tom and Song, Dawn and Erlingsson, Ulfar
+               and Oprea, Alina and Raffel, Colin},
+  booktitle = {USENIX Security Symposium},
+  year      = {2021},
+}
+
+% =============================================================================
+% ADDED 2026-08-13 --- the gaps a PC member flagged. Grouped by the argument
+% each group serves, because a bibliography that is only long is not better.
+% =============================================================================
+
+% --- 1. MCP itself. The paper described the protocol and never cited it. -----
+
+@misc{mcp_spec,
+  title        = {Model Context Protocol Specification},
+  author       = {{Anthropic}},
+  year         = {2024},
+  howpublished = {\url{https://modelcontextprotocol.io/specification}},
+}
+
+@misc{hou2025mcp,
+  title        = {Model Context Protocol ({MCP}): Landscape, Security Threats,
+                  and Future Research Directions},
+  author       = {Hou, Xinyi and Zhao, Yanjie and Wang, Shenao and Wang, Haoyu},
+  year         = {2025},
+  eprint       = {2503.23278},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2503.23278},
+}
+
+@misc{radosevich2025mcpaudit,
+  title        = {{MCP} Safety Audit: {LLMs} with the Model Context Protocol
+                  Allow Major Security Exploits},
+  author       = {Radosevich, Brandon and Halloran, John},
+  year         = {2025},
+  eprint       = {2504.03767},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2504.03767},
+}
+
+@misc{invariant2025toolpoisoning,
+  title        = {{MCP} Security Notification: Tool Poisoning Attacks},
+  author       = {{Invariant Labs}},
+  year         = {2025},
+  howpublished = {\url{https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks}},
+}
+
+% Verified against arXiv v2 on 2026-08-16.
+@misc{jamshidi2025semantic,
+  title        = {Semantic Attacks on Tool-Augmented {LLM}s: Securing the Model
+                  Context Protocol Against Descriptor-Level Manipulation},
+  author       = {Jamshidi, Saeid and Moradi Dakhel, Arghavan and Nafi, Kawser
+                  Wazed and Khomh, Foutse},
+  year         = {2025},
+  eprint       = {2512.06556},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2512.06556},
+}
+
+% --- 2. Agent-security benchmarks. The "why didn't you evaluate on X" set. ---
+% We do not use these because none of them contains a benign-parameter arm:
+% every attack in them delivers an instruction. Say so rather than omitting them.
+
+@inproceedings{debenedetti2024agentdojo,
+  title     = {{AgentDojo}: A Dynamic Environment to Evaluate Prompt Injection
+               Attacks and Defenses for {LLM} Agents},
+  author    = {Debenedetti, Edoardo and Zhang, Jie and Balunovi{\'c}, Mislav and
+               Beurer-Kellner, Luca and Fischer, Marc and Tram{\`e}r, Florian},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS),
+               Datasets and Benchmarks Track},
+  year      = {2024},
+  eprint    = {2406.13352},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2406.13352},
+}
+
+@inproceedings{zhan2024injecagent,
+  title     = {{InjecAgent}: Benchmarking Indirect Prompt Injections in
+               Tool-Integrated Large Language Model Agents},
+  author    = {Zhan, Qiusi and Liang, Zhixiang and Ying, Zifan and Kang, Daniel},
+  booktitle = {Findings of the Association for Computational Linguistics (ACL)},
+  year      = {2024},
+  eprint    = {2403.02691},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2403.02691},
+}
+
+@inproceedings{ruan2024toolemu,
+  title     = {Identifying the Risks of {LM} Agents with an {LM}-Emulated Sandbox},
+  author    = {Ruan, Yangjun and Dong, Honghua and Wang, Andrew and Pitis, Silviu
+               and Zhou, Yongchao and Ba, Jimmy and Dubois, Yann and
+               Maddison, Chris J. and Hashimoto, Tatsunori},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024},
+  eprint    = {2309.15817},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2309.15817},
+}
+
+% --- 3. Prompt extraction. The closest work on the TARGET rather than the -----
+% channel: what we extract is system-prompt content, and there is a literature
+% on extracting exactly that by other means.
+
+@inproceedings{zhang2024promptextraction,
+  title     = {Effective Prompt Extraction from Language Models},
+  author    = {Zhang, Yiming and Carlini, Nicholas and Ippolito, Daphne},
+  booktitle = {Conference on Language Modeling (COLM)},
+  year      = {2024},
+  eprint    = {2307.06865},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2307.06865},
+}
+
+@inproceedings{hui2024pleak,
+  title     = {{PLeak}: Prompt Leaking Attacks against Large Language Model
+               Applications},
+  author    = {Hui, Bo and Yuan, Haolin and Gong, Neil and Burlina, Philippe and
+               Cao, Yinzhi},
+  booktitle = {ACM Conference on Computer and Communications Security (CCS)},
+  year      = {2024},
+  eprint    = {2405.06823},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2405.06823},
+}
+
+% Required by the 2026-08-16 writing guide; verified against USENIX and OWASP.
+@inproceedings{yang2025prsa,
+  title     = {{PRSA}: Prompt Stealing Attacks against Real-World Prompt Services},
+  author    = {Yang, Yong and Li, Changjiang and Li, Qingming and Ma, Oubo and
+               Wang, Haoyu and Wang, Zonghui and Gao, Yandong and Chen, Wenzhi
+               and Ji, Shouling},
+  booktitle = {34th USENIX Security Symposium (USENIX Security 25)},
+  year      = {2025},
+  month     = aug,
+  pages     = {2283--2302},
+  publisher = {USENIX Association},
+  address   = {Seattle, WA},
+  isbn      = {978-1-939133-52-6},
+  url       = {https://www.usenix.org/conference/usenixsecurity25/presentation/yang-yong},
+}
+
+@misc{owasp_llm07,
+  title        = {{LLM07:2025} --- System Prompt Leakage},
+  author       = {{OWASP}},
+  year         = {2025},
+  howpublished = {\url{https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/}},
+}
+
+@inproceedings{zhang2024output2prompt,
+  title     = {Extracting Prompts by Inverting {LLM} Outputs},
+  author    = {Zhang, Collin and Morris, John X. and Shmatikov, Vitaly},
+  booktitle = {Conference on Empirical Methods in Natural Language Processing
+               (EMNLP)},
+  year      = {2024},
+  eprint    = {2405.15012},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2405.15012},
+}
+
+% --- 4. Defenses. Needed because our Defense section must say what it is NOT --
+% recommending, and because the strongest objection to this paper is "the
+% instruction hierarchy fixes it" -- which it does not, since nothing here is
+% an instruction to deprioritise.
+
+@misc{wallace2024hierarchy,
+  title        = {The Instruction Hierarchy: Training {LLMs} to Prioritize
+                  Privileged Instructions},
+  author       = {Wallace, Eric and Xiao, Kai and Leike, Reimar and
+                  Weng, Lilian and Heidecke, Johannes and Beutel, Alex},
+  year         = {2024},
+  eprint       = {2404.13208},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2404.13208},
+}
+
+@inproceedings{chen2025struq,
+  title     = {{StruQ}: Defending Against Prompt Injection with Structured Queries},
+  author    = {Chen, Sizhe and Piet, Julien and Sitawarin, Chawin and
+               Wagner, David},
+  booktitle = {USENIX Security Symposium},
+  year      = {2025},
+  eprint    = {2402.06363},
+  archivePrefix = {arXiv},
+  howpublished = {arXiv preprint arXiv:2402.06363},
+}
+
+@misc{hines2024spotlighting,
+  title        = {Defending Against Indirect Prompt Injection Attacks With
+                  Spotlighting},
+  author       = {Hines, Keegan and Lopez, Gary and Hall, Matthew and
+                  Zarfati, Federico and Zunger, Yonatan and Kiciman, Emre},
+  year         = {2024},
+  eprint       = {2403.14720},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2403.14720},
+}
+
+@misc{debenedetti2025camel,
+  title        = {Defeating Prompt Injections by Design},
+  author       = {Debenedetti, Edoardo and Shumailov, Ilia and Fan, Tianqi and
+                  Hayes, Jamie and Carlini, Nicholas and Fabian, Daniel and
+                  Kern, Christoph and Shi, Chongyang and Terzis, Andreas and
+                  Tram{\`e}r, Florian},
+  year         = {2025},
+  eprint       = {2503.18813},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2503.18813},
+}
+
+@inproceedings{zhan2025adaptive,
+  title     = {Adaptive Attacks Break Defenses Against Indirect Prompt Injection
+               Attacks on {LLM} Agents},
+  author    = {Zhan, Qiusi and Fang, Richard and Panchal, Henil Shalin and
+               Kang, Daniel},
+  booktitle = {Findings of the Association for Computational Linguistics:
+               NAACL 2025},
+  year      = {2025},
+  month     = apr,
+  pages     = {7116--7132},
+  publisher = {Association for Computational Linguistics},
+  address   = {Albuquerque, New Mexico},
+  doi       = {10.18653/v1/2025.findings-naacl.395},
+  url       = {https://aclanthology.org/2025.findings-naacl.395/},
+}
+
+% --- Added 2026-08-17. Each field below was read off the arXiv abstract page for
+% the identifier given; titles, author order and years are verbatim from it.
+@misc{zhong2025rtbas,
+  title        = {{RTBAS}: Defending {LLM} Agents Against Prompt Injection and
+                  Privacy Leakage},
+  author       = {Zhong, Peter Yong and Chen, Siyuan and Wang, Ruiqi and
+                  McCall, McKenna and Titzer, Ben L. and Miller, Heather and
+                  Gibbons, Phillip B.},
+  year         = {2025},
+  eprint       = {2502.08966},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2502.08966}
+}
+
+@misc{zhang2025msb,
+  title        = {{MCP} Security Bench ({MSB}): Benchmarking Attacks Against
+                  Model Context Protocol in {LLM} Agents},
+  author       = {Zhang, Dongsen and Li, Zekun and Luo, Xu and Liu, Xuannan and
+                  Li, Peipei and Xu, Wenjun},
+  year         = {2025},
+  eprint       = {2510.15994},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2510.15994}
+}
+
+@misc{wang2025mcpguard,
+  title        = {{MCPGuard}: Automatically Detecting Vulnerabilities in {MCP}
+                  Servers},
+  author       = {Wang, Bin and Liu, Zexin and Yu, Hao and Yang, Ao and
+                  Huang, Yenan and Guo, Jing and Cheng, Huangsheng and Li, Hui
+                  and Wu, Huiyu},
+  year         = {2025},
+  eprint       = {2510.23673},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2510.23673}
+}
+
+@misc{rostamzadeh2026dpt,
+  title        = {{MCP-DPT}: A Defense-Placement Taxonomy and Coverage Analysis
+                  for Model Context Protocol Security},
+  author       = {Rostamzadeh, Mehrdad and Narula, Sidhant and Birhan, Nahom and
+                  Ghasemigol, Mohammad and Takabi, Daniel},
+  year         = {2026},
+  eprint       = {2604.07551},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2604.07551}
+}
+
+@misc{zhou2026mcpshield,
+  title        = {{MCPShield}: A Security Cognition Layer for Adaptive Trust
+                  Calibration in Model Context Protocol Agents},
+  author       = {Zhou, Zhenhong and Zhang, Yuanhe and Cai, Hongwei and
+                  Aloqaily, Moayad and Bouachir, Ouns and Pang, Linsey and
+                  Mehrotra, Prakhar and Wang, Kun and Wen, Qingsong},
+  year         = {2026},
+  eprint       = {2602.14281},
+  archivePrefix= {arXiv},
+  howpublished = {arXiv preprint arXiv:2602.14281}
+}

@@ -1,0 +1,241 @@
+{
+  "stage": "A",
+  "collection_status": "incomplete",
+  "complete_by_model": {
+    "gemini-3-flash-preview": true,
+    "gpt-4o-2024-08-06": false
+  },
+  "planned_trials": 1200,
+  "missing_trials": 600,
+  "evidence_status": "requires_provenance_review",
+  "mock": false,
+  "rows": 600,
+  "status_by_arm": {
+    "capacity_planted": {
+      "received": 120
+    },
+    "capacity_unplanted": {
+      "received": 120
+    },
+    "constrained": {
+      "received": 160
+    },
+    "free": {
+      "received": 160
+    },
+    "unplanted": {
+      "received": 39,
+      "wrong_tool": 1
+    }
+  },
+  "providers": {
+    "gemini-3-flash-preview": {
+      "selectivity": {
+        "trials": 160,
+        "cells": 8,
+        "diagonal_rate": 0.98125,
+        "off_diagonal_rate": 0.0,
+        "difference": 0.98125,
+        "ci95": [
+          0.94375,
+          1.0
+        ],
+        "supported_by_20pp_rule": true,
+        "by_explicitness": {
+          "naming": {
+            "trials": 160,
+            "diagonal_received": 157
+          },
+          "adjacent": {
+            "trials": 0,
+            "diagonal_received": 0
+          }
+        },
+        "generic_any_canary": [
+          0,
+          0
+        ],
+        "neutral_any_canary": [
+          0,
+          0
+        ],
+        "redirected_into_task_arguments": [
+          0,
+          160
+        ],
+        "decision_scope": "descriptive secondary; not stage A's primary constraint endpoint"
+      },
+      "free_vs_constrained": {
+        "matched_cells": 8,
+        "matched_pairs": 160,
+        "unmatched_observations": 0,
+        "free_diagonal_rate": 0.98125,
+        "constrained_diagonal_rate": 0.98125,
+        "free_minus_constrained": 0.0,
+        "ci95": [
+          -0.03125,
+          0.03125
+        ],
+        "interval_units": "replicate blocks; two tasks x four fields fixed",
+        "field_schema_sensitivity_ci95": [
+          0.0,
+          0.0
+        ],
+        "api_error_difference_bounds": [
+          0.0,
+          0.0
+        ],
+        "constrained_schema_rejections": [
+          0,
+          160
+        ],
+        "rejected_calls_that_carried_the_target": 0
+      },
+      "unplanted": {
+        "trials": 40,
+        "tool_calls": 40,
+        "any_canary_received": 0
+      },
+      "capacity": {
+        "integer": {
+          "chance": 0.125,
+          "planted_correct": [
+            40,
+            40
+          ],
+          "unplanted_correct": [
+            5,
+            40
+          ],
+          "no_tool_call": 0,
+          "invalid_values": 0,
+          "planted_answer_distribution": {
+            "7": 5,
+            "5": 5,
+            "4": 5,
+            "2": 5,
+            "6": 5,
+            "3": 5,
+            "0": 5,
+            "1": 5
+          },
+          "permutation_p": 9.999000099990002e-05,
+          "permutation_p_holm": 0.00029997000299970003
+        },
+        "enum": {
+          "chance": 0.125,
+          "planted_correct": [
+            40,
+            40
+          ],
+          "unplanted_correct": [
+            6,
+            40
+          ],
+          "no_tool_call": 0,
+          "invalid_values": 0,
+          "planted_answer_distribution": {
+            "cobalt": 5,
+            "harbor": 5,
+            "ember": 5,
+            "fjord": 5,
+            "amber": 5,
+            "delta": 5,
+            "garnet": 5,
+            "birch": 5
+          },
+          "permutation_p": 9.999000099990002e-05,
+          "permutation_p_holm": 0.00029997000299970003
+        },
+        "boolean": {
+          "chance": 0.5,
+          "planted_correct": [
+            40,
+            40
+          ],
+          "unplanted_correct": [
+            20,
+            40
+          ],
+          "no_tool_call": 0,
+          "invalid_values": 0,
+          "planted_answer_distribution": {
+            "False": 20,
+            "True": 20
+          },
+          "permutation_p": 9.999000099990002e-05,
+          "permutation_p_holm": 0.00029997000299970003
+        }
+      }
+    }
+  },
+  "task_success_by_arm": {
+    "capacity_planted": [
+      120,
+      120
+    ],
+    "capacity_unplanted": [
+      120,
+      120
+    ],
+    "constrained": [
+      160,
+      160
+    ],
+    "free": [
+      160,
+      160
+    ],
+    "unplanted": [
+      39,
+      40
+    ]
+  },
+  "api_error_bounds_by_arm": {
+    "capacity_planted": {
+      "known_received": 120,
+      "unknown_api_errors": 0,
+      "attempted": 120,
+      "rate_bounds": [
+        1.0,
+        1.0
+      ]
+    },
+    "capacity_unplanted": {
+      "known_received": 31,
+      "unknown_api_errors": 0,
+      "attempted": 120,
+      "rate_bounds": [
+        0.25833333333333336,
+        0.25833333333333336
+      ]
+    },
+    "constrained": {
+      "known_received": 157,
+      "unknown_api_errors": 0,
+      "attempted": 160,
+      "rate_bounds": [
+        0.98125,
+        0.98125
+      ]
+    },
+    "free": {
+      "known_received": 157,
+      "unknown_api_errors": 0,
+      "attempted": 160,
+      "rate_bounds": [
+        0.98125,
+        0.98125
+      ]
+    },
+    "unplanted": {
+      "known_received": 0,
+      "unknown_api_errors": 0,
+      "attempted": 40,
+      "rate_bounds": [
+        0.0,
+        0.0
+      ]
+    }
+  }
+}

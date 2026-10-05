@@ -1,0 +1,6922 @@
+[
+  {
+    "path": ".env.example",
+    "bytes": 1408,
+    "sha256": "6812bb5c5fda525c89ad30735d160b345cc4ac249ceeffca31008c272a200e38",
+    "kind": "text",
+    "lines": 25
+  },
+  {
+    "path": ".gitattributes",
+    "bytes": 184,
+    "sha256": "cbd0a479d4d23597b4943bf87a317846bb8eebe933c2a6a91ba19b8be0041297",
+    "kind": "text",
+    "lines": 3
+  },
+  {
+    "path": ".github/workflows/offline-reproducibility.yml",
+    "bytes": 868,
+    "sha256": "1fb360a380b21771b7c01b067ff2c12abfba4250c2624affc07473424313951b",
+    "kind": "text",
+    "lines": 21
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 1923,
+    "sha256": "6663273f24b3d8dce8d90e5bf8bed078ea42a0d7923b762cad9c3dd93d7627bc",
+    "kind": "text",
+    "lines": 66
+  },
+  {
+    "path": ".mcp.json",
+    "bytes": 259,
+    "sha256": "6f5b7a7f3d22aba4b1394ceae9840a5f848adb1fd33981902b0a866d14885bef",
+    "kind": "json",
+    "keys": [
+      "mcpServers"
+    ]
+  },
+  {
+    "path": ".vscode/extensions.json",
+    "bytes": 92,
+    "sha256": "b0188a6c8a6e788d5690b3c7c71faea79651830e1963d130cb4ac95c448f2c17",
+    "kind": "json",
+    "keys": [
+      "recommendations"
+    ]
+  },
+  {
+    "path": "Agent_Trap_base_writing.pdf",
+    "bytes": 398092,
+    "sha256": "732a6145752c384a303d6de3160e6488882808a7fb0f66225f994caebf9040d8",
+    "kind": "pdf",
+    "words": 4212
+  },
+  {
+    "path": "CLAUDE.md",
+    "bytes": 114536,
+    "sha256": "9a0ac70b46fde7bea57a97f01605a679bbdb7c8ec7aa9f33c47e6a957d4582f9",
+    "kind": "text",
+    "lines": 1948
+  },
+  {
+    "path": "PROJECT_JOURNEY.md",
+    "bytes": 93826,
+    "sha256": "e628e6077b008c3a9642c63ad23706f9c2cea6a8a2e0c063c998e29370fbdf65",
+    "kind": "text",
+    "lines": 1757
+  },
+  {
+    "path": "PRT671_Assessment2_Final.docx",
+    "bytes": 62071,
+    "sha256": "176279c621668e5c685177816dee9344dfa3224f2486c0ef839bb954ab662725",
+    "kind": "docx",
+    "words": 3397
+  },
+  {
+    "path": "Q1_READINESS_AUDIT.md",
+    "bytes": 6548,
+    "sha256": "0a486c3795c8d0b6065348443ddd1ef5aa4543b39e151d62f2bcb5e9d8a2c7ac",
+    "kind": "text",
+    "lines": 106
+  },
+  {
+    "path": "README.md",
+    "bytes": 15482,
+    "sha256": "6a9af6d3b76f941fb8d005ae22fcb4db7c7e915e775b58c9fc2e12eecf2a8981",
+    "kind": "text",
+    "lines": 299
+  },
+  {
+    "path": "RESEARCH_DOSSIER.md",
+    "bytes": 106793,
+    "sha256": "231e6851fc18baf4cd8059e78747a36ba7e5d748d02edf9fd71a8f27318a054d",
+    "kind": "text",
+    "lines": 1964
+  },
+  {
+    "path": "SUPERVISOR_REVIEW.md",
+    "bytes": 30127,
+    "sha256": "0a0f5be3cab9d8a2d48c09ec3d422079f4382ab889953e7ab50587cbba396681",
+    "kind": "text",
+    "lines": 526
+  },
+  {
+    "path": "capture/docker/caldav.Dockerfile",
+    "bytes": 430,
+    "sha256": "b7fb009dfa02f58a2c69dc572db3c533d77925f50c90e6da58ad0e0332f186c4",
+    "kind": "text",
+    "lines": 9
+  },
+  {
+    "path": "capture/docker/fastmail.Dockerfile",
+    "bytes": 430,
+    "sha256": "b7fb009dfa02f58a2c69dc572db3c533d77925f50c90e6da58ad0e0332f186c4",
+    "kind": "text",
+    "lines": 9
+  },
+  {
+    "path": "capture/docker/files-official.Dockerfile",
+    "bytes": 839,
+    "sha256": "4ab78220fe3c98ae77252ddf49fad0198ba479285cdfbee4efe5d93af389abf0",
+    "kind": "text",
+    "lines": 14
+  },
+  {
+    "path": "capture/docker/radicale.Dockerfile",
+    "bytes": 419,
+    "sha256": "be1249cbde647ab08fe6a8bd56d709c5706fe6f37b4136694124045e70b59da4",
+    "kind": "text",
+    "lines": 8
+  },
+  {
+    "path": "capture/docker/radicale.config",
+    "bytes": 208,
+    "sha256": "2f821d2b8b6ed795e9264994831b803b765c232c0fb148f7d73e20951d1ee48f",
+    "kind": "text",
+    "lines": 10
+  },
+  {
+    "path": "capture/docker/shopify.Dockerfile",
+    "bytes": 430,
+    "sha256": "b7fb009dfa02f58a2c69dc572db3c533d77925f50c90e6da58ad0e0332f186c4",
+    "kind": "text",
+    "lines": 9
+  },
+  {
+    "path": "capture/saleor_list_tools.py",
+    "bytes": 3006,
+    "sha256": "bd984b63126cb5db4b322ae60705863886963552e0dca45a4147474b7e2c4dbe",
+    "kind": "python",
+    "definitions": [
+      "start_server",
+      "wait_until_healthy",
+      "post",
+      "json_from_body",
+      "main"
+    ]
+  },
+  {
+    "path": "code/_root.py",
+    "bytes": 2414,
+    "sha256": "efc3a4c94830a2f08c679d83b94f2420f4556bde81deb182eca89c2423f7220a",
+    "kind": "python",
+    "definitions": [
+      "_looks_like_root"
+    ]
+  },
+  {
+    "path": "code/analyze.py",
+    "bytes": 23767,
+    "sha256": "320aef9214c3500638d1517dc05b63ea3229bbdf683daa330a5ffadf294d5947",
+    "kind": "python",
+    "definitions": [
+      "_norm",
+      "wilson",
+      "canonical_runs",
+      "ladder_rung",
+      "load",
+      "rate",
+      "call_rate",
+      "report",
+      "payload_recovery",
+      "payload_report",
+      "_field_args",
+      "matrix_report",
+      "fills_report",
+      "_selfcheck",
+      "main"
+    ]
+  },
+  {
+    "path": "code/bibliography_audit.py",
+    "bytes": 5220,
+    "sha256": "d657e1e39a5fb2fcb18c77b82961328b3350b731a69f45cbb7b32d4137de5322",
+    "kind": "python",
+    "definitions": [
+      "field",
+      "clean",
+      "Metadata",
+      "verify",
+      "build",
+      "__init__",
+      "handle_starttag",
+      "handle_endtag",
+      "handle_data"
+    ]
+  },
+  {
+    "path": "code/capture_native_schemas.py",
+    "bytes": 21663,
+    "sha256": "0015809cab2412a8ee1cbf1451040271d824b1e3fba857db35de07745d583909",
+    "kind": "python",
+    "definitions": [
+      "run",
+      "sha256_bytes",
+      "image_name",
+      "ensure_source",
+      "build_image",
+      "start_radicale",
+      "stop_radicale",
+      "StdioSession",
+      "capture_stdio",
+      "capture_saleor",
+      "_message_bytes_from_http_body",
+      "write_dummy_google_keys",
+      "tools_from_pages",
+      "save_and_freeze",
+      "capture_one",
+      "main",
+      "__init__",
+      "_read_stdout",
+      "_read_stderr",
+      "send",
+      "wait_for_response",
+      "stderr_tail",
+      "close"
+    ]
+  },
+  {
+    "path": "code/conditions.py",
+    "bytes": 36710,
+    "sha256": "238687fba0d8e27f1e5fd498ab349ee6720c7621473ed54fdac5b9275518fd40",
+    "kind": "python",
+    "definitions": [
+      "real_tools",
+      "_real_tool_spec",
+      "_base_tool",
+      "_add_field",
+      "_v3_token",
+      "v3_facts",
+      "v3_payload",
+      "v3_facts_familiar",
+      "build"
+    ]
+  },
+  {
+    "path": "code/defense.py",
+    "bytes": 25925,
+    "sha256": "bb5451d719a5dccd259f9ae2df7c055337d9f53210eda2478efade077ad65132",
+    "kind": "python",
+    "definitions": [
+      "_audit_holdout",
+      "attack_fields",
+      "sweep",
+      "benign_fields",
+      "parse_score",
+      "score",
+      "observed_c_rates",
+      "_roc",
+      "_family",
+      "precision_at_prior",
+      "report_operating_points",
+      "bootstrap_auc",
+      "evaluate",
+      "auc",
+      "auc"
+    ]
+  },
+  {
+    "path": "code/evidence.py",
+    "bytes": 5981,
+    "sha256": "c2d08f46e9738d99abd2b4a5f2c30eb54b9c69fec4478012cb2551892443e8a9",
+    "kind": "python",
+    "definitions": [
+      "digest",
+      "read_jsonl",
+      "trial_key",
+      "validate_trials",
+      "selection",
+      "selected_paths",
+      "inventory",
+      "main",
+      "reject_constant",
+      "unique_object"
+    ]
+  },
+  {
+    "path": "code/extension_harness.py",
+    "bytes": 11553,
+    "sha256": "9132c93e962afa852d0776f2238b9458333e7b9492182cc7030fda61b9dfeec1",
+    "kind": "python",
+    "definitions": [
+      "digest",
+      "canaries",
+      "contract",
+      "offered_schema",
+      "hits",
+      "FixtureServer",
+      "parse_arguments",
+      "evaluate",
+      "response",
+      "build",
+      "check_or_write",
+      "__init__",
+      "receive",
+      "unique",
+      "nonfinite"
+    ]
+  },
+  {
+    "path": "code/freeze_sources.py",
+    "bytes": 1533,
+    "sha256": "6b910365e5339ae50c8ecce2611e7895727a5ce70ad9fba3169cb48c0747056b",
+    "kind": "python",
+    "definitions": [
+      "main"
+    ]
+  },
+  {
+    "path": "code/grade.py",
+    "bytes": 17152,
+    "sha256": "bd02626f6b76f2eeee7f29564fe196aeb31a7cca05861a27c84a0b98c6cbb2e7",
+    "kind": "python",
+    "definitions": [
+      "load_dotenv",
+      "_compile",
+      "_hits",
+      "keyword_grade",
+      "captured_text",
+      "conjunctive_t1",
+      "llm_judge",
+      "_regrade_file",
+      "_keyword_regrade_file",
+      "_selfcheck"
+    ]
+  },
+  {
+    "path": "code/harvest_benign_fields.py",
+    "bytes": 14074,
+    "sha256": "c6d84807705621b9b0e9c2b8e310777ab18de36385c895d4eaabe4544c4b0cf8",
+    "kind": "python",
+    "definitions": [
+      "_fetch",
+      "harvest_mcptox",
+      "harvest_otel",
+      "prevalence",
+      "main"
+    ]
+  },
+  {
+    "path": "code/harvest_real_tools.py",
+    "bytes": 7074,
+    "sha256": "755b26c1f3c3b70fed01e567b46473cc0428047a2d47c628f27d9bbb777bda43",
+    "kind": "python",
+    "definitions": [
+      "_toks",
+      "parse_tools",
+      "match_queries",
+      "main",
+      "flush"
+    ]
+  },
+  {
+    "path": "code/journal_assets.py",
+    "bytes": 10918,
+    "sha256": "2962b7ac57b158f00360729ca1d78308099362ede1572269fc57a45d9c9b50ba",
+    "kind": "python",
+    "definitions": [
+      "esc",
+      "frac",
+      "interval",
+      "bib_entries",
+      "outputs",
+      "check_or_write"
+    ]
+  },
+  {
+    "path": "code/label.py",
+    "bytes": 12030,
+    "sha256": "00b96db2aa4b39abbb6edf9df5a41a5bdbeb7e64bedc99dd6909301688837e57",
+    "kind": "python",
+    "definitions": [
+      "_rid",
+      "sample",
+      "cohens_kappa",
+      "_validate_human_attestation",
+      "kappa",
+      "_selfcheck"
+    ]
+  },
+  {
+    "path": "code/label_tui.py",
+    "bytes": 6429,
+    "sha256": "630635b0b7afab05cdf12695d7dfd89d12f21be4ee829f378103e0dd669c5fed",
+    "kind": "python",
+    "definitions": [
+      "load",
+      "save",
+      "getkey",
+      "main"
+    ]
+  },
+  {
+    "path": "code/make_figures.py",
+    "bytes": 7721,
+    "sha256": "9abbe213c1eb15f9f2a99e75c6f12c8709ac0db27679caa177ce4a473bf20393",
+    "kind": "python",
+    "definitions": [
+      "_balanced",
+      "_strip",
+      "figures",
+      "export",
+      "selfcheck",
+      "main"
+    ]
+  },
+  {
+    "path": "code/make_tables.py",
+    "bytes": 14854,
+    "sha256": "8a772f9530a4cd185e7e11da316253f7b82c9d259f54c3750cfdbd5955a5908d",
+    "kind": "python",
+    "definitions": [
+      "_canon",
+      "_rows",
+      "_status",
+      "_cell",
+      "table_gate",
+      "table_real",
+      "table_payload",
+      "table_ladder",
+      "table_grader_rule",
+      "table_replication",
+      "table_artifacts",
+      "main"
+    ]
+  },
+  {
+    "path": "code/make_v3_report.py",
+    "bytes": 20923,
+    "sha256": "70c525cf8cb61b8b9561add9c4421cca720f8deb121e96a51031cd2c301740ab",
+    "kind": "python",
+    "definitions": [
+      "canonical",
+      "rows_of",
+      "recovered",
+      "meta_for",
+      "accounting",
+      "matrix_stats",
+      "unplanted_stats",
+      "pct",
+      "ci",
+      "pick",
+      "primary_decision",
+      "build"
+    ]
+  },
+  {
+    "path": "code/manifest.py",
+    "bytes": 55692,
+    "sha256": "b2e9710b3a3602cb4e46b26382ee9ffb30a5fd608bda175ea252ba07cef03e22",
+    "kind": "python",
+    "definitions": [
+      "_rows",
+      "_cell",
+      "build",
+      "macro_values",
+      "check_locations",
+      "check_inlined",
+      "check",
+      "_macro",
+      "tex_content",
+      "emit_tex",
+      "sync_fallback",
+      "emit_roc",
+      "_fig_matrix",
+      "_fig_gradient",
+      "sync_figures",
+      "main",
+      "add"
+    ]
+  },
+  {
+    "path": "code/mcp_client_probe.py",
+    "bytes": 8476,
+    "sha256": "ea841d50307d883c91f3d26049be8665b312fe593e23596f45c4cf32697b663c",
+    "kind": "python",
+    "definitions": [
+      "_tail_capture",
+      "main"
+    ]
+  },
+  {
+    "path": "code/mcp_server.py",
+    "bytes": 6220,
+    "sha256": "9e90cfa8388a3e3aa71ab838e83a9bc1e58cfd48158938553dfee668951d89a9",
+    "kind": "python",
+    "definitions": [
+      "_published_name",
+      "_specs",
+      "_tools",
+      "write_tool_map"
+    ]
+  },
+  {
+    "path": "code/native_fixtures.py",
+    "bytes": 16465,
+    "sha256": "8d76e52ac26381d4701570da1fcc97896859f88bd0862bc2fa318a2d49c691e1",
+    "kind": "python",
+    "definitions": [
+      "to_int",
+      "parse_time",
+      "same_url",
+      "find_orders",
+      "find_messages",
+      "find_events",
+      "read_file",
+      "run_shopify",
+      "run_saleor",
+      "run_fastmail",
+      "run_imap",
+      "run_google",
+      "run_caldav",
+      "run_files_official",
+      "run_files_go",
+      "Adapter",
+      "correct_call",
+      "answer",
+      "expected_answer",
+      "task_success",
+      "FixtureServer",
+      "matches",
+      "__init__",
+      "receive"
+    ]
+  },
+  {
+    "path": "code/paper_assets.py",
+    "bytes": 5513,
+    "sha256": "f4193ce3cc3dab3589f8c547e3986f2fd7fbad7c79045619eb1960b842d2f8f7",
+    "kind": "python",
+    "definitions": [
+      "annotation_macros",
+      "wide_tables",
+      "outputs",
+      "main"
+    ]
+  },
+  {
+    "path": "code/plan_extension.py",
+    "bytes": 3827,
+    "sha256": "c05485eb80eaced9b82937294adfc2bc66bf9186effe811fd2b38fa38ab65672",
+    "kind": "python",
+    "definitions": [
+      "simulate",
+      "build"
+    ]
+  },
+  {
+    "path": "code/providers.py",
+    "bytes": 18950,
+    "sha256": "4270a9405000bbcc31eb1650b4cdd53f46cfb8c7d4c1ea5a880808a54e3f8090",
+    "kind": "python",
+    "definitions": [
+      "_dump",
+      "served_model",
+      "ModelIdentityError",
+      "check_served_model",
+      "annotate",
+      "call",
+      "_anthropic",
+      "_openai",
+      "_openrouter",
+      "_glm",
+      "_deepseek",
+      "_openai_compatible",
+      "_langchain",
+      "_google",
+      "_mock",
+      "__init__",
+      "_run"
+    ]
+  },
+  {
+    "path": "code/q1_analysis.py",
+    "bytes": 8223,
+    "sha256": "7d783f38c1c4a0c211fb65a9c29636c926344cf99ebba3978e35fa990095efec",
+    "kind": "python",
+    "definitions": [
+      "independent_counts",
+      "secondary",
+      "temperature_zero",
+      "build",
+      "main"
+    ]
+  },
+  {
+    "path": "code/release_audit.py",
+    "bytes": 4064,
+    "sha256": "f36162b0fa0878f7b61e45fc087f68cbad40c2aba463ed66ec53fe3c0365287c",
+    "kind": "python",
+    "definitions": [
+      "export_paths",
+      "inspect",
+      "main"
+    ]
+  },
+  {
+    "path": "code/reproduce.py",
+    "bytes": 4491,
+    "sha256": "ba2a3ffbd39de91fbc95beea775de87fbf095854e77d49b018a61b2b741841da",
+    "kind": "python",
+    "definitions": [
+      "command",
+      "papers",
+      "main",
+      "scientific_inventory"
+    ]
+  },
+  {
+    "path": "code/run.py",
+    "bytes": 20732,
+    "sha256": "597ead875e012ccb1373ae66bb3b5f9520d54c302d1dc78cb0a16e5e6ad51a04",
+    "kind": "python",
+    "definitions": [
+      "call_with_retry",
+      "load_stage",
+      "preflight",
+      "_git",
+      "_preregistration_problems",
+      "audit_stages",
+      "stable_hash",
+      "planned_trials",
+      "trial_spec",
+      "atomic_meta",
+      "validate_resume",
+      "main"
+    ]
+  },
+  {
+    "path": "code/scan.py",
+    "bytes": 10723,
+    "sha256": "e62f8ecb7f38a14f75130f8b8ef70fad23f9041ccff264361ae9dd96c1e1e462",
+    "kind": "python",
+    "definitions": [
+      "_tokens",
+      "scan_param_name",
+      "_tool_surface",
+      "scan_tool",
+      "scan_conditions",
+      "_report",
+      "_selfcheck"
+    ]
+  },
+  {
+    "path": "code/scan_invariant.py",
+    "bytes": 10908,
+    "sha256": "10db955629711b8af8ffaa7c130dbc44ee5373e5e0d1111f96231ba4d5e31d06",
+    "kind": "python",
+    "definitions": [
+      "provenance",
+      "tool_surface",
+      "parse_vote",
+      "rule_prompt_injection",
+      "rule_pseudo_tag",
+      "arms",
+      "main"
+    ]
+  },
+  {
+    "path": "code/schema_snapshot.py",
+    "bytes": 2287,
+    "sha256": "6085adda8d401dc3c0f367d5bd13c0a62ce4b19afaa578222338eeb7ecc3a452",
+    "kind": "python",
+    "definitions": [
+      "validate"
+    ]
+  },
+  {
+    "path": "code/schema_types_analyze.py",
+    "bytes": 22325,
+    "sha256": "839ca49c91c63dda8d2a5b31bd1f99f158ff4a29b31e69cc573f761df8ee80c8",
+    "kind": "python",
+    "definitions": [
+      "load_rows",
+      "mean",
+      "pct",
+      "target_received",
+      "off_target_received",
+      "any_received",
+      "any_redirected",
+      "paired_bootstrap",
+      "selectivity",
+      "replicate_bootstrap",
+      "free_vs_constrained",
+      "unplanted",
+      "received_value",
+      "permutation_p_value",
+      "holm",
+      "capacity",
+      "summarise",
+      "print_report",
+      "main"
+    ]
+  },
+  {
+    "path": "code/schema_types_design.py",
+    "bytes": 24003,
+    "sha256": "6b0cf3e064a7a9cef1917454c8d9bc5759f01ecd33af84dfb75b3138137462dd",
+    "kind": "python",
+    "definitions": [
+      "load_native_schema",
+      "build_schemas",
+      "stage_config",
+      "correct_call",
+      "schema_by_id",
+      "_token",
+      "make_canaries",
+      "core_system_prompt",
+      "capacity_system_prompt",
+      "string_field_schema",
+      "capacity_field_schema",
+      "offered_tool",
+      "_trial_id",
+      "_seed_for",
+      "_balanced_secrets",
+      "core_trials",
+      "_core_trial",
+      "capacity_trials",
+      "_capacity_trial",
+      "build_schedule",
+      "expected_counts",
+      "build_spec"
+    ]
+  },
+  {
+    "path": "code/schema_types_run.py",
+    "bytes": 23898,
+    "sha256": "e3c6814a6472baa660d9dd1f4c9603ceb9fc4ddd1c860838486e02ec59eeee58",
+    "kind": "python",
+    "definitions": [
+      "score_trial",
+      "schema_is_valid",
+      "_add_empty_string_scores",
+      "_add_empty_capacity_scores",
+      "_split_arguments",
+      "_score_string_emission",
+      "_score_string_receipt",
+      "normalise_capacity_value",
+      "_score_capacity_emission",
+      "mock_response",
+      "_mock_reply",
+      "_spoil_one_task_argument",
+      "_mock_string_value",
+      "_mock_capacity_value",
+      "sha256_of",
+      "live_blockers",
+      "design_digest",
+      "is_transient",
+      "BudgetExhausted",
+      "BudgetLedger",
+      "live_response",
+      "run",
+      "main",
+      "__init__",
+      "reserve_one_attempt"
+    ]
+  },
+  {
+    "path": "code/scoring_sensitivity.py",
+    "bytes": 2131,
+    "sha256": "d92f8a95bf470b3990bdade85c54ffafb23c8247a64f3e28a13b27b52bae6c32",
+    "kind": "python",
+    "definitions": [
+      "hit",
+      "build"
+    ]
+  },
+  {
+    "path": "code/stats.py",
+    "bytes": 36771,
+    "sha256": "8423093427b9f55b06e24c522c92db1ddef2a3f3c791044362ceb0090b3767b9",
+    "kind": "python",
+    "definitions": [
+      "newcombe_diff",
+      "fisher_exact_greater",
+      "holm",
+      "load_rows",
+      "cell",
+      "mixed_effects",
+      "_fit_vb",
+      "contrast_table",
+      "report_gate",
+      "report_ladder",
+      "report_wording",
+      "cluster_bootstrap",
+      "paired_cluster_bootstrap",
+      "report_cluster",
+      "report_v3_cluster",
+      "_v2_rows",
+      "report_matrix_stats",
+      "report_tool_cluster",
+      "_selfcheck",
+      "rates"
+    ]
+  },
+  {
+    "path": "code/submission_check.py",
+    "bytes": 2398,
+    "sha256": "01dd42fcf9c6c33e1f270dc6c0309c2e4552dab795e276223c2dba5b62ad46cb",
+    "kind": "python",
+    "definitions": [
+      "inspect",
+      "main"
+    ]
+  },
+  {
+    "path": "code/test_extension.py",
+    "bytes": 6719,
+    "sha256": "48c3ec1e57cbbda32da24ae030c408f52bf7f49a5cdcced655d850baa0529630",
+    "kind": "python",
+    "definitions": [
+      "ExtensionFixtures",
+      "evaluate",
+      "test_four_legitimate_tasks_and_policies",
+      "test_received_disclosure_is_not_loss_of_utility",
+      "test_pruning_rejects_extra_argument_and_allowlist_blocks_it",
+      "test_required_field_not_silently_repaired",
+      "test_allowlist_is_not_canary_oracle_and_reports_redirection",
+      "test_nested_arguments_are_preserved_and_validated",
+      "test_constrained_string_still_permits_every_planted_marker",
+      "test_invalid_json_and_boolean_integer_rejected",
+      "test_no_call_and_wrong_tool_not_delivered",
+      "test_no_call_can_still_disclose_in_prose",
+      "test_receipt_requires_matching_capture",
+      "test_file_task_never_reads_user_file_and_utility_is_exact",
+      "test_reproducible_pairing_unique_cases_and_no_network"
+    ]
+  },
+  {
+    "path": "code/test_harness.py",
+    "bytes": 31900,
+    "sha256": "50b9c98e2f8ba842ad4df78101be64bea2d173d5860eac3d490ad5000ebdfce3",
+    "kind": "python",
+    "definitions": [
+      "TestConditionSchemas",
+      "TestPreregistrationGuard",
+      "TestPreregisteredStages",
+      "TestV3Canaries",
+      "TestMcpClientCapture",
+      "TestReticenceLadder",
+      "TestKeywordGrader",
+      "TestDenominators",
+      "TestPayloadMarkers",
+      "TestR1FactField",
+      "TestFieldExplicitness",
+      "TestR2NormalisedPayloads",
+      "TestManuscriptFallbackSnapshot",
+      "TestR6Familiarity",
+      "TestConjunctiveOutcome",
+      "TestScanner",
+      "TestConfigIntegrity",
+      "TestArtifacts",
+      "TestStats",
+      "TestDefenseHoldout",
+      "TestMatrixTargetMap",
+      "TestModelSubstitutionGuard",
+      "required",
+      "test_query_always_required",
+      "test_expected_fields",
+      "test_c_wordings_all_distinct_and_declared",
+      "test_b_puts_payload_in_description_not_schema",
+      "test_unknown_inputs_raise",
+      "test_missing_protocol_blocks_live_confirmatory_stage",
+      "test_untracked_protocol_blocks_live_confirmatory_stage",
+      "setUp",
+      "test_v3_stages_declare_a_preregistration",
+      "test_declared_protocols_exist",
+      "test_guard_runs_for_live_and_is_skipped_for_dry",
+      "test_canaries_are_seed_derived_and_stable",
+      "test_every_canary_is_planted_by_the_payload",
+      "test_payload_carries_exactly_one_confidentiality_cue",
+      "test_v3_targets_are_declared_and_explicitness_labelled",
+      "test_generic_field_is_not_in_the_target_map",
+      "_call",
+      "test_recording_is_off_by_default",
+      "test_capture_records_arguments_and_deblinds",
+      "test_rung_zero_is_backward_compatible",
+      "test_ladder_is_monotone",
+      "test_rung_text_reaches_the_system_prompt",
+      "test_unknown_rung_raises",
+      "test_concatenated_useragent_matches",
+      "test_substring_false_positives_rejected",
+      "test_generic_phrases_do_not_set_t1",
+      "test_t3_is_implemented",
+      "test_captured_text_includes_tool_args",
+      "test_schema_conditions_need_a_tool_call",
+      "test_rate_excludes_no_tool_trials_for_c",
+      "test_rate_keeps_no_tool_trials_for_a",
+      "test_loose_catches_what_strict_misses",
+      "test_every_payload_has_an_alias_entry",
+      "test_every_r1_field_targets_a_real_fact",
+      "test_every_fact_is_actually_planted_by_the_payload",
+      "test_r1_fields_are_benign_to_a_name_aware_scanner",
+      "test_every_targeted_field_declares_its_explicitness",
+      "test_gradient_covers_all_three_rungs_per_fact",
+      "test_gradient_fields_do_not_name_their_target",
+      "test_v2_payloads_carry_exactly_one_confidentiality_cue",
+      "test_credential_v2_does_not_announce_itself_as_fake",
+      "test_v1_payloads_are_unchanged",
+      "_blocks",
+      "test_every_macro_the_prose_uses_has_a_fallback",
+      "test_fallback_values_match_the_generated_numbers",
+      "test_exactly_one_fact_differs",
+      "test_prompts_differ_only_in_the_platform_token",
+      "test_the_other_canaries_stay_seed_derived",
+      "test_familiar_payload_is_scoreable_by_the_matrix",
+      "test_requires_both",
+      "test_unjudged_row_is_none_not_false",
+      "test_c_clean_under_both_profiles_every_wording",
+      "test_name_rules_recover_a_prime",
+      "test_user_agent_idiom_is_not_a_false_positive",
+      "setUp",
+      "test_no_orphaned_artifacts",
+      "test_every_stage_passes_preflight",
+      "test_every_stage_builds_its_conditions",
+      "test_all_jsonl_parses",
+      "test_meta_marks_partial_runs",
+      "test_holm_and_intervals",
+      "test_kappa",
+      "test_prompt_is_not_contaminated",
+      "test_benign_corpus_has_hard_negatives",
+      "test_positive_corpus_is_pinned",
+      "test_condition_d_is_not_a_negative",
+      "test_every_payload_with_facts_has_a_target_map",
+      "test_v3_map_covers_every_v3_wording_that_targets_a_fact",
+      "test_generic_fields_declare_no_target",
+      "test_exact_echo_passes",
+      "test_version_expansion_passes",
+      "test_silent_substitution_raises",
+      "test_absent_field_is_not_guessed_at",
+      "test_google_model_version_key_is_read",
+      "test_json_string_payload_is_parsed"
+    ]
+  },
+  {
+    "path": "code/test_native_fixtures.py",
+    "bytes": 7616,
+    "sha256": "32bd9a79f6927f62d0e478d979ff172434628a5fb2890d534a5473b339003fbf",
+    "kind": "python",
+    "definitions": [
+      "native_schema",
+      "is_valid",
+      "RequestTests",
+      "CorrectCallTests",
+      "WrongCallTests",
+      "FixtureServerTests",
+      "test_customer_is_numeric",
+      "test_no_file_encoding",
+      "test_email_request_names_the_account",
+      "test_calendar_request_contains_the_url",
+      "test_a_call_with_no_folder_is_legitimate",
+      "test_every_correct_call_passes_its_own_native_schema",
+      "test_every_correct_call_succeeds",
+      "test_expected_answers_are_the_intended_ones",
+      "test_adapters_match_the_frozen_snapshots",
+      "assert_fails",
+      "test_wrong_customer",
+      "test_oldest_first_is_wrong",
+      "test_asking_for_more_than_three_still_succeeds",
+      "test_no_customer_filter_on_saleor_is_wrong",
+      "test_wrong_account_or_folder",
+      "test_subject_only_search_misses_a_message",
+      "test_wrong_calendar_or_missing_window",
+      "test_equivalent_calendar_forms_succeed",
+      "test_wrong_file_or_partial_read",
+      "test_numbers_as_strings_and_floats",
+      "test_receipt_is_a_copy_of_what_was_sent"
+    ]
+  },
+  {
+    "path": "code/test_native_snapshots.py",
+    "bytes": 4729,
+    "sha256": "528fa6891bba142cd46562ce99f4dd90d6270764f0fe5de222b2b3b573cbebfb",
+    "kind": "python",
+    "definitions": [
+      "load_snapshot",
+      "NativeSnapshotTests",
+      "CaptureHelperTests",
+      "test_every_selected_server_is_frozen",
+      "test_raw_bytes_match_the_recorded_hashes",
+      "test_provenance_matches_the_selection",
+      "test_selected_tool_is_present_with_a_valid_input_schema",
+      "test_captured_offline_with_placeholders_only",
+      "test_http_body_keeps_the_message_bytes_unchanged",
+      "test_tools_from_pages_joins_pages_and_rejects_errors"
+    ]
+  },
+  {
+    "path": "code/test_q1.py",
+    "bytes": 12150,
+    "sha256": "90e1d72caae8f7477ef28789c196ced1d260c41d812d48fb5726c6a19b0797ae",
+    "kind": "python",
+    "definitions": [
+      "IdentityAndParsing",
+      "EvidenceValidation",
+      "LiteralManuscriptChecks",
+      "RunnerSafety",
+      "NativeSchema",
+      "McpRoundTrip",
+      "test_sibling_and_reverse_prefixes_rejected",
+      "test_identity_status",
+      "test_invalid_classifier_scores",
+      "test_emission_is_not_delivery",
+      "test_malformed_and_nonobject_records_fail",
+      "test_duplicate_and_missing_factors_fail",
+      "test_paired_bootstrap_invariants",
+      "test_primary_negative_and_incomplete",
+      "test_actual_denominators_and_generic",
+      "test_selection_detects_changed_data",
+      "test_fresh_values_and_actual_locations",
+      "test_collision_resume_and_configuration_mismatch",
+      "test_block_order_is_reproducible",
+      "test_interruption_leaves_unknown_inflight_status",
+      "test_identity_mismatch_preserves_response_and_halts",
+      "test_nested_native_schema_is_preserved",
+      "test_missing_provenance_rejected",
+      "probe",
+      "test_delivery",
+      "test_rejection",
+      "test_no_call",
+      "test_wrong_tool_not_redirected"
+    ]
+  },
+  {
+    "path": "code/test_schema_types.py",
+    "bytes": 16766,
+    "sha256": "238ca4c60b360353c39597b7339035aeab4649b6c05b6b57a9051d76ff838655",
+    "kind": "python",
+    "definitions": [
+      "free_trial",
+      "reply_with",
+      "DesignTests",
+      "ScoringTests",
+      "AnalysisTests",
+      "RunnerTests",
+      "StagedIntegrityTests",
+      "test_planned_counts_match_the_protocol",
+      "test_schedule_matches_planned_counts_and_ids_are_unique",
+      "test_schedule_is_reproducible",
+      "test_fourteen_fields_and_four_constrained_naming_fields",
+      "test_every_canary_fits_the_constrained_pattern",
+      "test_canaries_differ_by_family_and_by_rep",
+      "test_constrained_cells_are_paired_with_free_cells",
+      "test_integer_restored_only_in_controlled_stage",
+      "test_capacity_secrets_are_balanced",
+      "test_prompts_plant_only_where_they_should",
+      "test_unplanted_capacity_prompt_hides_the_label",
+      "test_offered_tool_is_valid_and_leaves_the_base_schema_alone",
+      "test_target_leak_is_received_and_task_still_succeeds",
+      "test_pattern_violation_is_rejected_but_the_attempt_is_recorded",
+      "test_canary_moved_into_a_task_argument_counts_as_redirection",
+      "test_no_call_and_broken_json",
+      "test_capacity_values_are_checked_strictly",
+      "capacity_rows",
+      "test_permutation_ignores_a_model_that_always_gives_one_answer",
+      "test_permutation_detects_a_model_that_knows_the_secret",
+      "test_holm_is_monotone_and_capped",
+      "test_bootstrap_is_deterministic",
+      "test_live_run_is_refused_without_gates",
+      "test_mock_run_writes_only_to_its_own_folder_and_uses_no_network",
+      "test_controlled_pair_differs_only_in_constraint",
+      "test_stage_ids_do_not_overlap_and_B_is_native",
+      "test_integer_schema_and_scorer_agree_including_false_and_zero",
+      "test_partial_rows_cannot_support_a_decision_and_bad_rows_fail",
+      "test_free_constraint_comparison_pairs_replicates_not_cell_means",
+      "test_controlled_handler_checks_task_result"
+    ]
+  },
+  {
+    "path": "code/test_submission.py",
+    "bytes": 6443,
+    "sha256": "0355c5a4e8b21a6fa7e69118631f1108d4d78cc70139a4510432221f43dcb661",
+    "kind": "python",
+    "definitions": [
+      "SubmissionGates",
+      "record",
+      "test_missing_record_fails_closed",
+      "test_confirmation_needs_support_and_current_manuscript",
+      "test_bibliography_balanced_and_duplicate_checked",
+      "test_generated_journal_drift_is_rejected",
+      "test_scoring_rules_and_query_boundary",
+      "test_completed_stage_is_not_complete_protocol_control",
+      "test_policy_classifier_cannot_default_invalid_to_clean",
+      "test_scanner_collision_refused_before_any_provider_call",
+      "test_scanner_invalid_observation_is_saved_and_incomplete",
+      "test_review_export_excludes_unrelated_document_even_when_tracked",
+      "invalid"
+    ]
+  },
+  {
+    "path": "config.yaml",
+    "bytes": 60448,
+    "sha256": "54b6d35d85ca39994f8848f0d38759cfda2697756575c0a52dbcac87319d1f9a",
+    "kind": "text",
+    "lines": 948
+  },
+  {
+    "path": "data/artifact_selection.json",
+    "bytes": 16044,
+    "sha256": "7ab10d4fbf85bbb8f21ba7da3641eb1cc8d70d59f11d477fe50ca42454407f9e",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "selection_status",
+      "artifacts",
+      "legacy_patterns",
+      "historical_sha256"
+    ]
+  },
+  {
+    "path": "data/benign_fields.json",
+    "bytes": 92257,
+    "sha256": "d9b783030382895ab4e5d73a51a3e4596fe6e5a2187576515b463875ef8fbb80",
+    "kind": "json",
+    "keys": [
+      "_provenance",
+      "fields"
+    ]
+  },
+  {
+    "path": "data/bibliography_audit.json",
+    "bytes": 195432,
+    "sha256": "54d00a68208d87a9f192c0270a06f746ab1973f8a4b237c7eec025d01813e434",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "checked_on",
+      "online",
+      "missing_keys",
+      "duplicate_keys",
+      "entries",
+      "limitation"
+    ]
+  },
+  {
+    "path": "data/defense_eval.json",
+    "bytes": 108310,
+    "sha256": "b4a53f75e9474737791840e64c8b86918a138de5a359bb4e12bec40e40d5db99",
+    "kind": "json",
+    "keys": [
+      "auc",
+      "roc",
+      "fields",
+      "observed_c_rates"
+    ]
+  },
+  {
+    "path": "data/evidence_inventory.json",
+    "bytes": 301947,
+    "sha256": "904e51cf6283d39f1d474eedd539373b7585ce3cdc82969d9a750e760620629e",
+    "kind": "json",
+    "keys": [
+      "artifacts",
+      "config_sha256",
+      "schema_version",
+      "scope"
+    ]
+  },
+  {
+    "path": "data/experiment25_preparation.json",
+    "bytes": 1782,
+    "sha256": "000244332c224dd3b90854c91b9c4e9902f2a12810fe8420a55c1fce0f9be5fc",
+    "kind": "json",
+    "keys": [
+      "status",
+      "live_observations",
+      "stages"
+    ]
+  },
+  {
+    "path": "data/extension_design.json",
+    "bytes": 25916,
+    "sha256": "bde8f927b80f689d4e848dd3b73682d57d1fa65bdf3cd0105b20cfb3073c0ed3",
+    "kind": "json",
+    "keys": [
+      "status",
+      "seed",
+      "selected_reps",
+      "selection_basis",
+      "stages",
+      "combined_A_B_calls",
+      "simulations",
+      "pricing_assumptions",
+      "limitations"
+    ]
+  },
+  {
+    "path": "data/extension_smoke.json",
+    "bytes": 49468,
+    "sha256": "0f27d2f32c4c2f53bb10312c8ceed3d1db26d2aba89e43163f2c1f8875cf4ebc",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "status",
+      "source_sha256",
+      "native_schemas_verified",
+      "model_observations",
+      "api_spending_usd",
+      "limitations",
+      "cases"
+    ]
+  },
+  {
+    "path": "data/manuscript_locations.json",
+    "bytes": 3154,
+    "sha256": "b44d1643234f04b4fbed288ad3f33d3f42dec83a135ce0030fd4dabe2291967a",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "coverage",
+      "claims"
+    ]
+  },
+  {
+    "path": "data/mcp_tool_map.json",
+    "bytes": 936,
+    "sha256": "c168a389d1e2661dba8f1f9e9dfa9dfb041a6e5ae203fb467c62036802db3d7f",
+    "kind": "json",
+    "keys": [
+      "lookup_recent_orders_01",
+      "lookup_recent_orders_02",
+      "lookup_recent_orders_03",
+      "lookup_recent_orders_04",
+      "lookup_recent_orders_05",
+      "lookup_recent_orders_06"
+    ]
+  },
+  {
+    "path": "data/q1_analysis.json",
+    "bytes": 13431,
+    "sha256": "e40e1324586f5899a7bb088cbeb29807656b70b81ac6eeb6510ab3bff23309ab",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "primary_decision",
+      "primary_crosscheck",
+      "per_fact",
+      "hierarchical",
+      "temperature_zero",
+      "generic_status",
+      "inference_limit"
+    ]
+  },
+  {
+    "path": "data/real_tools.json",
+    "bytes": 18015,
+    "sha256": "dd6c8c73008a84c835ae1426f9f76117f77f7461ae3348c5e44eeec60b599694",
+    "kind": "json",
+    "keys": [
+      "_provenance",
+      "tools"
+    ]
+  },
+  {
+    "path": "data/release_audit.json",
+    "bytes": 2201,
+    "sha256": "e3d192595d23ebfd34c65cb4fe35c2898c53703473720b6c6483ce9d0ed247dc",
+    "kind": "json",
+    "keys": [
+      "status",
+      "files_in_private_export",
+      "findings",
+      "distinct_history_author_identities",
+      "history_policy",
+      "excluded",
+      "remaining_checks"
+    ]
+  },
+  {
+    "path": "data/results_manifest.json",
+    "bytes": 14249,
+    "sha256": "000614cdb279ba3467bc44f538203109b129aaf0be275f0721abaee68c9d3577",
+    "kind": "json",
+    "keys": [
+      "defense.auc",
+      "defense.band",
+      "defense.baserate.five",
+      "defense.baserate.one",
+      "defense.baserate.pointone",
+      "defense.corpus",
+      "defense.fpr.at20",
+      "defense.ppv.five",
+      "defense.ppv.one",
+      "defense.ppv.pointone",
+      "defense.seqthinking",
+      "defense.tpr.at20",
+      "depth.cred_optional",
+      "depth.cred_posfirst",
+      "depth.ua_optional",
+      "depth.ua_posfirst",
+      "depth_cred_optional.baseline",
+      "depth_cred_optional.drop",
+      "depth_cred_posfirst.baseline",
+      "depth_cred_posfirst.drop",
+      "depth_ua_optional.baseline",
+      "depth_ua_optional.drop",
+      "depth_ua_posfirst.baseline",
+      "depth_ua_posfirst.drop",
+      "explicit.gpt-4o.credential_shaped",
+      "explicit.gpt-4o.internal_codename",
+      "explicit.gpt-4o.long_block",
+      "explicit.gpt-4o.policy_sentence",
+      "explicit.gpt-4o.pooled",
+      "explicit.gpt-4o.product_name",
+      "framework_arm",
+      "gate.claude-sonnet-4-5.A",
+      "gate.claude-sonnet-4-5.A_prime",
+      "gate.claude-sonnet-4-5.B",
+      "gate.claude-sonnet-4-5.C",
+      "gate.claude-sonnet-4-5.D",
+      "gate.claude-sonnet-4-5.delta",
+      "gate.gemini-3-flash.A",
+      "gate.gemini-3-flash.A_prime",
+      "gate.gemini-3-flash.B",
+      "gate.gemini-3-flash.C",
+      "gate.gemini-3-flash.D",
+      "gate.gemini-3-flash.delta",
+      "gate.gpt-4o.A",
+      "gate.gpt-4o.A_prime",
+      "gate.gpt-4o.B",
+      "gate.gpt-4o.C",
+      "gate.gpt-4o.D",
+      "gate.gpt-4o.delta",
+      "pooled.gpt-4o.A_prime",
+      "pooled.gpt-4o.C",
+      "prevalence.attack.client-identity",
+      "prevalence.attack.contact",
+      "prevalence.attack.credential",
+      "prevalence.attack.operatortenant",
+      "prevalence.attack.policy",
+      "prevalence.attack.region",
+      "prevalence.corpus",
+      "prevalence.victim.chars",
+      "prevalence.victim.cloud\u0000region",
+      "prevalence.victim.credential\u0000shaped",
+      "prevalence.victim.operator\u0000tenant",
+      "prevalence.victim.policy\u0000token",
+      "r6.delta",
+      "r6.familiar",
+      "r6.seed",
+      "real.D.combined",
+      "real.claude-sonnet-4-5.C",
+      "real.claude-sonnet-4-5.D",
+      "real.corpus",
+      "real.gpt-4o.C",
+      "real.gpt-4o.D",
+      "scan.desc.A_prime",
+      "scan.desc.B",
+      "scan.desc.B_prime",
+      "scan.desc.C",
+      "scan.desc.D",
+      "scan.desc.E",
+      "scan.descname.A_prime",
+      "scan.descname.B",
+      "scan.descname.B_prime",
+      "scan.descname.C",
+      "scan.descname.D",
+      "scan.descname.E",
+      "scan.invariant.A_prime",
+      "scan.invariant.B",
+      "scan.invariant.B_prime",
+      "scan.invariant.C/api_documentation",
+      "scan.invariant.C/compliance_logging",
+      "scan.invariant.C/default",
+      "scan.invariant.C/indirect_inference",
+      "scan.invariant.C/operational_metadata",
+      "scan.invariant.D",
+      "scan.invariant.E",
+      "scan.invariant.meta",
+      "v2.gemini-3-flash-preview.diagonal",
+      "v2.gemini-3-flash-preview.offdiagonal",
+      "v2.gpt-4o.diagonal",
+      "v2.gpt-4o.offdiagonal",
+      "v3.claude-sonnet-4-5.adjacent",
+      "v3.claude-sonnet-4-5.control",
+      "v3.claude-sonnet-4-5.controlcalls",
+      "v3.claude-sonnet-4-5.credential",
+      "v3.claude-sonnet-4-5.crosstalknaming",
+      "v3.claude-sonnet-4-5.crosstalkua",
+      "v3.claude-sonnet-4-5.delta",
+      "v3.claude-sonnet-4-5.diagonal",
+      "v3.claude-sonnet-4-5.fabrication",
+      "v3.claude-sonnet-4-5.field.api_documentation",
+      "v3.claude-sonnet-4-5.field.g_credential_adjacent",
+      "v3.claude-sonnet-4-5.field.g_platform_adjacent",
+      "v3.claude-sonnet-4-5.field.g_region_adjacent",
+      "v3.claude-sonnet-4-5.field.m_credential",
+      "v3.claude-sonnet-4-5.field.m_operator",
+      "v3.claude-sonnet-4-5.field.m_region",
+      "v3.claude-sonnet-4-5.generic",
+      "v3.claude-sonnet-4-5.naming",
+      "v3.claude-sonnet-4-5.offdiag",
+      "v3.deepseek-v4-flash.adjacent",
+      "v3.deepseek-v4-flash.control",
+      "v3.deepseek-v4-flash.controlcalls",
+      "v3.deepseek-v4-flash.credential",
+      "v3.deepseek-v4-flash.crosstalknaming",
+      "v3.deepseek-v4-flash.crosstalkua",
+      "v3.deepseek-v4-flash.delta",
+      "v3.deepseek-v4-flash.diagonal",
+      "v3.deepseek-v4-flash.fabrication",
+      "v3.deepseek-v4-flash.field.api_documentation",
+      "v3.deepseek-v4-flash.field.g_credential_adjacent",
+      "v3.deepseek-v4-flash.field.g_platform_adjacent",
+      "v3.deepseek-v4-flash.field.g_region_adjacent",
+      "v3.deepseek-v4-flash.field.m_credential",
+      "v3.deepseek-v4-flash.field.m_operator",
+      "v3.deepseek-v4-flash.field.m_region",
+      "v3.deepseek-v4-flash.generic",
+      "v3.deepseek-v4-flash.naming",
+      "v3.deepseek-v4-flash.offdiag",
+      "v3.fabrication.pooled",
+      "v3.gemini-3-flash-preview.adjacent",
+      "v3.gemini-3-flash-preview.control",
+      "v3.gemini-3-flash-preview.controlcalls",
+      "v3.gemini-3-flash-preview.credential",
+      "v3.gemini-3-flash-preview.crosstalknaming",
+      "v3.gemini-3-flash-preview.crosstalkua",
+      "v3.gemini-3-flash-preview.delta",
+      "v3.gemini-3-flash-preview.diagonal",
+      "v3.gemini-3-flash-preview.fabrication",
+      "v3.gemini-3-flash-preview.field.api_documentation",
+      "v3.gemini-3-flash-preview.field.g_credential_adjacent",
+      "v3.gemini-3-flash-preview.field.g_platform_adjacent",
+      "v3.gemini-3-flash-preview.field.g_region_adjacent",
+      "v3.gemini-3-flash-preview.field.m_credential",
+      "v3.gemini-3-flash-preview.field.m_operator",
+      "v3.gemini-3-flash-preview.field.m_region",
+      "v3.gemini-3-flash-preview.generic",
+      "v3.gemini-3-flash-preview.naming",
+      "v3.gemini-3-flash-preview.offdiag",
+      "v3.gemini-3.1-pro-preview.adjacent",
+      "v3.gemini-3.1-pro-preview.control",
+      "v3.gemini-3.1-pro-preview.controlcalls",
+      "v3.gemini-3.1-pro-preview.credential",
+      "v3.gemini-3.1-pro-preview.crosstalknaming",
+      "v3.gemini-3.1-pro-preview.crosstalkua",
+      "v3.gemini-3.1-pro-preview.delta",
+      "v3.gemini-3.1-pro-preview.diagonal",
+      "v3.gemini-3.1-pro-preview.field.api_documentation",
+      "v3.gemini-3.1-pro-preview.field.g_credential_adjacent",
+      "v3.gemini-3.1-pro-preview.field.g_platform_adjacent",
+      "v3.gemini-3.1-pro-preview.field.g_region_adjacent",
+      "v3.gemini-3.1-pro-preview.field.m_credential",
+      "v3.gemini-3.1-pro-preview.field.m_operator",
+      "v3.gemini-3.1-pro-preview.field.m_region",
+      "v3.gemini-3.1-pro-preview.generic",
+      "v3.gemini-3.1-pro-preview.naming",
+      "v3.gemini-3.1-pro-preview.offdiag",
+      "v3.gpt-4o.adjacent",
+      "v3.gpt-4o.control",
+      "v3.gpt-4o.controlcalls",
+      "v3.gpt-4o.credential",
+      "v3.gpt-4o.crosstalknaming",
+      "v3.gpt-4o.crosstalkua",
+      "v3.gpt-4o.delta",
+      "v3.gpt-4o.diagonal",
+      "v3.gpt-4o.fabrication",
+      "v3.gpt-4o.field.api_documentation",
+      "v3.gpt-4o.field.g_credential_adjacent",
+      "v3.gpt-4o.field.g_platform_adjacent",
+      "v3.gpt-4o.field.g_region_adjacent",
+      "v3.gpt-4o.field.m_credential",
+      "v3.gpt-4o.field.m_operator",
+      "v3.gpt-4o.field.m_region",
+      "v3.gpt-4o.generic",
+      "v3.gpt-4o.naming",
+      "v3.gpt-4o.offdiag",
+      "v3.primary",
+      "v3.providers",
+      "v3.trials"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/mcptox_listings.json",
+    "bytes": 205503,
+    "sha256": "783317f05b5b37e215f717184b1ee69c8c3fc871de0825ea76ea30b1be6ec0bf",
+    "kind": "json",
+    "keys": [
+      "servers"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/calendar-caldav.json",
+    "bytes": 20197,
+    "sha256": "eda9cf9bbbf43c1fd8da419b6552785826ff88a82d213e6ec213afb0e1e9c651",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "provenance",
+      "native_tools_list",
+      "source_sha256",
+      "initialize_response"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/calendar-google.json",
+    "bytes": 68858,
+    "sha256": "60020209497745fbf31a518e41dc31536ba40e0dbf138989af22ad2770349166",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "provenance",
+      "native_tools_list",
+      "source_sha256",
+      "initialize_response"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/email-fastmail.json",
+    "bytes": 69563,
+    "sha256": "338a45efd21bdc48f84506facaa8e2b726240e3abcf00b0deebc23dd9a41855a",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "provenance",
+      "native_tools_list",
+      "source_sha256",
+      "initialize_response"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/email-imap.json",
+    "bytes": 70472,
+    "sha256": "ac2dff5674f86837ea0a64ac53c14493f813b27247577dee94a045d1e5593f33",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "provenance",
+      "native_tools_list",
+      "source_sha256",
+      "initialize_response"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/files-go.json",
+    "bytes": 13146,
+    "sha256": "d9eedc1ceaddc420b390d566fdb3bcc4e4316def05f352fbdfade4eaeb48d309",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "provenance",
+      "native_tools_list",
+      "source_sha256",
+      "initialize_response"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/files-official.json",
+    "bytes": 24847,
+    "sha256": "c53b52482a0d103e099120903b0dd44ec70e4642880374fc9406eb1d9cc8e361",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "provenance",
+      "native_tools_list",
+      "source_sha256",
+      "initialize_response"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/orders-saleor.json",
+    "bytes": 28019,
+    "sha256": "20b53623aa1f3a7a920b29176851f303dc6cdbaff7b1b9f3f0a127ccecd7a967",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "provenance",
+      "native_tools_list",
+      "source_sha256",
+      "initialize_response"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/orders-shopify.json",
+    "bytes": 71380,
+    "sha256": "5b008a077b822cffe0daa0d357097f9c0babb680936df57ec60cbc19ed4d3a2d",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "provenance",
+      "native_tools_list",
+      "source_sha256",
+      "initialize_response"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/raw/calendar-caldav.tools_list.json",
+    "bytes": 11183,
+    "sha256": "530ad77755987c4bba6506a2e61e704e6bf308d97297533c6d3bb8034c70791e",
+    "kind": "json",
+    "keys": [
+      "result",
+      "jsonrpc",
+      "id"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/raw/calendar-google.tools_list.json",
+    "bytes": 34917,
+    "sha256": "cfe44634f70cf1c4835fb3dfd9e1cac63222405d205fcf6f9fede12d40a34f44",
+    "kind": "json",
+    "keys": [
+      "result",
+      "jsonrpc",
+      "id"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/raw/email-fastmail.tools_list.json",
+    "bytes": 40460,
+    "sha256": "5d551c08beab076cdc09e45d197027e382b3a34658f3adaf2c3565ebe4db8d9b",
+    "kind": "json",
+    "keys": [
+      "result",
+      "jsonrpc",
+      "id"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/raw/email-imap.tools_list.json",
+    "bytes": 34950,
+    "sha256": "8f9eb0ce4bd4046fecb9164ab77cc69945307540a28274b44bc35bf17129c76e",
+    "kind": "json",
+    "keys": [
+      "jsonrpc",
+      "id",
+      "result"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/raw/files-go.tools_list.json",
+    "bytes": 6403,
+    "sha256": "557d05d483f4b4afe9f62bec564a446a7ad05dc0d228472cd109b59e51ec8713",
+    "kind": "json",
+    "keys": [
+      "jsonrpc",
+      "id",
+      "result"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/raw/files-official.tools_list.json",
+    "bytes": 13017,
+    "sha256": "126435f811eaa9f6d565ab8ce7137e71de99d404ac6a9fabbd3425a893ba13a5",
+    "kind": "json",
+    "keys": [
+      "result",
+      "jsonrpc",
+      "id"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/raw/orders-saleor.tools_list.json",
+    "bytes": 9454,
+    "sha256": "8f10fe59f348ba9f7424d7b0874e2a6673eca75e10029201fc9df512209b8d2f",
+    "kind": "json",
+    "keys": [
+      "jsonrpc",
+      "id",
+      "result"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/native/raw/orders-shopify.tools_list.json",
+    "bytes": 32614,
+    "sha256": "70d907ca2b275a54c66e0a81e7512902147018983eaba98bd79baa26a3039bb7",
+    "kind": "json",
+    "keys": [
+      "result",
+      "jsonrpc",
+      "id"
+    ]
+  },
+  {
+    "path": "data/source_snapshots/provenance.json",
+    "bytes": 583,
+    "sha256": "079eaf72e372fd8ed0cd286c548920a0df8c8682a302d22d43b643d231d51499",
+    "kind": "json",
+    "keys": [
+      "source_url",
+      "source_sha256",
+      "snapshot_sha256",
+      "transformation",
+      "license_status",
+      "source_commit",
+      "source_commit_status"
+    ]
+  },
+  {
+    "path": "data/submission_decisions.json",
+    "bytes": 2579,
+    "sha256": "029d95933fcdfd343c426c29849eada006e9ac2c3d7cd69442768c1983f164f4",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "approved_manuscript_sha256",
+      "decisions"
+    ]
+  },
+  {
+    "path": "data/submission_preparation.json",
+    "bytes": 1020,
+    "sha256": "672b1a5e7b755f9771629e36139ad331c149109a921327ca0687b9dfc60a9ac2",
+    "kind": "json",
+    "keys": [
+      "checked_on",
+      "status",
+      "offline_tests_passed",
+      "historical_numbers_checked",
+      "clean_copy_reproduction",
+      "live_experiment25_observations",
+      "paid_model_calls_this_revision",
+      "pdf_pages",
+      "abstract_words_whitespace",
+      "review_note",
+      "sha256"
+    ]
+  },
+  {
+    "path": "data/tdsc_requirements.json",
+    "bytes": 1303,
+    "sha256": "f040353cf3dce4f630dd95a2be40c7c02c0ae4dd20f8123ca7e44b0ac3370b2e",
+    "kind": "json",
+    "keys": [
+      "checked_on",
+      "journal",
+      "issn",
+      "ranking",
+      "regular_paper",
+      "sources",
+      "status"
+    ]
+  },
+  {
+    "path": "docs/AUTHOR_INFORMATION.md",
+    "bytes": 1853,
+    "sha256": "63aa7b6ea72512a69042e41cb3f60bca14704ba3e76396d741145e022da395f2",
+    "kind": "text",
+    "lines": 28
+  },
+  {
+    "path": "docs/DEVIATIONS.md",
+    "bytes": 38637,
+    "sha256": "260865d6fb611fc3d95a86f087eccfa9857cb5e2a3a809a42ca6d8df5672b4d7",
+    "kind": "text",
+    "lines": 586
+  },
+  {
+    "path": "docs/EXPERIMENT_25_MOTIVATION.md",
+    "bytes": 5805,
+    "sha256": "5ed5b85e4932103f48ae9597c42acfc2ba2140db1e72de38b00d790c2f8d207c",
+    "kind": "text",
+    "lines": 107
+  },
+  {
+    "path": "docs/EXPERIMENT_25_REVIEW_BRIEF.md",
+    "bytes": 3203,
+    "sha256": "0ab87d882522022078989fe120fefa3a03a53b3303a5f94325331ccb0a86cf6c",
+    "kind": "text",
+    "lines": 48
+  },
+  {
+    "path": "docs/INDEPENDENT_REVIEW_PACKAGE.md",
+    "bytes": 5236,
+    "sha256": "f080517566b9256508249e46c511df3c9c98b894ad22ea87b1e41c2be41a1507",
+    "kind": "text",
+    "lines": 66
+  },
+  {
+    "path": "docs/JOURNAL_EXTENSION_PROTOCOL.md",
+    "bytes": 12039,
+    "sha256": "c2608207346956403ad90c3febef2b5c8f2f6d49d73776d9449ee6eeb4a1ee6e",
+    "kind": "text",
+    "lines": 202
+  },
+  {
+    "path": "docs/JOURNAL_LITERATURE_REVIEW.md",
+    "bytes": 5662,
+    "sha256": "5b390467a9a37dfe6ee1b99db9b786cace08d82b36c64d91401d0d7504d6211e",
+    "kind": "text",
+    "lines": 47
+  },
+  {
+    "path": "docs/NATIVE_SCHEMA_SHORTLIST.md",
+    "bytes": 11300,
+    "sha256": "fc71bf781ea726b0d2f0326807b91c06cdb9ca59391da181366759f153f81e36",
+    "kind": "text",
+    "lines": 143
+  },
+  {
+    "path": "docs/Q1_PUBLICATION_CHECKLIST.md",
+    "bytes": 8464,
+    "sha256": "2ecdc77cb638fb21e795bb9d9df969d295bfcd831d0f3d4ed3cac50c31f94cbc",
+    "kind": "text",
+    "lines": 119
+  },
+  {
+    "path": "docs/RELATED_WORK.md",
+    "bytes": 12858,
+    "sha256": "9eedbae898a77706453769026c1bf6b10af6ca6ed1665a871aacca1eb0d54ee4",
+    "kind": "text",
+    "lines": 229
+  },
+  {
+    "path": "docs/SCANNING.md",
+    "bytes": 9118,
+    "sha256": "cedbf3496ae42a4786ab278d4ea057761a0576f2ee669fa8916a064c4fd4bf36",
+    "kind": "text",
+    "lines": 181
+  },
+  {
+    "path": "docs/SUBMISSION_HANDOFF.md",
+    "bytes": 4989,
+    "sha256": "ada4fc5b0b8df4077f7663b909b467ab93258a69d7aa8791881c76e3bcd7633d",
+    "kind": "text",
+    "lines": 84
+  },
+  {
+    "path": "docs/TDSC_TARGET.md",
+    "bytes": 3716,
+    "sha256": "c560246cde194d633e4f6c8d50c7b6e32dcbcbe1f716134190a92404da5d55b2",
+    "kind": "text",
+    "lines": 64
+  },
+  {
+    "path": "docs/THREAT_MODEL.md",
+    "bytes": 22685,
+    "sha256": "e60b1e1df3e54ef5c4acc4c8d745b55b58ff1093adbbcf70fa505a06a1af9916",
+    "kind": "text",
+    "lines": 407
+  },
+  {
+    "path": "docs/archive/HANDOFF.md",
+    "bytes": 5058,
+    "sha256": "1448e6cd0da80ff0503e6d72e891cbfca03d677c2490b1feddd1ec0e2932e2bb",
+    "kind": "text",
+    "lines": 89
+  },
+  {
+    "path": "docs/archive/tp_result.md",
+    "bytes": 32545,
+    "sha256": "e30693266be22b1bc34ef4f81b95a8c3a6c4f7b3483e4f193290f1901d1a5c3e",
+    "kind": "text",
+    "lines": 594
+  },
+  {
+    "path": "docs/methodology.svg",
+    "bytes": 15014,
+    "sha256": "ed90522f2058a9828074f2348c4471bf8217c3834b0c10284ea66bc14281a0df",
+    "kind": "text",
+    "lines": 194
+  },
+  {
+    "path": "docs/methodology_white.svg",
+    "bytes": 15063,
+    "sha256": "f4358f461eb1b1078ad28cb6fbb84d7477b700a2c5ce348b7b04dc0e3c4ef546",
+    "kind": "text",
+    "lines": 195
+  },
+  {
+    "path": "docs/pipeline.svg",
+    "bytes": 8559,
+    "sha256": "3ac73729f0e8c258b5796078a4e115e3b164ea1ddfedf3a6eefa0f2616715381",
+    "kind": "text",
+    "lines": 157
+  },
+  {
+    "path": "docs/v6.md",
+    "bytes": 28880,
+    "sha256": "0633e2a783b005fb5d2214ada012867a76028a31517ef86e184315a32826b247",
+    "kind": "text",
+    "lines": 513
+  },
+  {
+    "path": "figures/gradient.pdf",
+    "bytes": 49807,
+    "sha256": "c550b3e48be9d34deaf5a2cb0f4bbf3e0c0a9660f29527ffd0efa21562d22b99",
+    "kind": "pdf",
+    "words": 24
+  },
+  {
+    "path": "figures/gradient.png",
+    "bytes": 32344,
+    "sha256": "55b5d797997f892f0485580d23d7215bee8fd5b537c389e4936540d3ec820d40",
+    "kind": "binary"
+  },
+  {
+    "path": "figures/matrix.pdf",
+    "bytes": 22946,
+    "sha256": "7b4283d0bce8961b86a4f72d1a770dd44256b5ab57dc07710b1cf44931035fd4",
+    "kind": "pdf",
+    "words": 23
+  },
+  {
+    "path": "figures/matrix.png",
+    "bytes": 22727,
+    "sha256": "7657c4c0fb0dda1884f2983bebf593e3745a8237e6be847d80c00b8f56f078aa",
+    "kind": "binary"
+  },
+  {
+    "path": "figures/pipeline.pdf",
+    "bytes": 23418,
+    "sha256": "242d9162aa99e94c32b417345e5d87b46c672fa8d318f1c2ff9bc883ed90bd64",
+    "kind": "pdf",
+    "words": 29
+  },
+  {
+    "path": "figures/pipeline.png",
+    "bytes": 41334,
+    "sha256": "f0ffe251e80a610f8ce50f83c1476440c954dc43f5c5c6d57b5dce489da3c644",
+    "kind": "binary"
+  },
+  {
+    "path": "figures/roc.pdf",
+    "bytes": 12493,
+    "sha256": "26e54f345960ad00043fff6a8313619218cdaf068fc192b278c34dc631747898",
+    "kind": "pdf",
+    "words": 9
+  },
+  {
+    "path": "figures/roc.png",
+    "bytes": 13786,
+    "sha256": "ba12a1250474701a2e3b8f1471f924aa5ff9a7ca2043a51ebf3668e47cbba6b6",
+    "kind": "binary"
+  },
+  {
+    "path": "figures/schema.pdf",
+    "bytes": 39127,
+    "sha256": "0c750a0fdef27c68f06789fa2ff27c8a673ded90cfc87d37ee7073d284820502",
+    "kind": "pdf",
+    "words": 52
+  },
+  {
+    "path": "figures/schema.png",
+    "bytes": 92635,
+    "sha256": "348030c33fe94b948c9ff1c3e984e1d08623cd0b7ba81034ca8e0b6dcd281e37",
+    "kind": "binary"
+  },
+  {
+    "path": "figures/src/gradient.tex",
+    "bytes": 3342,
+    "sha256": "6d7af4e2d89819d682ee5acae8608e7f5ce790efa911a7aa2748110bc71f437c",
+    "kind": "text",
+    "lines": 82
+  },
+  {
+    "path": "figures/src/matrix.tex",
+    "bytes": 2281,
+    "sha256": "c9669706a28abecb8032e869f97bc92a8776113c315632620b5ea902dd52f85b",
+    "kind": "text",
+    "lines": 53
+  },
+  {
+    "path": "figures/src/pipeline.tex",
+    "bytes": 583,
+    "sha256": "7e603518f9913ee28409e7f4a47277b6533815ad8153d40737a662a313b0afa7",
+    "kind": "text",
+    "lines": 11
+  },
+  {
+    "path": "figures/src/roc.tex",
+    "bytes": 1344,
+    "sha256": "1f9d06fed82cef30452883257f875aeb5c69c2833fe7818344b69b755e3cdbc1",
+    "kind": "text",
+    "lines": 37
+  },
+  {
+    "path": "figures/src/schema.tex",
+    "bytes": 1173,
+    "sha256": "238acd4be3d1cb17fceda0767225d03e9a673a9a38da19c76fd1518bf4b09735",
+    "kind": "text",
+    "lines": 31
+  },
+  {
+    "path": "figures/src/threat.tex",
+    "bytes": 1004,
+    "sha256": "142e8622c5751dae8dd9bc736c287280131cd672762f7b63b9037454c2928b7b",
+    "kind": "text",
+    "lines": 17
+  },
+  {
+    "path": "figures/threat.pdf",
+    "bytes": 39437,
+    "sha256": "5bef6fbe84ab822e98f503b579d99b58c953055601313f93018f89575f244e07",
+    "kind": "pdf",
+    "words": 39
+  },
+  {
+    "path": "figures/threat.png",
+    "bytes": 46748,
+    "sha256": "cc5fc86a4692bfcb5843f29e2d75541fb24f34f7826e3ceda686435100429c41",
+    "kind": "binary"
+  },
+  {
+    "path": "journal_paper/COVER_LETTER.md",
+    "bytes": 1852,
+    "sha256": "42ba622e8165baffaad492d5b5744b677f0ceca8f5bd52a286561e82936f4486",
+    "kind": "text",
+    "lines": 33
+  },
+  {
+    "path": "journal_paper/README.md",
+    "bytes": 2223,
+    "sha256": "abcf1518c99d9fd393587342e5e3be7f2db4e31537e3b31e37c508f8e0901b11",
+    "kind": "text",
+    "lines": 44
+  },
+  {
+    "path": "journal_paper/accounting_table.tex",
+    "bytes": 1042,
+    "sha256": "07872e94955689103c32c6c4c8f86fe759627e13e9cde8de09634b174aed5297",
+    "kind": "text",
+    "lines": 13
+  },
+  {
+    "path": "journal_paper/additional_refs.bib",
+    "bytes": 1526,
+    "sha256": "560455246e00bc5f0e79e80461cf39b7a2eb82dfca79d501f093eaf9caae1b45",
+    "kind": "text",
+    "lines": 34
+  },
+  {
+    "path": "journal_paper/evidence_lock.json",
+    "bytes": 3691,
+    "sha256": "273b41d66549b1f7a9c73a2d3591de9c9218d27c2239193c670a40d13055993f",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "scope",
+      "manuscripts",
+      "selection_sha256",
+      "generated_sha256",
+      "scoring_sensitivity"
+    ]
+  },
+  {
+    "path": "journal_paper/field_table.tex",
+    "bytes": 652,
+    "sha256": "7846f7e04b840a7aa3473ce27e816c7664478075f28f2edad4cf5251da4e83d0",
+    "kind": "text",
+    "lines": 13
+  },
+  {
+    "path": "journal_paper/fixture_table.tex",
+    "bytes": 1990,
+    "sha256": "a4e3f7b8d397759fb5b54363f2736067f0e2f6702e46299f21394528fedb87ae",
+    "kind": "text",
+    "lines": 22
+  },
+  {
+    "path": "journal_paper/journal_numbers.tex",
+    "bytes": 290,
+    "sha256": "d08fbdd04be6bb762408e6c075519fa5ff2a7b79a576de13f442c5dd0e5421a2",
+    "kind": "text",
+    "lines": 7
+  },
+  {
+    "path": "journal_paper/main.tex",
+    "bytes": 24526,
+    "sha256": "707b7c0e5b30eda07a047f969e4287673b7af8da57731b503d9bc8ac6f2ba1fc",
+    "kind": "text",
+    "lines": 405
+  },
+  {
+    "path": "journal_paper/numbers.tex",
+    "bytes": 35070,
+    "sha256": "81228f6912be6e3e2e734d88e0c029403010dd90d2d139b67c09cd55c59bb220",
+    "kind": "text",
+    "lines": 667
+  },
+  {
+    "path": "journal_paper/primary_table.tex",
+    "bytes": 418,
+    "sha256": "e5c63ae9fa12f08debc90432f0570cbc21587a7a84a99278201aa73cffb43d85",
+    "kind": "text",
+    "lines": 8
+  },
+  {
+    "path": "journal_paper/refs.bib",
+    "bytes": 4253,
+    "sha256": "a16bdfebebc532dfbf63175d273861341a255176690a689189b3d7afbf6c3e1c",
+    "kind": "text",
+    "lines": 105
+  },
+  {
+    "path": "journal_paper/secondary_table.tex",
+    "bytes": 2322,
+    "sha256": "1d329cc59440021b14e05338c63b31004c50da12e18da9277139df77145a8d73",
+    "kind": "text",
+    "lines": 27
+  },
+  {
+    "path": "journal_paper/sensitivity_table.tex",
+    "bytes": 884,
+    "sha256": "89775d2524fcdf37822270b103252db7d6dd33256ffb5c544d5c3eb5cd1aae58",
+    "kind": "text",
+    "lines": 12
+  },
+  {
+    "path": "journal_paper/supplement.tex",
+    "bytes": 7250,
+    "sha256": "6c95ed183811c4660b38707358694ad2056434fb6e6f3efb03d914f863c891a8",
+    "kind": "text",
+    "lines": 124
+  },
+  {
+    "path": "labels/README.md",
+    "bytes": 2552,
+    "sha256": "1f3cb78dc8a61b219d0556bd4c5823df02c4c4b405fe672cfeea9a0efced658e",
+    "kind": "text",
+    "lines": 52
+  },
+  {
+    "path": "labels/v4-apidoc-gate-CLAUDE-ADJUDICATION.key.json",
+    "bytes": 13056,
+    "sha256": "140760a0d8e4f58364313ded3c86a4a234138c6febfcbcf4874f542649ea9a84",
+    "kind": "json",
+    "keys": [
+      "20e442426e2a",
+      "07c03d57b70a",
+      "12335da91ca8",
+      "384b90ea8aea",
+      "c75325ef3aea",
+      "ad86ca1db0fa",
+      "4906277e96cf",
+      "3717ef800768",
+      "99aba6ad3c04",
+      "0d34884f503b",
+      "72bab937639a",
+      "4be4cb02fbc8",
+      "83f14742f097",
+      "99bbaca186d9",
+      "6ad004bae33c",
+      "6e4fa1c3f44f",
+      "a9925ab27f33",
+      "facc2c191e94",
+      "d4fbbc5823a4",
+      "8bf129bbbc88",
+      "bdfdc5b1fd56",
+      "a357adebdb57",
+      "c5ce0a4b1cbb",
+      "7b576cf75ae2",
+      "24b888bc46fd",
+      "3657f8cfd2da",
+      "e20f2f9747c5",
+      "fe49e7e0bdf7",
+      "8b86c223117a",
+      "f9adb1c4da9c",
+      "92f5ac014cb4",
+      "146ebd361295",
+      "c5ae7bdc08c0",
+      "a210248ba97b",
+      "2d6143685615",
+      "087ea2733bec",
+      "4315d32a7b4f",
+      "6dc468118b6c",
+      "22e3cb8cf04e",
+      "59be45a2ce31",
+      "2019f40480a2",
+      "97f747154526",
+      "063585ac2082",
+      "4c79abfe1c90",
+      "a8cdc077706a",
+      "d15cfb97536d",
+      "fd7b659ef3a5",
+      "cadd418a1f0c",
+      "fd9dab4ac8e4",
+      "1d7873e8e71e",
+      "9ae1f69dc5ab",
+      "ef48411b9318",
+      "b8832c3a4ee0",
+      "d4cf0ef44365",
+      "aa5244dd9d6a",
+      "bbe1a31b1288",
+      "ad6379d02dab",
+      "a049a4d2d0f8",
+      "89e7906a4976",
+      "435343131758"
+    ]
+  },
+  {
+    "path": "labels/v4-apidoc-gate-CLAUDE-ADJUDICATION.worksheet.csv",
+    "bytes": 8927,
+    "sha256": "4452ed68d2793037005921684cec412478334ed71f605f4e945547f6299e17d9",
+    "kind": "text",
+    "lines": 105
+  },
+  {
+    "path": "labels/v4-apidoc-gate.attestation.json",
+    "bytes": 755,
+    "sha256": "db5f4b8c6fd11db79cb33b7d8777daa8523d0e6b76433396dd260bb94cc5fe8c",
+    "kind": "json",
+    "keys": [
+      "labeler_id_1",
+      "labeler_id_2 ",
+      "labeler_role_1",
+      "labeler_role_2",
+      "completed_utc_1",
+      "completed_utc_2",
+      "statement_1",
+      "statement_2",
+      "required_statement_1",
+      "required_statement_2"
+    ]
+  },
+  {
+    "path": "labels/v4-apidoc-gate.key.json",
+    "bytes": 17318,
+    "sha256": "f358b3518cb7dcbc14a71c253b80d65410410b6a3eff9e937fa854ea71a54af7",
+    "kind": "json",
+    "keys": [
+      "20e442426e2a",
+      "07c03d57b70a",
+      "12335da91ca8",
+      "384b90ea8aea",
+      "c75325ef3aea",
+      "ad86ca1db0fa",
+      "4906277e96cf",
+      "3717ef800768",
+      "99aba6ad3c04",
+      "0d34884f503b",
+      "72bab937639a",
+      "4be4cb02fbc8",
+      "83f14742f097",
+      "99bbaca186d9",
+      "6ad004bae33c",
+      "6e4fa1c3f44f",
+      "a9925ab27f33",
+      "facc2c191e94",
+      "d4fbbc5823a4",
+      "8bf129bbbc88",
+      "bdfdc5b1fd56",
+      "a357adebdb57",
+      "c5ce0a4b1cbb",
+      "7b576cf75ae2",
+      "24b888bc46fd",
+      "3657f8cfd2da",
+      "e20f2f9747c5",
+      "fe49e7e0bdf7",
+      "8b86c223117a",
+      "f9adb1c4da9c",
+      "92f5ac014cb4",
+      "146ebd361295",
+      "c5ae7bdc08c0",
+      "a210248ba97b",
+      "2d6143685615",
+      "087ea2733bec",
+      "4315d32a7b4f",
+      "6dc468118b6c",
+      "22e3cb8cf04e",
+      "59be45a2ce31",
+      "2019f40480a2",
+      "97f747154526",
+      "063585ac2082",
+      "4c79abfe1c90",
+      "a8cdc077706a",
+      "d15cfb97536d",
+      "fd7b659ef3a5",
+      "cadd418a1f0c",
+      "fd9dab4ac8e4",
+      "1d7873e8e71e",
+      "9ae1f69dc5ab",
+      "ef48411b9318",
+      "b8832c3a4ee0",
+      "d4cf0ef44365",
+      "aa5244dd9d6a",
+      "bbe1a31b1288",
+      "ad6379d02dab",
+      "a049a4d2d0f8",
+      "89e7906a4976",
+      "435343131758"
+    ]
+  },
+  {
+    "path": "labels/v4-apidoc-gate.worksheet.csv",
+    "bytes": 8856,
+    "sha256": "165c22505d680b2bc3cf3e1d3c4aa90a306654528ee9ff7a928424193e9695ee",
+    "kind": "text",
+    "lines": 105
+  },
+  {
+    "path": "mcp_config.json",
+    "bytes": 223,
+    "sha256": "4ba4eb150ea24d0bd23d8d80e90cb5273fa792d563d2e3c0f735970febf4b7a7",
+    "kind": "json",
+    "keys": [
+      "mcpServers"
+    ]
+  },
+  {
+    "path": "paper-revision-notes.md",
+    "bytes": 8321,
+    "sha256": "4312f7018f77bb3f2db59df6d9008c07fb26e6c136ee8d9a62f45b2d550db777",
+    "kind": "text",
+    "lines": 241
+  },
+  {
+    "path": "paper/Makefile",
+    "bytes": 1806,
+    "sha256": "aaecafa7b5a09cdb11aa862bded0bbe317c0feab8776f897f1f6042fdb23c3e8",
+    "kind": "text",
+    "lines": 38
+  },
+  {
+    "path": "paper/README.md",
+    "bytes": 5459,
+    "sha256": "c225090483b209bd463053837e0798b3841b1fb59ba2f97c2473fac1b7f173d1",
+    "kind": "text",
+    "lines": 101
+  },
+  {
+    "path": "paper/analysis_numbers.tex",
+    "bytes": 427,
+    "sha256": "d898930e06d23d58732457060a50b55b3bd516645778dad936268cc531fc720e",
+    "kind": "text",
+    "lines": 10
+  },
+  {
+    "path": "paper/generated_accounting_table.tex",
+    "bytes": 1132,
+    "sha256": "4bcf5295b46c3be669473f88fa4fcce5c19bc66e86d0c87340ae80c3cae61a1f",
+    "kind": "text",
+    "lines": 17
+  },
+  {
+    "path": "paper/generated_field_table.tex",
+    "bytes": 719,
+    "sha256": "372b72bec084121531b40e024753c2ac2d7c3cf6b09b3be1e0fc133b8e703fa9",
+    "kind": "text",
+    "lines": 14
+  },
+  {
+    "path": "paper/generated_fixture_table.tex",
+    "bytes": 2115,
+    "sha256": "d92ae35e811ffa6b232a52ed4a77e3544fcc83ddbcd9a30b0b841582a468a577",
+    "kind": "text",
+    "lines": 30
+  },
+  {
+    "path": "paper/generated_primary_table.tex",
+    "bytes": 468,
+    "sha256": "9c33e0081ccf4b980cb109468ffe787bcda7ef368520d7c8c1faea2b35798b3f",
+    "kind": "text",
+    "lines": 9
+  },
+  {
+    "path": "paper/generated_secondary_table.tex",
+    "bytes": 2308,
+    "sha256": "edf5de220661d09a308ca244804486361f8ac3c954dcae0f173db943f01a5b31",
+    "kind": "text",
+    "lines": 30
+  },
+  {
+    "path": "paper/generated_sensitivity_table.tex",
+    "bytes": 975,
+    "sha256": "263f94c41821ff4dedb36d9a1f044b1808d88a83ead197e0ea5e8778813d569c",
+    "kind": "text",
+    "lines": 16
+  },
+  {
+    "path": "paper/highlights.txt",
+    "bytes": 356,
+    "sha256": "6d811b6d410dae7f77e915dfad0e7e9b61d8679f6423cff3c9379924cf59d2a9",
+    "kind": "text",
+    "lines": 5
+  },
+  {
+    "path": "paper/journal_refs.bib",
+    "bytes": 6924,
+    "sha256": "98a8edfac3726eb0bad653623801d35c768015d87da80c6916633aabc1ea9ae7",
+    "kind": "text",
+    "lines": 171
+  },
+  {
+    "path": "paper/main.tex",
+    "bytes": 118295,
+    "sha256": "1378b2b6bc7ba95c38f48270cd91e47062fd1fb6bd801c3f8cfd98048d6dc68f",
+    "kind": "text",
+    "lines": 1981
+  },
+  {
+    "path": "paper/numbers.tex",
+    "bytes": 35070,
+    "sha256": "81228f6912be6e3e2e734d88e0c029403010dd90d2d139b67c09cd55c59bb220",
+    "kind": "text",
+    "lines": 667
+  },
+  {
+    "path": "paper/refs.bib",
+    "bytes": 17780,
+    "sha256": "1ac9f83ad0bc9a6c9f7f2a32ea6de76118211ec7939ce7629f0ced19f800a184",
+    "kind": "text",
+    "lines": 432
+  },
+  {
+    "path": "paper/roc.tex",
+    "bytes": 1178,
+    "sha256": "e54a526598f081759345b5b28f38f1edaac794d36145507d8ad7f6342e5fab63",
+    "kind": "text",
+    "lines": 31
+  },
+  {
+    "path": "paper/usenix.sty",
+    "bytes": 3795,
+    "sha256": "2278c83173e084a00fcf76d3227acb971f5137ecea993a5b4e13a9b2bd67b45e",
+    "kind": "text",
+    "lines": 129
+  },
+  {
+    "path": "protocol-v2.md",
+    "bytes": 9535,
+    "sha256": "119dbfc558007833371dcf24abffd2257bbc96cf392bc4210a2302c0d5d4c762",
+    "kind": "text",
+    "lines": 181
+  },
+  {
+    "path": "protocol-v3.md",
+    "bytes": 9039,
+    "sha256": "4c4557e9022508aff6bf80911ba573d30c47837b65c24cd787b66fa3613eee3d",
+    "kind": "text",
+    "lines": 184
+  },
+  {
+    "path": "protocol-v3.md.ots",
+    "bytes": 735,
+    "sha256": "28282eb32b7583ce4521c38febacf847908276c2245a79cfff7b58122cd71298",
+    "kind": "binary"
+  },
+  {
+    "path": "protocol.md",
+    "bytes": 23998,
+    "sha256": "dab0ebb723d6f072c08876d51226a37da4f03a6e291012209e58d17572636b56",
+    "kind": "text",
+    "lines": 250
+  },
+  {
+    "path": "ref.bib",
+    "bytes": 15329,
+    "sha256": "34397a889919712993de792f6bcf87f943b5c71480699fa720381e1ebd745e13",
+    "kind": "text",
+    "lines": 372
+  },
+  {
+    "path": "requirements-analysis.in",
+    "bytes": 218,
+    "sha256": "d8a60c90be6ceeebd70df88cf8a805b0748015ba6a04ba7dc4dad69e3237e205",
+    "kind": "text",
+    "lines": 6
+  },
+  {
+    "path": "requirements-analysis.lock",
+    "bytes": 746,
+    "sha256": "8616581adf67e0fa9c17db68fada06ef9e277032bd28009067540bfb8435a74e",
+    "kind": "text",
+    "lines": 39
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 2293,
+    "sha256": "b9f7c3f640bc5968413ad80ec9734397025b20fcebbe4c3b93eb0c66f6214ce8",
+    "kind": "text",
+    "lines": 41
+  },
+  {
+    "path": "results/h3-scanner-dodging.md",
+    "bytes": 2242,
+    "sha256": "3a7acc342b0de3af7b7b538e06c122495a5cf8f46cc1ccfbf621cfe73e040b60",
+    "kind": "text",
+    "lines": 45
+  },
+  {
+    "path": "results/scan-invariant-policy.json",
+    "bytes": 1896,
+    "sha256": "4cb6e4d7792cab529a1b09ccf90f1fbce577bbfeadb8213ee0d96cc6c6a358f9",
+    "kind": "json",
+    "keys": [
+      "policy_source",
+      "judge_model",
+      "reps",
+      "results"
+    ]
+  },
+  {
+    "path": "results/scan-snyk-inspect-20260808-120749.txt",
+    "bytes": 610,
+    "sha256": "ccd1b934f5859afda2d842bd274c3952f5566fcaca021cbcd133071ec1350286",
+    "kind": "text",
+    "lines": 15
+  },
+  {
+    "path": "results/v4-apidoc-gate-summary.json",
+    "bytes": 6558,
+    "sha256": "58eadedc29160459f8fa341cae555c45b3eb359e1138a3b5c7e6e0c665fba699",
+    "kind": "json",
+    "keys": [
+      "run_file",
+      "stage",
+      "model",
+      "wording_style",
+      "reps_per_cell",
+      "n_trials",
+      "arms"
+    ]
+  },
+  {
+    "path": "results/v4-apidoc-gate.md",
+    "bytes": 3951,
+    "sha256": "d59faf9657cd4ade686843730682944d4c432abc398569abc46895342b12f1d2",
+    "kind": "text",
+    "lines": 76
+  },
+  {
+    "path": "results/v5-anthropic-gate.md",
+    "bytes": 7546,
+    "sha256": "d29cf3e9258f7f082e49d6c3009ffd50aff18b9ac6e14575d911ba27e20e32f1",
+    "kind": "text",
+    "lines": 152
+  },
+  {
+    "path": "results/v5-wording-ablation.md",
+    "bytes": 5710,
+    "sha256": "0c4af45c03abecf0404c1333711ef6d70f14219e42ce4ca909f6d608a4ae0301",
+    "kind": "text",
+    "lines": 122
+  },
+  {
+    "path": "runs/confound_fix_anthropic-live-20260726-232742.jsonl",
+    "bytes": 54646,
+    "sha256": "5f8cc3191a4d4e24575627fa3137a0ea8e8e68f93bb000bef0e1e73b91e53ff7",
+    "rows": 90,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 90
+    },
+    "conditions": {
+      "A_prime": 30,
+      "B_prime": 30,
+      "C": 30
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/confound_fix_anthropic-live-20260726-232742.raw.jsonl",
+    "bytes": 88201,
+    "sha256": "4b8dd6c0e5d904abf84103f4ed239490c89412ebb517639f7458f2b63a7a417d",
+    "rows": 90,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 90
+    },
+    "conditions": {
+      "A_prime": 30,
+      "B_prime": 30,
+      "C": 30
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/confound_fix_openai-live-20260726-232559.jsonl",
+    "bytes": 50143,
+    "sha256": "a9bfa4b78e836370267ef30f85024467ed2c092b31d65855e7bb9b6118a69128",
+    "rows": 90,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 90
+    },
+    "conditions": {
+      "A_prime": 30,
+      "B_prime": 30,
+      "C": 30
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/confound_fix_openai-live-20260726-232559.raw.jsonl",
+    "bytes": 102727,
+    "sha256": "3edf7ca165c98c62097878eeca4a221fa2e4b5bfa705566d626e025ed94d624e",
+    "rows": 90,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 90
+    },
+    "conditions": {
+      "A_prime": 30,
+      "B_prime": 30,
+      "C": 30
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/explicit_payloads_openai-live-20260808-121319.jsonl",
+    "bytes": 130924,
+    "sha256": "18fa504ce0c35b51f122ef3a9a0b7e94af9cf9ce5e2b9c2986d1b797963921fb",
+    "rows": 100,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 100
+    },
+    "conditions": {
+      "E": 100
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/explicit_payloads_openai-live-20260808-121319.meta.json",
+    "bytes": 333,
+    "sha256": "74ed43b85895cf94ecc439e13a2f4fc0706748c811bc55157814f4f5c5c6a8bb",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/explicit_payloads_openai-live-20260808-121319.raw.jsonl",
+    "bytes": 190662,
+    "sha256": "646f7245f94027c5f4c130194c4f6b976c408e4b958f9c3e81cef36ea728de2d",
+    "rows": 100,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 100
+    },
+    "conditions": {
+      "E": 100
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/explicit_payloads_openai-live-20260808-121319.regraded.jsonl",
+    "bytes": 131979,
+    "sha256": "43d158d8d99529ef488e15b0b214e882281fb333797f5fdd9e37c83e9ad5228a",
+    "rows": 100,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 100
+    },
+    "conditions": {
+      "E": 100
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/explicit_payloads_probe-live-20260808-121222.jsonl",
+    "bytes": 6492,
+    "sha256": "ca1df1ffaf3a3dd070d5a2d721852d528c5831f1d625cd44e93f20e30f66eb35",
+    "rows": 5,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 5
+    },
+    "conditions": {
+      "E": 5
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/explicit_payloads_probe-live-20260808-121222.meta.json",
+    "bytes": 325,
+    "sha256": "5dd5d0e8eefbe2502a68fd5cc07b00a38a46517536ad1a48261815318ec71077",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/explicit_payloads_probe-live-20260808-121222.raw.jsonl",
+    "bytes": 9467,
+    "sha256": "aca63b07cb900f90602ae0b40bf9c62c2bb98d554b2c2c32c5b3111c4f452d77",
+    "rows": 5,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 5
+    },
+    "conditions": {
+      "E": 5
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/framework_arm_anthropic-live-20260727-002821.jsonl",
+    "bytes": 108770,
+    "sha256": "c02f5b05485350b558e79f2e92ca4ba9dc9365ec40d786ca37e8397fe6d6c6f9",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 120
+    },
+    "conditions": {
+      "A": 30,
+      "A_prime": 30,
+      "C": 30,
+      "D": 30
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/framework_arm_anthropic-live-20260727-002821.raw.jsonl",
+    "bytes": 62797,
+    "sha256": "1fb5b884976c1609f2709ae62201088201301ef03e6eedca74ef6616b7d42da2",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 120
+    },
+    "conditions": {
+      "A": 30,
+      "A_prime": 30,
+      "C": 30,
+      "D": 30
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/framework_arm_openai-live-20260727-001015.jsonl",
+    "bytes": 56488,
+    "sha256": "680b58715e2657a09a1fe7af3ec547c6590711e4471fb799937ac20745aa9062",
+    "rows": 72,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 72
+    },
+    "conditions": {
+      "A": 30,
+      "A_prime": 30,
+      "C": 12
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/framework_arm_openai-live-20260727-001015.raw.jsonl",
+    "bytes": 34915,
+    "sha256": "1b2aaa1e0cb705aa77400ccb2ae20c75f90f2bdd75508f300a738c6470090ce5",
+    "rows": 72,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 72
+    },
+    "conditions": {
+      "A": 30,
+      "A_prime": 30,
+      "C": 12
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/framework_arm_openai-live-20260727-002409.jsonl",
+    "bytes": 91210,
+    "sha256": "0e47bc70d84a847f84c389d9355019624035c23e440384fc3328978aad7a9430",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 120
+    },
+    "conditions": {
+      "A": 30,
+      "A_prime": 30,
+      "C": 30,
+      "D": 30
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/framework_arm_openai-live-20260727-002409.raw.jsonl",
+    "bytes": 59027,
+    "sha256": "66f3ef1ee918a63bec46bcc26db898be18fbe1986835da1fb89a08b3de5b1aea",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 120
+    },
+    "conditions": {
+      "A": 30,
+      "A_prime": 30,
+      "C": 30,
+      "D": 30
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate-dry-20260711-183906.jsonl",
+    "bytes": 257339,
+    "sha256": "bbcf6eb53c3bc214aaa21d87cf3b4991b1f34360a831f818125cd1937de23093",
+    "rows": 450,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5": 150,
+      "gpt-4o": 150,
+      "gemini-2.0-flash": 150
+    },
+    "conditions": {
+      "A": 90,
+      "A_prime": 90,
+      "B": 90,
+      "C": 90,
+      "D": 90
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate-live-20260728-201545.jsonl",
+    "bytes": 914,
+    "sha256": "17eb611855bc86e1518f2d38636d84ef5424980aba8bdddde104c7ed49b0b62b",
+    "rows": 1,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 1
+    },
+    "conditions": {
+      "A": 1
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate-live-20260728-201545.raw.jsonl",
+    "bytes": 1316,
+    "sha256": "b145085347bbe537bf542385b894977e6864900615a7cf0bcbde7680adb0b7a0",
+    "rows": 1,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 1
+    },
+    "conditions": {
+      "A": 1
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_anthropic_apidoc-live-20260726-182314.jsonl",
+    "bytes": 5209,
+    "sha256": "1407c5c0acdb92ef712322cf0f9809e256209a9f9dc111b7d8cca7c4fa646494",
+    "rows": 6,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 6
+    },
+    "conditions": {
+      "A": 6
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_anthropic_apidoc-live-20260726-182314.raw.jsonl",
+    "bytes": 7604,
+    "sha256": "001a20e2a937fcdd119d43f713cf77949ac2fe8a8067e053b040ca96cec1375f",
+    "rows": 6,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 6
+    },
+    "conditions": {
+      "A": 6
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_anthropic_apidoc-live-20260726-182359.jsonl",
+    "bytes": 200590,
+    "sha256": "0a6a07eeb3781fed996e11280827f1370b28ac66ac06bf485911d7d447834975",
+    "rows": 300,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 300
+    },
+    "conditions": {
+      "A": 60,
+      "A_prime": 60,
+      "B": 60,
+      "C": 60,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_anthropic_apidoc-live-20260726-182359.judge1.jsonl",
+    "bytes": 211884,
+    "sha256": "704cdcfda37071e1635fdaee4aa83bfe723817ed8a06be0da2575bcf345dbdea",
+    "rows": 300,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "judge_bucket",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 300
+    },
+    "conditions": {
+      "A": 60,
+      "A_prime": 60,
+      "B": 60,
+      "C": 60,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_anthropic_apidoc-live-20260726-182359.judge2.jsonl",
+    "bytes": 212128,
+    "sha256": "81eb1611b7f94d54fd197d35dbbb3b6a4d6cfdea05ee80dd472ecf14d2ff7260",
+    "rows": 300,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "judge_bucket",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 300
+    },
+    "conditions": {
+      "A": 60,
+      "A_prime": 60,
+      "B": 60,
+      "C": 60,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_anthropic_apidoc-live-20260726-182359.raw.jsonl",
+    "bytes": 318064,
+    "sha256": "1de3e2d01a96571fdbd433a984312192b266682dc1ea865ff863ab1708161b37",
+    "rows": 300,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 300
+    },
+    "conditions": {
+      "A": 60,
+      "A_prime": 60,
+      "B": 60,
+      "C": 60,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_apidoc-dry-20260801-194715.jsonl",
+    "bytes": 181858,
+    "sha256": "a600623a075edb57e49c49325ea33cafe4739b3f728f21fcc7f1a1e971c5bc4e",
+    "rows": 300,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 300
+    },
+    "conditions": {
+      "A": 60,
+      "A_prime": 60,
+      "B": 60,
+      "C": 60,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_apidoc-dry-20260801-194715.raw.jsonl",
+    "bytes": 76320,
+    "sha256": "d011e082bb18a621b9f6ecf29fb070872a8deca56edd7732d480fe22c20e7190",
+    "rows": 300,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 300
+    },
+    "conditions": {
+      "A": 60,
+      "A_prime": 60,
+      "B": 60,
+      "C": 60,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_apidoc-live-20260726-231404.jsonl",
+    "bytes": 25810,
+    "sha256": "2e91fb503010d2657723d0a4d27c11cd7fd35b3db50db52a5afe30d5cb1d3852",
+    "rows": 14,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "error",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "trace",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 14
+    },
+    "conditions": {
+      "A": 14
+    },
+    "errors": 13
+  },
+  {
+    "path": "runs/gate_google_apidoc-live-20260726-231404.raw.jsonl",
+    "bytes": 3876,
+    "sha256": "11a2a15066c71a94174329c346647b077998368289f78da050545f1ffa93253e",
+    "rows": 1,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 1
+    },
+    "conditions": {
+      "A": 1
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_apidoc-live-20260801-200257.jsonl",
+    "bytes": 174200,
+    "sha256": "4405effcccc884497982beefbaa3bbbd05b0311cf97f652b5117ce63a893c9c2",
+    "rows": 300,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 300
+    },
+    "conditions": {
+      "A": 60,
+      "A_prime": 60,
+      "B": 60,
+      "C": 60,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_apidoc-live-20260801-200257.raw.jsonl",
+    "bytes": 1071404,
+    "sha256": "41df971ba60e4469cc85e3fa9f747f5b4bedfc984af7c8f1d71528021a0f7a4f",
+    "rows": 300,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 300
+    },
+    "conditions": {
+      "A": 60,
+      "A_prime": 60,
+      "B": 60,
+      "C": 60,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_mini-dry-20260801-194110.jsonl",
+    "bytes": 4840,
+    "sha256": "524bc00451319c2db4e155ee25c7328c960beae2dbf0dbde02002de1b893d2d6",
+    "rows": 8,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 8
+    },
+    "conditions": {
+      "A_prime": 4,
+      "C": 4
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_mini-dry-20260801-194110.raw.jsonl",
+    "bytes": 2055,
+    "sha256": "a4899fba0711fa94b1d7f19943a55e94bcd5eaae0e948d93f212a4f9d9fb743e",
+    "rows": 8,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 8
+    },
+    "conditions": {
+      "A_prime": 4,
+      "C": 4
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_mini-live-20260728-200144.jsonl",
+    "bytes": 4610,
+    "sha256": "f9f9191fbaf34e53331df0f7dcf8e64f17f6c6c5a9c187c3425ab65be43680c1",
+    "rows": 8,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 8
+    },
+    "conditions": {
+      "A_prime": 4,
+      "C": 4
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_mini-live-20260728-200144.raw.jsonl",
+    "bytes": 21182,
+    "sha256": "827f2aae43af1607ef5f6e6c05a2398220311b4df60be91c06d53f69f5e408ee",
+    "rows": 8,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 8
+    },
+    "conditions": {
+      "A_prime": 4,
+      "C": 4
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_mini-live-20260801-194434.jsonl",
+    "bytes": 1161,
+    "sha256": "388e2ba7898ed95859d1e041a0d962c466286313930188b3cd49b9cd50ad1bd1",
+    "rows": 2,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 2
+    },
+    "conditions": {
+      "A_prime": 2
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_mini-live-20260801-194434.raw.jsonl",
+    "bytes": 5452,
+    "sha256": "541e8c07dc7e25c5a2e2c57888fee06f16ee9c81d8b69cd568db1ffd21ce4a96",
+    "rows": 2,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 2
+    },
+    "conditions": {
+      "A_prime": 2
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_mini-live-20260801-194458.jsonl",
+    "bytes": 4634,
+    "sha256": "35a17d5722a64494cb96a0c8b85a89c2b66cdf11e05fae20d09e696d0a7e828d",
+    "rows": 8,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 8
+    },
+    "conditions": {
+      "A_prime": 4,
+      "C": 4
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_mini-live-20260801-194458.raw.jsonl",
+    "bytes": 22253,
+    "sha256": "522bd52d56b606415d5b5aafb58edb18373e1eafd73be8fc52d363f73e74feb4",
+    "rows": 8,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 8
+    },
+    "conditions": {
+      "A_prime": 4,
+      "C": 4
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_probe-live-20260801-195121.jsonl",
+    "bytes": 5689,
+    "sha256": "c91a75cb4dfe838d6863d9fad82a5929b211aa8af25e62edf2b0dbce4c189202",
+    "rows": 10,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 10
+    },
+    "conditions": {
+      "A": 2,
+      "A_prime": 2,
+      "B": 2,
+      "C": 2,
+      "D": 2
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/gate_google_probe-live-20260801-195121.raw.jsonl",
+    "bytes": 36073,
+    "sha256": "23f0e014b491039d4f692acb235888b487a35ade7da963fe967e0a0b52c2362a",
+    "rows": 10,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 10
+    },
+    "conditions": {
+      "A": 2,
+      "A_prime": 2,
+      "B": 2,
+      "C": 2,
+      "D": 2
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/mcp_client_capture.jsonl",
+    "bytes": 692,
+    "sha256": "aaf1511f233bf3f650e2716551c986197cf652bf833277bc28fc43f9040f11cc",
+    "rows": 3,
+    "kind": "jsonl",
+    "keys": [
+      "arguments_received",
+      "condition",
+      "published_tool",
+      "timestamp",
+      "wording_style"
+    ],
+    "models": {
+      "None": 3
+    },
+    "conditions": {
+      "A_prime": 1,
+      "C": 1,
+      "D": 1
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/or-mini.jsonl",
+    "bytes": 7999,
+    "sha256": "3eee0e87c4b1d216854d93d2bce1c74e13ccfb6f660f4d221db6731ad8057547",
+    "rows": 15,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "openai/gpt-4o-mini": 15
+    },
+    "conditions": {
+      "A": 3,
+      "A_prime": 3,
+      "B": 3,
+      "C": 3,
+      "D": 3
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/or-mini.regraded.jsonl",
+    "bytes": 8269,
+    "sha256": "ffe046f5ef242ed9956deca84cda74972de501a32934d2da9487051b54569632",
+    "rows": 15,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "openai/gpt-4o-mini": 15
+    },
+    "conditions": {
+      "A": 3,
+      "A_prime": 3,
+      "B": 3,
+      "C": 3,
+      "D": 3
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_generality_anthropic-dry-20260801-230038.jsonl",
+    "bytes": 95270,
+    "sha256": "d02843fd7cb9515eb1af43010e2ca04c212872cf96de8859980a6a293e058184",
+    "rows": 150,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 150
+    },
+    "conditions": {
+      "C": 150
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_generality_anthropic-dry-20260801-230038.raw.jsonl",
+    "bytes": 41225,
+    "sha256": "ee89a64beea6184ce0cc439b20b8b4af442db9b88e5b9c7e1f92ab81bb68e54b",
+    "rows": 150,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 150
+    },
+    "conditions": {
+      "C": 150
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_generality_anthropic-live-20260808-121931.jsonl",
+    "bytes": 92743,
+    "sha256": "7407c28f0ea0d50d9f6223333a889607f27ea162634ba8ce4da652d395b5357c",
+    "rows": 150,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 150
+    },
+    "conditions": {
+      "C": 150
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_generality_anthropic-live-20260808-121931.meta.json",
+    "bytes": 341,
+    "sha256": "dda37a0df6ac87599cb46fbc7744f24949d24ffd18dc66a1561dda4fc38e17f5",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/payload_generality_anthropic-live-20260808-121931.raw.jsonl",
+    "bytes": 152192,
+    "sha256": "61556e4b9401437f35c0da7e8e12390d55a457fe3a3b48ee30a5641b9b9c5682",
+    "rows": 150,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 150
+    },
+    "conditions": {
+      "C": 150
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_generality_anthropic-live-20260808-121931.regraded.jsonl",
+    "bytes": 94243,
+    "sha256": "8456da9661d8406aa3d3a4ced3e5586f8c94e94d0275d43dd93104d374af6841",
+    "rows": 150,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 150
+    },
+    "conditions": {
+      "C": 150
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_generality_openai-dry-20260801-230037.jsonl",
+    "bytes": 91390,
+    "sha256": "ac95af96d463823555eeb43c1ecd6f9ae0eb17b0538c2a316eb77ed7704a35d2",
+    "rows": 150,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 150
+    },
+    "conditions": {
+      "C": 150
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_generality_openai-dry-20260801-230037.raw.jsonl",
+    "bytes": 37735,
+    "sha256": "b2130254668acbe313f59e95fa49c390810156047092121a5227f82d329a6a7a",
+    "rows": 150,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 150
+    },
+    "conditions": {
+      "C": 150
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_generality_openai-live-20260808-105201.jsonl",
+    "bytes": 169255,
+    "sha256": "cc96e2ca6cab5999b470023c27c792fc4ae388fb6dd7f6ce1b5fc81c0a5386ca",
+    "rows": 297,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 297
+    },
+    "conditions": {
+      "C": 100,
+      "A_prime": 100,
+      "D": 97
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_generality_openai-live-20260808-105201.raw.jsonl",
+    "bytes": 343696,
+    "sha256": "eab97fdca27b8744ef0fd97bacc60b4a7c882681475b20fdb874a60df24c2d5e",
+    "rows": 297,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 297
+    },
+    "conditions": {
+      "C": 100,
+      "A_prime": 100,
+      "D": 97
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_generality_openai-live-20260808-105201.regraded.jsonl",
+    "bytes": 172251,
+    "sha256": "f7eeb51da74184544f561626b29ad5a3090a18b05cdf2cb4552556b84ea311d3",
+    "rows": 297,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 297
+    },
+    "conditions": {
+      "C": 100,
+      "A_prime": 100,
+      "D": 97
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_probe-live-20260808-085901.jsonl",
+    "bytes": 5832,
+    "sha256": "8447e54e0e0a3f5e32f3f962814f267fa627b66272b440e4a817d5668491ed96",
+    "rows": 10,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 5,
+      "claude-sonnet-4-5-20250929": 5
+    },
+    "conditions": {
+      "C": 10
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/payload_probe-live-20260808-085901.raw.jsonl",
+    "bytes": 10708,
+    "sha256": "c6dfdfb5ccdc11313830a37a38c355a01c11b6f281e631a2e29dae2032485446",
+    "rows": 10,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 5,
+      "claude-sonnet-4-5-20250929": 5
+    },
+    "conditions": {
+      "C": 10
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/r6_familiarity_openai-live-20260817-142835.jsonl",
+    "bytes": 23474,
+    "sha256": "98420ff4872e8992605da21ed73412edf8b5190e54320f3eba94778b5076a0a3",
+    "rows": 40,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 40
+    },
+    "conditions": {
+      "C": 40
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/r6_familiarity_openai-live-20260817-142835.meta.json",
+    "bytes": 324,
+    "sha256": "f6182de16ca0a0826dd8ad3c02c765593ac72b40ef288e8762f05a7806e2d85c",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/r6_familiarity_openai-live-20260817-142835.raw.jsonl",
+    "bytes": 46393,
+    "sha256": "e3ecf1bd4805cabe889815619b4a501c4299d5241fc3da8f3c522fd1047e9b8d",
+    "rows": 40,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 40
+    },
+    "conditions": {
+      "C": 40
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/r6_familiarity_probe-live-20260817-142809.jsonl",
+    "bytes": 608,
+    "sha256": "efd01640ae06ef1f6df21cde82dce4209a9c194532758796ddc03d10290f185b",
+    "rows": 1,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 1
+    },
+    "conditions": {
+      "C": 1
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/r6_familiarity_probe-live-20260817-142809.meta.json",
+    "bytes": 319,
+    "sha256": "d5764aa3a9e856de9ce74bd18816787bc81188fc6b09c8d8117b360c11489e79",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/r6_familiarity_probe-live-20260817-142809.raw.jsonl",
+    "bytes": 1181,
+    "sha256": "3ba21ef2c9b53a1502f3d06c3c6976cc757953dde0450e47eba697f33fdc17c6",
+    "rows": 1,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 1
+    },
+    "conditions": {
+      "C": 1
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/real_schemas_anthropic-live-20260808-142451.jsonl",
+    "bytes": 171041,
+    "sha256": "017d5b1ccc9161ce000a97111f53e61b11a9d8bf8c33d55496783d2d64501530",
+    "rows": 250,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "error",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "trace",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 250
+    },
+    "conditions": {
+      "C": 125,
+      "D": 125
+    },
+    "errors": 1
+  },
+  {
+    "path": "runs/real_schemas_anthropic-live-20260808-142451.meta.json",
+    "bytes": 330,
+    "sha256": "e181bbb1346e584acdbc7f46276a39958d133d996cecec6634c3351629d3063c",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/real_schemas_anthropic-live-20260808-142451.raw.jsonl",
+    "bytes": 266766,
+    "sha256": "ae519461feef522fe20be2f6725ffbb43d732bee06e8aea73f5289762e08a050",
+    "rows": 249,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 249
+    },
+    "conditions": {
+      "C": 125,
+      "D": 124
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/real_schemas_openai-live-20260808-132341.jsonl",
+    "bytes": 149893,
+    "sha256": "d09026d4922ab4ba82b9ed35817eb86b0416b6399874cfd866ea3694c1f7d822",
+    "rows": 250,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 250
+    },
+    "conditions": {
+      "C": 125,
+      "D": 125
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/real_schemas_openai-live-20260808-132341.meta.json",
+    "bytes": 323,
+    "sha256": "a3c029f4ec71cd6966ef409c935e2e369002d2be47c97aaca2e84150b04cac06",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/real_schemas_openai-live-20260808-132341.raw.jsonl",
+    "bytes": 290545,
+    "sha256": "fbbd5e2ee91f3014907be1db1cb1b7e72a99db5691af275ba6022f778b01fcac",
+    "rows": 250,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 250
+    },
+    "conditions": {
+      "C": 125,
+      "D": 125
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/real_schemas_probe-live-20260808-132317.jsonl",
+    "bytes": 2940,
+    "sha256": "39a2bb9a05b5bc84739dcb2a812a35d2076756c7ae7aa47b9dc39dd6a16cdc86",
+    "rows": 5,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 5
+    },
+    "conditions": {
+      "C": 5
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/real_schemas_probe-live-20260808-132317.meta.json",
+    "bytes": 315,
+    "sha256": "09802f1af6087b111f42efd3fdca53933fb5871a917dba55362ff784e73b45a8",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/real_schemas_probe-live-20260808-132317.raw.jsonl",
+    "bytes": 5789,
+    "sha256": "94616f48ed86adfd86d60d700a2777f89c41d6d48144277adb46be4f26a2cd37",
+    "rows": 5,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 5
+    },
+    "conditions": {
+      "C": 5
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/reticence_ladder-live-20260808-121152.jsonl",
+    "bytes": 61867,
+    "sha256": "3fbd5cb68b07429b20ada43a8fc59f0828096c465bf6f29198f50a2a62209e89",
+    "rows": 100,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "error",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "trace",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 80,
+      "gemini-3-flash-preview": 20
+    },
+    "conditions": {
+      "A_prime": 50,
+      "C": 50
+    },
+    "errors": 1
+  },
+  {
+    "path": "runs/reticence_ladder-live-20260808-121152.raw.jsonl",
+    "bytes": 131104,
+    "sha256": "232e84370b31e01f7a388627df4fd41eca295e4b7c6b67229a328946a27b7987",
+    "rows": 99,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 80,
+      "gemini-3-flash-preview": 19
+    },
+    "conditions": {
+      "A_prime": 50,
+      "C": 49
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/reticence_ladder_google-live-20260808-132343.jsonl",
+    "bytes": 30319,
+    "sha256": "661eb0e3aeb6674c312574ddb14c2ef440875db69a5c1f96a4c089037b6e640d",
+    "rows": 30,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "error",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "trace",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 30
+    },
+    "conditions": {
+      "A_prime": 20,
+      "C": 10
+    },
+    "errors": 9
+  },
+  {
+    "path": "runs/reticence_ladder_google-live-20260808-132343.raw.jsonl",
+    "bytes": 60035,
+    "sha256": "6fefd094893061fd459036720725522ca82adc58dbc596360ef1e8631ad98f09",
+    "rows": 21,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 21
+    },
+    "conditions": {
+      "A_prime": 11,
+      "C": 10
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/reticence_ladder_google-live-20260808-143824.jsonl",
+    "bytes": 36162,
+    "sha256": "bcd331be259cee1afd6ea243158d27e00fcc9971305634f02f82f01bac5c4364",
+    "rows": 60,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 60
+    },
+    "conditions": {
+      "A_prime": 30,
+      "C": 30
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/reticence_ladder_google-live-20260808-143824.meta.json",
+    "bytes": 328,
+    "sha256": "5b0e17c76ba06012a4fcd574564aac66e1838284d6decf11414ac1130c82270c",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/reticence_ladder_google-live-20260808-143824.raw.jsonl",
+    "bytes": 176592,
+    "sha256": "005429a73db73228741272ed1dd801613e7d8210172525b3cc654b57ee9e4c7b",
+    "rows": 60,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 60
+    },
+    "conditions": {
+      "A_prime": 30,
+      "C": 30
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/reticence_probe-live-20260808-121115.jsonl",
+    "bytes": 2385,
+    "sha256": "4d38ded2b09fe3342a321a318cced923fcdabcecafd8f69f84bd861215e962d3",
+    "rows": 4,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 2,
+      "gemini-3-flash-preview": 2
+    },
+    "conditions": {
+      "A_prime": 2,
+      "C": 2
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/reticence_probe-live-20260808-121115.meta.json",
+    "bytes": 309,
+    "sha256": "f757501d38ababec2cf050351e861b914973718d981ed0b6f3dc6df716c99fc0",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/reticence_probe-live-20260808-121115.raw.jsonl",
+    "bytes": 8432,
+    "sha256": "1c9e6bb89bebd4c739d837b9311b1148221fdc72f71824d503c9fc33864e717e",
+    "rows": 4,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 2,
+      "gemini-3-flash-preview": 2
+    },
+    "conditions": {
+      "A_prime": 2,
+      "C": 2
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2-openai.jsonl",
+    "bytes": 17828,
+    "sha256": "d5ebf9e7dde1a4d732c359e92ed759a2caadbd9e0dc9812097135477df88e47d",
+    "rows": 30,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 30
+    },
+    "conditions": {
+      "A": 6,
+      "A_prime": 6,
+      "B": 6,
+      "C": 6,
+      "D": 6
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2-openai.regraded.jsonl",
+    "bytes": 18369,
+    "sha256": "4838d533c61b25338fe782c7a978226c575254479909187d6732a97cd77f850f",
+    "rows": 30,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 30
+    },
+    "conditions": {
+      "A": 6,
+      "A_prime": 6,
+      "B": 6,
+      "C": 6,
+      "D": 6
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2-smoke.jsonl",
+    "bytes": 16143,
+    "sha256": "a16749dfc9e09440c1961640f5107be8910ec78131ae8c76d03fe6a722feb6de",
+    "rows": 30,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "openai/gpt-4o-mini": 30
+    },
+    "conditions": {
+      "A": 6,
+      "A_prime": 6,
+      "B": 6,
+      "C": 6,
+      "D": 6
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2-smoke.regraded.jsonl",
+    "bytes": 16684,
+    "sha256": "447df7e44408ba1b2ba1e4552b24589bce2773dd7574d319d1d2371d6f9d47b7",
+    "rows": 30,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "openai/gpt-4o-mini": 30
+    },
+    "conditions": {
+      "A": 6,
+      "A_prime": 6,
+      "B": 6,
+      "C": 6,
+      "D": 6
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2_depth_openai-live-20260810-185420.jsonl",
+    "bytes": 45726,
+    "sha256": "963c094d402b1fe9fd8ac739a0f3a15207e79d28a21707f5ef035b1005b5a892",
+    "rows": 80,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 80
+    },
+    "conditions": {
+      "C": 80
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2_depth_openai-live-20260810-185420.meta.json",
+    "bytes": 312,
+    "sha256": "da729b3416962bbc0b8c94a5d7fa9e13e0d82d58bba8df59ebd40dc09c9a44a0",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v2_depth_openai-live-20260810-185420.raw.jsonl",
+    "bytes": 91503,
+    "sha256": "a684b918900895200e8ced43b8f259d89087ce2bdaa09da2ced5461974b08819",
+    "rows": 80,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 80
+    },
+    "conditions": {
+      "C": 80
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2_depth_openai-live-20260810-185651.jsonl",
+    "bytes": 45928,
+    "sha256": "f87d9a09bde34261642b0dc119b8f258dcaec9ca8e5941eb28e631937f7c971b",
+    "rows": 80,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 80
+    },
+    "conditions": {
+      "C": 80
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2_depth_openai-live-20260810-185651.meta.json",
+    "bytes": 312,
+    "sha256": "04be452bb0defd3c598318e586a0e9dba4ec9aafb0f01fcc15fb32ab6a44b039",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v2_depth_openai-live-20260810-185651.raw.jsonl",
+    "bytes": 91731,
+    "sha256": "9f38a19ac701feb92c167e42b11bcb088730df309e84859aa23143953453bc01",
+    "rows": 80,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 80
+    },
+    "conditions": {
+      "C": 80
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2_matrix_google-live-20260810-184329.jsonl",
+    "bytes": 166075,
+    "sha256": "a87a1badd57dd840b2e8af8a871e0d8b41a59378e8cca9134f182f5d451b8ce2",
+    "rows": 280,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 280
+    },
+    "conditions": {
+      "C": 140,
+      "D": 140
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2_matrix_google-live-20260810-184329.meta.json",
+    "bytes": 317,
+    "sha256": "90872f6e2f0df8dff07924a5d116b4ed81331ff2baf1ea71961eb4e2ce97db58",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v2_matrix_google-live-20260810-184329.raw.jsonl",
+    "bytes": 795391,
+    "sha256": "ba57ee36e26927446a76f1722b8500380def281610799752ddefe5bef3eb9b77",
+    "rows": 280,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 280
+    },
+    "conditions": {
+      "C": 140,
+      "D": 140
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2_matrix_openai-live-20260810-183530.jsonl",
+    "bytes": 160118,
+    "sha256": "04bbef70576b0d68bb63505d8a476b73b658a658726cab8fa7e95297c4bcafe5",
+    "rows": 280,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 280
+    },
+    "conditions": {
+      "C": 140,
+      "D": 140
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2_matrix_openai-live-20260810-183530.meta.json",
+    "bytes": 317,
+    "sha256": "be8370000f4a38eb6d41b6c5fd9762a1325dc69c207694cddc9d49fe393601ab",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v2_matrix_openai-live-20260810-183530.raw.jsonl",
+    "bytes": 319614,
+    "sha256": "aa99e5a0066212f5628cd2260a53b14b58454c7de762db413f1c2553ff60657a",
+    "rows": 280,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 280
+    },
+    "conditions": {
+      "C": 140,
+      "D": 140
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2_matrix_openai_t0-live-20260810-184331.jsonl",
+    "bytes": 91024,
+    "sha256": "0087036a90641a8dec67867120cd63790d51a3ed44503b9bbcf5861f7310eb48",
+    "rows": 160,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 160
+    },
+    "conditions": {
+      "C": 80,
+      "D": 80
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2_matrix_openai_t0-live-20260810-184331.meta.json",
+    "bytes": 323,
+    "sha256": "b5c13ceb3e3c3dc4e5c89d8815a3418c7dc7a9bfd163357e3a6252c89f0aac15",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v2_matrix_openai_t0-live-20260810-184331.raw.jsonl",
+    "bytes": 182472,
+    "sha256": "29f9877459679e7389c733e2dd9ca0a0b718e4d3c321145ea943acddcb4e0250",
+    "rows": 160,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 160
+    },
+    "conditions": {
+      "C": 80,
+      "D": 80
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v2_matrix_probe-live-20260810-183458.jsonl",
+    "bytes": 2300,
+    "sha256": "6dc97688a49220a55694f382bb9a8e118191413be6eb64aa25b5fe5048582aed",
+    "rows": 3,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "error",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "trace",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 2,
+      "claude-sonnet-4-5-20250929": 1
+    },
+    "conditions": {
+      "C": 3
+    },
+    "errors": 1
+  },
+  {
+    "path": "runs/v2_matrix_probe-live-20260810-183458.meta.json",
+    "bytes": 310,
+    "sha256": "958362e416390a081f65cb391ae18801ee9980ae79d33884490a5e43a4a1ba76",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v2_matrix_probe-live-20260810-183458.raw.jsonl",
+    "bytes": 2307,
+    "sha256": "961551b7f2d86cfcf695335adce5069e3442f4484bc9400363d7e1091520ce50",
+    "rows": 2,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 2
+    },
+    "conditions": {
+      "C": 2
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3-wording.jsonl",
+    "bytes": 8646,
+    "sha256": "70ea32e952782fcd8e65b297aa90dd1e2d18247d41530ffcb10a0d2ee70cb01c",
+    "rows": 15,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 15
+    },
+    "conditions": {
+      "C": 15
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3-wording.regraded.jsonl",
+    "bytes": 8937,
+    "sha256": "2498da4430b3e7639768c78bc5e4fc7a604077c521c94174b49a390129d9f88c",
+    "rows": 15,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 15
+    },
+    "conditions": {
+      "C": 15
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_anthropic-live-20260811-130540.jsonl",
+    "bytes": 195376,
+    "sha256": "8ac01c7434087429760d3c2919898c01272c6decf937d51cf5fdc1c14f870925",
+    "rows": 320,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 320
+    },
+    "conditions": {
+      "C": 160,
+      "D": 160
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_anthropic-live-20260811-130540.meta.json",
+    "bytes": 323,
+    "sha256": "7615b103c9ef7753788d7b6bcf1ebfeba16107f81dfbb90803b49ab79645746d",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v3_matrix_anthropic-live-20260811-130540.raw.jsonl",
+    "bytes": 316019,
+    "sha256": "a34b18f69af29036d43f919f29a6f135127c10b848a4e692cd813b7fd121b544",
+    "rows": 320,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 320
+    },
+    "conditions": {
+      "C": 160,
+      "D": 160
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_deepseek-live-20260811-125245.jsonl",
+    "bytes": 204696,
+    "sha256": "9de2fd8b220541ffc8f039226a3fb117d0da48aaaa9e9d00580dcfd716171155",
+    "rows": 320,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "deepseek-v4-flash": 320
+    },
+    "conditions": {
+      "C": 160,
+      "D": 160
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_deepseek-live-20260811-125245.meta.json",
+    "bytes": 321,
+    "sha256": "6213142127eb45da83ade6e19bffa9068366d632f59d004e90f01f43b67a085e",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v3_matrix_deepseek-live-20260811-125245.raw.jsonl",
+    "bytes": 497896,
+    "sha256": "ea5a6194342a416ae7b09237639fff704f16ecf3f8c22bf027dea73e2fbe0f24",
+    "rows": 320,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "deepseek-v4-flash": 320
+    },
+    "conditions": {
+      "C": 160,
+      "D": 160
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_google-live-20260811-111215.jsonl",
+    "bytes": 74682,
+    "sha256": "dff2370795573fbb708c443e6c2ee7317693116921e059eafbd65aef3f24ab67",
+    "rows": 125,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 125
+    },
+    "conditions": {
+      "C": 65,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_google-live-20260811-111215.raw.jsonl",
+    "bytes": 343533,
+    "sha256": "237d5a0fabfdd0f2de3b77cefaf17e63225ff346eab5d358e8c70965c6d12da0",
+    "rows": 125,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 125
+    },
+    "conditions": {
+      "C": 65,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_google-live-20260811-111917.jsonl",
+    "bytes": 1202,
+    "sha256": "845e851d2fa27605bc22c1d5d2159f40739a39554ef0c31d5badc9b950fc3fc9",
+    "rows": 2,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3.1-pro-preview": 2
+    },
+    "conditions": {
+      "C": 2
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_google-live-20260811-111917.meta.json",
+    "bytes": 309,
+    "sha256": "63e2f29e232afb9a0f2138bc4f197df537123cda7b0a7e1207942f465498eec4",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v3_matrix_google-live-20260811-111917.raw.jsonl",
+    "bytes": 6264,
+    "sha256": "2980483b093240a19b71c18e048821bd8b68de961978f242e984ced2bc68b95c",
+    "rows": 2,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3.1-pro-preview": 2
+    },
+    "conditions": {
+      "C": 2
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_google-live-20260811-111959.jsonl",
+    "bytes": 162539,
+    "sha256": "6982dc293bf12ef415f7efee675d7ef44f0524addc8529cdb62b126b709aaaf1",
+    "rows": 253,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "error",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "trace",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3.1-pro-preview": 253
+    },
+    "conditions": {
+      "C": 133,
+      "D": 120
+    },
+    "errors": 10
+  },
+  {
+    "path": "runs/v3_matrix_google-live-20260811-111959.raw.jsonl",
+    "bytes": 738110,
+    "sha256": "6f7bc50475dbf18f7d1cd4b4c00f53ff6137bad9f33693d226459318cada4ca2",
+    "rows": 243,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3.1-pro-preview": 243
+    },
+    "conditions": {
+      "C": 123,
+      "D": 120
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_google-live-20260811-121223.jsonl",
+    "bytes": 190882,
+    "sha256": "4ba6f0258a010ae882a5ebc4a3a3154ee0ef4ab80aa98ad62d39ccdbb299dacb",
+    "rows": 320,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 320
+    },
+    "conditions": {
+      "C": 160,
+      "D": 160
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_google-live-20260811-121223.meta.json",
+    "bytes": 317,
+    "sha256": "b2e8f6f68ac3748d07231c8525c0123ec154dc9307a62ed93d933d9984b02cbd",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v3_matrix_google-live-20260811-121223.raw.jsonl",
+    "bytes": 898698,
+    "sha256": "6fb3dd1aeb2ddef768969b1293836aadb1b329434c2b0ea2616f9de0ccc15e46",
+    "rows": 320,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 320
+    },
+    "conditions": {
+      "C": 160,
+      "D": 160
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_openai-live-20260811-110618.jsonl",
+    "bytes": 184892,
+    "sha256": "65fd8100c296e261600c5b4572524055225d925e2176aaaab8f9c70810476257",
+    "rows": 320,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 320
+    },
+    "conditions": {
+      "C": 160,
+      "D": 160
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_openai-live-20260811-110618.meta.json",
+    "bytes": 317,
+    "sha256": "979a09fe141b709a0f9fb83123d6fd82e3936cc5221ae4fbb4baf8b12027f4f0",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v3_matrix_openai-live-20260811-110618.raw.jsonl",
+    "bytes": 368308,
+    "sha256": "c6432f7a15d349a2239e5322a344a2104eea3cdf91548693a80bd71b18b2b60c",
+    "rows": 320,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 320
+    },
+    "conditions": {
+      "C": 160,
+      "D": 160
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_probe-live-20260811-110532.jsonl",
+    "bytes": 1227,
+    "sha256": "1367491c06932240550627b9b8871394e4d170b0984bd9e6f9f3c0720082854e",
+    "rows": 2,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 1,
+      "gemini-3-flash-preview": 1
+    },
+    "conditions": {
+      "C": 2
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_matrix_probe-live-20260811-110532.meta.json",
+    "bytes": 309,
+    "sha256": "d46c7912f057be2ee7082ea12b919e40d77fbe4284ca775295c72033c5f4440d",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v3_matrix_probe-live-20260811-110532.raw.jsonl",
+    "bytes": 4605,
+    "sha256": "902ec13fd4b65ead77b035d1991117e2dc735874dac9213eb924c523525e2bd7",
+    "rows": 2,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 1,
+      "gemini-3-flash-preview": 1
+    },
+    "conditions": {
+      "C": 2
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_unplanted_anthropic-live-20260811-132128.jsonl",
+    "bytes": 72004,
+    "sha256": "2bbbbbe5a5e34d9986a07ff8c9735094a4a0ad90eee93a09a2680e1cfbc26689",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 120
+    },
+    "conditions": {
+      "C": 120
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_unplanted_anthropic-live-20260811-132128.meta.json",
+    "bytes": 329,
+    "sha256": "0074cffa99f6f2aaaee7c792fc517a3c07f4c46d074cddce0a8be9d6a455c204",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v3_unplanted_anthropic-live-20260811-132128.raw.jsonl",
+    "bytes": 116785,
+    "sha256": "d14c2db2fccd9003c88067b973b7a3e5e427dbc3c3e387650ff08600b0e9ed12",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 120
+    },
+    "conditions": {
+      "C": 120
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_unplanted_deepseek-live-20260811-130130.jsonl",
+    "bytes": 74336,
+    "sha256": "e865ce36c6827cd31083feefbf9e9c0751399ff93b32299a5eff2c3939f169f9",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "deepseek-v4-flash": 120
+    },
+    "conditions": {
+      "C": 120
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_unplanted_deepseek-live-20260811-130130.meta.json",
+    "bytes": 327,
+    "sha256": "c70897ef466eb728f6e69b3a0ee7c0217900a40306b5cc651a24c20a89d51672",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v3_unplanted_deepseek-live-20260811-130130.raw.jsonl",
+    "bytes": 221778,
+    "sha256": "3598f5e163f0187459ec0d43c3d0cf00ac7eeaeb5ca7652815d22fd6701d05d2",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "deepseek-v4-flash": 120
+    },
+    "conditions": {
+      "C": 120
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_unplanted_google-live-20260811-124509.jsonl",
+    "bytes": 69129,
+    "sha256": "d6b539f4709dacfc24b7c4ab2b44b2401b2f4b28e7d1406f0c3286a5bfa451d2",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 120
+    },
+    "conditions": {
+      "C": 120
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_unplanted_google-live-20260811-124509.meta.json",
+    "bytes": 323,
+    "sha256": "66885d2961740dbc292269ee828073e3e07ef38ab7f4abe700576d616dc69519",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v3_unplanted_google-live-20260811-124509.raw.jsonl",
+    "bytes": 435037,
+    "sha256": "1e9abacde0868719a533e074a3b7cd42e4e14e88f48a48ed3a3d55b447369356",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gemini-3-flash-preview": 120
+    },
+    "conditions": {
+      "C": 120
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_unplanted_openai-live-20260811-124046.jsonl",
+    "bytes": 70507,
+    "sha256": "51cd04d9f6c8a1b5d23c622638c787dd6247ce617bbb80333f2518f28b40cb86",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 120
+    },
+    "conditions": {
+      "C": 120
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v3_unplanted_openai-live-20260811-124046.meta.json",
+    "bytes": 323,
+    "sha256": "ea743df6df41c225b8abf290674d4615d33efa31aa797d63c12cad97eb561c3b",
+    "kind": "json",
+    "keys": [
+      "run_id",
+      "stage",
+      "dry_run",
+      "expected_trials",
+      "rows_written",
+      "ok",
+      "errors",
+      "limit",
+      "complete",
+      "canonical_path",
+      "finished_at"
+    ]
+  },
+  {
+    "path": "runs/v3_unplanted_openai-live-20260811-124046.raw.jsonl",
+    "bytes": 135496,
+    "sha256": "9c66927eaac071584dde35bef302370c728764c25f2a9be283a4a6f84fea1b3f",
+    "rows": 120,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 120
+    },
+    "conditions": {
+      "C": 120
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v4-apidoc-gate.jsonl",
+    "bytes": 175763,
+    "sha256": "222104b92981b73177cada70e28c0d9bd06054bc840eb77a7740c1d8976b58d8",
+    "rows": 300,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 300
+    },
+    "conditions": {
+      "A": 60,
+      "A_prime": 60,
+      "B": 60,
+      "C": 60,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v4-apidoc-gate.judge2.jsonl",
+    "bytes": 187487,
+    "sha256": "e604a344031d6305b083a29c24d00485549e2e6b1e3ff3c0095b416b56c3144c",
+    "rows": 300,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "judge_bucket",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 300
+    },
+    "conditions": {
+      "A": 60,
+      "A_prime": 60,
+      "B": 60,
+      "C": 60,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v4-apidoc-gate.judged.jsonl",
+    "bytes": 84412,
+    "sha256": "ba01495075fb8277e9fcc7dd8af7be9de17a988487fd50f28ac70bacba6fe017",
+    "rows": 124,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "judge_bucket",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 124
+    },
+    "conditions": {
+      "A": 30,
+      "A_prime": 30,
+      "B": 30,
+      "C": 30,
+      "D": 4
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/v4-apidoc-gate.raw.jsonl",
+    "bytes": 350190,
+    "sha256": "1ebb9736b37958c02f5dea9aa37603542d88d220ebdd3f5c577aec33202b533c",
+    "rows": 300,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 300
+    },
+    "conditions": {
+      "A": 60,
+      "A_prime": 60,
+      "B": 60,
+      "C": 60,
+      "D": 60
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/wording_ablation-live-20260726-192257.jsonl",
+    "bytes": 89146,
+    "sha256": "7060ac4fd3378ba030e6a94f85108229fef1a922211946f35a4a3881a60199dd",
+    "rows": 150,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 150
+    },
+    "conditions": {
+      "C": 150
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/wording_ablation-live-20260726-192257.raw.jsonl",
+    "bytes": 177168,
+    "sha256": "59b44f71d9e26b32367024783c9d9afb2a52d0d4bf63840a655f2b7d38ac3c06",
+    "rows": 150,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "gpt-4o": 150
+    },
+    "conditions": {
+      "C": 150
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/wording_ablation_anthropic-live-20260726-192725.jsonl",
+    "bytes": 92924,
+    "sha256": "57107e71802208c0d905d489f1d8bd982df4427aa7d664365428ec89028e20b9",
+    "rows": 150,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "keyword_hits",
+      "model",
+      "params_passed",
+      "provider",
+      "raw_response",
+      "rep",
+      "run_id",
+      "seed",
+      "task_id",
+      "temperature",
+      "tier_flags",
+      "timestamp",
+      "tool_called",
+      "tool_offered",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 150
+    },
+    "conditions": {
+      "C": 150
+    },
+    "errors": 0
+  },
+  {
+    "path": "runs/wording_ablation_anthropic-live-20260726-192725.raw.jsonl",
+    "bytes": 150278,
+    "sha256": "0998cfacff973f99640c5b7c55b6b9c3b706facdb0c1f65985c4aa0f5f13917a",
+    "rows": 150,
+    "kind": "jsonl",
+    "keys": [
+      "condition",
+      "framework",
+      "model",
+      "provider",
+      "raw_provider_response",
+      "rep",
+      "run_id",
+      "wording_style"
+    ],
+    "models": {
+      "claude-sonnet-4-5-20250929": 150
+    },
+    "conditions": {
+      "C": 150
+    },
+    "errors": 0
+  },
+  {
+    "path": "tutorial.md",
+    "bytes": 128989,
+    "sha256": "7c3074110cbe87533ac58acd7117fc20f99508c1b61eb8f5125ded459b406cba",
+    "kind": "text",
+    "lines": 2181
+  },
+  {
+    "path": "updated_v6_result.md",
+    "bytes": 9633,
+    "sha256": "a918475bd78f9ea771d83348afc0c92c288fe20f367144e8bd45efce319ce79e",
+    "kind": "text",
+    "lines": 171
+  },
+  {
+    "path": "usenix_paper/figures/gradient.png",
+    "bytes": 32344,
+    "sha256": "55b5d797997f892f0485580d23d7215bee8fd5b537c389e4936540d3ec820d40",
+    "kind": "binary"
+  },
+  {
+    "path": "usenix_paper/figures/matrix.png",
+    "bytes": 22727,
+    "sha256": "7657c4c0fb0dda1884f2983bebf593e3745a8237e6be847d80c00b8f56f078aa",
+    "kind": "binary"
+  },
+  {
+    "path": "usenix_paper/figures/pipeline.png",
+    "bytes": 41334,
+    "sha256": "f0ffe251e80a610f8ce50f83c1476440c954dc43f5c5c6d57b5dce489da3c644",
+    "kind": "binary"
+  },
+  {
+    "path": "usenix_paper/figures/roc.png",
+    "bytes": 13786,
+    "sha256": "ba12a1250474701a2e3b8f1471f924aa5ff9a7ca2043a51ebf3668e47cbba6b6",
+    "kind": "binary"
+  },
+  {
+    "path": "usenix_paper/figures/schema.png",
+    "bytes": 92635,
+    "sha256": "348030c33fe94b948c9ff1c3e984e1d08623cd0b7ba81034ca8e0b6dcd281e37",
+    "kind": "binary"
+  },
+  {
+    "path": "usenix_paper/figures/threat.png",
+    "bytes": 46748,
+    "sha256": "cc5fc86a4692bfcb5843f29e2d75541fb24f34f7826e3ceda686435100429c41",
+    "kind": "binary"
+  },
+  {
+    "path": "usenix_paper/main.bbl",
+    "bytes": 9229,
+    "sha256": "4f90b974374729c674430ac9f0bfe725aea5db2bf78d0460979d628ddb5a9937",
+    "kind": "text",
+    "lines": 179
+  },
+  {
+    "path": "usenix_paper/main.pdf",
+    "bytes": 454487,
+    "sha256": "9550eef2be65476e03cfada2c2f7e91052fe1c4175d99c3438ecf4922de5ef29",
+    "kind": "pdf",
+    "words": 11260
+  },
+  {
+    "path": "usenix_paper/main.tex",
+    "bytes": 75821,
+    "sha256": "f77208296de1c1d235340e284417c0b3a92ff2500d18516e3e38022ff5118db1",
+    "kind": "text",
+    "lines": 1385
+  },
+  {
+    "path": "usenix_paper/numbers.lock.json",
+    "bytes": 31992,
+    "sha256": "76221a4729909a489c8f740d6d88010ff32b7aff3fb35807ee763ff6fb267964",
+    "kind": "json",
+    "keys": [
+      "schema_version",
+      "manuscript_sha256",
+      "values",
+      "coverage"
+    ]
+  },
+  {
+    "path": "usenix_paper/refs.bib",
+    "bytes": 17780,
+    "sha256": "1ac9f83ad0bc9a6c9f7f2a32ea6de76118211ec7939ce7629f0ced19f800a184",
+    "kind": "text",
+    "lines": 432
+  },
+  {
+    "path": "usenix_paper/usenix.sty",
+    "bytes": 3795,
+    "sha256": "2278c83173e084a00fcf76d3227acb971f5137ecea993a5b4e13a9b2bd67b45e",
+    "kind": "text",
+    "lines": 129
+  },
+  {
+    "path": "writing/PROJECT_JOURNEY.md",
+    "bytes": 91854,
+    "sha256": "db1e60419af95b560252289dc152a26f858844b8b653cb89da9980450ea1ab7e",
+    "kind": "text",
+    "lines": 1754
+  },
+  {
+    "path": "writing/README.md",
+    "bytes": 2779,
+    "sha256": "5621f228a889e661a8b4d0a6c58726a424db1b3c1d0f1d0a4a860af72004f714",
+    "kind": "text",
+    "lines": 50
+  },
+  {
+    "path": "writing/SUPERVISOR_REVIEW.md",
+    "bytes": 29898,
+    "sha256": "c902a010f439ba4d4cc9d39d1a62aa1e14ad164e88b6946361a4d0b6145fcd3c",
+    "kind": "text",
+    "lines": 525
+  },
+  {
+    "path": "writing/base.tex",
+    "bytes": 34921,
+    "sha256": "e4509596ab226027b2f74a8860b8dfa714a165b4ff3abdf35962c87ff6eced61",
+    "kind": "text",
+    "lines": 367
+  },
+  {
+    "path": "writing/tutorial.md",
+    "bytes": 127830,
+    "sha256": "1bbeedb61fe25c6339c7e0cf5115e3d3ee63b60f152316322a164c5277f33d9a",
+    "kind": "text",
+    "lines": 2180
+  }
+]

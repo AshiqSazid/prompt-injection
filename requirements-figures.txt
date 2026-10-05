@@ -1,0 +1,3 @@
+# Plotting dependency for code/plot_figures.py, installed on top of
+# requirements-analysis.lock. The analysis and its checks do not need it.
+matplotlib==3.11.2

@@ -1,0 +1,22 @@
+{
+  "checked_on": "2026-09-29",
+  "status": "not_submission_ready",
+  "offline_tests_passed": 171,
+  "historical_numbers_checked": 197,
+  "clean_copy_reproduction": "passed",
+  "live_experiment25_observations": 0,
+  "paid_model_calls_this_revision": 0,
+  "pdf_pages": {
+    "main": 5,
+    "supplement": 5
+  },
+  "abstract_words_whitespace": 162,
+  "review_note": "Rendered pages inspected; author details and prospective findings remain pending. Author approval has not been inferred.",
+  "sha256": {
+    "journal_paper/main.pdf": "c625ed5a1ea56924280e4a7673664fb3ea3791c415a39920f7e77685be3aa3cd",
+    "journal_paper/supplement.pdf": "f3143befa513aaad31329b84342a66051c62ab802a89f14d46ce125228c67f59",
+    "journal_paper/main.tex": "707b7c0e5b30eda07a047f969e4287673b7af8da57731b503d9bc8ac6f2ba1fc",
+    "journal_paper/supplement.tex": "6c95ed183811c4660b38707358694ad2056434fb6e6f3efb03d914f863c891a8",
+    "docs/JOURNAL_EXTENSION_PROTOCOL.md": "c2608207346956403ad90c3febef2b5c8f2f6d49d73776d9449ee6eeb4a1ee6e"
+  }
+}

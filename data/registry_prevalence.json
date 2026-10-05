@@ -1,0 +1,210 @@
+{
+ "audit": {
+  "cloud region argument": {
+   "entries": [
+    "AWS Cost Explorer/region"
+   ],
+   "names": 1,
+   "servers": 1
+  },
+  "credential argument": {
+   "entries": [
+    "Gmail Headless/google_access_token",
+    "Gmail Headless/google_client_secret",
+    "Gmail Headless/google_refresh_token",
+    "Lingo.dev/password",
+    "Meilisearch/api_key",
+    "SingleStore/password",
+    "Thirdweb/secret_key",
+    "Windows CLI/connectionConfig"
+   ],
+   "names": 7,
+   "servers": 6
+  },
+  "user location argument": {
+   "entries": [
+    "OpenAI WebSearch MCP/user_location"
+   ],
+   "names": 1,
+   "servers": 1
+  }
+ },
+ "distinct_names": 1066,
+ "families": {
+  "client-identity": {
+   "matches": [],
+   "names": 0,
+   "parameters": 0,
+   "servers": 0
+  },
+  "contact": {
+   "matches": [
+    "Phone MCP/create_contact/name: (str) The contact's full name",
+    "Phone MCP/create_contact/phone: (str) The phone number for the contact",
+    "Telegram/add_contact/first_name: (str) First name of the contact",
+    "Telegram/add_contact/last_name: (Optional, str) Last name of the contact",
+    "Telegram/add_contact/phone: (str) Phone number of the contact",
+    "Telegram/delete_contact/user_id: (int) ID of the contact",
+    "Telegram/get_contact_chats/contact_id: (int) ID of the contact",
+    "Telegram/get_last_interaction/contact_id: (int) ID of the contact",
+    "Telegram/import_contacts/contacts: (list of dict) List of contact dictionaries"
+   ],
+   "names": 7,
+   "parameters": 9,
+   "servers": 2
+  },
+  "credential": {
+   "matches": [
+    "Airflow/Get DAG Source/file_token: (string) The token of the DAG source file.",
+    "Airflow/Reparse DAG File/file_token: (string) The token of the DAG source file.",
+    "EVM MCP Server/approve-token-spending/tokenAddress: (address/ENS) The address or ENS name of the token",
+    "EVM MCP Server/check-nft-ownership/tokenId: (string) The token ID",
+    "EVM MCP Server/get-erc1155-balance/tokenAddress: (address/ENS) The address or ENS name of the ERC1155 token",
+    "EVM MCP Server/get-erc1155-balance/tokenId: (string) The token ID",
+    "EVM MCP Server/get-erc1155-token-uri/tokenAddress: (address/ENS) The address or ENS name of the ERC1155 token",
+    "EVM MCP Server/get-erc1155-token-uri/tokenId: (string) The token ID",
+    "EVM MCP Server/get-nft-info/tokenId: (string) The token ID",
+    "EVM MCP Server/get-token-balance/tokenAddress: (address/ENS) The address or ENS name of the token",
+    "EVM MCP Server/get-token-info/tokenAddress: (address/ENS) The address or ENS name of the token",
+    "EVM MCP Server/transfer-erc1155/tokenAddress: (address/ENS) The address or ENS name of the ERC1155 token",
+    "EVM MCP Server/transfer-erc1155/tokenId: (string) The token ID",
+    "EVM MCP Server/transfer-nft/tokenId: (string) The token ID",
+    "EVM MCP Server/transfer-token/tokenAddress: (address/ENS) The address or ENS name of the token",
+    "Fewsats/pay_offer/l402_offer: (object) Offer details containing: offers (Array of offer objects with ID, amount, currenc",
+    "Gmail Headless/get_full_email_body_content/google_access_token: (string) The access token required to authenticate the request.",
+    "Gmail Headless/get_recent_emails/google_access_token: (string) The access token required to authenticate the request.",
+    "Gmail Headless/gmail_refresh_token/google_client_secret: (string) The client secret obtained from Google API credentials.",
+    "Gmail Headless/gmail_refresh_token/google_refresh_token: (string) The refresh token used to obtain a new access token.",
+    "Gmail Headless/send_email/google_access_token: (string) The access token required to authenticate the request.",
+    "Heurist Mesh Agent/fetch_security_details/contract_address: (string) The token contract address",
+    "Heurist Mesh Agent/get_coingecko_id/token_name: (string) The token name to search for",
+    "Heurist Mesh Agent/get_token_info/coingecko_id: (string) The CoinGecko ID of the token",
+    "Heurist Mesh Agent/get_token_pairs/token_address: (string) The token contract address to look up all pairs for",
+    "Heurist Mesh Agent/search_pairs/search_term: (string) Search term (token name, symbol, or address)",
+    "Hyperliquid/get_candle_snapshot/coin: (string) Token symbol",
+    "Hyperliquid/get_l2_book/symbol: (string) Token symbol",
+    "Kong Konnect/List Consumers/offset: (string) Pagination offset token",
+    "Kong Konnect/List Plugins/offset: (string) Pagination offset token",
+    "Kong Konnect/List Routes/offset: (string) Pagination offset token",
+    "Kong Konnect/List Services/offset: (string) Pagination offset token",
+    "Lingo.dev/add-user/password: (string) The password for the new user.",
+    "Meilisearch/update-connection-settings/api_key: (string) New Meilisearch API key",
+    "SingleStore/create_virtual_workspace/password: (string) Password for the user",
+    "SingleStore/execute_sql/password: (string) Password for the user",
+    "SingleStore/execute_sql_on_virtual_workspace/password: (string) Password for the user",
+    "Solana Agent Kit/createDebridgeOrder/dstChainTokenOut: (string) Destination token mint",
+    "Solana Agent Kit/createDebridgeOrder/srcChainTokenIn: (string) Source token mint",
+    "Solana Agent Kit/createDebridgeOrder/srcChainTokenInAmount: (string) Amount of source token",
+    "Solana Agent Kit/createWrappedToken/tokenAddress: (string) Original token address",
+    "Solana Agent Kit/deployToken/initialSupply: (number) Initial supply of the token",
+    "Solana Agent Kit/deployToken/name: (string) Name of the token",
+    "Solana Agent Kit/deployToken/symbol: (string) Symbol of the token",
+    "Solana Agent Kit/deployToken/uri: (string) URI for the token metadata",
+    "Solana Agent Kit/depositToDriftUserAccount/token: (string) Token symbol",
+    "Solana Agent Kit/executeSwap/fromTokenAddress: (string) Source token address",
+    "Solana Agent Kit/executeSwap/toTokenAddress: (string) Destination token address",
+    "Solana Agent Kit/getDebridgeTokensInfo/token: (string) Token symbol",
+    "Solana Agent Kit/getPriceInference/token: (string) Token symbol",
+    "Solana Agent Kit/getQuote/fromTokenAddress: (string) Source token address",
+    "Solana Agent Kit/getQuote/toTokenAddress: (string) Destination token address",
+    "Solana Agent Kit/getTokenInfo/tokenAddress: (string) Token address",
+    "Solana Agent Kit/getTokenPriceData/tokens: (string[]) Array of token addresses",
+    "Solana Agent Kit/sendCompressedAirdrop/mint: (PublicKey) Token mint",
+    "Solana Agent Kit/swap/fromToken: (string) Source token address",
+    "Solana Agent Kit/swap/toToken: (string) Destination token address",
+    "Solana Agent Kit/tokenTransfer/tokenAddress: (string) Original token address or leave it empty to transfer Native SOL",
+    "Solana Agent Kit/trade/sourceTokenMint: (PublicKey) Source token mint",
+    "Solana Agent Kit/trade/targetTokenMint: (PublicKey) Target token mint",
+    "Solana Agent Kit/withdrawFromDriftAccount/token: (string) Token symbol",
+    "Thirdweb/get_tools/secret_key: (string) The secret key required for authentication.",
+    "Windows CLI/create_ssh_connection/connectionConfig: (object) Connection configuration details including host, port, username, and either passw"
+   ],
+   "names": 34,
+   "parameters": 64,
+   "servers": 13
+  },
+  "operator/tenant": {
+   "matches": [
+    "Bitrise/create_connected_app/workspace_slug: (string) Identifier of the Bitrise workspace",
+    "Bitrise/create_workspace_group/workspace_slug: (string) Slug of the Bitrise workspace",
+    "Bitrise/get_workspace/workspace_slug: (string) Slug of the Bitrise workspace",
+    "Bitrise/get_workspace_groups/workspace_slug: (string) Slug of the Bitrise workspace",
+    "Bitrise/get_workspace_members/workspace_slug: (string) Slug of the Bitrise workspace",
+    "Bitrise/invite_member_to_workspace/workspace_slug: (string) Slug of the Bitrise workspace",
+    "Bitrise/list_connected_apps/workspace_slug: (string) Identifier of the Bitrise workspace",
+    "Bitrise/register_app/organization_slug: (string) The organization (aka workspace) the app to add to",
+    "CircleCI/find_flaky_tests/url_or_context: (string) Either a CircleCI project URL or a combination of workspace root path and Git rem",
+    "CircleCI/get_build_failure_logs/url_or_context: (string) Either a CircleCI URL or a combination of workspace root path, Git remote URL, an",
+    "CircleCI/get_job_test_results/url_or_context: (string) Either a CircleCI URL (job, workflow, or pipeline) or a combination of workspace ",
+    "CircleCI/get_latest_pipeline_status/url_or_context: (string) Either a CircleCI project URL or a combination of workspace root path, Git remote",
+    "ClickUp/create_document/workspaceId: (string) The ID of the workspace where the document will be created",
+    "ClickUp/create_document_pages/workspaceId: (string) The ID of the workspace",
+    "ClickUp/get_document/workspaceId: (string) The ID of the workspace",
+    "ClickUp/list_documents/workspaceId: (string) The ID of the workspace",
+    "ClickUp/update_document_page/workspaceId: (string) The ID of the workspace",
+    "DevDb/URI Handler/workspace: (Optional, string) The workspace path",
+    "GitHub/create_or_update_file/owner: (string) Repository owner (username or organization)",
+    "GitHub/fork_repository/organization: (optional string) Organization to fork to",
+    "Github Actions/cancel_workflow_run/owner: (string) Repository owner (username or organization)",
+    "Github Actions/get_workflow/owner: (string) Repository owner (username or organization)",
+    "Github Actions/get_workflow_run/owner: (string) Repository owner (username or organization)",
+    "Github Actions/get_workflow_run_jobs/owner: (string) Repository owner (username or organization)",
+    "Github Actions/get_workflow_usage/owner: (string) Repository owner (username or organization)",
+    "Github Actions/list_workflow_runs/owner: (string) Repository owner (username or organization)",
+    "Github Actions/list_workflows/owner: (string) Repository owner (username or organization)",
+    "Github Actions/rerun_workflow/owner: (string) Repository owner (username or organization)",
+    "Github Actions/trigger_workflow/owner: (string) Repository owner (username or organization)",
+    "InfluxDB/create-bucket/orgID: (string) The ID of the organization",
+    "InfluxDB/create-org/description: (Optional, string) A description of the organization",
+    "InfluxDB/create-org/name: (string) The name of the new organization",
+    "InfluxDB/query-data/org: (string) The organization name",
+    "InfluxDB/write-data/org: (string) The organization name",
+    "SingleStore/create_virtual_workspace/name: (string) Name of the starter workspace",
+    "SingleStore/create_virtual_workspace/username: (string) Username for accessing the workspace",
+    "SingleStore/execute_sql/username: (string) Username for accessing the workspace",
+    "SingleStore/execute_sql/workspace_group_identifier: (string) Identifier of the workspace group",
+    "SingleStore/execute_sql/workspace_identifier: (string) Identifier of the workspace",
+    "SingleStore/execute_sql_on_virtual_workspace/username: (string) Username for accessing the workspace",
+    "SingleStore/execute_sql_on_virtual_workspace/virtual_workspace_id: (string) ID of the virtual workspace",
+    "SingleStore/workspaces_info/workspaceGroupID: (string) ID of the workspace group",
+    "xcodebuild/build/folder: (string, required) The full path of the current folder that the iOS Xcode workspace/projec",
+    "xcodebuild/test/folder: (string, required) The full path of the current folder that the iOS Xcode workspace/projec"
+   ],
+   "names": 17,
+   "parameters": 44,
+   "servers": 9
+  },
+  "policy": {
+   "matches": [],
+   "names": 0,
+   "parameters": 0,
+   "servers": 0
+  },
+  "region": {
+   "matches": [
+    "AWS Cost Explorer/get_bedrock_daily_usage_stats/region: (str) AWS region (default: 'us-east-1')",
+    "AWS Cost Explorer/get_bedrock_hourly_usage_stats/region: (str) AWS region (default: 'us-east-1')",
+    "OpenAI WebSearch MCP/web_search/user_location: (object or null) User location details, including type, city, country, region, and timezon",
+    "TickTick/create_task/timeZone: (optional string) Task time zone (e.g., 'America/Los_Angeles')",
+    "Travel Planner/getTimeZone/timestamp: (optional) Timestamp for time zone calculation"
+   ],
+   "names": 4,
+   "parameters": 5,
+   "servers": 4
+  }
+ },
+ "parameters": 2942,
+ "schema_version": 1,
+ "servers": 308,
+ "snapshot_sha256": "6e41597c5e34e3bc5fa7f89f77479d20680519d73452accde25ceca9cdac775d",
+ "source": {
+  "dataset": "MCP-tools (MCP-Zero)",
+  "download_sha256": "ba517c009ddc6a06e2d62cc23eea5c50a4750e164282269ee7b29129dbbf0842",
+  "drive_file_id": "1RjBGU-AGdHdhUABoeYSztbfQlD0hjUBn",
+  "license": "MIT",
+  "note": "tool and parameter lists were extracted from server READMEs by a language model",
+  "repository": "https://github.com/xfey/MCP-Zero",
+  "retrieved": "2026-10-01"
+ },
+ "tools": 2797
+}

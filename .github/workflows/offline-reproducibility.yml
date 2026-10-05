@@ -1,0 +1,21 @@
+name: Offline evidence checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-analysis.lock
+      - run: python -m pip install -r requirements-analysis.lock
+      - name: Offline regression and evidence checks (no provider SDKs or secrets)
+        run: python code/reproduce.py
+      - name: Install manuscript build tools
+        run: sudo apt-get update && sudo apt-get install -y texlive-latex-extra texlive-publishers texlive-fonts-recommended texlive-fonts-extra latexmk poppler-utils
+      - name: Compile journal manuscript, supplement and earlier manuscripts
+        run: python code/reproduce.py --papers-only

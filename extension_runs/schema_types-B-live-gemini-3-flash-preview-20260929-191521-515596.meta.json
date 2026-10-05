@@ -1,0 +1,47 @@
+{
+  "experiment": "schema-types-25",
+  "mode": "live",
+  "evidence": "live",
+  "stage": "B",
+  "leg": "gemini-3-flash-preview",
+  "design_sha256": "b26321f16057743903f9e473df40bb666deddc60c51b304128f3ce80ed15f8e6",
+  "expected_trials": 80,
+  "selected_trials": 49,
+  "rows_written": 80,
+  "errors": 0,
+  "complete": true,
+  "status": "finished",
+  "stop_reason": null,
+  "limit": null,
+  "planned_counts": {
+    "free": 80,
+    "constrained": 80,
+    "unplanted": 0,
+    "capacity_planted": 0,
+    "capacity_unplanted": 0
+  },
+  "source_sha256": {
+    "schema_types_design.py": "c27dee3c892c033aa21a4314cdd56246c43ff86e5db059838165ffbedf25fdc9",
+    "schema_types_run.py": "c36cd7766b9fc477e1691ffd842385d98f353d46640d0d132dc10b8c975afc95",
+    "native_fixtures.py": "ff66f5c1526d84a3581bb4accf9a97cbe22f507a3a3838526843bf477d5e5b45",
+    "extension_harness.py": "9132c93e962afa852d0776f2238b9458333e7b9492182cc7030fda61b9dfeec1"
+  },
+  "prices_usd_per_million": {
+    "gemini-3-flash-preview": [
+      0.5,
+      3.0
+    ],
+    "gpt-4o-2024-08-06": [
+      2.5,
+      10.0
+    ]
+  },
+  "prices_verified_on": "2026-09-29",
+  "committed_usd": 0.101281,
+  "canonical_path": "extension_runs\\schema_types-B-live-gemini-3-flash-preview-20260929-191521-515596.jsonl",
+  "started_at": "2026-09-29T19:15:21.516597+00:00",
+  "resumed_at": [
+    "2026-09-29T19:17:15.397272+00:00"
+  ],
+  "finished_at": "2026-09-29T19:20:03.063596+00:00"
+}

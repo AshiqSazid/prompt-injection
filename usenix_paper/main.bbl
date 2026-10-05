@@ -1,0 +1,179 @@
+\begin{thebibliography}{10}
+
+\bibitem{mcp_spec}
+{Anthropic}.
+\newblock Model context protocol specification.
+\newblock \url{https://modelcontextprotocol.io/specification}, 2024.
+
+\bibitem{carlini2021extracting}
+Nicholas Carlini, Florian Tram{\`e}r, Eric Wallace, Matthew Jagielski, Ariel Herbert-Voss, Katherine Lee, Adam Roberts, Tom Brown, Dawn Song, Ulfar Erlingsson, Alina Oprea, and Colin Raffel.
+\newblock Extracting training data from large language models.
+\newblock In {\em USENIX Security Symposium}, 2021.
+
+\bibitem{chen2025struq}
+Sizhe Chen, Julien Piet, Chawin Sitawarin, and David Wagner.
+\newblock {StruQ}: Defending against prompt injection with structured queries.
+\newblock In {\em USENIX Security Symposium}, 2025.
+
+\bibitem{debenedetti2025camel}
+Edoardo Debenedetti, Ilia Shumailov, Tianqi Fan, Jamie Hayes, Nicholas Carlini, Daniel Fabian, Christoph Kern, Chongyang Shi, Andreas Terzis, and Florian Tram{\`e}r.
+\newblock Defeating prompt injections by design.
+\newblock arXiv preprint arXiv:2503.18813, 2025.
+
+\bibitem{debenedetti2024agentdojo}
+Edoardo Debenedetti, Jie Zhang, Mislav Balunovi{\'c}, Luca Beurer-Kellner, Marc Fischer, and Florian Tram{\`e}r.
+\newblock {AgentDojo}: A dynamic environment to evaluate prompt injection attacks and defenses for {LLM} agents.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS), Datasets and Benchmarks Track}, 2024.
+
+\bibitem{greshake2023not}
+Kai Greshake, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz.
+\newblock Not what you've signed up for: Compromising real-world {LLM}-integrated applications with indirect prompt injection.
+\newblock In {\em ACM Workshop on Artificial Intelligence and Security (AISec)}, 2023.
+
+\bibitem{hiddenlayer2025mcp}
+{HiddenLayer}.
+\newblock Beyond {MCP}: Expanding agentic function parameter abuse.
+\newblock \url{https://www.hiddenlayer.com/research/beyond-mcp-expanding-agentic-function-parameter-abuse}, 2025.
+
+\bibitem{hines2024spotlighting}
+Keegan Hines, Gary Lopez, Matthew Hall, Federico Zarfati, Yonatan Zunger, and Emre Kiciman.
+\newblock Defending against indirect prompt injection attacks with spotlighting.
+\newblock arXiv preprint arXiv:2403.14720, 2024.
+
+\bibitem{hou2025mcp}
+Xinyi Hou, Yanjie Zhao, Shenao Wang, and Haoyu Wang.
+\newblock Model context protocol ({MCP}): Landscape, security threats, and future research directions.
+\newblock arXiv preprint arXiv:2503.23278, 2025.
+
+\bibitem{hui2024pleak}
+Bo~Hui, Haolin Yuan, Neil Gong, Philippe Burlina, and Yinzhi Cao.
+\newblock {PLeak}: Prompt leaking attacks against large language model applications.
+\newblock In {\em ACM Conference on Computer and Communications Security (CCS)}, 2024.
+
+\bibitem{invariant2025toolpoisoning}
+{Invariant Labs}.
+\newblock {MCP} security notification: Tool poisoning attacks.
+\newblock \url{https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks}, 2025.
+
+\bibitem{jamshidi2025semantic}
+Saeid Jamshidi, Arghavan Moradi~Dakhel, Kawser~Wazed Nafi, and Foutse Khomh.
+\newblock Semantic attacks on tool-augmented {LLM}s: Securing the model context protocol against descriptor-level manipulation.
+\newblock arXiv preprint arXiv:2512.06556, 2025.
+
+\bibitem{mcpitp2026}
+Ruiqi Li, Zhiqiang Wang, Yunhao Yao, and Xiang-Yang Li.
+\newblock {MCP-ITP}: An automated framework for implicit tool poisoning in {MCP}.
+\newblock arXiv preprint arXiv:2601.07395, 2026.
+
+\bibitem{liu2023prompt}
+Yupei Liu, Yuqi Jia, Runpeng Geng, Jinyuan Jia, and Neil~Zhenqiang Gong.
+\newblock Formalizing and benchmarking prompt injection attacks and defenses.
+\newblock In {\em 33rd USENIX Security Symposium (USENIX Security 24)}, pages 1831--1847, Philadelphia, PA, August 2024. USENIX Association.
+
+\bibitem{opentelemetry_semconv}
+{OpenTelemetry Authors}.
+\newblock {OpenTelemetry} semantic conventions.
+\newblock \url{https://github.com/open-telemetry/semantic-conventions}.
+\newblock Accessed: Aug. 16, 2026.
+
+\bibitem{owasp_llm07}
+{OWASP}.
+\newblock {LLM07:2025} --- system prompt leakage.
+\newblock \url{https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/}, 2025.
+
+\bibitem{owasp_mcp03}
+{OWASP}.
+\newblock {MCP03:2025} --- tool poisoning.
+\newblock \url{https://owasp.org/www-project-mcp-top-10/}, 2025.
+
+\bibitem{perez2022ignore}
+F{\'a}bio Perez and Ian Ribeiro.
+\newblock Ignore previous prompt: Attack techniques for language models.
+\newblock In {\em NeurIPS ML Safety Workshop}, 2022.
+
+\bibitem{radosevich2025mcpaudit}
+Brandon Radosevich and John Halloran.
+\newblock {MCP} safety audit: {LLMs} with the model context protocol allow major security exploits.
+\newblock arXiv preprint arXiv:2504.03767, 2025.
+
+\bibitem{rostamzadeh2026dpt}
+Mehrdad Rostamzadeh, Sidhant Narula, Nahom Birhan, Mohammad Ghasemigol, and Daniel Takabi.
+\newblock {MCP-DPT}: A defense-placement taxonomy and coverage analysis for model context protocol security.
+\newblock arXiv preprint arXiv:2604.07551, 2026.
+
+\bibitem{ruan2024toolemu}
+Yangjun Ruan, Honghua Dong, Andrew Wang, Silviu Pitis, Yongchao Zhou, Jimmy Ba, Yann Dubois, Chris~J. Maddison, and Tatsunori Hashimoto.
+\newblock Identifying the risks of {LM} agents with an {LM}-emulated sandbox.
+\newblock In {\em International Conference on Learning Representations (ICLR)}, 2024.
+
+\bibitem{wallace2024hierarchy}
+Eric Wallace, Kai Xiao, Reimar Leike, Lilian Weng, Johannes Heidecke, and Alex Beutel.
+\newblock The instruction hierarchy: Training {LLMs} to prioritize privileged instructions.
+\newblock arXiv preprint arXiv:2404.13208, 2024.
+
+\bibitem{wang2025mcpguard}
+Bin Wang, Zexin Liu, Hao Yu, Ao~Yang, Yenan Huang, Jing Guo, Huangsheng Cheng, Hui Li, and Huiyu Wu.
+\newblock {MCPGuard}: Automatically detecting vulnerabilities in {MCP} servers.
+\newblock arXiv preprint arXiv:2510.23673, 2025.
+
+\bibitem{mindguard2025}
+Zhiqiang Wang, Haohua Du, Guanquan Shi, Junyang Zhang, HaoRan Cheng, Yunhao Yao, Kaiwen Guo, and Xiang-Yang Li.
+\newblock {MindGuard}: Intrinsic decision inspection for securing {LLM} agents against metadata poisoning.
+\newblock arXiv preprint arXiv:2508.20412, 2025.
+
+\bibitem{mcptox2025}
+Zhiqiang Wang, Yichao Gao, Yanting Wang, Suyuan Liu, Haifeng Sun, Haoran Cheng, Guanquan Shi, Haohua Du, and Xiangyang Li.
+\newblock {MCPTox}: A benchmark for tool poisoning attack on real-world {MCP} servers.
+\newblock arXiv preprint arXiv:2508.14925, 2025.
+
+\bibitem{yang2025prsa}
+Yong Yang, Changjiang Li, Qingming Li, Oubo Ma, Haoyu Wang, Zonghui Wang, Yandong Gao, Wenzhi Chen, and Shouling Ji.
+\newblock {PRSA}: Prompt stealing attacks against real-world prompt services.
+\newblock In {\em 34th USENIX Security Symposium (USENIX Security 25)}, pages 2283--2302, Seattle, WA, August 2025. USENIX Association.
+
+\bibitem{zhan2025adaptive}
+Qiusi Zhan, Richard Fang, Henil~Shalin Panchal, and Daniel Kang.
+\newblock Adaptive attacks break defenses against indirect prompt injection attacks on {LLM} agents.
+\newblock In {\em Findings of the Association for Computational Linguistics: NAACL 2025}, pages 7116--7132, Albuquerque, New Mexico, April 2025. Association for Computational Linguistics.
+
+\bibitem{zhan2024injecagent}
+Qiusi Zhan, Zhixiang Liang, Zifan Ying, and Daniel Kang.
+\newblock {InjecAgent}: Benchmarking indirect prompt injections in tool-integrated large language model agents.
+\newblock In {\em Findings of the Association for Computational Linguistics (ACL)}, 2024.
+
+\bibitem{zhang2024output2prompt}
+Collin Zhang, John~X. Morris, and Vitaly Shmatikov.
+\newblock Extracting prompts by inverting {LLM} outputs.
+\newblock In {\em Conference on Empirical Methods in Natural Language Processing (EMNLP)}, 2024.
+
+\bibitem{zhang2025msb}
+Dongsen Zhang, Zekun Li, Xu~Luo, Xuannan Liu, Peipei Li, and Wenjun Xu.
+\newblock {MCP} security bench ({MSB}): Benchmarking attacks against model context protocol in {LLM} agents.
+\newblock arXiv preprint arXiv:2510.15994, 2025.
+
+\bibitem{asb2024}
+Hanrong Zhang, Jingyuan Huang, Kai Mei, Yifei Yao, Zhenting Wang, Chenlu Zhan, Hongwei Wang, and Yongfeng Zhang.
+\newblock Agent security bench ({ASB}): Formalizing and benchmarking attacks and defenses in {LLM}-based agents.
+\newblock arXiv preprint arXiv:2410.02644, 2024.
+
+\bibitem{leakdata2026}
+Wuyang Zhang and Shichao Pei.
+\newblock Your {LLM} agent can leak your data: Data exfiltration via backdoored tool use.
+\newblock arXiv preprint arXiv:2604.05432, 2026.
+
+\bibitem{zhang2024promptextraction}
+Yiming Zhang, Nicholas Carlini, and Daphne Ippolito.
+\newblock Effective prompt extraction from language models.
+\newblock In {\em Conference on Language Modeling (COLM)}, 2024.
+
+\bibitem{zhong2025rtbas}
+Peter~Yong Zhong, Siyuan Chen, Ruiqi Wang, McKenna McCall, Ben~L. Titzer, Heather Miller, and Phillip~B. Gibbons.
+\newblock {RTBAS}: Defending {LLM} agents against prompt injection and privacy leakage.
+\newblock arXiv preprint arXiv:2502.08966, 2025.
+
+\bibitem{zhou2026mcpshield}
+Zhenhong Zhou, Yuanhe Zhang, Hongwei Cai, Moayad Aloqaily, Ouns Bouachir, Linsey Pang, Prakhar Mehrotra, Kun Wang, and Qingsong Wen.
+\newblock {MCPShield}: A security cognition layer for adaptive trust calibration in model context protocol agents.
+\newblock arXiv preprint arXiv:2602.14281, 2026.
+
+\end{thebibliography}

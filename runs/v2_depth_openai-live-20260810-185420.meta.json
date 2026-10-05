@@ -1,0 +1,13 @@
+{
+  "run_id": "20260810-185420",
+  "stage": "v2_depth_openai",
+  "dry_run": false,
+  "expected_trials": 80,
+  "rows_written": 80,
+  "ok": 80,
+  "errors": 0,
+  "limit": null,
+  "complete": true,
+  "canonical_path": "runs/v2_depth_openai-live-20260810-185420.jsonl",
+  "finished_at": "2026-08-10T18:56:09.261802"
+}

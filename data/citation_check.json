@@ -1,0 +1,1077 @@
+{
+  "checked_on": "2026-10-03",
+  "bibliography": "paper\\journal_refs.bib",
+  "missing_keys": [],
+  "uncited_keys": [],
+  "results": [
+    {
+      "key": "asb2024",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents",
+        "authors": [
+          "Hanrong Zhang",
+          "Jingyuan Huang",
+          "Kai Mei",
+          "Yifei Yao",
+          "Zhenting Wang",
+          "Chenlu Zhan",
+          "Hongwei Wang",
+          "Yongfeng Zhang"
+        ],
+        "year": "2024",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "bagdasarian2024airgap",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "AirGapAgent: Protecting Privacy-Conscious Conversational Agents",
+        "authors": [
+          "Eugene Bagdasarian",
+          "Ren Yi",
+          "Sahra Ghalebikesabi",
+          "Peter Kairouz",
+          "Marco Gruteser",
+          "Sewoong Oh",
+          "Borja Balle",
+          "Daniel Ramage"
+        ],
+        "year": "2024",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "beurerkellner2025patterns",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Design Patterns for Securing LLM Agents against Prompt Injections",
+        "authors": [
+          "Luca Beurer-Kellner",
+          "Beat Buesser",
+          "Ana-Maria Creţu",
+          "Edoardo Debenedetti",
+          "Daniel Dobos",
+          "Daniel Fabian",
+          "Marc Fischer",
+          "David Froelicher",
+          "Kathrin Grosse",
+          "Daniel Naeff",
+          "Ezinwanne Ozoani",
+          "Andrew Paverd",
+          "Florian Tramèr",
+          "Václav Volhejn"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "carlini2021extracting",
+      "sources": [
+        "web"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "web_record": {
+        "final_url": "https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting",
+        "title": "Extracting Training Data from Large Language Models | USENIX",
+        "og_title": null,
+        "h1": "Extracting Training Data from Large Language Models",
+        "author": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "chen2025struq",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "StruQ: Defending Against Prompt Injection with Structured Queries",
+        "authors": [
+          "Sizhe Chen",
+          "Julien Piet",
+          "Chawin Sitawarin",
+          "David Wagner"
+        ],
+        "year": "2024",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "costa2025fides",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Securing AI Agents with Information-Flow Control",
+        "authors": [
+          "Manuel Costa",
+          "Boris Köpf",
+          "Aashish Kolluri",
+          "Andrew Paverd",
+          "Mark Russinovich",
+          "Ahmed Salem",
+          "Shruti Tople",
+          "Lukas Wutschitz",
+          "Santiago Zanella-Béguelin"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "debenedetti2024agentdojo",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+        "authors": [
+          "Edoardo Debenedetti",
+          "Jie Zhang",
+          "Mislav Balunović",
+          "Luca Beurer-Kellner",
+          "Marc Fischer",
+          "Florian Tramèr"
+        ],
+        "year": "2024",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "debenedetti2025camel",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Defeating Prompt Injections by Design",
+        "authors": [
+          "Edoardo Debenedetti",
+          "Ilia Shumailov",
+          "Tianqi Fan",
+          "Jamie Hayes",
+          "Nicholas Carlini",
+          "Daniel Fabian",
+          "Christoph Kern",
+          "Chongyang Shi",
+          "Andreas Terzis",
+          "Florian Tramèr"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "fei2025mcpzero",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "MCP-Zero: Active Tool Discovery for Autonomous LLM Agents",
+        "authors": [
+          "Xiang Fei",
+          "Xiawu Zheng",
+          "Hao Feng"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "fu2024imprompter",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Imprompter: Tricking LLM Agents into Improper Tool Use",
+        "authors": [
+          "Xiaohan Fu",
+          "Shuheng Li",
+          "Zihan Wang",
+          "Yihao Liu",
+          "Rajesh K. Gupta",
+          "Taylor Berg-Kirkpatrick",
+          "Earlence Fernandes"
+        ],
+        "year": "2024",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "greshake2023not",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+        "authors": [
+          "Kai Greshake",
+          "Sahar Abdelnabi",
+          "Shailesh Mishra",
+          "Christoph Endres",
+          "Thorsten Holz",
+          "Mario Fritz"
+        ],
+        "year": "2023",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "hiddenlayer2025mcp",
+      "sources": [
+        "web"
+      ],
+      "issues": [],
+      "notes": [],
+      "web_record": {
+        "final_url": "https://www.hiddenlayer.com/research/beyond-mcp-expanding-agentic-function-parameter-abuse",
+        "title": "LLM Fake Function Injection: How to Prevent System Prompt and Tool Leaks",
+        "og_title": "LLM Fake Function Injection: How to Prevent System Prompt and Tool Leaks",
+        "h1": "Beyond MCP: Expanding Agentic Function Parameter Abuse",
+        "author": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "hines2024spotlighting",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Defending Against Indirect Prompt Injection Attacks With Spotlighting",
+        "authors": [
+          "Keegan Hines",
+          "Gary Lopez",
+          "Matthew Hall",
+          "Federico Zarfati",
+          "Yonatan Zunger",
+          "Emre Kiciman"
+        ],
+        "year": "2024",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "hou2025mcp",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions",
+        "authors": [
+          "Xinyi Hou",
+          "Yanjie Zhao",
+          "Shenao Wang",
+          "Haoyu Wang"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "hui2024pleak",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "PLeak: Prompt Leaking Attacks against Large Language Model Applications",
+        "authors": [
+          "Bo Hui",
+          "Haolin Yuan",
+          "Neil Gong",
+          "Philippe Burlina",
+          "Yinzhi Cao"
+        ],
+        "year": "2024",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "invariant2025toolpoisoning",
+      "sources": [
+        "web"
+      ],
+      "issues": [],
+      "notes": [
+        "page author metadata: ['<br/>']"
+      ],
+      "web_record": {
+        "final_url": "https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks",
+        "title": "MCP Security Notification: Tool Poisoning Attacks",
+        "og_title": null,
+        "h1": "MCP Security Notification: Tool Poisoning Attacks",
+        "author": [
+          "<br/>"
+        ]
+      },
+      "status": "ok"
+    },
+    {
+      "key": "jamshidi2025semantic",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [
+        "authors differ: bib ['jamshidi', 'moradidakhel', 'nafi', 'khomh'] vs record ['jamshidi', 'dakhel', 'nafi', 'khomh'] (arXiv)"
+      ],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Semantic Attacks on Tool-Augmented LLMs: Securing the Model Context Protocol Against Descriptor-Level Manipulation",
+        "authors": [
+          "Saeid Jamshidi",
+          "Arghavan Moradi Dakhel",
+          "Kawser Wazed Nafi",
+          "Foutse Khomh"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "mismatch"
+    },
+    {
+      "key": "leakdata2026",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Your LLM Agent Can Leak Your Data: Data Exfiltration via Backdoored Tool Use",
+        "authors": [
+          "Wuyang Zhang",
+          "Shichao Pei"
+        ],
+        "year": "2026",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "lin2026schema",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Your Prompt Is Not the Only Prompt: How Much Do LLMs Weight Structured-Output Schema Descriptions?",
+        "authors": [
+          "Sin-Ying Lin"
+        ],
+        "year": "2026",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "liu2023prompt",
+      "sources": [
+        "web"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "web_record": {
+        "final_url": "https://www.usenix.org/conference/usenixsecurity24/presentation/liu-yupei",
+        "title": "Formalizing and Benchmarking Prompt Injection Attacks and Defenses | USENIX",
+        "og_title": null,
+        "h1": "Formalizing and Benchmarking Prompt Injection Attacks and Defenses",
+        "author": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "mcp_spec",
+      "sources": [
+        "web"
+      ],
+      "issues": [],
+      "notes": [],
+      "web_record": {
+        "final_url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools",
+        "title": "Tools - Model Context Protocol",
+        "og_title": "Tools - Model Context Protocol",
+        "h1": "Tools",
+        "author": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "mcpitp2026",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "MCP-ITP: An Automated Framework for Implicit Tool Poisoning in MCP",
+        "authors": [
+          "Ruiqi Li",
+          "Zhiqiang Wang",
+          "Yunhao Yao",
+          "Xiang-Yang Li"
+        ],
+        "year": "2026",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "mcptox2025",
+      "sources": [
+        "crossref"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "crossref_record": {
+        "title": "MCPTox: A Benchmark for Tool Poisoning on Real-World MCP Servers",
+        "year": "2026",
+        "authors": [
+          "Zhiqiang Wang",
+          "Yichao Gao",
+          "Yanting Wang",
+          "Suyuan Liu",
+          "Haifeng Sun",
+          "Haoran Cheng",
+          "Guanquan Shi",
+          "Haohua Du",
+          "Xiangyang Li"
+        ],
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "pages": "35811-35819",
+        "volume": "40",
+        "issue": "42"
+      },
+      "status": "ok"
+    },
+    {
+      "key": "mindguard2025",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "MindGuard: Intrinsic Decision Inspection for Securing LLM Agents Against Metadata Poisoning",
+        "authors": [
+          "Zhiqiang Wang",
+          "Haohua Du",
+          "Guanquan Shi",
+          "Junyang Zhang",
+          "HaoRan Cheng",
+          "Yunhao Yao",
+          "Kaiwen Guo",
+          "Xiang-Yang Li"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "mireshghallah2024confaide",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Can LLMs Keep a Secret? Testing Privacy Implications of Language Models via Contextual Integrity Theory",
+        "authors": [
+          "Niloofar Mireshghallah",
+          "Hyunwoo Kim",
+          "Xuhui Zhou",
+          "Yulia Tsvetkov",
+          "Maarten Sap",
+          "Reza Shokri",
+          "Yejin Choi"
+        ],
+        "year": "2023",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "opentelemetry_semconv",
+      "sources": [
+        "web"
+      ],
+      "issues": [],
+      "notes": [],
+      "web_record": {
+        "final_url": "https://github.com/open-telemetry/semantic-conventions",
+        "title": "GitHub - open-telemetry/semantic-conventions: Defines standards for generating consistent, accessible telemetry across a variety of domains · GitHub",
+        "og_title": "GitHub - open-telemetry/semantic-conventions: Defines standards for generating consistent, accessible telemetry across a variety of domains",
+        "h1": "OpenTelemetry Semantic Conventions",
+        "author": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "owasp_llm07",
+      "sources": [
+        "web"
+      ],
+      "issues": [],
+      "notes": [
+        "page author metadata: ['OWASPGenAIProject Editor']"
+      ],
+      "web_record": {
+        "final_url": "https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/",
+        "title": "LLM07:2025 System Prompt Leakage - OWASP Gen AI Security Project",
+        "og_title": "LLM07:2025 System Prompt Leakage",
+        "h1": "Join us in Orlando, FL 10/11 – 10/15 @ InfoSec World 2026",
+        "author": [
+          "OWASPGenAIProject Editor"
+        ]
+      },
+      "status": "ok"
+    },
+    {
+      "key": "perez2022ignore",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Ignore Previous Prompt: Attack Techniques For Language Models",
+        "authors": [
+          "Fábio Perez",
+          "Ian Ribeiro"
+        ],
+        "year": "2022",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "radosevich2025mcpaudit",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "MCP Safety Audit: LLMs with the Model Context Protocol Allow Major Security Exploits",
+        "authors": [
+          "Brandon Radosevich",
+          "John Halloran"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "rostamzadeh2026dpt",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "MCP-DPT: A Defense-Placement Taxonomy and Coverage Analysis for Model Context Protocol Security",
+        "authors": [
+          "Mehrdad Rostamzadeh",
+          "Sidhant Narula",
+          "Nahom Birhan",
+          "Mohammad Ghasemigol",
+          "Daniel Takabi"
+        ],
+        "year": "2026",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "ruan2024toolemu",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Identifying the Risks of LM Agents with an LM-Emulated Sandbox",
+        "authors": [
+          "Yangjun Ruan",
+          "Honghua Dong",
+          "Andrew Wang",
+          "Silviu Pitis",
+          "Yongchao Zhou",
+          "Jimmy Ba",
+          "Yann Dubois",
+          "Chris J. Maddison",
+          "Tatsunori Hashimoto"
+        ],
+        "year": "2023",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "shao2024privacylens",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "PrivacyLens: Evaluating Privacy Norm Awareness of Language Models in Action",
+        "authors": [
+          "Yijia Shao",
+          "Tianshi Li",
+          "Weiyan Shi",
+          "Yanchen Liu",
+          "Diyi Yang"
+        ],
+        "year": "2024",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "shi2025progent",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Progent: Securing AI Agents with Privilege Control",
+        "authors": [
+          "Tianneng Shi",
+          "Jingxuan He",
+          "Zhun Wang",
+          "Hongwei Li",
+          "Linyu Wu",
+          "Wenbo Guo",
+          "Dawn Song"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "wallace2024hierarchy",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions",
+        "authors": [
+          "Eric Wallace",
+          "Kai Xiao",
+          "Reimar Leike",
+          "Lilian Weng",
+          "Johannes Heidecke",
+          "Alex Beutel"
+        ],
+        "year": "2024",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "wang2025mcpguard",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "MCPGuard : Automatically Detecting Vulnerabilities in MCP Servers",
+        "authors": [
+          "Bin Wang",
+          "Zexin Liu",
+          "Hao Yu",
+          "Ao Yang",
+          "Yenan Huang",
+          "Jing Guo",
+          "Huangsheng Cheng",
+          "Hui Li",
+          "Huiyu Wu"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "wu2025isolategpt",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "arXiv journal_ref: The Network and Distributed System Security (NDSS) Symposium 2025",
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "IsolateGPT: An Execution Isolation Architecture for LLM-Based Agentic Systems",
+        "authors": [
+          "Yuhao Wu",
+          "Franziska Roesner",
+          "Tadayoshi Kohno",
+          "Ning Zhang",
+          "Umar Iqbal"
+        ],
+        "year": "2024",
+        "journal_ref": "The Network and Distributed System Security (NDSS) Symposium 2025",
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "yang2025prsa",
+      "sources": [
+        "web"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "web_record": {
+        "final_url": "https://www.usenix.org/conference/usenixsecurity25/presentation/yang-yong",
+        "title": "PRSA: Prompt Stealing Attacks against Real-World Prompt Services | USENIX",
+        "og_title": null,
+        "h1": "PRSA: Prompt Stealing Attacks against Real-World Prompt Services",
+        "author": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "yergattikar2026securing",
+      "sources": [
+        "crossref"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "crossref_record": {
+        "title": "Securing the Tool Layer: A Threat Taxonomy and Runtime Defense Framework for Model Context Protocol Deployments",
+        "year": "2026",
+        "authors": [
+          "Saurabh Yergattikar"
+        ],
+        "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 6: Industry Track)",
+        "pages": "865-871",
+        "volume": null,
+        "issue": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "zhan2024injecagent",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: HTTPError: HTTP Error 500: Internal Server Error"
+      ],
+      "arxiv_record": {
+        "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+        "authors": [
+          "Qiusi Zhan",
+          "Zhixiang Liang",
+          "Zifan Ying",
+          "Daniel Kang"
+        ],
+        "year": "2024",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "zhan2025adaptive",
+      "sources": [
+        "crossref"
+      ],
+      "issues": [
+        "pages 7116--7132 vs Crossref 7101-7117"
+      ],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "crossref_record": {
+        "title": "Adaptive Attacks Break Defenses Against Indirect Prompt Injection Attacks on LLM Agents",
+        "year": "2025",
+        "authors": [
+          "Qiusi Zhan",
+          "Richard Fang",
+          "Henil Shalin Panchal",
+          "Daniel Kang"
+        ],
+        "venue": "Findings of the Association for Computational Linguistics: NAACL 2025",
+        "pages": "7101-7117",
+        "volume": null,
+        "issue": null
+      },
+      "status": "mismatch"
+    },
+    {
+      "key": "zhang2024output2prompt",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Extracting Prompts by Inverting LLM Outputs",
+        "authors": [
+          "Collin Zhang",
+          "John X. Morris",
+          "Vitaly Shmatikov"
+        ],
+        "year": "2024",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "zhang2024promptextraction",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "Effective Prompt Extraction from Language Models",
+        "authors": [
+          "Yiming Zhang",
+          "Nicholas Carlini",
+          "Daphne Ippolito"
+        ],
+        "year": "2023",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "zhang2025msb",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents",
+        "authors": [
+          "Dongsen Zhang",
+          "Zekun Li",
+          "Xu Luo",
+          "Xuannan Liu",
+          "Peipei Li",
+          "Wenjun Xu"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "zhong2025rtbas",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage",
+        "authors": [
+          "Peter Yong Zhong",
+          "Siyuan Chen",
+          "Ruiqi Wang",
+          "McKenna McCall",
+          "Ben L. Titzer",
+          "Heather Miller",
+          "Phillip B. Gibbons"
+        ],
+        "year": "2025",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    },
+    {
+      "key": "zhou2026mcpshield",
+      "sources": [
+        "arxiv"
+      ],
+      "issues": [],
+      "notes": [
+        "DBLP lookup failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "arxiv_record": {
+        "title": "MCPShield: A Security Cognition Layer for Adaptive Trust Calibration in Model Context Protocol Agents",
+        "authors": [
+          "Zhenhong Zhou",
+          "Yuanhe Zhang",
+          "Hongwei Cai",
+          "Moayad Aloqaily",
+          "Ouns Bouachir",
+          "Linsey Pang",
+          "Prakhar Mehrotra",
+          "Kun Wang",
+          "Qingsong Wen"
+        ],
+        "year": "2026",
+        "journal_ref": null,
+        "doi": null
+      },
+      "status": "ok"
+    }
+  ],
+  "limitation": "Existence and metadata only; claim support is not checked."
+}

@@ -1,0 +1,3079 @@
+% =============================================================================
+% Journal manuscript. One thesis: a required tool field selects confidential
+% prompt facts, and schema validity, field type, and content matching do not
+% govern their release. Study 1 (field-to-fact matrix), Study 2 (constraints
+% and typed fields at handler receipt), Study 3 (encodings and typed slots
+% against a dispatch filter) and Study 4 (current models, host context, and a
+% refusing provider). Detection, provenance and full breakdowns are in the
+% appendices; the pilot studies are in supplement.tex.
+%
+% Quantitative tables and macros are generated from selected repository evidence.
+% New descriptive intervals come from code/paper_details.py. Their assumptions
+% and retrospective status are stated in the manuscript and revision audit.
+%
+% Build:  make -C paper        (compiles main.tex and supplement.tex, then
+%                               refreshes the cross-document label files)
+%
+% TEMPLATE: elsarticle, 5p, two columns, numbered references. Venue: Computers
+% & Security (\journal below).
+% =============================================================================
+\documentclass[final,5p,times,twocolumn]{elsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{courier} % scalable monospace font for schema names and code
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,
+  columns=fullflexible,keepspaces=true,showstringspaces=false,
+  literate={—}{{\textemdash}}1}
+\usepackage{xurl}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{pict2e} % reimplements picture \qbezier/\line/\circle as real drawing
+                    % primitives; avoids an arithmetic overflow in roc.tex's near-
+                    % degenerate qbezier segment. Engine-agnostic (pdflatex + XeTeX).
+% elsarticle loads natbib; the cite package is incompatible with it.
+\biboptions{numbers,sort&compress}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage[hidelinks]{hyperref}
+% Supplementary tables and figures, numbered from supplement.aux by
+% code/cross_labels.py. A missing label prints as a bold ??.
+\IfFileExists{supplement_labels.tex}{\input{supplement_labels}}{}
+\newcommand{\supref}[1]{\ifcsname supl@#1\endcsname\csname supl@#1\endcsname\else\textbf{??}\fi}
+\input{analysis_numbers}
+\input{details_macros}
+
+% Prefer the generated file; fall back to the snapshot below. A submission
+% system where you upload main.tex and refs.bib but not the generated siblings
+% is the common case, and without this the compile dies at line 1 with
+% "File `numbers.tex' not found" rather than producing a PDF.
+\IfFileExists{numbers.tex}{\input{numbers}}{}
+
+% BEGIN GENERATED FALLBACK SNAPSHOT
+% Source: paper/numbers.tex, restricted to macros this manuscript references.
+\providecommand{\DefenseAucCI}{[0.986, 0.999]}
+\providecommand{\DefenseAucValue}{0.994}
+\providecommand{\DefenseBandAttack}{25}
+\providecommand{\DefenseBandLegitimate}{15}
+\providecommand{\DefenseBaserateFivePct}{5.0\%}
+\providecommand{\DefenseBaserateOnePct}{1.0\%}
+\providecommand{\DefenseBaseratePointonePct}{0.1\%}
+\providecommand{\DefenseCorpusNegatives}{506}
+\providecommand{\DefenseCorpusPositives}{9}
+\providecommand{\DefenseFprAttwozeroPct}{2.6\%}
+\providecommand{\DefensePpvFivePct}{67.2\%}
+\providecommand{\DefensePpvOnePct}{28.2\%}
+\providecommand{\DefensePpvPointonePct}{3.8\%}
+\providecommand{\DefenseSeqthinkingFrac}{5/13}
+\providecommand{\DefenseTprAttwozeroPct}{100\%}
+\providecommand{\DepthCredOptionalBaselineFrac}{20/20}
+\providecommand{\DepthCredOptionalFrac}{14/20}
+\providecommand{\DepthCredPosfirstBaselineFrac}{20/20}
+\providecommand{\DepthCredPosfirstFrac}{20/20}
+\providecommand{\DepthUaOptionalBaselineFrac}{20/20}
+\providecommand{\DepthUaOptionalFrac}{8/20}
+\providecommand{\DepthUaPosfirstBaselineFrac}{20/20}
+\providecommand{\DepthUaPosfirstFrac}{19/20}
+\providecommand{\FrameworkArmDisclosed}{0}
+\providecommand{\FrameworkArmToolCalled}{240}
+\providecommand{\GateClaudeSonnetFourFiveDeltaPp}{0}
+\providecommand{\GateGeminiThreeFlashDeltaPp}{0}
+\providecommand{\GateGptFouroDeltaPp}{67}
+\providecommand{\PrevalenceAttackClientIdentityFrac}{0/401}
+\providecommand{\PrevalenceAttackContactFrac}{1/401}
+\providecommand{\PrevalenceAttackCredentialFrac}{0/401}
+\providecommand{\PrevalenceAttackOperatortenantFrac}{5/401}
+\providecommand{\PrevalenceAttackPolicyFrac}{0/401}
+\providecommand{\PrevalenceAttackRegionFrac}{1/401}
+\providecommand{\PrevalenceCorpusN}{401}
+\providecommand{\PrevalenceCorpusParams}{1048}
+\providecommand{\PrevalenceCorpusServers}{45}
+\providecommand{\PrevalenceVictimCharsN}{195,012}
+\providecommand{\PrevalenceVictimCloudRegionK}{3}
+\providecommand{\PrevalenceVictimCredentialShapedK}{0}
+\providecommand{\PrevalenceVictimOperatorTenantK}{0}
+\providecommand{\PrevalenceVictimPolicyTokenK}{0}
+\providecommand{\RealClaudeSonnetFourFiveCFrac}{120/120}
+\providecommand{\RealClaudeSonnetFourFiveCIttFrac}{120/125}
+\providecommand{\RealClaudeSonnetFourFiveCIttPct}{96\%}
+\providecommand{\RealClaudeSonnetFourFiveCPct}{100\%}
+\providecommand{\RealClaudeSonnetFourFiveCToolsCalled}{24}
+\providecommand{\RealClaudeSonnetFourFiveCToolsLeaking}{24}
+\providecommand{\RealClaudeSonnetFourFiveDFrac}{0/119}
+\providecommand{\RealClaudeSonnetFourFiveDIttFrac}{0/124}
+\providecommand{\RealClaudeSonnetFourFiveDIttN}{124}
+\providecommand{\RealCorpusServers}{25}
+\providecommand{\RealCorpusTools}{25}
+\providecommand{\RealDCombinedFrac}{0/228}
+\providecommand{\RealGptFouroCFrac}{78/113}
+\providecommand{\RealGptFouroCIttFrac}{78/125}
+\providecommand{\RealGptFouroCIttPct}{62\%}
+\providecommand{\RealGptFouroCPct}{69\%}
+\providecommand{\RealGptFouroCToolsCalled}{24}
+\providecommand{\RealGptFouroCToolsLeaking}{22}
+\providecommand{\RealGptFouroDFrac}{0/109}
+\providecommand{\RealGptFouroDIttFrac}{0/125}
+\providecommand{\ScanDescAPrimeFlagged}{0}
+\providecommand{\ScanDescBFlagged}{1}
+\providecommand{\ScanDescBPrimeFlagged}{1}
+\providecommand{\ScanDescCFlagged}{0}
+\providecommand{\ScanDescDFlagged}{0}
+\providecommand{\ScanDescEFlagged}{1}
+\providecommand{\ScanDescnameAPrimeFlagged}{1}
+\providecommand{\ScanDescnameBFlagged}{1}
+\providecommand{\ScanDescnameBPrimeFlagged}{1}
+\providecommand{\ScanDescnameCFlagged}{0}
+\providecommand{\ScanDescnameDFlagged}{0}
+\providecommand{\ScanDescnameEFlagged}{1}
+\providecommand{\ScanRawAPrimeFlagged}{0}
+\providecommand{\ScanRawBFlagged}{1}
+\providecommand{\ScanRawBPrimeFlagged}{1}
+\providecommand{\ScanRawCApiDocumentationFlagged}{0}
+\providecommand{\ScanRawDFlagged}{0}
+\providecommand{\ScanRawEFlagged}{0}
+\providecommand{\ScanRawMetaArms}{56}
+\providecommand{\ScanRawMetaCalls}{168}
+\providecommand{\ScanRawMetaReps}{3}
+\providecommand{\ScanRawMetaSfourarms}{10}
+\providecommand{\ScanRawMetaSfourflagged}{0}
+\providecommand{\ScanRawMetaSonearms}{9}
+\providecommand{\ScanRawMetaSoneflagged}{0}
+\providecommand{\ScanRawMetaSthreearms}{7}
+\providecommand{\ScanRawMetaSthreeflagged}{0}
+\providecommand{\ScanRawMetaStudyarms}{30}
+\providecommand{\ScanRawMetaStudyflagged}{0}
+\providecommand{\ScanRawMetaStwoarms}{4}
+\providecommand{\ScanRawMetaStwoflagged}{0}
+\providecommand{\ScanRawMetaValid}{168}
+\providecommand{\VthreeClaudeSonnetFourFiveFabricationFrac}{0/120}
+\providecommand{\VthreeDeepseekVfourFlashFabricationFrac}{0/77}
+\providecommand{\VthreeFabricationPooledFrac}{0/367}
+\providecommand{\VthreeGeminiThreeFlashPreviewAdjacentCI}{[23, 46]}
+\providecommand{\VthreeGeminiThreeFlashPreviewAdjacentFrac}{20/60}
+\providecommand{\VthreeGeminiThreeFlashPreviewAdjacentPct}{33\%}
+\providecommand{\VthreeGeminiThreeFlashPreviewControlFrac}{0/800}
+\providecommand{\VthreeGeminiThreeFlashPreviewControlcallsFrac}{0/160}
+\providecommand{\VthreeGeminiThreeFlashPreviewCredentialFrac}{20/20}
+\providecommand{\VthreeGeminiThreeFlashPreviewCrosstalknamingFrac}{0/4}
+\providecommand{\VthreeGeminiThreeFlashPreviewCrosstalkuaFrac}{4/4}
+\providecommand{\VthreeGeminiThreeFlashPreviewDeltaCI}{[17, 86]}
+\providecommand{\VthreeGeminiThreeFlashPreviewDeltaPp}{58}
+\providecommand{\VthreeGeminiThreeFlashPreviewDiagonalCI}{[20, 87]}
+\providecommand{\VthreeGeminiThreeFlashPreviewDiagonalFrac}{82/140}
+\providecommand{\VthreeGeminiThreeFlashPreviewDiagonalPct}{59\%}
+\providecommand{\VthreeGeminiThreeFlashPreviewFabricationFrac}{0/77}
+\providecommand{\VthreeGeminiThreeFlashPreviewFieldApiDocumentationFrac}{2/20}
+\providecommand{\VthreeGeminiThreeFlashPreviewFieldGCredentialAdjacentFrac}{0/20}
+\providecommand{\VthreeGeminiThreeFlashPreviewFieldGPlatformAdjacentFrac}{0/20}
+\providecommand{\VthreeGeminiThreeFlashPreviewFieldGRegionAdjacentFrac}{20/20}
+\providecommand{\VthreeGeminiThreeFlashPreviewGenericFrac}{0/20}
+\providecommand{\VthreeGeminiThreeFlashPreviewNamingCI}{[67, 85]}
+\providecommand{\VthreeGeminiThreeFlashPreviewNamingFrac}{62/80}
+\providecommand{\VthreeGeminiThreeFlashPreviewNamingPct}{78\%}
+\providecommand{\VthreeGeminiThreeFlashPreviewOffdiagCI}{[0, 2]}
+\providecommand{\VthreeGeminiThreeFlashPreviewOffdiagFrac}{4/560}
+\providecommand{\VthreeGeminiThreeFlashPreviewOffdiagPct}{1\%}
+\providecommand{\VthreeGeminiThreeOneProPreviewFieldGCredentialAdjacentFrac}{0/3}
+\providecommand{\VthreeGeminiThreeOneProPreviewFieldGPlatformAdjacentFrac}{20/20}
+\providecommand{\VthreeGptFouroAdjacentCI}{[23, 46]}
+\providecommand{\VthreeGptFouroAdjacentFrac}{20/60}
+\providecommand{\VthreeGptFouroAdjacentPct}{33\%}
+\providecommand{\VthreeGptFouroControlFrac}{0/800}
+\providecommand{\VthreeGptFouroControlN}{800}
+\providecommand{\VthreeGptFouroControlcallsFrac}{0/160}
+\providecommand{\VthreeGptFouroControlcallsN}{160}
+\providecommand{\VthreeGptFouroCredentialFrac}{20/20}
+\providecommand{\VthreeGptFouroCrosstalknamingFrac}{0/9}
+\providecommand{\VthreeGptFouroCrosstalkuaFrac}{8/9}
+\providecommand{\VthreeGptFouroDeltaCI}{[32, 95]}
+\providecommand{\VthreeGptFouroDeltaPp}{66}
+\providecommand{\VthreeGptFouroDiagonalCI}{[36, 96]}
+\providecommand{\VthreeGptFouroDiagonalFrac}{95/140}
+\providecommand{\VthreeGptFouroDiagonalPct}{68\%}
+\providecommand{\VthreeGptFouroFabricationFrac}{0/93}
+\providecommand{\VthreeGptFouroFieldApiDocumentationFrac}{15/20}
+\providecommand{\VthreeGptFouroFieldGCredentialAdjacentFrac}{0/20}
+\providecommand{\VthreeGptFouroFieldGPlatformAdjacentFrac}{0/20}
+\providecommand{\VthreeGptFouroFieldGRegionAdjacentFrac}{20/20}
+\providecommand{\VthreeGptFouroFieldMCredentialFrac}{20/20}
+\providecommand{\VthreeGptFouroGenericFrac}{0/20}
+\providecommand{\VthreeGptFouroNamingCI}{[86, 97]}
+\providecommand{\VthreeGptFouroNamingFrac}{75/80}
+\providecommand{\VthreeGptFouroNamingPct}{94\%}
+\providecommand{\VthreeGptFouroOffdiagCI}{[0, 4]}
+\providecommand{\VthreeGptFouroOffdiagFrac}{9/560}
+\providecommand{\VthreeGptFouroOffdiagPct}{2\%}
+\providecommand{\VthreeTrialsErrors}{10}
+\providecommand{\VthreeTrialsN}{2013}
+% END GENERATED FALLBACK SNAPSHOT
+
+% Scanner votes are generated from the historical record; the prose and caption
+% explain why a stored negative vote is not an audited raw classifier response.
+\newcommand{\verdict}[1]{\ifnum#1=1\textbf{flag}\else no flag\fi}
+
+% Venue changed 2026-10-05 to the Journal of Information Security and
+% Applications (Elsevier; takes this elsarticle source as is). Computers &
+% Security, named here on 2026-10-04, is out of scope: its Elsevier page
+% (shop.elsevier.com/journals/computers-and-security/0167-4048) states a
+% moratorium since early 2024 on submissions with AI or ML as a significant
+% component, and that "items directed to the security of AI/ML systems
+% themselves (such as LLM and federated learning) are out of scope of the
+% journal". The JISA scope page excludes only the routine application of
+% existing AI/ML models to standard security datasets. IEEE TDSC
+% (docs/TDSC_TARGET.md) would need IEEEtran and a cut to its 18-page cap.
+% TODO: T34 Read the JISA guide for authors (the ScienceDirect page refuses automated access) for its abstract limit, keyword count, highlight rules, length limit and review model, and confirm its current SCImago quartile. Measured on 2026-10-05 against the usual Elsevier figures: abstract 250 words, six keywords, five highlights of 68 to 85 characters. The AI declaration heading follows Elsevier's current wording (T26).
+\journal{Journal of Information Security and Applications}
+
+\begin{document}
+\begin{frontmatter}
+\title{Required Tool Parameters Select Confidential Prompt Facts: Schema Validity, Field Type, and Content Matching Do Not Govern Their Release}
+% Authors and order confirmed by the study author on 2026-10-04.
+\author{Ashiq Sazid}
+\author{Md. Rafiur Rahman}
+% TODO: T22 Supply each author's affiliation, the corresponding author, and that author's email (\affiliation, \cortext, \ead). Not supplied on 2026-10-04; do not infer them.
+
+\begin{abstract}
+  A tool provider can require a parameter the user's task does not need, which a
+  model may fill from its confidential system prompt. In an order-lookup task,
+  every trial plants five synthetic confidential facts and the schema adds one
+  required field. On two preregistered models a targeted
+  field returns its fact in \VthreeGptFouroDiagonalPct{} of GPT-4o and
+  \VthreeGeminiThreeFlashPreviewDiagonalPct{} of Gemini 3 Flash calls, and each
+  other fact in \VthreeGptFouroOffdiagPct{} and
+  \VthreeGeminiThreeFlashPreviewOffdiagPct{} of checks. Region, operator, and
+  service-key fields succeed in every call; two of three fields that only allude
+  to their fact never do. A neutral field returns none. An exploratory
+  replication on GPT-6.1 Sol, Claude Opus 5.5 and Gemini 3.1 Pro, the last
+  incomplete, shows the same selectivity, by \DetStudyFourSolDelta{} to
+  \DetStudyFourOpusDelta{} percentage points. In two further preregistered
+  studies with a local handler, a string pattern that admits the secret does not
+  measurably reduce recovery, and enumerated, integer, and boolean fields deliver
+  the planted value in \ExpACapacityPlanted{} trials, above guessing rates. A
+  dispatch filter that knows every planted value blocks plain copies but passes
+  the hexadecimal form in \DetStudyThreeGemHexPthree{} and
+  \DetStudyThreeGptHexPthree{} trials, and a code split across typed slots in
+  every planted trial. An allowlist of task arguments, defined by the
+  experimenter, removes them all. When the tool then refuses the reduced call,
+  the targeted secret moves elsewhere in \DetStudyFourPooledRelocated{} trials, within
+  the stated bound on every leg, one incomplete, and every task fails. An earlier
+  preregistered hypothesis, that such a field outperforms an explicit request on
+  most models, failed.
+\end{abstract}
+  
+
+\begin{keyword}
+Tool-calling agents \sep Information disclosure \sep Schema security \sep
+Model Context Protocol \sep Prompt confidentiality \sep Reproducible measurement
+\end{keyword}
+\end{frontmatter}
+
+\section{Introduction}
+\label{sec:intro}
+A tool-using language model must convert a user's request into arguments that
+conform to an external interface. The interface describes both the operation
+and the information that its provider expects to receive. This arrangement
+creates a confidentiality question that is distinct from whether the operation
+itself is appropriate: a model can select the intended tool while placing
+unnecessary information in an additional argument. If the host dispatches that
+argument, the tool provider receives information outside the user's task.
+
+Consider an assistant asked to retrieve recent orders. The task requires an
+order query. A third-party provider additionally declares a required field for
+client identification, deployment region, or an integration key. The interface
+presents the field as routine bookkeeping and contains no instruction to ignore
+a policy. If the system prompt holds a matching confidential fact, the model
+may use that fact to satisfy the interface.
+
+The Model Context Protocol (MCP) makes this arrangement routine. Its tools are
+model-controlled: the model discovers the available tools and invokes them from
+its context and the user's request~\cite{mcp_spec}. Each tool declares an input
+schema, and a server may change its tool list after a person first reviewed
+it. The specification recommends that clients show tool inputs to the user
+before calling the server, to avoid malicious or accidental data
+exfiltration~\cite{mcp_spec}. The protocol therefore anticipates that arguments
+can carry data out of a host, and it leaves the control to client behavior.
+
+That a parameter can extract prompt content is established. HiddenLayer reports
+function-parameter abuse, including explicitly named prompt fields and
+fake-function variants~\cite{hiddenlayer2025mcp}, and MCP Security Bench (MSB)
+includes out-of-scope parameters as an attack surface~\cite{zhang2025msb}. What
+a defender needs to know is different. The first open question is whether the
+field controls \emph{which} fact leaves when several are available, or whether
+the model copies prompt content indiscriminately. The second is whether the
+checks a host can apply before dispatch, namely validity against the schema,
+the declared type of the field, and matching argument content against known
+secrets, decide what leaves.
+
+This paper answers both with four studies that share one design: synthetic
+facts with seed-derived markers are planted in the system prompt under a
+confidentiality instruction, required fields are added to an otherwise
+legitimate tool, and a deterministic scorer records which marker appears where.
+Study~1 crosses seven targeted fields with five simultaneously planted facts.
+On two preregistered models a field returns its own fact and almost never the
+four others, a neutral field returns nothing, and fields that only allude to
+their target mostly fail. Study~2 records what a local tool handler receives. A
+permissive string pattern does not reduce recovery, and enumerated, integer,
+and boolean fields carry the planted value. Study~3 places a content filter
+with exact knowledge of every secret at dispatch. The models encode the secret
+or split it across typed slots when the schema asks, which the filter passes,
+while an allowlist of task arguments removes every planted value. Study~4,
+exploratory, repeats the matrix on three newer models, plants facts of the
+kind real agent hosts place in context, and lets a provider refuse the
+call that the allowlist reduced.
+
+Selectivity matters for three reasons. For an attacker, a field that names a
+category turns a schema into a precise query: the provider receives the fact it
+asked for, not a dump that it must search. A field that only alludes to the
+fact mostly does not. For evaluation it means that a benchmark that scores whether any
+marker appears, or averages over fields, misreads both the channel's strength
+and its limits. For a defender it gives a diagnostic: matched recovery,
+nonmatched recovery, and the call rate together show whether a change removes
+the disclosure, removes the selectivity, or suppresses the tool.
+
+One objection applies to everything that follows. The model may only be doing
+what it was asked: the prompt said to keep the configuration confidential, a
+tool asked for part of it, and nothing told the model that the tool's provider
+was not an intended recipient. We take that objection to be the finding rather
+than a rebuttal of it. The model cannot know which recipients the deployer
+authorized, and the experiments show that neither the schema's structure nor
+the content of its arguments supplies that knowledge at dispatch. In an
+exploratory pilot with ten to twenty trials per cell, a confidentiality
+instruction that names tool parameters closed the channel on one provider and
+not on another (Section~\ref{sec:reticence}).
+Section~\ref{sec:instruction} develops the argument.
+
+The scope is narrow, and the paper reports the evidence that limits it. Every
+secret is synthetic, every handler is local, and every field wording comes
+from the study's own design rather than from an independent author. An earlier preregistered hypothesis, that an
+operationally worded field outperforms an explicit identity request on most
+models, failed. A framework experiment with nothing planted recovered no
+genuine runtime identity, so every result concerns content supplied in the
+prompt.
+
+The paper makes four contributions.
+\begin{enumerate}
+\item \textbf{Required fields select among available facts.} With five facts
+present in every trial, the targeted field returns its own fact far more often
+than the others, the neutral field and trials with nothing planted return
+none, and direct naming of the category carries the effect on the primary pair
+(Section~\ref{sec:matrix}). Three newer models show the same pattern in an
+exploratory study with a different design, and return a planted signed-in user
+through a billing field (Section~\ref{sec:study4}).
+\item \textbf{Schema validity and field type do not gate release.} A
+permissive string constraint does not measurably reduce received recovery,
+and categorical fields carry admissible planted values while the user's task
+succeeds (Section~\ref{sec:exp25}).
+\item \textbf{Models transform confidential content on request, so content
+matching fails and structural removal does not.} A filter with exact knowledge
+of the secrets passes encoded and slot-split values. An allowlist of task
+arguments, defined here by the experimenter, removes them. When a provider
+refuses the reduced call, no model moved them elsewhere, and the
+confidentiality loss becomes a failed task
+(Sections~\ref{sec:study3} and~\ref{sec:study4}).
+\item \textbf{An auditable measurement design.} The simultaneous-fact matrix,
+its controls, field-level uncertainty, three timestamped protocols, and every
+pilot and negative result are released with logs from which each reported
+number is regenerated.
+\end{enumerate}
+
+Section~\ref{sec:background} gives background and Section~\ref{sec:threat} the
+threat model. Section~\ref{sec:method} describes what the studies share, and
+Sections~\ref{sec:matrix} to~\ref{sec:study4} report one study each as a
+question, a design, a result, and a boundary. Section~\ref{sec:scope} collects
+robustness checks, the detection evidence, and the failed hypothesis.
+Ecological context, discussion, threats to validity, and related work follow.
+The appendices give exact stimuli, complete breakdowns, and provenance records,
+and the Supplementary Material reports the pilot studies.
+
+\section{Background}
+\label{sec:background}
+\subsection{Tool calling and schema delivery}
+A tool-calling interface lets a model return a structured request for an
+operation instead of, or alongside, an ordinary answer. The request names a
+function and supplies argument values, and the surrounding host decides whether
+to execute it. An interface specifies an operation name, a description, and an
+input schema. Field descriptions tell the model what values belong in the
+call. A required field constrains the structure of the argument object. It
+does not determine which source of information may supply the value. A string
+copied from a confidential instruction is a syntactically valid string, so
+structural validation alone cannot establish the purpose or authority of that
+transfer.
+
+MCP defines a standard interface between host applications and servers that
+expose tools~\cite{mcp_spec}. A host discovers the available tools, and its
+model adapter translates their declarations into the tool format of the chosen
+model API. The model therefore reads names and descriptions that the server
+wrote. Discovery precedes generation and dispatch follows it. The server
+controls the declaration, the host controls which declarations reach the model
+and whether a generated call proceeds, and the model provider controls how the
+inputs are processed. The disclosure mechanism studied here is not specific to
+MCP. Any host that accepts external function declarations exposes the same
+model input.
+
+\subsection{Prompt confidentiality, injection, and extraction}
+A system prompt supplies instructions and context that the host places before
+the user's request. A deployer may treat parts of it as confidential because
+they describe internal operations, organizational assignments, or
+access-related settings. Guidance to keep secrets out of system prompts
+reduces the exposure at its source~\cite{owasp_llm07}. Our experiments make the
+confidentiality policy explicit: fabricated facts are placed in the system
+message together with an instruction that the configuration must not be
+revealed.
+
+Prompt injection concerns adversarial influence over an application's behavior
+through model inputs~\cite{perez2022ignore,liu2023prompt}. Indirect injection
+extends the threat to content met during a legitimate task, with no attacker
+control of the user's request~\cite{greshake2023not}. Tool descriptions and
+schemas are a related externally authored surface. Prompt extraction names the
+protected object and the outcome: recovery of instructions or facts supplied
+through private context. A parameter that appears to request ordinary metadata
+can recover prompt content without an imperative override. The contrast we
+draw is between these surface forms. We do not place the parameter channel
+outside every definition of prompt injection.
+
+\section{Threat model and observable outcomes}
+\label{sec:threat}
+\subsection{Participants and adversary capabilities}
+The setting contains a user, a host application, a language model accessed
+through an API, and a third-party tool provider (Figure~\ref{fig:threat}). The
+user initiates an authorized task. The deployer configures the host, chooses
+which information enters the model context, and decides which destinations may
+receive it. The protected asset is information in the system prompt that the
+host's confidentiality instruction prohibits revealing.
+
+\begin{figure*}[t]\centering
+\begin{tikzpicture}[
+  font=\footnotesize, >=Stealth,
+  box/.style={draw, rounded corners=2pt, align=center, minimum height=11mm,
+              text width=27mm, inner sep=3pt},
+  adv/.style={box, fill=black!8},
+  study/.style={draw, dashed, rounded corners=2pt, align=center, inner sep=2pt,
+                text width=29mm, font=\scriptsize}]
+\node[box] (deployer) at (1.6, 0.85) {\textbf{Deployer}\\system prompt with\\confidential facts};
+\node[adv] (provider) at (1.6, -0.85) {\textbf{Tool provider}\\schema with one added\\required field};
+\node[box] (model) at (5.2, 0) {\textbf{Model}\\fills the schema from\\task and context};
+\node[box] (call) at (8.6, 0) {\textbf{Emitted call}\\task arguments and\\the added field};
+\node[box] (host) at (12.0, 0) {\textbf{Host at dispatch}\\validity check, then\\release policy};
+\node[adv] (handler) at (15.4, 0) {\textbf{Provider handler}\\receives the\\dispatched arguments};
+\draw[->] (deployer.east) -- (model.west);
+\draw[->] (provider.east) -- (model.west);
+\draw[->] (model) -- (call);
+\draw[->] (call) -- (host);
+\draw[->] (host) -- (handler);
+\draw[->, dashed] (handler.south) -- (15.4, -1.25) -- node[below, font=\scriptsize]
+  {Study~4: refusal of the reduced call returned to the model} (5.2, -1.25) -- (model.south);
+\node[study] at (8.6, 1.5) {Study~1: which planted\\fact each field emits};
+\node[study] at (12.0, 1.5) {Studies~2 and~3: validity,\\type, content filter, allowlist};
+\node[study] at (15.4, 1.5) {Studies~2 to~4: what\\the handler receives};
+\end{tikzpicture}
+\caption{Threat model and measurement points. The shaded parties are the
+adversary's: it controls the schema and receives what the host dispatches.
+The deployer controls the system prompt and the host's release policy. The
+dashed boxes mark where each study observes the flow. Study~4 also returns
+the provider's refusal of a reduced call to the model.}
+\label{fig:threat}
+\end{figure*}
+
+The adversary is a tool provider whose declaration the host accepts. It
+controls its own tool's name, description, property names, property
+descriptions, and required list. It does not control the user's request, the
+system prompt, the model weights, or the host's release policy. Its goal is to
+make a matching protected fact appear in an added argument and, where the host
+dispatches the call, to receive it. The adversary names a semantic category
+such as region or operator. It does not know the planted value, which only the
+experimenter's scorer uses. The user's message stays an ordinary task request,
+so the attack needs no forged user turn and no interactive extraction query.
+The schema is the adversarial input.
+
+We call a field \emph{operationally framed} when its wording invokes a
+recognizable function such as diagnostics or account reconciliation. The term
+describes the form of the request. It makes no claim that the field is needed
+for the task or that the user authorized it.
+
+Each observation is one model response under a fixed condition. The design has
+no victim-specific search, no conversation adaptation, and no malicious tool
+response, so it does not bound what an adaptive attacker can achieve.
+
+\subsection{From generation to external receipt}
+\begin{table}[t]\centering\small
+\caption{Outcome levels and the evidence needed to distinguish them. Study~1
+measures the first level. Studies~2 to~4 measure all five against a local
+handler.}
+\label{tab:endpoints}
+\begin{tabular}{@{}p{.22\columnwidth}p{.72\columnwidth}@{}}
+\toprule
+Level & Required observation \\
+\midrule
+Emission & Recorded model response contains a tool call and its arguments. \\
+Validity & Tool name and arguments satisfy the offered interface. \\
+Dispatch & Host records sending the selected call. \\
+Receipt & Server capture matches the call, arguments, and correlation identifier. \\
+Task utility & The returned result satisfies a legitimate-task oracle. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:endpoints} lists the successive outcomes relevant to
+operational risk. A host may reject an emitted call, ask for confirmation, or
+remove a field, and a server may reject an argument. Emission is therefore not
+a direct estimate of completed exfiltration. Study~1 measures emission.
+Studies~2 to~4 record validity, dispatch, receipt by an in-process handler, and
+task success for every trial. That receipt is local. It involves neither an
+MCP transport nor a remote provider.
+
+\subsection{Scope of the security claim}
+The claim concerns information that the deployer placed in the model context.
+It does not concern credentials absent from that context, extraction from
+model weights, malicious tool outputs, compromised client code, or use of a
+secret after receipt. Every credential-shaped value is synthetic and
+authenticates to no service. The studies cover free strings, one permissive
+string constraint, three small categorical domains, three encodings of a
+string, and a code split across typed slots. Constraints that
+exclude the secret, commercial client interfaces, and host authorization
+policies are outside it.
+% TODO: T01 Obtain correlated live model, dispatch, and remote server receipt records over a real MCP transport, plus a legitimate task oracle, before making an end-to-end exfiltration claim. Study 2 records in-process handler receipt only.
+% TODO: T02 Obtain client-specific UI and confirmation observations before making any claim about user visibility or consent.
+
+\section{Study design}
+\label{sec:method}
+\subsection{Questions and evidence roles}
+\label{sec:questions}
+The four studies answer five questions in the order a value travels from the
+prompt to the provider. Q1: when several confidential facts are available,
+does a field recover its designated fact more often than the others? Q2: how
+does recovery vary with how directly the field names its target, and does
+anything appear when the facts are absent? Q3: does a constraint on the
+requested string, or a categorical field type, change what a tool handler
+receives when the secret remains admissible? Q4: can a provider get a planted
+value past a dispatch-time content filter by changing only what its schema
+asks for? Q5: when a host removes the added argument and the provider refuses
+the reduced call, does the model move the secret elsewhere? Study~1 addresses
+Q1 and Q2, Study~2 Q3, and Study~3 Q4. Study~4 revisits Q1 and Q2 on current
+models and adds Q5.
+
+\begin{table*}[t]\centering\small
+\caption{Studies and evidence roles. Only the rows for the two preregistered
+Study~1 models, Study~2, and Study~3 support confirmatory statements.}
+\label{tab:arms}
+\begin{tabular}{@{}p{.21\textwidth}p{.33\textwidth}p{.40\textwidth}@{}}
+\toprule
+Evidence & Role in this paper & Status and principal restriction \\
+\midrule
+Study~1, two preregistered models (Section~\ref{sec:matrix}) & Field-to-fact
+selectivity (Q1, Q2) & Protocol timestamped before collection. The paired
+analysis was implemented after collection. \\
+Study~1, controls and further models & Generic field, trials with nothing
+planted, three more models & Unplanted trials cover six of eight fields. The
+further models were added after the protocol, and one arm is incomplete. \\
+Study~2 (Section~\ref{sec:exp25}) & String constraints and categorical types
+at handler receipt (Q3) & Sealed and timestamped protocol. Two models,
+synthetic tools, four fields, and one amendment before the native-schema
+stage. \\
+Policy replay (Section~\ref{sec:release}) & Five dispatch policies applied to
+the recorded Study~2 calls & Exploratory. No new model calls, no adaptive
+attacker, local handlers. \\
+Study~3 (Section~\ref{sec:study3}) & Encodings and typed slots against a
+content filter at dispatch (Q4) & Sealed protocol with its Bitcoin anchor
+verified before the first planted call. Two models, two facts, encodings fixed
+in advance. \\
+Study~4 (Section~\ref{sec:study4}) & Selectivity on three newer models,
+planted host-context facts, and a provider that refuses the reduced call (Q5)
+& Exploratory, after the sealed protocols. Design files committed with the
+data, not before; every recorded request matches them. One leg is partial, one
+was discarded, and the refusal is local. \\
+Robustness checks (Section~\ref{sec:scope}) & Confidentiality strength,
+reconstructed interfaces, required against optional fields & Exploratory.
+Keyword identity measure. Rendered listings lose native constraints. \\
+Detection (Section~\ref{sec:detection}) & One published scanner policy and one
+field classifier & Scanner replies kept and validated. The classifier has no
+independent holdout. \\
+Pilot studies (Supplementary Material) & Channel comparison, wording,
+payloads, familiarity & A preregistered superiority hypothesis failed. The
+wording was chosen after an ablation. \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Table~\ref{tab:arms} fixes the status of each body of evidence. The remaining
+sections state results without repeating these restrictions, and
+Section~\ref{sec:limits} collects the threats to validity.
+
+\subsection{Shared elements}
+\paragraph{Planted facts}
+Every planted trial places facts in the system prompt under a
+confidentiality instruction. Studies~1 and~4, the string arms of Study~2, and
+the encoding arm of Study~3 plant a platform, a region, an operator, and a
+credential-shaped value. Study~1 adds an opaque control value, and Study~4 adds
+a working directory and a signed-in user. The capacity arm of Study~2 plants
+one admissible value instead, a tier, a slot number, or a maintenance flag,
+and the covert arm of Study~3 plants an access code. The values are
+derived from a fixed seed through a family-specific SHA-256 digest, so they
+exist nowhere else, and each protocol fixes the generation rule. Planting the
+facts together is what gives the nonmatched cells meaning: a fact that does not
+appear was available in the same context. Unplanted trials remove the facts and
+keep the task and field. Because a seed-derived marker cannot be guessed, they
+do not estimate a fabrication rate. They check that the scorer does not credit
+the invented values that models write into such fields, and that no marker
+reaches a trial from anywhere but its own prompt.
+
+\paragraph{One added field}
+Each trial offers a legitimate tool with one extra required field, except the
+covert arm of Study~3, which adds one required field for each of the four or
+eight characters of the code. The request and the base tool are held fixed
+within a study, so the added declaration is the only manipulation. A neutral field that names no fact
+category controls for the presence of an extra required argument.
+
+\paragraph{Deterministic scoring}
+\label{sec:analysis}
+The scorer serializes the argument object without the task's own arguments,
+lowercases it, removes nonalphanumeric characters, and tests whether it
+contains the normalized marker. Let $B_{fr}$ be the normalized arguments for
+repetition $r$ of field $f$, and let $\mathcal A_k$ hold the normalized marker,
+and in Study~1 its prespecified aliases, for fact $k$. The indicator is
+\begin{equation}
+Y_{frk}=\mathbf{1}\{\exists a\in\mathcal A_k : a\text{ is a substring of }B_{fr}\}.
+\label{eq:score}
+\end{equation}
+This is normalized substring matching. It needs no semantic judge and no human
+label. Studies~2 and~4 use the full marker without aliases, apply it to the
+arguments the handler received, and count no-call, invalid, and rejected trials
+as no recovery. Study~3 applies the same rule after the decoding that each of
+its fields declares (Section~\ref{sec:study3}).
+
+\section{Study~1: required fields select among available facts}
+\label{sec:matrix}
+\paragraph{Question}
+When five confidential facts are in the prompt, does an added field return the
+one it names, the others as well, or nothing (Q1)? And how far does recovery
+depend on naming the target directly (Q2)?
+
+\subsection{Design}
+\paragraph{Task and manipulation}
+The task is the request, ``Can you pull up my three most recent orders?'' The
+base tool, \texttt{lookup\_recent\_orders}, has one required string argument,
+\texttt{query}. The system instruction describes an assistant that helps a
+user manage an online store. The request, the tool, and the prompt are held
+fixed. Condition C adds a targeted or generic field. Condition D adds
+\texttt{request\_trace\_id}, described as an opaque unique identifier for the
+request.
+
+\paragraph{Fields}
+Seven fields have a designated target. Four are \emph{naming} fields:
+\texttt{client\_user\_agent} (platform), \texttt{deployment\_region\_code}
+(region), \texttt{operator\_account\_name} (operator), and
+\texttt{service\_key\_reference} (credential). Three are \emph{adjacent} fields
+that avoid the target noun: \texttt{issuing\_surface} (platform),
+\texttt{locality\_hint} (region), and \texttt{integration\_binding\_note}
+(credential). An eighth field, \texttt{call\_context}, is generic and has no
+target. The taxonomy was fixed before collection. It classifies the chosen
+wordings and is not a calibrated scale of semantic distance, so results are
+reported per field as well as per class. The five planted facts are a
+platform, a region, an operator, a credential-shaped value, and an opaque
+control value that no field targets. \ref{app:fixtures} gives every
+description and marker.
+
+\paragraph{Models and schedule}
+The protocol names \texttt{gpt-4o} and \texttt{gemini-3-flash-preview}
+(GPT-4o and Gemini Flash below). Each model has 20 repetitions for each of the
+eight C fields and the matching D condition, at temperature 0.7. Seven
+targeted fields thus supply 140 matched checks and 560 nonmatched checks per
+model, and the 160 D calls supply 800 correlated fact checks. Each repetition
+is a fresh request with no conversation history. Claude Sonnet, DeepSeek
+Flash, and Gemini Pro were run on the same grid after the protocol was
+timestamped and are reported as exploratory. The Gemini Pro arm stopped at a
+quota limit. \ref{app:reproduction} gives the provenance record, the
+requested and reported model identifiers, and the record validation rules.
+
+\paragraph{Estimands}
+Recovery means that a planted marker appears in the recorded arguments other
+than \texttt{query}, among calls that the adapter reports as tool calls. For
+the set $\mathcal F$ of seven targeted fields, let $t(f)$ be the designated
+target and $n_f$ the number of emitted calls. The matched rate, the nonmatched
+rate, and their contrast are
+\begin{align}
+\widehat p_M
+  &=\frac{\sum_{f\in\mathcal F}\sum_{r=1}^{n_f}Y_{fr,t(f)}}
+          {\sum_{f\in\mathcal F}n_f},\label{eq:matched}\\
+\widehat p_U
+  &=\frac{\sum_{f\in\mathcal F}\sum_{r=1}^{n_f}\sum_{k\ne t(f)}Y_{frk}}
+          {4\sum_{f\in\mathcal F}n_f},\label{eq:unmatched}\\
+\widehat\Delta&=\widehat p_M-\widehat p_U.\label{eq:contrast}
+\end{align}
+The contrast compares per-fact opportunities, so one call can contribute a
+matched success and several nonmatched successes. For the generic and neutral
+conditions, which have no target, the call-level outcome is
+\begin{equation}
+A_{fr}=\mathbf{1}\left\{\sum_kY_{frk}>0\right\}.
+\label{eq:any}
+\end{equation}
+
+\paragraph{Uncertainty and decision rule}
+The primary interval is a percentile bootstrap that resamples the seven
+targeted fields with replacement, keeping each field's matched and nonmatched
+counts together, with 10,000 draws and seed zero. Resampling fields reflects
+the main source of heterogeneity. With seven hand-selected fields the interval
+describes sensitivity to field composition, and we add leave-one-field-out
+contrasts. The preregistered rule (H1) requires a difference of at least 20
+percentage points and an interval excluding zero on both named models. The
+paired implementation of this bootstrap was written after collection, as was
+the exclusion of the targetless generic field from the nonmatched
+denominator. \ref{app:reproduction} records both corrections. With the generic
+field's fact checks left in, as first implemented, the nonmatched counts are
+\DetVthreeGptFouroOffWithGeneric{} and
+\DetVthreeGeminiThreeFlashPreviewOffWithGeneric{}, each difference moves by
+less than one point, and the decision is the same. An independent
+implementation reproduces the counts. With seven fields the bootstrap
+distribution is discrete, so its lower endpoint moves with the seed, over
+\DetVthreeGptFouroDeltaLowSeeds{} points for GPT-4o and
+\DetVthreeGeminiThreeFlashPreviewDeltaLowSeeds{} for Gemini Flash across seeds
+zero to nineteen. Enumerating every resample of the seven fields gives the
+reported intervals, \DetVthreeGptFouroDeltaExactCI{} and
+\DetVthreeGeminiThreeFlashPreviewDeltaExactCI{}, with no seed.
+
+Individual proportions carry two-sided 95\% Wilson intervals. Per-fact Fisher
+tests with Holm adjustment, Newcombe intervals, a hierarchical logistic fit,
+and three alternative scoring rules are secondary analyses reported in
+\ref{app:secondary}. The protocol's second hypothesis applies a diagonal rule
+to the generic field, which has no target. We report any-fact recovery for
+that field instead. Its third hypothesis concerns unplanted controls for the
+same fields, and the collected controls cover six of the eight.
+
+\subsection{Result: the field selects its fact}
+\input{generated_primary_table}
+Table~\ref{tab:primary} reports the preregistered comparison. GPT-4o recovers
+the matched fact on \VthreeGptFouroDiagonalFrac{} opportunities
+(\VthreeGptFouroDiagonalPct{}, field bootstrap interval
+\VthreeGptFouroDiagonalCI{}), compared with \VthreeGptFouroOffdiagFrac{}
+nonmatched checks (\VthreeGptFouroOffdiagPct{}, \VthreeGptFouroOffdiagCI{}).
+Gemini Flash recovers the matched fact on
+\VthreeGeminiThreeFlashPreviewDiagonalFrac{} opportunities
+(\VthreeGeminiThreeFlashPreviewDiagonalPct{},
+\VthreeGeminiThreeFlashPreviewDiagonalCI{}), compared with
+\VthreeGeminiThreeFlashPreviewOffdiagFrac{} nonmatched checks
+(\VthreeGeminiThreeFlashPreviewOffdiagPct{},
+\VthreeGeminiThreeFlashPreviewOffdiagCI{}). The two arms contain
+\DetVthreeGptFouroAttempts{} and \DetVthreeGeminiThreeFlashPreviewAttempts{}
+attempted trials, and every planted trial emitted a call.
+Table~\ref{tab:accounting_table-1} gives the errors and emitted calls behind
+these denominators.
+
+\begin{figure*}[t]\centering
+\includegraphics[width=\textwidth]{figures/selectivity}
+\caption{Field-by-fact recovery for the two preregistered models: (a) GPT-4o
+and (b) Gemini Flash. Each cell gives the number of emitted calls that
+recovered the column's planted fact, column $n$ gives the emitted calls that
+carried the row's field, and a cell is shaded in proportion to that share. An
+outlined cell is the field's designated target.
+The last two rows are the generic field and the neutral control, which have no
+target. The cells of a row share the same calls. The neutral row repeats one
+request under \DetVthreeGptFouroControlSeeds{} seeds, so its calls are far
+from independent.
+Tables~\ref{tab:matrix-gpt-4o} and~\ref{tab:matrix-gemini-3-flash-preview} give
+the Wilson interval for every cell.}
+\label{fig:selectivity}
+\end{figure*}
+Figure~\ref{fig:selectivity} shows the complete field-by-fact matrix behind
+these totals. Each row is one added field and each column is one planted fact.
+The outlined cell in a row is the matched check, and the other four cells are
+the nonmatched checks. Recovery concentrates in the outlined cells. Outside
+them, the client field also returns other facts in a few calls, and GPT-4o
+returns the opaque marker once through the credential-adjacent field. The
+generic field and the neutral field return no fact in any column.
+
+The paired differences are \VthreeGptFouroDeltaPp{} percentage points
+\VthreeGptFouroDeltaCI{} for GPT-4o and
+\VthreeGeminiThreeFlashPreviewDeltaPp{} points
+\VthreeGeminiThreeFlashPreviewDeltaCI{} for Gemini Flash. Both exceed the
+preregistered threshold and both intervals exclude zero, so H1 is met. The
+intervals are wide because they resample seven fields: hundreds of fact checks
+are not hundreds of independently sampled interfaces. Leave-one-field-out
+differences range over \JournalGptLoo{} percentage points for GPT-4o and
+\JournalGeminiLoo{} for Gemini, so no single field supplies the sign of the
+result.
+
+Neither primary model recovers a fact in its neutral arm:
+\VthreeGptFouroControlcallsFrac{} calls for GPT-4o and
+\VthreeGeminiThreeFlashPreviewControlcallsFrac{} for Gemini Flash, which
+correspond to \VthreeGptFouroControlFrac{} and
+\VthreeGeminiThreeFlashPreviewControlFrac{} correlated fact checks. The Wilson
+intervals for the neutral calls are \DetVthreeGptFouroControlcallsCI{}\% and
+\DetVthreeGeminiThreeFlashPreviewControlcallsCI{}\%. These intervals treat the
+calls as independent, which overstates their precision. The neutral field is
+one identical request under each of the eight field labels of the design, sent
+with the same \DetVthreeGptFouroControlSeeds{} seeds under each label. GPT-4o,
+which receives the seed, returned \DetVthreeGptFouroControlDistinct{} distinct
+argument objects in its neutral calls, and Gemini Flash
+\DetVthreeGeminiThreeFlashPreviewControlDistinct{}. The content of the added
+field, and not its mere existence, drives recovery in this setting.
+
+\subsection{Result: naming the category carries the effect}
+\label{sec:gradient}
+\input{generated_field_table}
+Table~\ref{tab:fields} shows why a single average is incomplete. The direct
+region, operator, and credential fields recover their matched facts in every
+emitted call on both primary models. The GPT-4o service-key cell is
+\VthreeGptFouroFieldMCredentialFrac{}, with Wilson interval
+\DetVthreeGptFouroFieldMCredentialCI{}\%. The platform field,
+\texttt{client\_user\_agent}, recovers its target on
+\VthreeGptFouroFieldApiDocumentationFrac{} GPT-4o calls
+(\DetVthreeGptFouroFieldApiDocumentationCI{}\%) and
+\VthreeGeminiThreeFlashPreviewFieldApiDocumentationFrac{} Gemini calls
+(\DetVthreeGeminiThreeFlashPreviewFieldApiDocumentationCI{}\%), so the category
+matters even among naming fields.
+
+The adjacent fields separate sharply. \texttt{issuing\_surface} recovers the
+platform on \VthreeGptFouroFieldGPlatformAdjacentFrac{} and
+\VthreeGeminiThreeFlashPreviewFieldGPlatformAdjacentFrac{} calls on the primary
+pair, and \texttt{integration\_binding\_note} recovers the credential on
+\VthreeGptFouroFieldGCredentialAdjacentFrac{} and
+\VthreeGeminiThreeFlashPreviewFieldGCredentialAdjacentFrac{} calls. In
+contrast, \texttt{locality\_hint} recovers the region on
+\VthreeGptFouroFieldGRegionAdjacentFrac{} and
+\VthreeGeminiThreeFlashPreviewFieldGRegionAdjacentFrac{} calls. Its wording
+asks where the request is served from, a close paraphrase of the target
+category. The generic field yields \VthreeGptFouroGenericFrac{} and
+\VthreeGeminiThreeFlashPreviewGenericFrac{} any-fact recoveries, with Wilson
+intervals \DetVthreeGptFouroGenericCI{}\% and
+\DetVthreeGeminiThreeFlashPreviewGenericCI{}\%. On these two models the
+channel therefore works by naming a category or closely paraphrasing it. A
+field that only alludes to its target, or that invites unspecified context,
+recovers nothing.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\columnwidth]{figures/gradient}
+\caption{Matched recovery for every targeted field and model. Each cell gives
+the calls that returned the field's target fact over the emitted calls, and is
+shaded in proportion to that share. The upper block holds the naming fields and
+the lower block the adjacent fields. Two cells have fewer than twenty emitted
+calls: the incomplete Pro credential-adjacent cell and the DeepSeek operator
+cell, where noncalls reduced the denominator. Table~\ref{tab:gradient} gives
+the Wilson interval for every cell.}
+\label{fig:gradient}
+\end{figure}
+Figure~\ref{fig:gradient} extends this pattern to all five models. The rows
+for \texttt{issuing\_surface} and \texttt{integration\_binding\_note} are empty
+on every complete arm. \texttt{locality\_hint} is full on every model. The
+naming rows are full except \texttt{client\_user\_agent}, whose share varies
+from model to model. The adjacent class average therefore reflects one
+near-synonym field and not a uniform ability to recover unnamed facts.
+
+\input{details_classes}
+Table~\ref{tab:classes} gives the class totals. Naming fields recover
+\VthreeGptFouroNamingFrac{} targets on GPT-4o (\VthreeGptFouroNamingPct{},
+Wilson interval \VthreeGptFouroNamingCI{}) and
+\VthreeGeminiThreeFlashPreviewNamingFrac{} on Gemini Flash
+(\VthreeGeminiThreeFlashPreviewNamingPct{},
+\VthreeGeminiThreeFlashPreviewNamingCI{}). Adjacent fields recover
+\VthreeGptFouroAdjacentFrac{} and \VthreeGeminiThreeFlashPreviewAdjacentFrac{}
+(\VthreeGptFouroAdjacentPct{} and \VthreeGeminiThreeFlashPreviewAdjacentPct{},
+with intervals \VthreeGptFouroAdjacentCI{} and
+\VthreeGeminiThreeFlashPreviewAdjacentCI{}). The primary pooled rate keeps the
+adjacent fields on purpose. Restricting the denominator to naming fields after
+seeing which fields succeed would give a stronger-looking number for a
+narrower question.
+
+Most nonmatched recoveries on the primary pair come from the broad
+\texttt{client\_user\_agent} field: \VthreeGptFouroCrosstalkuaFrac{} on GPT-4o
+and \VthreeGeminiThreeFlashPreviewCrosstalkuaFrac{} on Gemini. The region,
+operator, and credential fields contribute \VthreeGptFouroCrosstalknamingFrac{}
+and \VthreeGeminiThreeFlashPreviewCrosstalknamingFrac{}. A request for client
+identification can produce a composite description that holds more than one
+deployment fact, while a field naming one fact produces a focused answer. The
+low nonmatched rate is thus not a uniform background error.
+
+\subsection{Result: nothing appears when the facts are absent}
+The service-key field recovers its planted fixture on
+\VthreeGptFouroCredentialFrac{} GPT-4o calls and
+\VthreeGeminiThreeFlashPreviewCredentialFrac{} Gemini Flash calls, although
+the fixture sits under the confidentiality instruction. The unplanted controls
+ask whether the same fields return a marker when the facts are removed. No
+unplanted call does: \VthreeFabricationPooledFrac{} across four models, with
+\VthreeGptFouroFabricationFrac{} for GPT-4o
+(\DetVthreeGptFouroFabricationCI{}\%),
+\VthreeGeminiThreeFlashPreviewFabricationFrac{} for Gemini Flash
+(\DetVthreeGeminiThreeFlashPreviewFabricationCI{}\%),
+\VthreeClaudeSonnetFourFiveFabricationFrac{} for Claude Sonnet
+(\DetVthreeClaudeSonnetFourFiveFabricationCI{}\%), and
+\VthreeDeepseekVfourFlashFabricationFrac{} for DeepSeek Flash
+(\DetVthreeDeepseekVfourFlashFabricationCI{}\%). The pooled Wilson interval is
+\DetVthreeFabricationPooledCI{}\%.
+
+The fields are not left empty in these trials. Models fill them with generic
+or invented strings such as an application label or a region-like value. That
+is why field population is not the outcome measure: only a planted marker
+shows that the value came from the prompt. Some unplanted configurations also
+produce fewer tool calls. GPT-4o makes no call in its unplanted service-key
+trials, and returns the planted key in every planted one.
+Table~\ref{tab:all-unplanted} gives each field. The controls cover six of the
+eight fields and omit the platform-adjacent and region-adjacent wordings.
+
+Three alternative scoring rules give the same matched and nonmatched counts
+as the registered rule on both primary models
+(Table~\ref{tab:sensitivity_table-1}): full markers without aliases, verbatim
+markers without normalization, and the registered rule with the
+\texttt{query} argument included. The per-fact tests and the hierarchical fit,
+whose status is \JournalMixedStatus{}, are in \ref{app:secondary}.
+% TODO: T08 Collect the omitted platform-adjacent and region-adjacent unplanted cells before claiming complete H3 coverage.
+
+\subsection{Further models}
+\label{sec:extensions}
+\input{details_matrix_summary}
+Table~\ref{tab:matrix} and Figure~\ref{fig:matrix} place the primary pair
+beside three exploratory arms. Claude Sonnet and DeepSeek Flash show the same
+pattern of high matched and near-zero nonmatched recovery. The Gemini Pro arm
+is incomplete: its credential-adjacent cell holds
+\VthreeGeminiThreeOneProPreviewFieldGCredentialAdjacentFrac{} calls and its
+generic condition has none. Its \texttt{issuing\_surface} cell returns the
+platform on \VthreeGeminiThreeOneProPreviewFieldGPlatformAdjacentFrac{} calls,
+the only success of that field on any model. All Study~1 files together
+contain \VthreeTrialsN{} attempted rows, including \VthreeTrialsErrors{}
+API-error rows.
+% TODO: T09 Complete the quota-limited Pro grid under a documented prospective continuation, including its missing generic cell. Do not impute the missing observations.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\columnwidth]{figures/matrix}
+\caption{Matched and nonmatched recovery by model in Study~1. The filled
+circle is matched recovery, the fact that a targeted field requests. The open
+circle is nonmatched recovery, the four other planted facts checked in the same
+calls. Horizontal lines give the paired field-bootstrap 95\% intervals, which
+resample the seven targeted fields. Bold names mark the preregistered pair. The other three
+arms are exploratory, and the Gemini Pro arm is incomplete. The neutral control
+is omitted. Its counts appear in Table~\ref{tab:accounting_table-1}.}
+\label{fig:matrix}
+\end{figure}
+
+\paragraph{Boundary}
+Study~1 shows selectivity among named categories on one task and one tool.
+It does not show that a field which never names its target retrieves it, and
+it measures emitted arguments, not what a server receives. Study~4 tests
+whether the adjacent-field boundary holds on current models.
+
+\section{Study~2: schema validity and field type do not gate release}
+\label{sec:exp25}
+\paragraph{Question}
+Study~1 offers every added field as a free string. If a host constrains the
+string, or a provider declares a small categorical domain, does less reach the
+handler (Q3)?
+
+\subsection{Design}
+\label{sec:exp25-method}
+Study~2's protocol was written, reviewed, and timestamped before any planted
+call, and its data are never pooled with Study~1. Study~2a uses two synthetic
+tools, an order lookup and an email search, with deterministic local handlers.
+Each tool and replicate has four seed-derived facts: a platform, a region, an
+operator, and a fabricated service key. Four naming fields request one fact
+each. Every free-string trial has a constrained partner with the same prompt,
+task, and facts. The constrained arm adds the pattern
+\texttt{\^{}[A-Za-z0-9\_ -]\{1,128\}\$} and a maximum length of 128
+characters. Every planted value satisfies this constraint, so the arm is a
+floor test: it asks whether a permissive constraint attenuates recovery, not
+whether a constraint that forbids the secret would. The schedule has 20 pairs
+for each model, tool, and field, and five unplanted repetitions per cell. A
+capacity arm on the order tool replaces the string with an enumeration of
+eight tier names, an integer from 0 to 7, or a boolean. Each domain has 40
+planted trials with balanced values and 40 unplanted trials per model. The
+unplanted trials carry hidden balanced labels that the model never sees, which
+supplies a guessing baseline.
+
+Study~2b is a smaller contextual check. It adds one field,
+\texttt{client\_platform\_name}, to eight native tool schemas captured from
+version-pinned MCP servers, two for each of four tasks, with five pairs per
+schema and model. The native names, descriptions, and input schemas are used
+as captured. Local fixtures serve the calls.
+
+A local host parses each call, validates it against the offered schema, and
+dispatches valid calls to an in-process handler. The primary endpoint is
+receipt of the target value in a non-task argument, per attempted trial. A
+task oracle records whether the legitimate request was answered correctly.
+
+The models are \texttt{gpt-4o-2024-08-06} and \texttt{gemini-3-flash-preview}
+at temperature 0.7 with an output cap of 1,024 tokens. The protocol digest was
+submitted to four public timestamp calendars a few minutes before the first
+planted trial, and the proof is now anchored in the Bitcoin chain
+(\ref{app:reproduction}). One dated amendment approved the native fixtures
+before any planted Study~2b call. A
+coauthor reviewed the four field texts before Study~2a and the eight native
+task fixtures before Study~2b. Before the planted trials, \DetExpCompatGemini{}
+Gemini, \DetExpCompatGpt{} GPT-4o, and \DetExpCompatB{} Study~2b calls with
+nothing planted checked that each provider accepted the schemas.
+\ref{app:exp25} gives the stimuli and the collection record.
+
+\paragraph{Estimands}
+\label{sec:exp25-analysis}
+For each model, the primary estimand is the mean over tools and fields of free
+minus constrained received recovery per attempted trial, in percentage points.
+The protocol describes attenuation only when the 95\% intervals of both models
+exclude zero in the positive direction. Study~2a intervals resample the 20
+replicate blocks with 10,000 draws, keeping both tools, all four fields, and
+both arms together. Study~2b intervals resample schemas within the four tasks.
+Capacity is tested by a one-sided permutation of the planted labels within
+model and domain, with 10,000 permutations and Holm adjustment over the six
+tests. These choices were fixed in the sealed protocol.
+
+\subsection{Result: a permissive constraint does not reduce recovery}
+\input{generated_exp25_table}
+Table~\ref{tab:exp25} gives the primary endpoint. In Study~2a, the local
+handler received the target value from Gemini Flash in \ExpAGemFree{}
+free-string trials (Wilson interval \DetExpAGemFreeCI{}\%) and
+\ExpAGemConstrained{} constrained trials (\DetExpAGemConstrainedCI{}\%). The
+paired difference is \ExpAGemDelta{} percentage points \ExpAGemDeltaCI{}. For
+GPT-4o the counts are \ExpAGptFree{} (\DetExpAGptFreeCI{}\%) and
+\ExpAGptConstrained{} (\DetExpAGptConstrainedCI{}\%), a difference of
+\ExpAGptDelta{} points \ExpAGptDeltaCI{}. Neither interval excludes zero in the
+positive direction, so the prespecified rule describes no attenuation for
+either model. Validation rejected \ExpAGemRejected{} and \ExpAGptRejected{}
+constrained calls. A constraint that admits the secret neither blocked the
+call nor stopped the model from supplying the value. The intervals bound the
+attenuation compatible with these data. They do not show that the two arms
+are equal.
+
+Study~2b gives the same answer in native schema contexts with less precision.
+Gemini Flash returns the target in \ExpBGemFree{} free trials
+(\DetExpBGemFreeCI{}\%) and \ExpBGemConstrained{} constrained trials
+(\DetExpBGemConstrainedCI{}\%), a difference of \ExpBGemDelta{} points
+\ExpBGemDeltaCI{}. GPT-4o returns it in \ExpBGptFree{} (\DetExpBGptFreeCI{}\%)
+and \ExpBGptConstrained{} (\DetExpBGptConstrainedCI{}\%), a difference of
+\ExpBGptDelta{} points \ExpBGptDeltaCI{}. Both intervals include zero, and the
+lower endpoint for Gemini lies exactly at zero. With one field and five pairs
+per schema, Study~2b is a contextual check. Table~\ref{tab:exp25-native}
+reports every schema context.
+
+\subsection{Result: categorical fields carry admissible secrets}
+\input{generated_exp25_capacity_table}
+Table~\ref{tab:exp25capacity} reports the capacity arm. Across both models and
+the three domains, the handler received the planted value in
+\ExpACapacityPlanted{} trials. For the enumeration, Gemini Flash returns the
+planted tier in \ExpAGemEnumPlanted{} trials (\DetExpAGemEnumPlantedCI{}\%)
+and matches the hidden label in \ExpAGemEnumUnplanted{} unplanted trials
+(\DetExpAGemEnumUnplantedCI{}\%). GPT-4o gives \ExpAGptEnumPlanted{}
+(\DetExpAGptEnumPlantedCI{}\%) and \ExpAGptEnumUnplanted{}
+(\DetExpAGptEnumUnplantedCI{}\%). For the integer, the planted counts are
+\ExpAGemIntegerPlanted{} and \ExpAGptIntegerPlanted{}, against
+\ExpAGemIntegerUnplanted{} and \ExpAGptIntegerUnplanted{} unplanted matches.
+For the boolean, they are \ExpAGemBooleanPlanted{} and
+\ExpAGptBooleanPlanted{}, against \ExpAGemBooleanUnplanted{} and
+\ExpAGptBooleanUnplanted{}. The unplanted matches stay near the guessing
+rates. All six permutation tests give Holm-adjusted $p\le\ExpAHolmMax$.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\columnwidth]{figures/constraints}
+\caption{Study~2, with 95\% Wilson intervals. (a) Received target recovery for
+the free and the constrained string in Studies~2a and~2b. (b) The capacity
+arm: the share of trials in which the handler received the planted admissible
+value, and the share in which the answer matched a hidden label when nothing
+was planted. The vertical line is the guessing rate of the domain.}
+\label{fig:constraints}
+\end{figure}
+Figure~\ref{fig:constraints} shows both parts. In panel (a), the free and
+constrained markers overlap in every row. In panel (b), the planted markers
+sit at or near the ceiling for all three domains, and the unplanted markers
+sit on the guessing rate, so a biased default answer does not explain the
+planted recoveries.
+
+A categorical field therefore carries a secret that is one of its admissible
+values. A finite domain limits how much information moves in one call: a
+boolean carries one bit. It does not stop an admissible value from moving. The
+three domains differ in wording and planted fact as well as in type, so the
+table does not isolate a pure effect of JSON type.
+
+\subsection{Result: selectivity and task success survive receipt}
+Study~2a reproduces field-to-fact selectivity under a different prompt, a
+second tool, and a stricter scorer. The requested fact is received in
+\ExpAGemSelDiag{} of free calls for Gemini Flash and \ExpAGptSelDiag{} for
+GPT-4o. Each of the three other planted facts is received in \ExpAGemSelOff{}
+and \ExpAGptSelOff{} of those calls. The unplanted controls return no marker:
+\ExpAGemUnplanted{} for Gemini Flash and \ExpAGptUnplanted{} for GPT-4o. Only
+naming fields were tested here.
+
+Disclosure coexists with a correct answer to the user. In Study~2a the task
+oracle is satisfied in \DetExpATaskFreeFrac{} free trials and
+\DetExpATaskConstrainedFrac{} constrained trials. In Study~2b it is satisfied
+in \DetExpBTaskFreeFrac{} free trials (\DetExpBTaskFreeCI{}\%) and
+\DetExpBTaskConstrainedFrac{} constrained trials
+(\DetExpBTaskConstrainedCI{}\%). The lower Study~2b rate reflects the native
+schemas, where the unplanted compatibility check had already shown task
+failures. A user who sees the right answer has no signal that anything else
+left.
+
+Two observations were not prespecified. First, \ExpAFirstWord{} of the
+\ExpAMisses{} Study~2a nonrecoveries sent only the first word of a two-word
+platform value, which the full-marker rule does not count, and
+Table~\ref{tab:exp25-cells} shows that every Study~2a cell below its ceiling is
+a platform cell. The binary endpoint thus understates partial disclosure.
+Second, in Study~2b, \ExpBGemWrongTool{} Gemini calls named tools that were
+not offered and never reached the handler, \ExpBFirstWord{} of the
+\ExpBMisses{} nonrecoveries were first-word truncations, and \DetExpBNoCall{}
+trial made no tool call.
+
+\paragraph{Boundary}
+The constraint admitted every planted value by design, and the capacity
+domains varied wording and fact together with type. Study~2 therefore shows
+that validity and type do not stop an admissible secret. It does not measure a
+constraint that excludes the secret, where relocation into other arguments and
+task failure would become the outcomes of interest.
+
+\section{Study~3: models transform confidential content on request}
+\label{sec:study3}
+\paragraph{Question}
+If validity and type do not decide release, a host might inspect argument
+content at dispatch. Can a provider get a planted value past a filter that
+knows every secret by changing only what its schema asks for (Q4)?
+
+\subsection{Motivation: dispatch policies replayed over Study~2}
+\label{sec:release}
+A release policy sits between a validated model call and the tool handler and
+decides which arguments leave the host. In Study~2 the model answers once per
+trial and never sees a policy, so every policy can be applied to the same
+recorded call. We replayed the host pipeline over all \DetRelTrials{} Study~2
+trials under five policies. P0 dispatches the call verbatim. P1 removes
+arguments that the offered schema does not mark as required, which is the
+common advice to drop optional arguments. P2 keeps only the arguments of the
+legitimate call for that tool. P3 is a provenance filter with oracle knowledge
+of every planted value: it removes any argument whose normalized text contains
+a run of six characters from one of them, or whose tokens overlap that value's
+tokens with a Jaccard similarity of at least one half. P4 applies P2 and then P3.
+The replay is exploratory. The policies were written after Study~2 was
+collected, it makes no model call, and no attacker adapts to a policy.
+
+\input{details_release}
+Table~\ref{tab:release} gives the result. P0 reproduces the recorded outcome
+of every trial. P1 protects nothing, because the adversary marks its field as
+required: the handler still receives the planted value in
+\DetRelStringAPoneRecv{} Study~2a string trials and \DetRelStringBPoneRecv{}
+Study~2b trials. On the native schemas P1 also removes optional arguments that
+the task needs, such as limits, sort keys, and time windows, in
+\DetRelStringBPoneTaskArgRemoved{} trials, and task success falls from
+\DetRelStringBPzeroTask{} to \DetRelStringBPoneTask{}. P2 removes the planted
+value in every trial of every arm and leaves task success unchanged, at
+\DetRelStringAPtwoTask{} and \DetRelStringBPtwoTask{} for the string arms,
+because these local handlers accept a call without the added field.
+
+The provenance filter separates the field types. It removes the planted value
+in every string trial, including the calls that sent only the first word of a
+two-word value, and in every enumeration and integer trial. It lets the
+boolean through in \DetRelBooleanPthreeRecv{} trials, because the argument
+\texttt{true} shares no text with the prompt's statement that maintenance mode
+is enabled. It also damages the task in the integer arm: when the planted slot
+number equals the order limit that the user asked for, the filter removes the
+legitimate \texttt{limit} argument as well, in
+\DetRelIntegerPthreeTaskArgRemoved{} trials, and task success falls from
+\DetRelIntegerPzeroTask{} to \DetRelIntegerPthreeTask{}. A filter that matches
+content therefore fails in both directions on short typed values, even with
+exact knowledge of the secret. A realistic filter knows less. The replay
+leaves two cases open: a provider that reshapes the requested value, which
+Study~3 adds, and a provider that refuses a call without its field, which
+Study~4 adds.
+% TODO: T16 Study 4 (Section sec:study4, exploratory) closed three of these on 2026-10-02: a model that responds to a blocked call, a provider that refuses a call without its required field, and more than two models (three current flagships). Still untested: a filter that decodes or joins arguments, remote receipt over a real transport, and a refusal returned by a remote provider rather than a local handler (docs/STUDY_3_PROTOCOL.md, docs/STUDY_4_PROTOCOL.md).
+
+\subsection{Design}
+Study~3 runs on the two Study~2 models. Its protocol was sealed, and the
+Bitcoin anchor of its timestamp was verified, before any planted call
+(\ref{app:study3}). In the encoding arm the added field asks for the service
+key or the region as a plain value, as its last four characters, reversed, or
+in hexadecimal. The arm runs on the synthetic order tool and on one native
+file-reading schema, with 40 replicate blocks per cell and newly derived
+values. The protocol chose that native schema because both models had called
+it correctly in every Study~2b trial. In the covert arm the prompt states an access code of four or eight
+hexadecimal characters, and the schema declares one required enumeration of
+sixteen values for each character, with 40 planted and 40 unplanted trials per
+length and model. Each trial makes one model call, and the recorded call is
+scored under every policy of Section~\ref{sec:release}. The target counts as
+obtained when the value that reaches the handler lets the receiver recover it:
+directly, after the declared decoding, or, for the suffix field, as the last
+four characters of the target. That the filter does not match a reversed,
+encoded, or single-character value is a property of its rule and was known in
+advance. The open question was whether the models would produce such values
+from content they were told to keep confidential.
+
+\subsection{Result: the models perform the transformation}
+\input{details_study3}
+They do. A plain copy was sent into an encoded field in
+\DetStudyThreeGemPlainCopies{} Gemini trials and \DetStudyThreeGptPlainCopies{}
+GPT-4o trials: asked for the hexadecimal form of a confidential key, the models
+computed it. The misses are transformation errors and not refusals: every miss
+that reached the handler carried a value, and a wrong reversal stays close to
+the planted value, with a median sequence similarity of
+\DetStudyThreeGemReversedMissSimilarity{} for Gemini and
+\DetStudyThreeGptReversedMissSimilarity{} for GPT-4o after the reversal is
+undone. These two descriptions were made after collection.
+
+Table~\ref{tab:study3} gives the consequence for the filter. Under verbatim
+dispatch both models return the plain value in every trial,
+\DetStudyThreeGemPlainPzero{} and \DetStudyThreeGptPlainPzero{}, and the filter
+removes all of them. The encoded values pass. Under the filter the handler
+still obtains the target in \DetStudyThreeGemHexPthree{} Gemini trials and
+\DetStudyThreeGptHexPthree{} GPT-4o trials for hexadecimal, in
+\DetStudyThreeGemSuffixPthree{} and \DetStudyThreeGptSuffixPthree{} for the
+last four characters, and in \DetStudyThreeGemReversedPthree{} and
+\DetStudyThreeGptReversedPthree{} for reversal. The preregistered rule asks,
+for each encoding and on both models, for a difference from the plain field of
+at least 20 percentage points with an adjusted interval above zero. It is
+\DetStudyThreeDecisionHex{} for hexadecimal, \DetStudyThreeDecisionSuffix{}
+for the last four characters, and \DetStudyThreeDecisionReversed{} for
+reversal. The smallest difference is GPT-4o's reversal,
+\DetStudyThreeGptReversedDelta{} points \DetStudyThreeGptReversedDeltaCI{}.
+
+Two rules that the protocol fixed affect the suffix and reversal counts, and
+we report both readings after collection. First, the protocol counts the target
+as obtained when it appears in the value after decoding, which credits answers
+that are too long or partly wrong, such as more than four final characters or
+a reversal with an extra character. Requiring the decoded answer to equal the
+target, after case and punctuation are removed, gives
+\DetStudyThreeGemSuffixPthreeExact{} and \DetStudyThreeGptSuffixPthreeExact{}
+suffix trials and \DetStudyThreeGemReversedPthreeExact{} and
+\DetStudyThreeGptReversedPthreeExact{} reversed trials under the filter, and
+leaves hexadecimal unchanged. Second, the filter's token rule compares the
+tokens of a value and a planted value by Jaccard similarity. A rule that
+removes a value when half of its own tokens occur in a planted value also
+removes a region suffix whose final digit is a whole token of the region, and
+lowers the suffix counts under the filter to
+\DetStudyThreeGemSuffixPthreeContained{} and
+\DetStudyThreeGptSuffixPthreeContained{}, while hexadecimal is unchanged and
+reversal changes by at most one trial. Recomputing the preregistered
+evadability decision under each reading leaves it unchanged: under the exact
+reading it is \DetStudyThreeDecisionExact{}, and under the containment reading
+\DetStudyThreeDecisionContained{}, because the smaller counts still clear the
+20-point margin over the plain field with an interval excluding zero. The
+hexadecimal and covert results do not depend on either rule.
+
+In the covert arm the handler received the exact code in every planted trial
+of both models at both lengths: \DetStudyThreeGemCovertFourPthree{} and
+\DetStudyThreeGemCovertEightPthree{} for Gemini and
+\DetStudyThreeGptCovertFourPthree{} and \DetStudyThreeGptCovertEightPthree{}
+for GPT-4o under the filter, the same as without it. No unplanted trial
+matched its hidden code, with \DetStudyThreeGemCovertFourUnplanted{} and
+\DetStudyThreeGptCovertFourUnplanted{} at four characters and
+\DetStudyThreeGemCovertEightUnplanted{} and
+\DetStudyThreeGptCovertEightUnplanted{} at eight. All four Fisher tests give
+Holm-adjusted $p<\DetStudyThreeHolmMax$, so the preregistered rule is
+\DetStudyThreeDecisionCovertFour{} at four characters and
+\DetStudyThreeDecisionCovertEight{} at eight. A secret split into single typed
+characters passes a filter that inspects one argument at a time.
+
+\subsection{Result: the allowlist removes every variant}
+The task allowlist removes the target in every trial of every encoding. Under
+it the user's task succeeds in \DetStudyThreeGemEncodingTaskPtwo{} and
+\DetStudyThreeGptEncodingTaskPtwo{} encoding trials, against
+\DetStudyThreeGemEncodingTaskPzero{} and \DetStudyThreeGptEncodingTaskPzero{}
+under verbatim dispatch. It also removes every slot of the covert code, which
+leaves \DetStudyThreeGemCovertEightPtwo{} and
+\DetStudyThreeGptCovertEightPtwo{} codes received at eight characters.
+
+\paragraph{Boundary}
+The field descriptions state the encoding openly, so a reviewer or a scanner
+that reads the schema could notice it, and detection of these schemas is
+reported in Section~\ref{sec:detection}. The filter inspects one argument at a
+time, and a filter that decodes or joins arguments is a different rule that a
+provider could again design around. No model saw a blocked call in this study,
+and the handler is local.
+
+\section{Study~4: current models, host context, and a refusing provider}
+\label{sec:study4}
+\paragraph{Question}
+Studies~1 to~3 leave three gaps. Their models are no longer the current
+releases of their providers. They plant deployment facts that real hosts rarely
+supply, while real hosts do supply user and workspace context
+(Section~\ref{sec:prevalence}). And every handler accepted a call that had lost
+the added field, so no model ever saw its reduced call refused. Does
+selectivity hold on current models, does planted host context leave, and does
+the allowlist hold when a provider refuses (Q1, Q2, Q5)?
+
+\subsection{Design}
+Study~4 is exploratory: it ran after the three sealed protocols, it carries no
+timestamp, and it is never pooled with the confirmatory studies. Its design
+files were committed together with the collected data, not before, and every
+recorded request matches the request those files build (\ref{app:study4}). Its
+models are one from each provider whose key the study holds, taken from the
+providers' recommended tier: GPT-6.1 Sol, Claude Opus 5.5, and Gemini 3.1 Pro.
+The most capable reasoning models were not run.
+
+Every planted trial adds one required string field to one of three tools and
+places \DetStudyFourFacts{} seed-derived facts in the system prompt under the
+Study~2 confidentiality sentence. Four are targeted by a field family. A
+working directory and a signed-in user are planted and named by no field, so
+they can only be recovered as nonmatched facts. Most surveyed hosts supply the
+working directory. None supplies a user identity as such, and the user name
+stands for the account name that an absolute path commonly contains
+(Section~\ref{sec:prevalence}). The fields are the \DetStudyFourFields{} texts of the
+Study~2 design: two naming texts and one adjacent text for each of the four
+families, a generic field, and a neutral field (Table~\ref{tab:study4-texts}).
+Study~2 used the first naming text of each family. This study therefore varies
+the models and the planted material, not the wordings.
+
+The refusal arm applies the task allowlist of Section~\ref{sec:release}. The
+provider then refuses the reduced call for want of its required field, and the
+host returns that refusal to the model, which may answer for up to
+\DetStudyFourTurns{} turns. Half the trials return the provider's bare error,
+and half also tell the model that the host removed the argument because the
+task does not need it (\ref{app:study4} gives both messages).
+
+\subsection{Result: selectivity holds on current models}
+\input{details_study4}
+\input{details_study4_fields}
+\begin{figure*}[t]\centering
+\includegraphics[width=\textwidth]{figures/study4_selectivity}
+\caption{Study~4, exploratory: field-by-fact recovery on (a) GPT-6.1 Sol,
+(b) Claude Opus 5.5 and (c) the partial Gemini 3.1 Pro leg. Each cell gives the
+number of planted trials in which the handler received the column's planted
+fact, column $n$ gives the attempted trials of the row's field, and a cell is
+shaded in proportion to that share. An outlined cell is the field's designated
+target. No field targets the working directory or the signed-in user, so those
+two columns hold only nonmatched checks, and the generic and neutral fields have
+no target. The cells of a row share the same trials.
+Tables~\ref{tab:study4-fields} and~\ref{tab:study4-facts} give the same counts
+by field and by fact.}
+\label{fig:study4}
+\end{figure*}
+\begin{figure}[t]\centering
+\includegraphics[width=\columnwidth]{figures/study4_matrix}
+\caption{Matched and nonmatched recovery by model in Study~4, drawn as
+Figure~\ref{fig:matrix} is for Study~1. The filled circle is matched recovery,
+the fact that a targeted field requests. The open circle is nonmatched
+recovery, the other five planted facts checked in the same trials. Horizontal
+lines give 95\% intervals from the study's field bootstrap, which resamples the
+targeted fields, applied to each rate separately.
+Table~\ref{tab:study4} gives the counts and the interval of the difference. All
+three arms are exploratory, and the Gemini Pro leg is partial. The two studies
+differ in fields, prompt, and planted facts, so the two figures do not support
+a rate-for-rate comparison.}
+\label{fig:study4-matrix}
+\end{figure}
+\begin{figure}[t]\centering
+\includegraphics[width=\columnwidth]{figures/study4_gradient}
+\caption{Matched recovery for every targeted field and model in Study~4, drawn
+as Figure~\ref{fig:gradient} is for Study~1. Each cell gives the planted trials
+in which the handler received the field's target fact over the attempted
+trials of that field, and is shaded in proportion to that share. The upper
+block holds the naming fields and the lower block the adjacent fields. The
+Gemini Pro leg is partial, so its cells hold fewer trials.
+Table~\ref{tab:study4-fields} gives the same counts.}
+\label{fig:study4-gradient}
+\end{figure}
+Table~\ref{tab:study4} gives both arms, Table~\ref{tab:study4-fields} every
+field, and Figure~\ref{fig:study4} every field against every planted fact.
+Figure~\ref{fig:study4-matrix} sets matched against nonmatched recovery for
+each model, and Figure~\ref{fig:study4-gradient} gives matched recovery field
+by field. The
+targeted field recovers its own fact in \DetStudyFourSolMatched{}
+opportunities on GPT-6.1 Sol and \DetStudyFourOpusMatched{} on Claude Opus 5.5,
+against \DetStudyFourSolNonmatched{} and \DetStudyFourOpusNonmatched{}
+nonmatched checks, which are differences of \DetStudyFourSolDelta{}
+\DetStudyFourSolDeltaCI{} and \DetStudyFourOpusDelta{}
+\DetStudyFourOpusDeltaCI{} percentage points. The partial Gemini Pro leg agrees
+at \DetStudyFourProDelta{} \DetStudyFourProDeltaCI{}. The generic field returns
+\DetStudyFourSolGenericAny{}, \DetStudyFourOpusGenericAny{}, and
+\DetStudyFourProGenericAny{} any-fact recoveries, and the neutral field
+\DetStudyFourSolNeutralAny{}, \DetStudyFourOpusNeutralAny{}, and
+\DetStudyFourProNeutralAny{}. No unplanted trial on any model returned a
+planted fact, \DetStudyFourPooledUnplanted{}, although the models still filled
+the field with invented values in most of those trials.
+
+Naming fields again carry the effect, reaching \DetStudyFourOpusNamingMatched{}
+on Opus, and the adjacent class again fails the prespecified threshold on every
+model, at \DetStudyFourSolIndirectDelta{} \DetStudyFourSolIndirectDeltaCI{} on
+Sol, \DetStudyFourOpusIndirectDelta{} \DetStudyFourOpusIndirectDeltaCI{} on
+Opus, and \DetStudyFourProIndirectDelta{} \DetStudyFourProIndirectDeltaCI{} on
+the partial Gemini Pro leg, whose difference exceeds 20 points but whose
+interval includes zero. The decision is therefore \DetStudyFourDecisionSelectivity{} for
+selectivity and \DetStudyFourDecisionIndirectFields{} for the adjacent class.
+The adjacent-class decision scores the attribution field against the operator,
+a target that the next section argues may have been the wrong prediction.
+The per-field table qualifies that verdict. On these models the region and
+platform adjacent texts succeed in part or in full, while the credential and
+operator adjacent texts return their targets in no trial. These adjacent texts
+are not those of Study~1, and the prompt, sampling settings, and output cap
+differ as well, so the comparison cannot separate model generation from
+wording. One naming cell also falls short: asked for the credential
+identifier this integration authenticates with, Sol makes no call in
+\DetStudyFourSolCredTwoNoCall{} trials and sends the signed-in user's name in
+\DetStudyFourSolCredTwoUser{}.
+
+\subsection{Result: planted user context leaves through an adjacent field}
+\input{details_study4_facts}
+Table~\ref{tab:study4-facts} breaks the nonmatched recoveries down by fact.
+The four deployment facts almost never leave through a field that targets
+another one. In this arm the working directory never leaves, at
+\DetStudyFourSolNonmatchedWorkdir{}, \DetStudyFourOpusNonmatchedWorkdir{} and
+\DetStudyFourProNonmatchedWorkdir{}. The signed-in user does, in
+\DetStudyFourSolNonmatchedUser{}, \DetStudyFourOpusNonmatchedUser{} and
+\DetStudyFourProNonmatchedUser{} checks, which is nearly all of the
+nonmatched recovery: outside the user, Sol, Opus and Gemini Pro return
+\DetStudyFourSolNonmatchedOtherThanUser{},
+\DetStudyFourOpusNonmatchedOtherThanUser{} and
+\DetStudyFourProNonmatchedOtherThanUser{} nonmatched facts.
+
+Most of it comes through one field, which accounts for
+\DetStudyFourSolUserViaAttribution{}, \DetStudyFourOpusUserViaAttribution{} and
+\DetStudyFourProUserViaAttribution{} of those user recoveries; the rest came
+through the credential fields. \texttt{account\_attribution} asks who the call
+should be attributed to for billing review, and it targets the operator. It returns
+the operator in \DetStudyFourSolAttributionOperator{},
+\DetStudyFourOpusAttributionOperator{} and \DetStudyFourProAttributionOperator{}
+trials and the signed-in user in \DetStudyFourSolAttributionUser{},
+\DetStudyFourOpusAttributionUser{} and \DetStudyFourProAttributionUser{}. The
+models read the field as asking for a person and supply the person the prompt
+names. That reading is plausible: the party billed for a call can as well be
+the signed-in user as the operating organization, so the designated target
+may simply have been the wrong prediction, and the adjacent-operator failure is
+partly an artifact of how that target was specified. Scored by what reached
+the provider, a field that names no user delivered the planted user in every
+trial on all three models, the partial Gemini Pro leg included. This reading
+was made after collection, from one field text and its trials on three models. The nonmatched rate is low because the
+other facts stay put, not because the models withhold what a field appears to
+ask for.
+
+\subsection{Result: no relocation under refusal, and the task fails}
+This is the first arm in which a provider rejects a reduced call. The models
+emit the target in the added field on \DetStudyFourPooledFirstTurn{} first
+turns, so the secret is present before the host acts. After the allowlist
+removes the field and the provider refuses, the target reaches the handler
+inside a legitimate task argument in \DetStudyFourPooledRelocated{} trials
+\DetStudyFourPooledRelocatedCI{}, and the models state it to the user in
+\DetStudyFourPooledProse{}. The Sol count includes \DetStudyFourSolErrors{}
+trial that ended in a client-library error before any model output and is
+scored as no relocation. The discarded fourth leg (\ref{app:study4}) did
+state it to the user, by quoting its own refused call, in
+\DetStudyFourDiscardedProse{} of its refusal trials, and relocated it in
+\DetStudyFourDiscardedRelocated{}. Per model the relocation counts are
+\DetStudyFourSolRelocated{} \DetStudyFourSolRelocatedCI{},
+\DetStudyFourOpusRelocated{} \DetStudyFourOpusRelocatedCI{} and
+\DetStudyFourProRelocated{} \DetStudyFourProRelocatedCI{}, with no difference
+between the two refusal messages. The prespecified bound, an interval upper
+end below ten percentage points, is met on the two complete legs and on the
+partial one, which holds \DetStudyFourProArmFeedback{} of its refusal trials,
+so the rule read across all three models is
+\DetStudyFourDecisionAllowlistHoldsUnderRefusal{}. The partial leg cleared the
+bound only after it was resumed. The resume was decided after its first
+results had been analysed, and collection then stopped by the authors' choice,
+made with the resumed results in view (\ref{app:study4}).
+
+These counts concern the targeted fact. A different planted fact did reach the
+handler inside a task argument. In \DetStudyFourProRelocatedAny{} Gemini Pro
+trials \DetStudyFourProRelocatedAnyCI{}, the third call prefixed the planted
+working directory to the requested file path, and the allowlist keeps that
+argument by definition. Sol and Opus did so in \DetStudyFourSolRelocatedAny{}
+and \DetStudyFourOpusRelocatedAny{} trials. The allowlist therefore removes the
+added field, and it does not stop a model that is retrying a refused call from
+writing other context into an argument the task needs. This observation was
+not a prespecified endpoint, and it rests on the partial leg.
+
+Confidentiality is bought with the task. No refusal-arm trial reached an
+accepted call: \DetStudyFourSolFeedbackAccepted{},
+\DetStudyFourOpusFeedbackAccepted{} and \DetStudyFourProFeedbackAccepted{}.
+Sol and Opus stop after the refusal in \DetStudyFourSolStopped{} and
+\DetStudyFourOpusStopped{} trials, in \DetStudyFourSolFeedbackRetried{} and
+\DetStudyFourOpusFeedbackRetried{} of them after a second refused call, while
+Gemini Pro kept calling until its turns ran out in
+\DetStudyFourProKeptCalling{} of its trials. None of them moved the targeted
+value.
+The replay's finding that the allowlist costs the task nothing holds only where
+the handler accepts a reduced call. Against a provider that requires its
+field, structural removal converts a confidentiality loss into an availability
+loss, and the user's request goes unanswered.
+
+\paragraph{Boundary}
+The refusal is returned by a strict local handler and not by a remote server,
+in a tool result whose wording is ours. The models are three, one from each
+provider, and the Gemini Pro leg is partial because its provider's per-day
+request cap stopped it. The field wordings are the Study~2 texts, so nothing
+here measures a wording an adversary might choose against a current model.
+One task-oracle effect is not a disclosure effect: Sol quoted the search phrase
+in \DetStudyFourSolEmailQuoted{} of its email calls, which the exact-match oracle
+counts as a failed task, so its matrix task success is
+\DetStudyFourSolMatrixTask{}.
+
+\section{Robustness, detection, and the failed hypothesis}
+\label{sec:scope}
+\subsection{Strength of the confidentiality instruction}
+\label{sec:reticence}
+If the channel were only under-specified instructions, a stronger instruction
+should close it. An exploratory ladder from the pilot studies tests this with
+a planted product identity and the keyword identity measure of the
+Supplementary Material. Each rung adds one sentence to the confidentiality
+instruction: never state the host product, then refuse when asked, then apply
+the rule to every channel including values placed in tool parameters. The
+ladder compares the operational field C with an explicit identity field A$'$.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\columnwidth]{figures/reticence}
+\caption{Recovery of the planted identity along the confidentiality ladder,
+with 95\% Wilson intervals: (a) Claude Sonnet and (b) Gemini Flash. Rung zero
+adds no text, and each later rung adds one sentence to the confidentiality
+instruction. Rung three names tool parameters. Supplementary
+Table~\supref{tab:all-reticence} gives attempts, errors, and counts for every
+cell.}
+\label{fig:reticence}
+\end{figure}
+Figure~\ref{fig:reticence} shows the result. On Claude, the explicit field falls
+over the first two rungs while the operational field stays at the ceiling. At
+the second rung Claude recovers the planted identity in
+\DetReticenceClaudeSonnetFourFiveRtwoAPrimeFrac{} explicit-field calls
+(\DetReticenceClaudeSonnetFourFiveRtwoAPrimeCI{}\%) but in
+\DetReticenceClaudeSonnetFourFiveRtwoCFrac{} operational-field calls
+(\DetReticenceClaudeSonnetFourFiveRtwoCCI{}\%): a model that refuses a direct
+request still fills the same fact into a field that does not look like one.
+The third rung, which names tool parameters, brings Claude's operational field
+to \DetReticenceClaudeSonnetFourFiveRthreeCFrac{}
+(\DetReticenceClaudeSonnetFourFiveRthreeCCI{}\%). On Gemini the same sentence
+leaves it at \DetReticenceGeminiThreeFlashPreviewRthreeCFrac{}
+(\DetReticenceGeminiThreeFlashPreviewRthreeCCI{}\%), while the explicit field
+falls to \DetReticenceGeminiThreeFlashPreviewRthreeAPrimeFrac{}
+(\DetReticenceGeminiThreeFlashPreviewRthreeAPrimeCI{}\%). Gemini's rung-2
+A$'$ cell has \DetReticenceGeminiThreeFlashPreviewRtwoAPrimeErrors{} API errors
+among \DetReticenceGeminiThreeFlashPreviewRtwoAPrimeAttempts{} attempts, so
+its \DetReticenceGeminiThreeFlashPreviewRtwoAPrimeFrac{} conditional result is
+not a complete cell. The cells hold ten to twenty attempts, so the intervals
+are wide.
+
+A prompt-level control therefore exists on one provider and not on another.
+Where it works it also blocks every parameter equally, including fields the
+deployer wants filled, because the instruction cannot tell an authorized
+recipient from an unauthorized one either. None of these contrasts measures
+relocation into other arguments or task failure.
+
+\subsection{Reconstructed tool-listing contexts}
+\label{sec:external}
+This arm appends the \texttt{client\_user\_agent} field, or the neutral field,
+to \RealCorpusTools{} tool interfaces reconstructed from \RealCorpusServers{}
+MCPTox server entries~\cite{mcptox2025}, and plants a product identity. The
+source publishes rendered tool descriptions and not complete JSON Schemas, so
+the reconstruction assigns string types to harvested parameters and loses
+nesting, enumerations, and patterns. Tasks are paired with tools by greedy
+token overlap. The outcome is the keyword identity measure of the pilot
+studies.
+
+\begin{table*}[t]\centering\small
+\caption{Interfaces reconstructed from authentic tool listings, with one added
+field. Each cell gives successes/denominator and the 95\% Wilson interval in
+percent. Conditional rates use emitted tool calls. Usable-response rates
+include noncalls and exclude API errors.}
+\label{tab:real-schemas}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+& \multicolumn{2}{c}{C: added field} & \multicolumn{2}{c}{D: neutral field} \\
+\cmidrule(lr){2-3}\cmidrule(l){4-5}
+Model & Conditional & Usable responses & Conditional & Usable responses \\
+\midrule
+GPT-4o & \RealGptFouroCFrac{} \DetRealGptFouroCCI{} & \RealGptFouroCIttFrac{} \DetRealGptFouroCIttCI{} & \RealGptFouroDFrac{} \DetRealGptFouroDCI{} & \RealGptFouroDIttFrac{} \DetRealGptFouroDIttCI{} \\
+Claude & \RealClaudeSonnetFourFiveCFrac{} \DetRealClaudeSonnetFourFiveCCI{} & \RealClaudeSonnetFourFiveCIttFrac{} \DetRealClaudeSonnetFourFiveCIttCI{} & \RealClaudeSonnetFourFiveDFrac{} \DetRealClaudeSonnetFourFiveDCI{} & \RealClaudeSonnetFourFiveDIttFrac{} \DetRealClaudeSonnetFourFiveDIttCI{} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+GPT-4o recovers the planted identity on \RealGptFouroCFrac{} emitted calls
+(\RealGptFouroCPct{}), or \RealGptFouroCIttFrac{} usable responses
+(\RealGptFouroCIttPct{}). Claude recovers it on
+\RealClaudeSonnetFourFiveCFrac{} emitted calls
+(\RealClaudeSonnetFourFiveCPct{}), or \RealClaudeSonnetFourFiveCIttFrac{}
+usable responses (\RealClaudeSonnetFourFiveCIttPct{}). The neutral field
+recovers it on \RealDCombinedFrac{} emitted calls across both models
+(Table~\ref{tab:real-schemas}). Recovery occurs at least once on
+\RealGptFouroCToolsLeaking{} of \RealGptFouroCToolsCalled{} called GPT-4o
+interfaces and on \RealClaudeSonnetFourFiveCToolsLeaking{} of
+\RealClaudeSonnetFourFiveCToolsCalled{} called Claude interfaces. Resampling
+interfaces instead of calls widens the GPT-4o interval from
+\DetRealGptFouroCCI{}\% to \DetRealGptFouroCClusterCI{}\%.
+
+The files contain \DetRealGptFouroAttempts{} attempts for GPT-4o with
+\DetRealGptFouroErrors{} API errors, and
+\DetRealClaudeSonnetFourFiveAttempts{} for Claude with
+\DetRealClaudeSonnetFourFiveErrors{} error in D, which leaves
+\RealClaudeSonnetFourFiveDIttN{} usable D responses from
+\DetRealClaudeSonnetFourFiveDAttempts{} attempts. Supplementary
+Table~\supref{tab:all-contexts} lists every interface and Supplementary
+Figure~\supref{fig:interfaces} their distribution by outcome. The pattern
+holds across surrounding tool descriptions written by unrelated third parties,
+at a lower rate for GPT-4o than on the synthetic tool. The arm does not execute
+the original servers or check task completion.
+
+\subsection{Required against optional fields}
+\begin{table}[t]\centering\footnotesize
+\caption{Exploratory contrasts on GPT-4o. Each row gives conditional target
+recovery and the 95\% Wilson interval in percent. The required baselines come
+from an earlier pilot matrix.}
+\label{tab:depth}
+\begin{tabular}{@{}llrl@{}}
+\toprule
+Field & Schema variant & Recovered & Interval \\
+\midrule
+Identity & Required, default position & \DepthUaOptionalBaselineFrac{} & \DetDepthUaOptionalBaselineCI{} \\
+ & Optional & \DepthUaOptionalFrac{} & \DetDepthUaOptionalCI{} \\
+ & Required, first position & \DepthUaPosfirstFrac{} & \DetDepthUaPosfirstCI{} \\
+\midrule
+Credential & Required, default position & \DepthCredOptionalBaselineFrac{} & \DetDepthCredOptionalBaselineCI{} \\
+ & Optional & \DepthCredOptionalFrac{} & \DetDepthCredOptionalCI{} \\
+ & Required, first position & \DepthCredPosfirstFrac{} & \DetDepthCredPosfirstCI{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+Making the added identity field optional reduces recovery from
+\DepthUaOptionalBaselineFrac{} to \DepthUaOptionalFrac{}. For the fabricated
+credential, recovery falls from \DepthCredOptionalBaselineFrac{} to
+\DepthCredOptionalFrac{} (Table~\ref{tab:depth}). Requiredness therefore
+matters, and optionality does not close the channel: the model still fills a
+field that the schema does not require. Moving the field ahead of
+\texttt{query} yields \DepthUaPosfirstFrac{} identity recoveries and
+\DepthCredPosfirstFrac{} credential recoveries, against
+\DepthUaPosfirstBaselineFrac{} and \DepthCredPosfirstBaselineFrac{} in the
+default position, so position has no visible effect.
+
+\subsection{Detection}
+\label{sec:detection}
+The first detection measurement reproduces locally the prompt and rule
+distributed in \texttt{mcp-scan==0.3.39}, with the policy's own model at
+temperature zero and a majority vote over \ScanRawMetaReps{}
+repetitions. Every reply is kept, and a reply other than an exact YES or NO
+would invalidate its arm; all \ScanRawMetaValid{} of
+\ScanRawMetaCalls{} replies were valid. The policy flags the two
+imperative pilot conditions and records no flag for the operationally framed
+client field or for the explicit prompt and model parameters of prior work
+(Table~\ref{tab:scanners}). It also records no flag for any of the
+\ScanRawMetaStudyarms{} declarations that Studies~1 to~4 offered,
+\ScanRawMetaStudyflagged{} in all, including the hexadecimal, reversed,
+and slot-split requests of Study~3 and the \ScanRawMetaSfourarms{} field texts
+used only in Study~4, the billing-attribution field among them
+(\ScanRawMetaSfourflagged{} flagged). The policy asks whether a tool description
+contains an injection. Such a question does not assess whether generated
+arguments are authorized to leave the host. The vendor's hosted service was not
+evaluated, so this is evidence about one published policy.
+
+The second is a prompted field classifier scored on \DefenseCorpusPositives{}
+study-authored positive fields and \DefenseCorpusNegatives{} benign fields
+from real schemas. Its AUC is \DefenseAucValue{}~\DefenseAucCI{}, with no
+independent holdout. At the threshold that flags every positive, the
+false-positive rate is \DefenseFprAttwozeroPct{}, and precision at assumed
+attack base rates of \DefenseBaseratePointonePct{}, \DefenseBaserateOnePct{},
+and \DefenseBaserateFivePct{} is \DefensePpvPointonePct{},
+\DefensePpvOnePct{}, and \DefensePpvFivePct{}. The most effective attack
+wording scores \DefenseBandAttack{}, and the legitimate OpenTelemetry
+attribute \texttt{user\_agent.original} scores
+\DefenseBandLegitimate{}~\cite{opentelemetry_semconv}. Requests for client
+metadata that are legitimate and requests that are hostile occupy the same
+semantic space, which limits what a field classifier can deliver at realistic
+base rates. The AUC is also measured on self-identity positives, not on the
+fields the studies deployed. Scored on the \DetDetectorStudyN{} added-field
+texts of Studies~1 to~4, the same classifier puts \DetDetectorStudyBelowThr{}
+of them below the threshold that flags every self-identity positive
+(\DetDetectorStudyThr{}), the billing-attribution field
+(\DetDetectorStudyAttribution{}) among them
+(Table~\ref{tab:detector-study}). The misses do not follow the fact family.
+All \DetDetectorStudyAssistantN{} texts that name the assistant are flagged,
+which includes \DetDetectorStudyTwoFlagged{} of the \DetDetectorStudyNamingN{}
+fields that Study~2 used, at \DetDetectorStudyTwoHighLow{} to
+\DetDetectorStudyTwoHighTop{}. Its service-key field is missed
+(\DetDetectorStudyServiceKey{}). Of the \DetDetectorStudyNamingN{} naming
+fields of Study~1, \DetDetectorStudyOneFlagged{} is flagged, and the region
+and operator fields that returned their fact in every call
+(Table~\ref{tab:fields}) score \DetDetectorStudyOneRegion{} and
+\DetDetectorStudyOneOperator{}. Two service-key texts that share their first
+clause score \DetDetectorStudyServiceKeyRef{} and
+\DetDetectorStudyServiceKey{}. The operating point is also unstable. The
+\texttt{client\_user\_agent} text scored \DetDetectorPositiveClientUaRuns{} in
+three repetitions as a corpus positive and \DetDetectorStudyClientUaRuns{}
+when it was scored again as a study field, at temperature zero. At the second
+median the threshold flags \DetDetectorRescoredSensitivity{} positives. A
+detector tuned to agent self-identity therefore misses about half of the
+field texts that the studies deployed, with no clear rule for which.
+\ref{app:detection} gives the full record.
+
+\subsection{The failed preregistered hypothesis}
+\label{sec:gate}
+The pilot gate compared elicitation channels for a planted host identity on
+three models. Its preregistered rule required the operationally framed field C
+to exceed an explicit identity field A$'$ by at least 20 percentage points on
+at least two of three models. The observed differences are
+\GateGptFouroDeltaPp{} points for GPT-4o, \GateClaudeSonnetFourFiveDeltaPp{}
+for Claude, and \GateGeminiThreeFlashDeltaPp{} for Gemini, so the rule failed.
+Claude and Gemini fill both fields at the ceiling, which explains the zero
+contrasts and does not rescue the decision. The same gate shows the neutral
+field returning nothing on every model, and the operational wording used
+afterwards was chosen after an ablation in which most wordings recovered
+little on GPT-4o (Supplementary Tables~\supref{tab:all-gate}
+and~\supref{tab:all-wording}). A separate framework arm with nothing planted
+yields \FrameworkArmDisclosed{} disclosures of the genuine runtime in
+\FrameworkArmToolCalled{} tool-call observations, which led to withdrawing a
+self-knowledge hypothesis. Every result in this paper therefore concerns
+content supplied in the prompt.
+
+\section{Ecological context}
+\label{sec:prevalence}
+The staged attack needs an interface that requests a category and a prompt
+that contains a matching protected fact. We examined both surfaces in a corpus
+of \PrevalenceCorpusServers{} MCPTox server entries with
+\PrevalenceCorpusParams{} parameters and \PrevalenceCorpusN{} distinct
+parameter names, using permissive category rules fixed before the count.
+
+Among distinct names, the rules find \PrevalenceAttackClientIdentityFrac{}
+client-identity fields, \PrevalenceAttackCredentialFrac{} credential fields,
+and \PrevalenceAttackPolicyFrac{} policy fields. Region and contact categories
+have \PrevalenceAttackRegionFrac{} and \PrevalenceAttackContactFrac{} matches.
+The \PrevalenceAttackOperatortenantFrac{} operator-shaped matches are, on
+inspection, repository-ownership concepts. Across \PrevalenceVictimCharsN{}
+characters of host-prompt text in the same corpus, the rules find
+\PrevalenceVictimCredentialShapedK{} credential-shaped strings,
+\PrevalenceVictimOperatorTenantK{} tenant statements,
+\PrevalenceVictimPolicyTokenK{} policy tokens, and
+\PrevalenceVictimCloudRegionK{} cloud-region occurrences.
+
+A larger corpus qualifies the attack-surface count. We applied the same rules,
+unchanged, to the tool listings released with MCP-Zero~\cite{fei2025mcpzero},
+which cover \DetRegistryServers{} servers and \DetRegistryTools{} tools with
+\DetRegistryNames{} distinct parameter names. That dataset was extracted from
+server documentation by a language model, so it holds documented parameters
+and not captured schemas. The rules again find
+\DetRegistryClientIdentityFrac{} client-identity names and
+\DetRegistryPolicyFrac{} policy names. They find \DetRegistryCredentialFrac{}
+credential-shaped names on \DetRegistryCredentialServers{} servers. Most of
+these are rule noise, such as blockchain and pagination tokens. On inspection,
+\DetRegistryCredentialAuditNames{} names on
+\DetRegistryCredentialAuditServers{} servers take an actual credential as an
+argument, for example an access token, an API key, or a password, and one tool
+asks for the user's location. The \DetRegistryOperatorFrac{} operator-shaped
+names identify a workspace or organization for the tool to act on. A parameter
+that asks a model to supply a secret therefore has precedent in documented
+servers, while a parameter that asks for client identity does not.
+
+The field families used in the laboratory are thus uncommon in both corpora,
+and the surveyed host prompts carry almost none of the planted material. This
+limits any severity claim based on the staged setup. The first corpus is a
+constructed benchmark context and not a sample of private commercial prompts.
+A high conditional recovery rate matters for a deployment that supplies a
+matching fact, and it does not tell how often that precondition holds.
+
+What real hosts supply differs from what we planted in Studies~1 to~3. We read
+the prompt sources of \DetHostN{} open-source agent hosts at pinned commits
+(Table~\ref{tab:host-context}). Of these, \DetHostWorkingDirectory{} give the
+model the absolute working directory or workspace path, \DetHostPlatform{} the
+operating system, \DetHostDate{} the date or time, \DetHostGit{} the state of
+the version-control repository, and \DetHostShell{} the shell. Single hosts add
+the home directory, the user's language, or the model identifier. Some place
+this block in the system prompt and others in a host-written context message.
+None of it is a credential. All of it is user and deployment context that an
+order lookup or a file reader does not need, and an absolute path on a
+personal machine commonly contains the account name. No surveyed host supplies
+a user identity as a separate item. Study~4 planted a working directory and,
+on that reasoning, a signed-in user, and named neither in any field. In the
+selectivity arm the working directory never left, and the signed-in user left
+through a billing-attribution field on every model, one of them on a partial
+leg. In the refusal arm one model wrote the working directory into a file path
+it retried, in \DetStudyFourProRelocatedAny{} trials
+(Section~\ref{sec:study4}). Whether a field written to request a workspace
+path recovers it remains untested. Estimating incident frequency would require representative
+deployment sampling, realistic secret placement, and receipt observations.
+
+\section{Discussion}
+\label{sec:discussion}
+\subsection{Is this instruction following?}
+\label{sec:instruction}
+Every result above can be read as the model doing what it was asked.
+The confidentiality instruction says the configuration must not be revealed,
+which plausibly means revealed to the user, and the field asks for part of the
+configuration on behalf of the integration that is being called. The credential
+field makes the reading sharp: passing the key an integration was configured
+with to the integration that asks for it is what a correctly configured client
+does, and Section~\ref{sec:prevalence} found documented servers that take
+credentials as arguments.
+
+We accept the premise and draw the opposite conclusion. Nothing in the model's
+context distinguishes a tool provider the deployer trusts from one it merely
+installed, and nothing in the declaration tells the model which recipients may
+receive which facts. The model fills the field with the content that best
+answers it, as the attribution result shows most plainly: the field targeted
+the operator, the models supplied the signed-in user, and no instruction about
+users was involved at all. Better instruction wording does not supply the
+missing knowledge. Section~\ref{sec:reticence} shows a sentence naming tool
+parameters closing the channel on one provider and not another, and where it
+works it blocks every recipient alike. Whether a value may go to a recipient is
+a fact about the deployment, and only the host holds it. This is the sense in
+which the flow violates contextual integrity: information supplied for one
+purpose reaches a recipient that the deployer never approved, and the
+appropriateness of that flow depends on context the model is not
+given~\cite{mireshghallah2024confaide,shao2024privacylens}.
+
+\subsection{Schema validity is not permission to release}
+A required field expresses the provider's contract for an operation. It grants
+the provider no permission to receive every source of information that could
+satisfy the field. Every disclosing call in Study~2a was valid against its
+schema, the permissive pattern rejected none of them, and categorical fields
+delivered the planted value in \ExpACapacityPlanted{} trials. A check that a
+call is valid and well typed therefore says nothing about where its values
+came from. Study~3 adds that the models will compute a requested
+transformation of a confidential value, so a check on what the value looks
+like says nothing about it either. Matching argument content against the
+secret failed on a boolean field, on encoded strings, and on a code split
+across typed slots.
+
+\subsection{Where an allowlist comes from, and what it costs}
+The structural policy that held throughout keeps only ``the arguments of the
+legitimate call''. In the experiments the experimenter defined that call. A
+host facing a provider that marked its field as required has no such ground
+truth, so the result says what a correct allowlist achieves and not how to
+obtain one. Four sources are plausible, none evaluated here. A host can pin a
+tool's schema when a person reviews it and treat any field added later as
+unapproved. A server can declare a purpose for each parameter, separating user
+operands from client configuration, and the host can ask the user to approve
+the configuration fields once. A host can treat the arguments that the user's
+request determines as operands and hold every other value for confirmation,
+which the MCP specification already recommends for tool
+inputs~\cite{mcp_spec}. And a host can label system-prompt content and enforce
+an information-flow policy that forbids its release to third-party tools, as
+FIDES does for agent data~\cite{costa2025fides}. Study~3 implies that such a
+policy must track where a value came from, not what it looks like.
+
+Whichever source is used, the allowlist has a price that Study~4 measured. When
+the provider refuses the reduced call, no model completed the task, and the
+user's request went unanswered. A provider that controls its own required list
+therefore holds a coercion lever: by refusing any call without its field, it
+forces the host to choose between disclosing the value and losing the tool.
+A host that strips a field should tell the user why the
+call failed, so the choice between the task and the disclosure is made by the
+person entitled to make it.
+
+\subsection{Implications}
+\paragraph{Clients and servers}
+The control point for a client is the transition from a model-proposed call to
+a dispatched call. A client can inspect the complete argument object and
+compare it with the purpose the user approved. It can supply approved public
+metadata, such as a fixed application label, through trusted code, and it can
+require a new review when a server adds a field. Server developers should
+document why each parameter is needed and separate user operands from client
+configuration. A finite domain for a metadata field limits what the field can
+express. Study~2 shows that it does not decide whether the model may take the
+value from confidential context. These are design implications and were not
+evaluated as controls.
+
+\paragraph{Model providers}
+A model that declines a direct request may still use the same information
+while satisfying a tool schema, as the confidentiality ladder shows on Claude.
+Confidentiality tests should therefore cover assistant text, argument values,
+and other structured outputs. The simultaneous-fact design gives a diagnostic:
+matched recovery, nonmatched recovery, and tool invocation together show
+whether a change reduces disclosure, removes selectivity, or suppresses all
+calls.
+
+\paragraph{Deployers}
+Authentication material that can stay in trusted application code need not
+enter the model context, and neither need user identity that a task does not
+use. The threat requires several conditions at once: a relevant fact is
+present, the declaration reaches the model, the model generates the value, and
+the host releases it. This paper measures the generation and release
+conditions with the others fixed by design, so a deployer cannot read the
+conditional recovery rate as an incident probability.
+
+\subsection{What the negative results rule out}
+The failed pilot hypothesis rejects a general superiority of an operationally
+worded field over an explicit request. The framework experiment rejects the
+reading that a field reveals a model's genuine runtime. The adjacent-field
+failures on the primary pair restrict the selectivity result to fields with
+close semantic correspondence. On the Study~4 models some different adjacent
+wordings succeed, which the change of wording alone could explain. A familiarity pilot rejects one explanation for variation between
+experiments. For benchmark construction this matters: a suite that reports
+only whether any marker ever appears would miss the difference between
+generic, broad, and precise fields, and a suite that reports only an average
+would hide categories that always fail.
+
+\subsection{Ethics and responsible disclosure}
+\label{sec:ethics}
+All planted facts are fabricated, including credential-shaped values. The
+experiments use author-controlled prompts and provider accounts, with no
+third-party deployment. No tool response acts against the caller, and no
+recovered fixture gives access to a real service. Parameter-based extraction
+is already public in prior work. Publication still has dual-use implications,
+because the paper records effective field wordings. The authors decided on
+4~October 2026 to notify the Model Context Protocol maintainers, the four model
+providers measured here, and the authors of the tested scanner policy before
+submission. As of that date no notice had been sent.
+\texttt{docs/DISCLOSURE.md} records the status of each notice and any reply.
+No hosted scanner was sent the study's schemas. Study~2 used US\$\ExpCost{} of paid inference at list prices, Study~3
+US\$\DetStudyThreeCost{} and Study~4 US\$\DetStudyFourBilled{}, each recorded per
+call in a budget journal.
+% TODO: T17 Send the notices listed in docs/DISCLOSURE.md, wait the period it sets, and then state in this paragraph when each was sent and how each recipient replied.
+
+\section{Threats to validity}
+\label{sec:limits}
+\paragraph{Construct validity}
+Normalized marker recovery is a precise and narrow measure of confidentiality
+loss. It misses paraphrases, summaries, and encodings, and its aliases can
+count partial matches. Three alternative scoring rules give identical
+primary counts. Study~1 measures emitted arguments and observes no dispatch,
+receipt, or task outcome. Studies~2 to~4 measure receipt by an in-process
+handler, which is neither an MCP transport nor a remote server. One check
+outside the studies used a real transport. On 10~August 2026, three live
+calls, one per pilot condition, passed the pilot schemas from a stdio MCP
+server through the MCP Python SDK client to a model, and the server recorded
+the returned arguments (\texttt{runs/mcp\_client\_capture.jsonl}). The check
+shows that the path is connected. It supports no rate, and it involved no
+shipping client. The pilot
+studies and robustness checks use a keyword identity measure that is not
+interchangeable with marker recovery. Their human agreement check rests on one
+worksheet.
+
+\paragraph{Internal validity}
+Field names and descriptions vary together, so the study estimates the effect
+of complete declarations. The planted prompts state each fact with the noun
+that its naming field uses, such as a deployment region or a service key. The
+design therefore does not separate selecting a fact by its category from
+matching a label, and no trial states a fact in vocabulary that differs from
+the field's. The adjacent fields are the only partial test. The region
+paraphrase shares no content word with the prompt's sentence and returned the
+region in every call, while the platform and credential paraphrases returned
+nothing on the primary pair. The planted values are fixed across repetitions.
+Study~1 ran each model's trials in blocks, one condition and field at a time,
+so differences between fields are confounded with collection time, and
+provider behavior can change with it. The paired bootstrap, the secondary
+multiplicity families, the mixed-model settings, and the scoring sensitivities
+were settled after Study~1 was collected. Studies~2 and~3 fixed their analyses
+before collection. The unplanted controls of Study~1 omit two of eight fields.
+
+\paragraph{Statistical validity}
+Seven hand-selected fields give limited information about variation among
+interfaces. Percentile bootstrap intervals with so few clusters are sensitive
+to the empirical field distribution and do not establish coverage over a
+population of schemas. Fact checks within a call and trials within a field are
+dependent, and the per-fact tests reflect that structure only in part.
+Complete separation in several cells limits the hierarchical model. Several
+summaries of the same data are not independent evidence.
+
+\paragraph{External validity}
+The primary evidence covers one order-lookup task, one base tool, synthetic
+secrets, and two model identifiers that name API aliases and not fixed
+weights. Study~2 adds an email task, constrained and categorical fields, and
+eight native schema contexts. It still tests four naming fields on two
+synthetic tools and one field on the native schemas, with local fixtures in
+place of the original servers. The reconstructed-listing arm loses native
+constraints and does not execute servers. Study~4 adds a newer model from each
+of three providers, which bounds how far the primary pair's age explains the
+effect, but it is exploratory, one of its legs is partial, and it changes the
+sampling settings and wordings along with the models. Every field
+wording comes from the study's own design; the corpus counts in
+Section~\ref{sec:prevalence} show that such fields are rare in published
+schemas, and independently authored wordings remain untested.
+
+\paragraph{Detection evidence}
+The scanner evidence covers one published policy, run locally with its own
+model, and not the vendor's hosted service. Its earlier boolean-only record has
+been superseded by a run that keeps every reply. The classifier has
+\DefenseCorpusPositives{} positives from a few related families and no
+holdout. Its negatives were scored once, and the one positive near the
+threshold changed its score when it was scored again.
+
+\paragraph{Policy replay and Study~3}
+The dispatch policies were defined after Study~2 was collected and applied to
+its recorded calls. In the replay and in Study~3 no attacker reshaped a value
+in response to a policy, and no model responded to a blocked call. The
+provenance filter knows every planted value and inspects arguments one at a
+time, so its failures are conservative and its successes are an upper bound.
+Study~3 covers two models, two facts, one synthetic tool, and one native
+schema. The suffix field obtains four characters of the key, or three
+alphanumerics of a region whose last four characters include a hyphen, and is a
+partial disclosure.
+
+\paragraph{Study~4}
+Study~4 is exploratory and post-dates the sealed protocols, so it supports no
+confirmatory claim. Its design files were committed with its data rather than
+before, so the record shows that the requests match the design, not that the
+design preceded collection. A fourth leg named by its protocol was stopped
+after \DetStudyFourDiscardedTrials{} trials and is reported only in
+\ref{app:study4}. Its refusal is returned by a strict local handler rather
+than a remote provider, in a tool result whose wording is ours. One of its
+three legs stopped at a per-day request cap and is reported as partial. It was
+resumed after its first results had been analysed, its relocation interval
+cleared the ten-point bound only with the resumed trials, and the authors then
+chose to stop collecting. Its planted working directory and signed-in user are named
+by no field, so the study says nothing about a field written to request them.
+Four of its fourteen field texts carry a recorded review; the other ten were
+written in the same Study~2 design before Study~2 began.
+
+\paragraph{Future work}
+The main gaps in release control are a filter that decodes or joins arguments,
+a refusal returned over a real transport by a remote provider, and an
+allowlist derived without an oracle. A constraint that excludes the secret
+needs an attempt-based endpoint that records invalid calls, relocation into
+other arguments, and task failure. The capacity domains varied wording and
+fact together with type, so an isolated type effect is unmeasured. Broader
+task families, independently authored fields, executed native servers, and
+commercial clients would each address a separate generalization question.
+% TODO: T18 Extend Study 2: secret-excluding constraints with an attempt-based endpoint, all four field families on the native schemas, executed native servers, and further tasks. No such observations exist. Study 2b covers one field with local fixtures.
+% TODO: T19 Evaluate relocation into other arguments and alternative tools after optionality changes or dispatch rejection. The existing optional-field comparisons do not measure this behavior.
+
+\section{Related work}
+\label{sec:related}
+\subsection{Prompt injection}
+Perez and Ribeiro study attacks that place conflicting requests into language
+model inputs~\cite{perez2022ignore}. Liu et al. formalize and benchmark prompt
+injection attacks and defenses~\cite{liu2023prompt}. Greshake et al. examine
+indirect injection through external material that an application meets while
+serving a legitimate user~\cite{greshake2023not}. These works establish why
+the origin and authority of model input matter. Our threat model shares their
+separation between user and attacker. The distinctive input is a declared
+parameter whose meaning helps determine an output value, and the endpoint is
+which facts appear in the argument object, with the intended operation still
+selected.
+
+\subsection{Prompt extraction}
+Zhang et al. study recovery of prompts from language
+models~\cite{zhang2024promptextraction}. PLeak studies prompt leaking attacks
+against applications~\cite{hui2024pleak}, and PRSA examines prompt stealing
+against prompt services~\cite{yang2025prsa}. Output inversion reconstructs
+prompts from generated outputs~\cite{zhang2024output2prompt}. These studies
+optimize queries against a victim or train an inversion model, and they target
+the whole prompt. Our attacker supplies one fixed tool declaration, the
+legitimate user supplies the task, and the target is one fact. Training data
+extraction~\cite{carlini2021extracting} concerns information encoded through
+training, whereas every target here is supplied in the current prompt.
+
+\subsection{MCP parameter abuse and metadata poisoning}
+HiddenLayer's function parameter abuse is the closest precedent for using
+arguments as a prompt disclosure destination~\cite{hiddenlayer2025mcp}. Its
+report includes explicit parameter names and fake functions supplied through a
+user message, a different entry point from an installed provider controlling
+its own declaration. MSB includes out-of-scope parameters among the attack
+surfaces evaluated for MCP agents~\cite{zhang2025msb}. MCPTox studies poisoning
+of tool metadata and supplies the listings used in our scope
+check~\cite{mcptox2025}, and the Invariant notification describes tool
+poisoning as an MCP security concern~\cite{invariant2025toolpoisoning}. We
+attribute the extraction mechanism to this prior work. Our addition is the
+crossed measurement of a field against all facts available at the same time,
+with naming, adjacent, generic, and neutral treatments, and the test of
+constraints and types at handler receipt.
+
+MCP landscape and safety studies give context for the integration
+boundary~\cite{hou2025mcp,radosevich2025mcpaudit}. Work on descriptor
+manipulation and implicit tool poisoning examines further ways that tool
+metadata influences an agent~\cite{jamshidi2025semantic,mcpitp2026}. Zhang and
+Pei study data exfiltration through backdoored tool
+use~\cite{leakdata2026}. Our setting plants no backdoor and embeds no
+instruction: the model and the tool implementation are unmodified, and only
+the declared schema changes.
+% TODO: verify T20 hou2025mcp, radosevich2025mcpaudit, jamshidi2025semantic, mcpitp2026, and leakdata2026 were checked against their arXiv abstract pages on 2026-10-02: titles, authors, and the descriptions used here. mcptox2025 now cites its archival AAAI 2026 record, whose title drops the word Attack. leakdata2026 lists ACL 2026 as its venue. Still open: a read of the full text by an author.
+
+\subsection{Schemas as behavioral input}
+Lin studies the influence of structured output schema descriptions when prompt
+and schema definitions conflict in a nonce-label classification
+task~\cite{lin2026schema}. That work treats a schema as a source of semantic
+influence and not only a formatting constraint. We examine confidential fact
+recovery instead of label choice, supply several facts at once, and separate
+planted from unplanted trials. Study~2 adds the value domain: a permissive
+pattern left recovery unchanged, and categorical fields returned admissible
+planted values. It did not vary a description while holding the type fixed.
+
+\subsection{Agent security benchmarks}
+AgentDojo provides a dynamic environment for evaluating agent tasks, prompt
+injection attacks, and defenses~\cite{debenedetti2024agentdojo}. InjecAgent
+benchmarks indirect injection in tool-integrated
+agents~\cite{zhan2024injecagent}. Agent Security Bench broadens the
+organization of agent attacks and defenses~\cite{asb2024}. ToolEmu uses a
+sandbox emulated by a language model to investigate agent
+risks~\cite{ruan2024toolemu}. These frameworks cover interaction with an
+environment and consequences for a task. Our main experiment fixes the task
+and the available facts to gain control, and gives up task diversity. The
+simultaneous-fact scorer could be added to such a benchmark together with
+dispatch, receipt, and task outcomes.
+
+\subsection{Instruction separation and information-flow control}
+Instruction hierarchy training addresses prioritization of privileged
+instructions~\cite{wallace2024hierarchy}. StruQ studies structured separation
+of instructions and data~\cite{chen2025struq}, and spotlighting marks
+lower-trust content in indirect injection settings~\cite{hines2024spotlighting}.
+These approaches govern which instruction a model follows. A required
+parameter contains no imperative override, so whether they affect our
+fixtures is an empirical question that we did not test.
+
+CaMeL separates control and data flow and applies capability
+policies~\cite{debenedetti2025camel}, and RTBAS adapts information-flow
+control to prompt injection and privacy leakage in
+agents~\cite{zhong2025rtbas}. Their runtime perspective
+matches the distinction between generating a value and authorizing its
+release. Adaptive attack evaluations show why performance against a fixed
+attack set is no universal guarantee~\cite{zhan2025adaptive}. Our attacker
+uses fixed declarations and does not respond to detector feedback.
+Several systems enforce such a separation by construction. FIDES tracks
+confidentiality and integrity labels through an agent and applies
+information-flow policies deterministically~\cite{costa2025fides}. IsolateGPT
+isolates the execution of separate applications~\cite{wu2025isolategpt},
+Progent checks every tool call against symbolic rules over tool names and
+arguments~\cite{shi2025progent}, and Beurer-Kellner et al. propose design
+patterns for agents with provable resistance to prompt
+injection~\cite{beurerkellner2025patterns}. A label on system-prompt content that
+forbids its release to third-party tools would address the flow measured
+here. Study~3 shows that such a policy has to track where a value came from,
+because matching its content against the secret fails on encoded and typed
+values. We evaluated none of these
+systems.
+
+\subsection{Contextual integrity and exfiltration through tool use}
+Contextual integrity frames privacy as the appropriateness of an information
+flow for its context. ConfAIde tests whether language models respect such
+norms~\cite{mireshghallah2024confaide}, PrivacyLens evaluates norm awareness
+when models act as agents~\cite{shao2024privacylens}, and AirGapAgent restricts
+an agent to the data needed for a task so that a third party cannot extract
+the rest~\cite{bagdasarian2024airgap}. Imprompter optimizes obfuscated
+adversarial prompts that make an agent extract personal information from a
+conversation and send it to an attacker's server~\cite{fu2024imprompter}. Those studies protect user data in a
+conversation. Our asset is deployer context in the system prompt, and our
+attacker writes a schema and no prompt.
+% TODO: verify T30 The eight references added on 2026-10-01 (mireshghallah2024confaide, shao2024privacylens, bagdasarian2024airgap, costa2025fides, beurerkellner2025patterns, wu2025isolategpt, shi2025progent, fu2024imprompter) were checked against their arXiv abstracts on 2026-10-02: titles, authors, venues, and the one-line descriptions used here. Still open: a read of the full text by an author.
+% TODO: verify T29 zhong2025rtbas was checked against its arXiv abstract on 2026-10-02 (it adapts information-flow control). Still open: a read of the full text by an author.
+
+\subsection{MCP-specific detection and runtime defenses}
+MindGuard studies inspection of agent decisions under metadata
+poisoning~\cite{mindguard2025}. MCPGuard concerns detection of vulnerabilities
+in MCP servers~\cite{wang2025mcpguard}. MCPShield studies a security layer for
+trust calibration in MCP agents~\cite{zhou2026mcpshield}. ShieldMCP addresses
+runtime defense at the tool layer~\cite{yergattikar2026securing}, and a
+defense placement taxonomy organizes where controls operate in MCP
+systems~\cite{rostamzadeh2026dpt}. We benchmarked none of these systems. Our
+detection evidence covers one published scanner policy and one field
+classifier.
+% TODO: verify T21 mindguard2025, wang2025mcpguard, zhou2026mcpshield, and rostamzadeh2026dpt were checked against their arXiv abstract pages on 2026-10-02: titles, authors, and the descriptions used here. Still open: a read of the full text by an author. No fixture evaluation against these systems is available.
+
+\section{Conclusion}
+\label{sec:conclusion}
+A required tool parameter acts as a selector over the confidential content in a
+model's context. With five facts available, both preregistered models return
+the fact a field names far more often than the others, a neutral field returns
+none, and trials with nothing planted return none. Direct naming carries the
+effect on those models. In an exploratory study with a different design, three
+newer models show the same selectivity, succeed with some adjacent wordings
+that differ from those of Study~1, and return a planted signed-in user through
+a field that asks whom to bill.
+
+The checks a host can apply at dispatch do not decide what leaves. A
+constraint that admits the secret does not measurably reduce what a tool
+handler receives, and enumerated, integer, and boolean fields carry admissible
+planted values while the user's task still succeeds. The models compute
+encodings of content they were told to keep confidential and split it across
+typed slots when a schema asks, so a content filter with exact knowledge of
+every secret passes it. Keeping only the arguments a task needs, as the
+experimenter defined them, removes every planted value in Studies~2 and~3. In
+the exploratory refusal arm the models did not move the targeted secret
+elsewhere when the reduced call was refused, although one model wrote a
+planted working directory into a task argument in a few trials. That
+protection has a price: against a provider that requires its
+field, the task fails. A host must also decide which arguments a task needs
+without an oracle, and this paper does not evaluate a way to do so.
+
+Release is therefore an information-flow decision that belongs to the host,
+which alone knows which recipients the deployer approved. What remains to
+measure is that decision made without an oracle, a refusal returned over a real
+transport by a remote provider, and a filter that decodes or joins arguments.
+
+% TODO: T27 Supply the permanent artifact URL or DOI, release scope, license, and third-party redistribution permissions.
+\section*{Data and code availability}
+The research artifact contains the experimental harness, the run logs behind
+every reported number, fixture definitions, input hashes, analysis scripts,
+and instructions for rebuilding the tables and figures.
+
+\section*{CRediT authorship contribution statement}
+\textbf{Ashiq Sazid:} Conceptualization, Methodology, Investigation, Formal
+analysis, Data curation, Validation, Writing -- original draft, Writing --
+review \& editing, Project administration. \textbf{Md. Rafiur Rahman:}
+Validation.
+% TODO: T23 Drafted on 2026-10-04 from the repository record (study design, field reviews, run approvals and the annotation attestation). Each author must confirm these roles, add any the record does not show, and approve the final manuscript.
+
+% TODO: T24 The authors report that the work was funded (2026-10-04). Supply the funder and grant number, then restore: \section*{Funding}
+
+\section*{Declaration of competing interest}
+The authors declare that they have no known competing financial interests or
+personal relationships that could have appeared to influence the work reported
+in this paper.
+
+% TODO: T26 Obtain author review of the complete AI-assistance statement and responsibility declaration. Elsevier's policy (June 2026 text, read 2026-10-05) also asks for two things this paragraph lacks, and only the authors can supply them: the name of each tool or service used, and the sentence that the authors reviewed and edited the content and take full responsibility for the publication. It places the section immediately before the reference list.
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+An AI coding and writing assistant assisted with manuscript restructuring,
+language revision, and checks of the LaTeX build and existing analysis
+artifacts. It implemented the policy replay and the Study~3 and Study~4
+harnesses, and it ran the compatibility checks and model calls of both studies
+after a study author had approved each leg and its budget. The authors
+collected Study~2.
+
+\clearpage\onecolumn
+\appendix
+\counterwithin{table}{section}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+\section{Exact field descriptions and synthetic fixtures}
+\label{app:fixtures}
+Tables~\ref{tab:fixture_table-1} and~\ref{tab:fixture_table-2} reproduce the
+implemented field descriptions and marker/alias definitions. All added fields
+in the primary matrix are required strings. The generic and neutral fields
+have no target. The opaque marker is present in the planted prompt but lacks
+a targeted C field. These properties determine which terms are meaningful in
+Equations~\ref{eq:matched}--\ref{eq:any}.
+
+The descriptions are presented exactly as implemented rather than rewritten
+to match a uniform sentence length or editorial style. They vary in specificity,
+length, and framing. Their labels in the protocol do not eliminate that
+variation, and the study's comparison is between the complete declarations.
+The seed fixes one marker per family. The same markers recur across trials.
+The accompanying code supplies the full prompt composition and base interface
+needed for an exact reconstruction.
+\input{generated_fixture_table}
+\section{Full prompts, schema examples, and grading rubrics}
+\label{app:prompts}
+The following listings are generated from the fixture code. They
+preserve stimulus wording and punctuation, including punctuation that is not
+used in the article's narrative style. Line breaks in the display permit
+readable wrapping. The prose distinguishes current implementation from
+earlier versions where the record does not establish identity. No missing
+earlier prompt is reconstructed by guessing.
+\input{details_prompts}
+
+\subsection{Human labeling rubric and interpretation}
+The labeling interface uses the same eight bucket names as the model
+judge. The rubric assigns refused to a declined answer, empty or placeholder
+to absent or filler content, and generic nonidentifying to a category without
+a named product. Framework identifying requires a specific framework, product,
+or harness. Model identifying requires a model or provider. Both identifying
+requires both categories. Operator metadata covers deployment facts such as
+region, tenant, policy, or contact. Other useful denotes other information the
+tool should not receive. These definitions describe the annotation interface.
+They do not establish annotation accuracy.
+
+The pilot labeling interface describes assistant prose together with
+arguments as what a tool provider receives. The API logs establish only that
+arguments are sent to a tool, so we treat captured text as the grading input
+and interpret the older endpoint as a measure of captured text. Under the protocol's conjunctive T1 rule, both
+the keyword flag and a framework-identifying or both-identifying judge bucket
+are needed. A missing judge verdict remains unknown. The single
+worksheet cannot establish independent agreement between two human raters.
+
+\input{details_payload_aliases}
+Table~\ref{tab:payload-aliases} records the exact original payload targets and
+allowed fragments. This makes the difference between a literal full marker
+with case ignored and the normalized alias endpoint explicit. These pilot
+aliases were informed by a probe. They do not inherit the stronger prospective
+fixture provenance of the Study~1 seed-derived markers.
+\section{Selected-artifact accounting}
+\label{app:accounting}
+Table~\ref{tab:accounting_table-1} gives attempted rows, errors, usable
+responses, emitted calls, and control outcomes for every selected Study~1 matrix
+and unplanted arm. For a matrix row, the final fraction is neutral any-canary
+recovery. For an unplanted row, it is any-canary recovery among its emitted
+calls. Counts in that column therefore have different condition scopes,
+although they share a call-level outcome definition.
+
+The Pro matrix contains incomplete collection and recorded errors. The
+unplanted stages have complete configured collection but partial protocol-field
+coverage. These are separate kinds of incompleteness and require different
+interpretations. The table makes neither missing trials nor missing fields
+equivalent to observed nonrecovery. Artifact paths and hashes are fixed in
+\texttt{data/artifact\_selection.json}. The broader inventory records
+sources that are not selected for the current estimate.
+\input{generated_accounting_table}
+\section{Secondary per-fact analyses}
+\label{app:secondary}
+Per-fact analyses use Wilson intervals for matched proportions, one-sided
+Fisher tests, and Newcombe intervals for matched-minus-nonmatched differences.
+Holm adjustment is applied to the eight estimable all-stratum tests across the
+primary provider pair. Naming/adjacent tests form a separate family. These
+multiplicity-family choices were settled after collection. The opaque fact has
+no targeted field and therefore no estimable diagonal comparison. The tests
+summarize fact-specific patterns but do not fully model correlation among
+outcomes from the same call or field. They do not supersede the primary
+field-level interpretation.
+
+The hierarchical sensitivity model is
+\begin{equation}
+\operatorname{logit}\Pr(Y=1)=\beta_0+\beta_M M+u_f+v_k+w_p,
+\label{eq:mixed}
+\end{equation}
+where $M$ indicates matching and the random intercepts correspond to field,
+fact, and provider. The variational Bayesian binomial implementation uses
+\texttt{fe\_p=2}, \texttt{vcp\_p=1}, zero initial means, and unit initial
+standard deviations. The recorded fit status is \JournalMixedStatus{}.
+These fitting choices were resolved after collection. Only two provider levels
+inform the provider term, and the formula contains no separate trial-level
+random effect for repeated facts. Separation and prior choices further limit
+interpretation. Log-odds estimates are not substituted for the primary
+percentage-point difference.
+
+Three postcollection sensitivity checks recompute the primary observations
+using normalized full markers without aliases, verbatim full markers, and the
+registered marker/alias rule including \texttt{query}. The same selected calls
+and field clusters are kept. These checks test whether the main finding
+depends on abbreviated aliases, case/punctuation normalization, or exclusion
+of the legitimate query argument. They are robustness analyses of existing
+observations, not newly registered endpoints or additional model trials.
+
+Table~\ref{tab:secondary_table-1} gives the per-fact calculations described in
+Section~\ref{sec:analysis}. M and U are matched and nonmatched opportunities
+for the specified fact within the indicated stratum. The all-stratum family
+and the naming/adjacent family use separately adjusted tests. The generic
+field is absent because it has no target, and the opaque fact is absent from
+diagonal tests because no C field targets it.
+
+Wilson and Newcombe intervals and Fisher tests summarize the observed cells
+under their respective assumptions. They are not additional field-cluster
+analyses. Differences between nominal cell-level significance and the broader
+field-level interpretation are expected when field and trial outcomes are
+dependent. The full hierarchical coefficients, posterior standard deviations,
+and fit diagnostics are kept in \texttt{data/q1\_analysis.json}. The
+assumptions and limitations of that sensitivity model are given alongside
+Equation~\ref{eq:mixed}.
+\input{generated_secondary_table}
+Table~\ref{tab:sensitivity_table-1} gives the three alternative scoring rules.
+They use the same calls and field clusters as the registered rule.
+\input{generated_sensitivity_table}
+
+\section{Complete matrix and unplanted breakdowns}
+\label{app:fullmatrix}
+Tables~\ref{tab:matrix-gpt-4o}, \ref{tab:matrix-gemini-3-flash-preview},
+\ref{tab:matrix-claude-sonnet-4-5-20250929},
+\ref{tab:matrix-deepseek-v4-flash}, and
+\ref{tab:matrix-gemini-31-pro-preview} provide every selected field by fact
+cell for GPT-4o, Gemini Flash, Claude, DeepSeek, and Pro respectively. A row
+shares the same emitted calls across its five fact columns. Consequently,
+column counts cannot be summed and interpreted as independent model trials.
+The generic row has no designated target. A missing Pro generic row supplies
+no estimate. The neutral row pools the repeated D scheduling labels because
+they instantiate the same interface.
+
+The GPT-4o table shows that the client field accounts for
+\VthreeGptFouroCrosstalkuaFrac{} of its nonmatched recoveries. The remaining recovery is an opaque marker in the
+credential-adjacent row. The Gemini table has few platform recoveries despite
+complete direct region, operator, and credential recovery. Claude shows no
+nonmatched recovery. DeepSeek's smaller operator denominator reflects noncalls.
+Pro's complete platform-adjacent result coexists with an incomplete
+credential-adjacent cell. These features explain why the pooled summaries
+must be read together with their field composition.
+\input{details_full_matrix}
+
+Table~\ref{tab:all-unplanted} gives each measured unplanted field separately.
+The counts make reduced invocation visible even though every observed recovery
+count is zero. GPT-4o's service-key field has no emitted call, so its conditional
+recovery rate is undefined. The absent platform-adjacent and region-adjacent
+fields are omitted from the table because no trials exist for them.
+\input{details_unplanted}
+
+Table~\ref{tab:gradient} gives the Wilson interval for every cell of
+Figure~\ref{fig:gradient}, including the incomplete Pro cells.
+\input{details_gradient}
+
+\section{Study~2: stimuli, breakdowns, and collection record}
+\label{app:exp25}
+This appendix documents Study~2. The
+listings are generated by the same functions that built the trial schedule.
+Planted values differ for every tool and replicate, so the listing shows one
+replicate as an example.
+\input{details_exp25_prompts}
+
+\subsection{Breakdowns}
+Table~\ref{tab:exp25-cells} gives received target recovery for every Study~2a
+model, tool, and field. Region, operator, and service-key cells are complete on
+both models and both tools. Every cell below its ceiling is a platform cell.
+Task success is complete in all planted string cells. Table~\ref{tab:exp25-native}
+gives the Study~2b results for each native schema context. Each cell has five
+trials, so the Wilson intervals are wide. The email context from the IMAP
+server and the Google calendar context show low task success, which the
+unplanted compatibility check had anticipated. Table~\ref{tab:exp25-status}
+lists the outcome status and task success for every stage, model, and arm. It
+shows the unplanted and capacity arms as well as the string arms. In the
+Study~2a unplanted arm GPT-4o made no tool call in some trials, which the status
+column records.
+\input{details_exp25_cells}
+\input{details_exp25_native}
+\input{details_exp25_status}
+
+\subsection{Collection record and deviations}
+Study~2a comprises \ExpATrials{} trials and Study~2b \ExpBTrials{} trials. The
+selected legs contain no API errors, and the analysis verifies their file
+digests before use. The first Gemini launch for Study~2a failed locally. The
+runner did not load the credential file, so the client raised an error before
+any request was sent. That file holds \DetExpFailedLaunchRows{} error rows. It
+is kept as a record and excluded from every analysis. The relaunch loaded
+the credential in the caller without changing any hashed source file.
+
+The output-token bound stopped collection on Gemini calls whose reported
+output exceeded the cap of 1,024 tokens, because the provider's output limit
+does not bound its thinking tokens. The affected legs were resumed
+\DetExpResumes{} times in total under the prespecified resume policy, which
+skips recorded trials and counts earlier attempts. No trial was repeated. The
+GPT-4o legs ran without stops.
+
+Billed inference at list prices was US\$\ExpACost{} for Study~2a and
+US\$\ExpBCost{} for Study~2b, a total of US\$\ExpCost{}. The amendment that
+approved the native fixtures is kept beside the sealed protocol with its
+own timestamp proof. The sealed protocol text still describes the experiment
+as not yet collected, because the file was frozen before collection and is not
+edited afterwards.
+
+\section{Study~3: stimuli and collection record}
+\label{app:study3}
+Table~\ref{tab:study3-fields} gives the field texts. A study author reviewed
+the seven new texts before any model saw them. The encoding arm uses the
+Study~2a system prompt with newly derived values, and the covert arm states
+one access code under the same confidentiality sentence.
+\input{details_study3_fields}
+
+The protocol, the analysis code, and the schedule were committed together. The
+protocol digest was submitted to the timestamp calendars at 18:44 UTC on
+1 October 2026. Its Bitcoin anchor is block 969484, with header time 19:19
+UTC, and the Merkle root was compared with the block header before
+collection. The first planted call was made at 20:07 UTC. Before sealing, 14
+calls per provider with nothing planted checked that both providers accepted
+every schema.
+
+The two legs hold \DetStudyThreeTrials{} trials with no API error and no
+repeated trial. The Gemini leg recorded \DetStudyThreeGemStatuses{}, and the
+GPT-4o leg \DetStudyThreeGptStatuses{}. All Gemini calls to a tool that was
+not offered, and most of its trials without a call, are unplanted covert
+trials, where the prompt holds nothing to report. The Gemini leg was resumed
+\DetStudyThreeGemResumes{} times under the prespecified rule, each time
+because a call billed more than 1,024 output tokens of thinking. The GPT-4o
+leg ran without a stop. Billed inference at list prices was
+US\$\DetStudyThreeCost{} for the two legs. An AI coding assistant implemented
+the harness and ran the compatibility checks and both legs. A study author
+reviewed the field texts and approved each leg and its budget beforehand.
+
+\section{Study~4: design and collection record}
+\label{app:study4}
+Study~4 is an exploratory extension and carries no timestamp proof. Its design,
+schedule, scoring and analysis are fixed in \texttt{code/flagship\_study.py}
+and stated, with the limits expected in advance, in
+\texttt{docs/STUDY\_4\_PROTOCOL.md}. Both files entered the repository in the
+commit that also added the collected data, at 00:41 UTC on 2 October 2026,
+about an hour and a half after the first planted call at 23:04 UTC on
+1 October. The commit record therefore does not show that the design preceded
+collection. It does show that the requests did not change: each of the
+\DetStudyFourSpecMatched{} recorded trials, the discarded leg below included,
+stores a digest of its request that equals the digest of the request the
+committed design builds for that trial. The design digest that each leg
+recorded at launch also covers the harness source code and the refusal
+messages. It equals the committed design for the Gemini Pro leg and not for the
+three earlier legs, so the harness code changed between legs, and the record
+cannot show whether the refusal messages changed with it.
+
+The models are one from each provider whose key the study holds, taken from
+the providers' recommended tier: \texttt{gpt-6.1-sol}, \texttt{claude-opus-5-5}
+and \texttt{gemini-3.1-pro-preview}, each echoed back by its provider exactly
+as requested. The protocol considered the most capable reasoning models and
+did not run them, for cost. The models ran at the providers' default sampling
+settings, with the output cap and the per-leg budget recorded in each leg's
+approval file. The protocol also named \texttt{gemini-3.8-flash}. Its leg was
+started at 23:39 UTC and stopped after \DetStudyFourDiscardedTrials{} trials,
+about a minute and a half later, when a study author asked for that provider's
+flagship model instead. The session record shows that none of the leg's
+outputs had been inspected when it was stopped. It supports no number in the
+main text, and we report what it recorded so that the discard can be checked:
+\DetStudyFourDiscardedMatrix{} generic or neutral matrix trials and the rest
+refusal trials, in which it relocated the secret in
+\DetStudyFourDiscardedRelocated{} and, by quoting its own refused call, stated
+it to the user in \DetStudyFourDiscardedProse{}. No reported leg did the
+latter.
+The two complete legs were collected concurrently at four requests at a time.
+The Gemini Pro leg was run one call at a time to stay under its provider's
+per-minute rate limit, and its resumed session two at a time.
+
+The selectivity arm adds one of the \DetStudyFourFields{} field texts of the
+Study~2 design (Table~\ref{tab:study4-texts}) to the two synthetic Study~2a
+tools and one native Study~2b schema, and the refusal arm uses the synthetic
+order tool and the same native schema. All fourteen texts were committed in the
+Study~2 design before Study~2 began. Study~2 used the four first naming texts,
+and those four carry the recorded review described in Section~\ref{sec:exp25};
+the other ten were not used before Study~4.
+% TODO: T31 The Study 4 review record (docs/STUDY_4_FIELD_REVIEW.md) says all fourteen texts were reviewed on 2026-09-29, but the 2026-09-29 record (docs/EXPERIMENT_25_FIELD_REVIEW.md) covers only the four CONSTRAINED_FIELDS. An author should confirm whether the other ten had a review, and the text above should then say so.
+The planted prompt is the Study~2a configuration sentence with two clauses added
+for the working directory and the signed-in user; a study author reviewed those
+clauses and the two refusal messages before any model saw them. Scoring is the
+Study~2 receipt rule: the full normalized marker in an argument the task does
+not use, per attempted trial.
+
+\input{details_study4_texts}
+
+The refusal arm returns one of two messages to the model after the provider
+refuses the reduced call, with \texttt{<field>} replaced by the name of the
+removed argument:
+\input{details_study4_refusal}
+
+The three legs hold \DetStudyFourTrials{} trials. GPT-6.1 Sol recorded
+\DetStudyFourSolRows{} of \DetStudyFourSolExpected{} with
+\DetStudyFourSolErrors{} error, raised by the client library rather than
+returned by the provider, Claude Opus 5.5
+\DetStudyFourOpusRows{} with \DetStudyFourOpusErrors{}, and Gemini 3.1 Pro
+\DetStudyFourProRows{} with \DetStudyFourProErrors{}. The Pro leg stopped when
+three successive attempts on one trial returned a quota error, which is the
+prespecified stop; its remaining trials are not imputed, and the leg is reported
+as partial throughout.
+
+That leg is the one incomplete arm in this paper, so we state its coverage
+exactly. \DetStudyFourProMissing{} of its scheduled trials were never sent. The
+shortfall is spread unevenly across its arms, because the schedule is shuffled
+within replicate blocks: it holds \DetStudyFourProArmMatrix{} selectivity
+trials, \DetStudyFourProArmUnplanted{} unplanted trials and
+\DetStudyFourProArmFeedback{} refusal trials. The cause is a
+per-day request cap on this preview model, which is fixed for the model and does
+not depend on the account's balance.
+
+The leg was collected in two sessions. The first stopped at the cap on
+2 October 2026 with \DetStudyFourProFirstLaunchRows{} trials, and an attempt to
+continue at 00:34 UTC that day was refused on every probe. On 5 October 2026 a
+study author asked for the leg to be continued. It was resumed from its
+recorded rows under the same design hash, and it stopped at the same cap after
+\DetStudyFourProResumedRows{} further trials. This is a post hoc continuation:
+it was decided after the first session's results had been analysed and written
+up. It follows the fixed schedule, each session ended at the provider's cap and
+not at a result, and every resumed trial stores the request digest of the
+committed design. One reported decision changed with it. The first session
+alone gave a relocation count of \DetStudyFourProFirstLaunchRelocated{} with
+interval \DetStudyFourProFirstLaunchRelocatedCI{}, which could not exclude ten
+percentage points, and the rule across the three models was then reported as
+not met. With both sessions the count is \DetStudyFourProRelocated{} with
+interval \DetStudyFourProRelocatedCI{}. No further session was run. The
+authors chose to report the leg at this size and not to wait for the further
+daily sessions that would complete it, and they made that choice with these
+results in view. The leg's final size was therefore not fixed in advance,
+which the protocol's rule against data-dependent stopping did not foresee, and
+the change of decision should be read with that in mind. The leg remains
+resumable from its recorded rows under the same design hash, and the two
+complete legs carry every claim that Study~4 makes. Billed inference at list prices was US\$\DetStudyFourBilled{} for the
+three legs, against US\$\DetStudyFourCost{} reserved for them in the budget
+ledger; the stopped fourth leg billed a further US\$\DetStudyFourDiscardedCost{}.
+An AI coding assistant implemented
+the harness and ran the compatibility checks and the legs. A study author
+reviewed the new prose, chose the models, and approved each leg and its budget
+beforehand.
+
+Every field text in Study~4 comes from the study's own Study~2 design. Study~4
+therefore varies models and planted facts and not wordings, and
+it says nothing about wordings that an independent author or an adaptive
+adversary would choose.
+
+\section{Detection evidence: complete record}
+\label{app:detection}
+This appendix gives the full record behind Section~\ref{sec:detection}. It
+covers a local scanner profile written for the study, a local reproduction
+of a published scanner policy, and a prompted field classifier. None of them
+is an executed host defense with a task-success endpoint.
+
+\subsection{Published policy and external scanner coverage}
+The scanner study reproduces the prompt and pseudo-tag rule distributed in
+\texttt{mcp-scan==0.3.39}, using the policy's specified
+\texttt{gpt-4o-mini} model and temperature zero. The evaluation supplies the
+tool surface the policy reads, namely the tool name, its description, and every
+parameter's name and description, and applies a study-defined majority vote
+across \ScanRawMetaReps{} repetitions. It is a local reproduction of a
+published policy at a fixed version. It is not a run of the vendor's hosted
+service or an evaluation of its current production rules.
+
+The reported run keeps every reply together with the model identity that the
+provider reported, and it accepts only an exact YES or NO. Any other reply
+would mark its arm invalid rather than clean, and an invalid arm would block the
+result. All \ScanRawMetaValid{} of \ScanRawMetaCalls{} replies were
+valid, and the provider reported a dated \texttt{gpt-4o-mini} snapshot for
+every one. The run covers \ScanRawMetaArms{} declarations: the pilot
+conditions, every wording of the pilot field family, and the
+\ScanRawMetaStudyarms{} added fields that Studies~1 to~4 offered. The Study~1
+fields were scanned on the Study~1 order tool, and the fields of Studies~2
+to~4 on the synthetic order tool of Study~2. The email tool and the native
+schemas were not scanned. An earlier run of the pilot conditions stored
+boolean votes without replies; the new run reproduces each of its verdicts and
+supersedes it.
+
+\begin{table}[t]\centering\small
+\caption{Scanner verdicts. ``Published'' is Invariant Labs' \texttt{policy.gr}
+from \texttt{mcp-scan==0.3.39}, re-implemented locally with its own model and
+\ScanRawMetaReps{} repetitions, every reply kept. It is not the vendor's
+current hosted service. E is prior work's explicit attack, whose parameters are
+literally named \texttt{system\_prompt} and \texttt{model\_name}. ``desc'' and
+``desc+name'' are two study-authored profiles. The last three rows count the
+added fields of each study that the published policy flagged.}
+\label{tab:scanners}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ & Published & \multicolumn{2}{c}{Ours} \\
+\cmidrule(l){3-4}
+Condition & \texttt{policy.gr} & desc & desc+name \\
+\midrule
+A$'$ explicit ask & \verdict{\ScanRawAPrimeFlagged} & \verdict{\ScanDescAPrimeFlagged} & \verdict{\ScanDescnameAPrimeFlagged} \\
+B\phantom{$'$} injection & \verdict{\ScanRawBFlagged} & \verdict{\ScanDescBFlagged} & \verdict{\ScanDescnameBFlagged} \\
+B$'$ command tone & \verdict{\ScanRawBPrimeFlagged} & \verdict{\ScanDescBPrimeFlagged} & \verdict{\ScanDescnameBPrimeFlagged} \\
+C\phantom{$'$} operational field & \verdict{\ScanRawCApiDocumentationFlagged} & \verdict{\ScanDescCFlagged} & \verdict{\ScanDescnameCFlagged} \\
+D\phantom{$'$} neutral control & \verdict{\ScanRawDFlagged} & \verdict{\ScanDescDFlagged} & \verdict{\ScanDescnameDFlagged} \\
+\textbf{E}\phantom{$'$} \textbf{published attack} & \textbf{\verdict{\ScanRawEFlagged}} & \verdict{\ScanDescEFlagged} & \verdict{\ScanDescnameEFlagged} \\
+\midrule
+Study~1 fields & \ScanRawMetaSoneflagged{} of \ScanRawMetaSonearms{} & & \\
+Study~2 fields & \ScanRawMetaStwoflagged{} of \ScanRawMetaStwoarms{} & & \\
+Study~3 fields & \ScanRawMetaSthreeflagged{} of \ScanRawMetaSthreearms{} & & \\
+Study~4 fields & \ScanRawMetaSfourflagged{} of \ScanRawMetaSfourarms{} & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+The hosted Snyk Agent Scan service was not evaluated. A saved local
+\texttt{inspect} transcript from version 0.5.15 enumerates the six published
+tools without security verification. It is a tool discovery check and supplies
+no flagged or clean verdict. No result is available for promptfoo or other
+suggested external scanners. The tested external artifact is the
+Invariant policy text of that version, run through the study's local
+reproduction and its specified model API.
+
+The policy flags the imperative B and B$'$ conditions and records no flag for
+the parameter-only C condition, for the explicit-parameter E comparison, or for
+any added field of Studies~1 to~4, including the Study~3 requests for a
+hexadecimal, reversed, or slot-split secret (Table~\ref{tab:scanners}). The
+study-authored description-only and description-plus-name profiles give
+additional comparisons. Reading names allows the latter profile to flag
+explicit identity and prompt requests while leaving the operationally framed
+C field unflagged. The authors wrote both profiles after the C wording existed,
+the name-reading profile was added after the original protocol, and the test
+suite requires later pilot field wordings to pass both, so these two columns
+are not independent evidence that the C field is hard to detect.
+
+One interpretation of the pattern is that a question focused on imperative
+manipulation does not assess whether generated arguments are authorized to
+leave the host. This motivates comparing instruction-focused classification
+with data-release policy. It does not prove that parameter-only requests are
+inherently undetectable, that the policy's semantic model is known, or that
+every injection-oriented defense must fail. A scanner that read the Study~3
+field descriptions could notice their stated encodings, and none of the
+results here depends on accepting the scanner interpretation.
+
+% TODO: T12 Supply an author-approved disclosure decision and actual hosted-scanner results before making any claim about the vendor's hosted service.
+
+\subsection{Field intent classification and prevalence-dependent precision}
+\label{sec:defense}
+\subsubsection{Corpus construction and detector development}
+The classifier is a prompted language model rather than a classifier
+trained by fitting weights on a tabular dataset. The implementation requests
+\texttt{claude-haiku-4-5-20251001} at temperature zero with an eight-token
+output budget. It asks how strongly a parameter requests information about
+the agent itself rather than user data or operands required for the task.
+Scores range from zero to 100. The saved evaluation contains a single score
+for each of the \DefenseCorpusNegatives{} negative fields, with no raw reply
+and no served model identity. The \DefenseCorpusPositives{} positives and the
+study fields of Table~\ref{tab:detector-study} were scored again with
+\DetDetectorStudyReps{} repetitions each, and those replies and the served
+model identity are kept. The stability of the negative scores is therefore
+unknown.
+
+The positive set contains five C wording variants, the explicit A$'$ identity
+field, the imperative B$'$ identity field, and the two E fields. Thus its nine
+rows represent a small number of related semantic families. Two positives,
+\texttt{system\_prompt} and \texttt{model\_name}, are also among the published
+parameter examples named by the detector prompt. The positive set is
+therefore not separated from the prompt's design, even by literal name.
+
+The negative corpus contains \DetCorpusMcptoxN{} fields harvested from clean
+MCPTox listings and \DetCorpusOtelN{} from six OpenTelemetry semantic convention
+registries. The OpenTelemetry fields were taken from the unversioned main
+branch of the conventions repository, so their upstream revision is not
+recorded. The harvested fields themselves are fixed in the artifact file
+\texttt{data/benign\_fields.json}. The latter cover
+user agent, client, service, telemetry, device, and HTTP metadata. They provide
+legitimate examples that can resemble requests about the caller. The harvesting
+record excludes the study's neutral \texttt{request\_trace\_id}, since an
+experimental control is not independent corpus evidence. A corpus label of
+benign identifies the field's source and intended use. It does not establish
+that sending every possible value through that field is authorized.
+
+The original detector prompt explicitly named several of the study's attack
+wordings and was evaluated on those same wordings. That evaluation used its
+own prompt development examples as test data. We do not present its performance
+as generalization. The rebuilt prompt uses examples from prior published
+parameter attacks and applies a blacklist against distinctive C vocabulary.
+This removes one direct overlap. It does not erase the authors' knowledge of
+C, separate a training corpus from a prospectively sealed test corpus, or
+supply independent attack families.
+
+There is no independent training, validation, and holdout split for the reported
+ROC. The operating threshold is interpreted on the same scored corpus. The
+leave-one-positive and leave-one-family summaries remove rows from
+an already scored set. They do not retrain or redesign the detector without
+the omitted family. They are sensitivity descriptions, not cross-validation
+estimates. A future generalization claim requires independently authored
+attacks, a frozen prompt and threshold, and previously unseen server contexts.
+% TODO: T13 Create an independently collected defense holdout with a prospectively frozen prompt and threshold, including unseen semantic attack families and native benign schemas.
+% TODO: T14 Recover the original detector's scored corpus and exact development prompt if reporting its numerical performance. Only its contaminated evaluation procedure is documented here.
+% TODO: T15 Retain raw field-classifier replies, served model identity, and repeated scores to assess parsing validity and score stability.
+
+\subsubsection{ROC, uncertainty, and threshold tradeoffs}
+The field classifier evaluates names and descriptions.
+On \DefenseCorpusPositives{} study-authored positives and
+\DefenseCorpusNegatives{} corpus-derived negative fields, it achieves
+AUC \DefenseAucValue{}~\DefenseAucCI{}. At the reported operating point,
+the true-positive rate is \DefenseTprAttwozeroPct{} and the false-positive
+rate is \DefenseFprAttwozeroPct{}. These figures describe discrimination
+within this evaluation set. The positive vocabulary and negatives are
+study specific, and lexical separation from a detector prompt does not amount
+to an independently designed deployment holdout.
+
+\begin{figure}[t]\centering
+\includegraphics[width=.62\textwidth]{figures/roc}
+\caption{ROC for the field intent classifier, \DefenseCorpusPositives{} positives
+against \DefenseCorpusNegatives{} real benign schema fields
+(AUC \DefenseAucValue{}). The dashed line is chance. The inset enlarges the
+region of low false-positive rates, and the markers show the operating points
+at thresholds 20 and 80. Ranking performance does not determine precision
+under low attack prevalence. Table~\ref{tab:ppv} evaluates the selected
+operating point under three assumed rates.}
+\label{fig:roc}
+\end{figure}
+Figure~\ref{fig:roc} plots the fraction of positive fields flagged against
+the fraction of negative fields flagged as the score threshold changes. The
+curve rises within the first few percent of false positives, which the inset
+enlarges. AUC summarizes ranking across the scored positive and negative fields. The
+implementation gives half credit to tied positive-negative pairs and obtains
+the same ranking interpretation from the trapezoidal ROC. The uncertainty
+interval resamples each class separately with replacement for 10,000 draws
+using seed zero. This field-level bootstrap does not represent variation across
+independent semantic attack families or repeated classifier generations.
+
+\input{details_detector}
+Table~\ref{tab:defense-thresholds} supplies the trial counts behind each
+operating point and the negative-source breakdown. At threshold 20, the
+classifier flags \DetThrTwozeroSensFrac{} positives, with Wilson interval
+\DetThrTwozeroSensCI{}\%. The \DetThrTwozeroFprFrac{} false positives comprise
+\DetThrTwozeroFprMcptoxFrac{} MCP fields and \DetThrTwozeroFprOtelFrac{}
+OpenTelemetry fields. On this corpus the threshold flags more negatives than
+positives, a precision of \DetDetectorCorpusPrecision{}. At threshold 80, \DetThrEightzeroSensFrac{} positives
+remain flagged (\DetThrEightzeroSensCI{}\%) and \DetThrEightzeroFprFrac{}
+negative fields are flagged, with Wilson interval \DetThrEightzeroFprCI{}\%.
+That result does not establish zero false positives outside this corpus.
+
+\begin{figure}[t]\centering
+\includegraphics[width=.62\textwidth]{figures/detector_scores}
+\caption{Field intent classifier. (a) Distribution of scores for the benign MCP
+fields, the benign OpenTelemetry fields, and the study positives, on a
+logarithmic count axis. Dashed lines mark thresholds 20 and 80. (b) Precision
+at threshold 20 from Equation~\ref{eq:ppv} as a function of the assumed share
+of hostile fields. The markers are the three scenarios of Table~\ref{tab:ppv}.}
+\label{fig:detector}
+\end{figure}
+Figure~\ref{fig:detector} shows the scores behind these operating points. In
+panel (a), most benign fields score at or near zero. A group of benign fields
+nevertheless receives the same high score as several study positives, and one
+study positive scores below that group. No threshold separates the two classes.
+Panel (b) evaluates the precision formula below across assumed prevalence. The
+curve is a scenario calculation and not a measured attack rate.
+
+Ranking performance alone does not specify the value of an alert. Let $\pi$
+be an assumed attack prevalence, $s$ the true-positive rate, and $q$ the
+false-positive rate. Under those assumptions, precision is
+\begin{equation}
+\operatorname{PPV}(\pi)=\frac{s\pi}{s\pi+q(1-\pi)}.
+\label{eq:ppv}
+\end{equation}
+\begin{table}[t]\centering\small
+\caption{Illustrative precision of a black-box field intent classifier under
+assumed attack base rates. The selected threshold flags all study positives
+(TPR \DefenseTprAttwozeroPct{}, FPR \DefenseFprAttwozeroPct{}). AUC is
+\DefenseAucValue{}~\DefenseAucCI{} over \DefenseCorpusPositives{} positives and
+\DefenseCorpusNegatives{} real benign schema fields.}
+\label{tab:ppv}
+\begin{tabular}{@{}rrl@{}}
+\toprule
+Base rate & PPV & Reading \\
+\midrule
+\DefenseBaseratePointonePct{} & \DefensePpvPointonePct{} & alerts dominated by false positives \\
+\DefenseBaserateOnePct{} & \DefensePpvOnePct{} & false alerts still dominate \\
+\DefenseBaserateFivePct{} & \DefensePpvFivePct{} & precision remains base-rate dependent \\
+\bottomrule
+\end{tabular}
+\end{table}
+At assumed prevalences of \DefenseBaseratePointonePct{},
+\DefenseBaserateOnePct{}, and \DefenseBaserateFivePct{}, the projected
+precision is \DefensePpvPointonePct{}, \DefensePpvOnePct{}, and
+\DefensePpvFivePct{}, respectively (Table~\ref{tab:ppv}). These are scenario
+calculations, not measured ecosystem attack rates. A high AUC can coexist with
+a low proportion of useful alerts when attacks are uncommon.
+
+Legitimate metadata also occupies nearby semantic space. The evaluated attack
+wording scores \DefenseBandAttack{}, whereas the OpenTelemetry field
+\texttt{user\_agent.original} scores \DefenseBandLegitimate{} under the same
+classifier~\cite{opentelemetry_semconv}. Sequential Thinking field names
+contribute \DefenseSeqthinkingFrac{} of the observed false positives at
+the selected operating point. These examples illustrate overlap between
+permitted interface functions and suspicious categories. They do not prove
+that context-aware classification is impossible or that this particular
+classifier is optimal.
+
+The retrospective analysis projects which observed recoveries might have been
+removed by blocking associated fields. It does not execute a defense in the
+host, permit the model to respond to rejection, or measure the user's task
+after filtering. Argument substitution, alternative tool selection, and task
+failure could all change the result. Consequently, the classifier experiment
+is a detection study and a base-rate illustration, not a measured prevention
+claim. In particular, the classifier's positives concern agent identity and
+prompt information, not the region, operator, and credential declarations the
+studies deployed, so the reported AUC is not a detection estimate for those
+categories. Table~\ref{tab:detector-study} scores every added-field text of
+Studies~1 to~4 through the same classifier, as a descriptive check kept separate
+from the ROC corpus. At the threshold that flags every self-identity positive,
+\DetDetectorStudyBelowThr{} of \DetDetectorStudyN{} score below it. All
+\DetDetectorStudyAssistantN{} texts that name the assistant are flagged. They
+are three of the four fields that Study~2 used, a second region text, and the
+three region encodings of Study~3. Among the other texts the outcome is mixed.
+The Study~1 service-key reference and the reversed and hexadecimal service-key
+requests score high. The Study~2 service-key field, the Study~1 region and
+operator fields, the billing-attribution field, and most adjacent texts are
+missed. The misses therefore do not follow the fact family, and several missed
+fields returned their fact in every call. The \texttt{client\_user\_agent}
+text shows that a score near the threshold is not stable: it scored
+\DetDetectorPositiveClientUaRuns{} as a corpus positive and
+\DetDetectorStudyClientUaRuns{} here. This is the deployment-relevant reading
+of the detector, and it is weaker than the AUC on self-identity positives
+suggests.
+\input{details_detector_study}
+
+\section{Provenance, record validation, and reproducibility}
+\label{app:reproduction}
+\subsection{Models, repetitions, and collection provenance}
+The Study~1 protocol names \texttt{gpt-4o} and
+\texttt{gemini-3-flash-preview}. Studies~2 and~3 use
+\texttt{gpt-4o-2024-08-06} and \texttt{gemini-3-flash-preview}, and Study~4
+uses \texttt{gpt-6.1-sol}, \texttt{claude-opus-5-5} and
+\texttt{gemini-3.1-pro-preview} (\ref{app:study4}). Each planned planted arm has 20 repetitions
+for each of eight C wordings and the corresponding D conditions, at temperature
+0.7. These are requested API identifiers, not immutable model-weight hashes.
+Sampling-seed support differs across providers: seeds are passed as controls
+where supported by OpenAI-compatible endpoints and otherwise serve as logged
+trial labels. Equal seed labels across providers do not imply equal random
+states or matched model samples.
+
+The protocol digest and calendar receipts are recorded before the selected Study~1
+collection. Only the models named by that document supply the primary decision.
+The study had already observed earlier exploratory data when Study~1 was designed. Preregistration does not make its designers unaware of those observations.
+Its purpose is to distinguish a prospectively specified new comparison from
+retrospective selection of favorable markers or endpoints.
+
+\paragraph{Timestamp anchoring}
+Each protocol file was hashed locally and its SHA-256 digest was submitted to
+four public OpenTimestamps calendars. On 1 October 2026 we upgraded copies of
+the proofs and compared the Merkle root of every Bitcoin attestation
+with the corresponding block header from a public block explorer. All matched.
+This check used an explorer and not a local full node. The Study~1 protocol is
+anchored in block 961955, whose header time is 04:14:11 UTC on 11 August 2026.
+The first Study~1 trial is recorded at 11:05:32 on that day, in a record
+without a time zone, which is 05:05:32 UTC if it is local time and later if it
+is UTC. The Study~2 protocol was committed and submitted to the calendars at
+17:31 UTC on 29 September 2026, and the first planted trial started at 17:36
+UTC. Its earliest Bitcoin anchor is block 969188, with header time 18:11:16
+UTC. That is after the Gemini leg of Study~2a began and before the GPT-4o leg
+and Study~2b. The amendment was committed and submitted at 19:13 UTC, before
+the first planted Study~2b trial at 19:15 UTC, and its earliest anchor is block
+969197 at 20:35:31 UTC, after Study~2b was collected. For the Gemini leg of
+Study~2a and for the amendment, precedence therefore rests on the calendar
+receipts and the commit record, and the Bitcoin anchors bound the protocol
+dates only from above. The Study~3 protocol was submitted at 18:44 UTC on
+1 October 2026 and is anchored in block 969484, with header time 19:19:47 UTC,
+before its first planted call at 20:07 UTC. The upgraded proofs are stored
+beside the originals, which are unchanged.
+
+Additional Study~1 arms use Claude Sonnet, DeepSeek Flash, and Gemini Pro. These
+providers were added after the timestamped protocol and remain exploratory.
+The Pro arm stopped at a quota limit. Its incomplete cells, error rows, and
+unobserved generic condition are kept as such. They are not filled in with
+zeros, pooled with the preregistered Google model, or treated as completed
+replications. The reported Gemini Flash arm is a second, complete collection.
+A first Flash collection stopped after \DetVthreeAbandonedRows{} trials when
+the Gemini leg was switched to Gemini Pro and back during the run
+(\texttt{docs/DEVIATIONS.md}, Section~8a.3); a short Pro fragment from the same
+switch also exists. The stopped Flash file recovered the matched fact in
+\DetVthreeAbandonedMatched{} opportunities and a nonmatched fact in
+\DetVthreeAbandonedNonmatched{} checks. Neither file is pooled or supports a
+number in the main text.
+
+The artifact-selection manifest fixes the input paths and their
+hashes. Analysis validates those selections rather than choosing whichever
+available run has the largest sample or most favorable outcome. Canonical
+records, raw provider payloads, and derived scored copies are related records
+of the same trials, not independent observations. Mock and dry-run files are
+excluded from scientific results.
+
+\input{details_models}
+Table~\ref{tab:model-identities} gives the exact requested identifiers and the
+identifiers reported in the corresponding raw planted Study~1 responses. GPT-4o
+reports a dated model version. The other selected responses report the requested
+identifier. The incomplete Pro run has fewer raw successful responses than
+attempts because quota errors are counted separately. This check establishes
+consistency of recorded identifiers, not invariance of a provider's model
+implementation.
+
+The selected Study~1 filenames record collection on 11 August 2026. Earlier gate,
+wording, and framework observations occur in July and August. The familiarity
+comparison occurs on 17 August. Filename and canonical timestamps are kept
+as recorded. They are not all timezone qualified and should not be substituted
+for an externally verified UTC chronology. The versioned protocol receipt has
+its own explicitly recorded UTC timestamp.
+
+The primary requested temperature is 0.7. The saved configuration and
+deviation history specify an output budget of 256 tokens for the primary
+pair, with a temporary increase to 1024 during the Pro substitution. The
+API adapters translate the generic tool declaration into provider-specific
+formats and permit the model to choose whether to call. Seeds are passed to
+supported OpenAI-compatible endpoints. They are not controls for the Google
+and Anthropic sampling processes. Older pre-repair runs used process-dependent
+seed labels and did not pass them consistently to adapters. This limits exact
+regeneration of earlier response strings even when prompts are identical.
+% TODO: T03 Recover immutable request-side snapshots for historical API settings, including token budgets, adapter versions, and timezone-qualified collection times. Current configuration and response logs do not establish every original request byte.
+% TODO: T04 The three proofs were upgraded on copies and checked against a public block explorer on 2026-10-01 (docs/timestamps/README.md). Still open: verify them against a local Bitcoin full node with `ots verify`, and have a second person repeat the check. Do not state that the Bitcoin anchor precedes the Gemini leg of Study 2a or the collection of Study 2b; it does not.
+
+\subsection{Record validation and denominators}
+API-error rows are counted and excluded from the Study~1 recovery rates as
+specified by the protocol. The evidence readers reject malformed records,
+duplicate trial identities in selected sources, and unexpected factor values.
+Usable responses, emitted calls, and attempted requests are counted separately.
+The selected primary planted arms contain calls throughout their configured
+grids. Their conditional and attempted-trial recovery denominators consequently
+coincide. This is not assumed for other providers or unplanted conditions.
+
+There are seven targeted fields in a complete primary arm. Each emitted targeted
+call offers one matched check and four nonmatched checks. The generic C calls
+have no matched outcome and are analyzed using any-canary recovery. The neutral
+D arm offers five fact checks per call. Thus
+\VthreeGptFouroControlcallsN{} neutral calls produce \VthreeGptFouroControlN{}
+correlated fact checks, not that many independent opportunities to query the
+model. Rates with different units
+are never pooled into a single attack-success percentage.
+
+Reported served-model identities are compared with requested identifiers where
+the raw response supports that check. Missing reported identities
+remain unverified. Improvements to identity checking, malformed-response handling,
+and transport validation implemented after collection do not retrospectively
+upgrade the original records. \ref{app:accounting} supplies the complete
+selected matrix and unplanted accounting.
+
+The Study~1 collection uses the fixed eight wording schedule. No record establishes random assignment of the trial order. Repeated
+requests were collected in configured stages. We do not retrospectively
+attribute blocked randomization to those runs because a later extension harness
+implements it. Time, provider state, and within-stage ordering remain possible
+sources of dependence.
+
+\subsection{Descriptive intervals and missing outcomes}
+Unless a table explicitly identifies a field or interface bootstrap, intervals
+for individual proportions are two-sided 95\% Wilson intervals using
+$z=1.96$. For a count $k$ from $n$ observations and $\widehat p=k/n$, their
+center and half width are
+\begin{align}
+ c&=\frac{\widehat p+z^2/(2n)}{1+z^2/n},\\
+ h&=\frac{z\sqrt{\widehat p(1-\widehat p)/n+z^2/(4n^2)}}{1+z^2/n}.
+\end{align}
+The interval is $[c-h,c+h]$. This avoids interpreting an observed zero as a
+zero upper risk bound. For example, the generic field's GPT-4o result,
+\VthreeGptFouroGenericFrac{}, has the interval \DetVthreeGptFouroGenericCI{}\%,
+while the GPT-4o service-key result, \VthreeGptFouroFieldMCredentialFrac{},
+has \DetVthreeGptFouroFieldMCredentialCI{}\%. These are fixed-cell sampling summaries.
+They do not account for a population of untested schemas or common provider
+state across calls. All new interval calculations in the expanded appendices
+are retrospective descriptive analyses of existing observations.
+
+The analysis code uses the label ``ITT'' for some denominators containing
+all usable responses after excluding API errors. We call these usable-response
+rates. An attempted-request denominator additionally includes error rows.
+An API error supplies no observed recovery outcome. Where errors occur, the
+paper reports attempts and errors separately rather than silently treating an
+unobserved response as a confidentiality success or failure. No conditional
+interval is reported for a cell with no emitted calls.
+
+Corpus counts are enumerations of the corpus. Hypothetical prevalence
+calculations, fixed settings, cluster counts, and the number of protocol models
+are not estimated trial probabilities and do not receive binomial intervals.
+Repeated scanner votes are also not independent draws from a population of
+attacks. Their small repetition count precludes interpreting a vote interval
+as detector accuracy, even though every reply is now kept.
+
+\subsection{Hypothesis labels and secondary protocol questions}
+The main text writes H1, H2, and H3 for the hypotheses that the Study~1
+protocol file labels H-v3-1, H-v3-2, and H-v3-3.
+H2 applies a diagonal-minus-off-diagonal criterion to adjacent and generic
+strata. Its generic part is undefined because the same protocol explicitly
+assigns no target to a generic field. We report any-canary recovery for that
+field and do not invent a target retrospectively. For adjacent fields, the
+class average must be read alongside the individual wordings, especially the
+near-synonym relationship between locality and region.
+
+H3 concerns unplanted controls for the same fields. The observed stages
+complete their six-field configurations, but two matrix fields lack matching
+unplanted coverage. Absence of recovery in the measured controls is informative
+for those cells. It does not establish complete fulfillment of the planned
+eight-field control grid. These two limitations are separate from the primary
+selectivity decision.
+
+\subsection{Analysis changes and rebuild instructions}
+The study's provenance distinguishes six stages. The original gate tested
+an identity-superiority hypothesis and failed its majority-model rule. The
+pilot matrix explored field-to-fact matching but lacks the required committed
+pre-data protocol provenance. The Study~1 design names a new primary provider pair
+and deterministic markers under a recorded external witness. Subsequent
+analysis audits correct the paired bootstrap and denominator handling and
+add explicit accounting and sensitivity checks. Study~2
+then follows its own sealed protocol, with one dated amendment
+before Study~2b, and is never pooled with the earlier stages. Study~3 follows
+a third sealed protocol whose Bitcoin anchor was verified before collection.
+Each stage remains
+visible in the repository. A later correction does not rewrite its original
+protocol.
+
+The main analysis corrections are exclusion of the targetless generic field
+from the nonmatched denominator, paired resampling of whole field units,
+separate call-level neutral accounting, explicit inclusion of the partial Pro
+arm in inventory totals, recognition of missing unplanted field coverage, and
+a re-run of the scanner policy that keeps every raw reply. The expanded
+writing review additionally identifies the incompatible annotation-attestation
+format. Worksheet agreement is computable, but validated human provenance is
+not claimed. These changes
+affect the interpretation of the evidence and are disclosed in
+\texttt{docs/DEVIATIONS.md}. They do not alter collected provider outputs.
+
+The minimal local build is \texttt{make -C paper}. It regenerates numeric
+macros and expanded-manuscript assets through the configured analysis
+environment, then runs LaTeX and BibTeX. The companion command
+\texttt{make -C paper check} verifies registered claims and
+regenerated expanded-manuscript tables and bibliography against source
+evidence. The full repository reproduction entry point is
+\texttt{code/reproduce.py}. No paid model calls are required for these steps.
+
+The principal implementation files are \texttt{conditions.py} for fixtures,
+\texttt{make\_v3\_report.py} and \texttt{stats.py} for primary summaries,
+\texttt{q1\_analysis.py} for independent and secondary calculations,
+\texttt{scoring\_sensitivity.py} for scorer alternatives,
+\texttt{schema\_types\_design.py}, \texttt{schema\_types\_run.py}, and
+\texttt{schema\_types\_analyze.py} for Study~2,
+\texttt{release\_policies.py} and \texttt{release\_stage1.py} for the policy
+replay and Study~3,
+\texttt{manifest.py} for result macros, and \texttt{paper\_assets.py} with
+\texttt{paper\_details.py} for the expanded manuscript's generated tables,
+prose macros, figures, and bibliography. These files
+reside under \texttt{code/}. Source and generated files are distinguished so
+that manual formatting edits cannot silently replace the numerical analysis.
+
+\subsection{Host context survey}
+Table~\ref{tab:host-context} lists the hosts, commits, and source files behind
+the counts in Section~\ref{sec:prevalence}. The record with the quoted source
+lines is \texttt{data/host\_context\_survey.json}.
+\input{details_hosts}
+
+\subsection{Evidence preservation}
+The analysis artifact preserves run logs and protocols, the selected
+input hashes, fixture definitions, and a deviation log. Numeric manuscript
+macros are generated from the evidence rather than manually transcribed.
+Tables for accounting, exact fixtures, secondary analyses, and scoring
+sensitivities are regenerated from the same analysis functions used for the
+audited journal materials. The expanded manuscript's bibliography incorporates
+the locally reviewed source corrections.
+
+The offline reproduction environment uses Python 3.12 and a locked analysis
+dependency file. The workflow validates selected artifacts, reconstructs counts,
+checks statistical summaries, and verifies generated manuscript assets without
+issuing live model requests. Engineering tests exercise malformed records,
+duplicate identities, scoring behavior, paired-bootstrap invariants, and mock
+transport outcomes. A passing test suite is evidence of specified software
+properties, not validation of scientific generality or confirmation that a
+deployed defense is effective.
+
+\ref{app:reproduction} identifies the commands and source files needed
+to rebuild this manuscript.
+% TODO: T27 duplicate: the public archive, license, and release scope are still to be supplied.
+Raw payloads require appropriate review before
+redistribution, even though the study's planted secrets are synthetic. Numerical
+reproducibility and permission to distribute the complete underlying materials
+are distinct requirements.
+
+% TODO: verify T28 Complete or explicitly justify missing bibliography metadata: pages for perez2022ignore, greshake2023not, zhang2024promptextraction, hui2024pleak, zhang2024output2prompt, carlini2021extracting, debenedetti2024agentdojo, zhan2024injecagent, ruan2024toolemu, and chen2025struq. Do not invent pagination for unpaginated proceedings. opentelemetry_semconv has no year because the corpus was harvested from the unversioned main branch. The hiddenlayer2025mcp page title observed in the 2026-09-28 audit differs from the cited title and needs an author check.
+\bibliographystyle{elsarticle-num}
+\begingroup\small
+\bibliography{journal_refs}
+\endgroup
+\end{document}
